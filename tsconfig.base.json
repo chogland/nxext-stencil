@@ -16,6 +16,9 @@
     "baseUrl": ".",
     "paths": {
       "@rds-core/core-components": ["dist/libs/core-components"],
+      "@rds-core/core-components-react": [
+        "packages/core-components-react/src/index.ts"
+      ],
       "@rds-core/core-components/*": [
         "dist/libs/core-components/dist/components/*"
       ],

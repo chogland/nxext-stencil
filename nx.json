@@ -15,5 +15,12 @@
   },
   "cli": {
     "defaultCollection": "@nxext/stencil"
+  },
+  "generators": {
+    "@nrwl/react": {
+      "application": {
+        "babel": true
+      }
+    }
   }
 }

@@ -1,0 +1,6 @@
+*,
+:host,
+::before,
+::after {
+  @apply ring-0 ring-offset-0 ring-transparent ring-offset-white;
+}

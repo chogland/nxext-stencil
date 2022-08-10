@@ -2,6 +2,7 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
-    "core-components": "packages/core-components"
+    "core-components": "packages/core-components",
+    "core-components-react": "packages/core-components-react"
   }
 }

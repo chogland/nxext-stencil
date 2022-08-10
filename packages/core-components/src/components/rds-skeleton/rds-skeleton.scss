@@ -1,0 +1,30 @@
+.skeleton {
+  @apply will-change-transform outline-none overflow-hidden relative bg-gray-300 rounded w-full h-5 inline-block mb-2 bg-no-repeat box-border animate-pulse;
+
+  &::after,
+  &::before {
+    @apply box-border;
+  }
+
+  &.circle {
+    @apply w-10 h-10 mb-1 rounded-full;
+  }
+
+  &.rect {
+    @apply rounded-none;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    @apply opacity-100;
+  }
+
+  50% {
+    @apply opacity-40;
+  }
+
+  100% {
+    @apply opacity-100;
+  }
+}

@@ -1,0 +1,100 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsFooter from '../../../dist/collection/components/rds-footer/rds-footer';
+
+<Meta
+  title="Patterns/Global Footer/Stories"
+  component={RdsFooter}
+  parameters={{
+    layout: 'fullscreen',
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=136%3A15133',
+    },
+    backgrounds: {
+      default: 'White',
+    },
+  }}
+  argTypes={{
+    confidentiality: {
+      control: {
+        type: 'boolean',
+      },
+    },
+    disclaimer: {
+      control: {
+        type: 'boolean',
+      },
+    },
+    helpHref: {
+      control: {
+        type: 'text',
+      },
+    },
+    survey: {
+      control: {
+        type: 'boolean',
+      },
+    },
+    surveyUrl: {
+      control: {
+        type: 'text',
+      },
+    },
+  }}
+/>
+
+export const Template = args => <rds-footer {...args}></rds-footer>;
+
+# Footer
+
+### Default
+
+<Canvas>
+  <Story name="Default" args={{}}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### With Confidentialty Notice
+
+<Canvas>
+  <Story
+    name="With Confidentiality Notice"
+    args={{
+      confidentiality: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### With Feedback
+
+<Canvas>
+  <Story
+    name="With Feedback"
+    args={{
+      survey: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### With All
+
+<Canvas>
+  <Story
+    name="With All"
+    args={{
+      help: true,
+      confidentiality: true,
+      survey: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

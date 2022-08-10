@@ -1,0 +1,270 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+
+<Meta title="Components/Box/Overview" />
+
+# Box: Overview
+
+`Box` is a component used to add additional styles around and to slotted HTML elements and/or other RDS components.
+
+The component is comprised of two nested inline DOM elements. The first inline element is there to add margin/padding to, handled by the _margin_ and _padding_ properties, and the second inline element is there for the addition of any custom CSS passed in through the _styles_ property.
+
+You can add as many RDS components to the slot as you would like. Below is an unstyled box component that houses a button component. You may find yourself adding box components around any sub components that you would like to add padding/margin to, for example.
+
+<Canvas withSource="none">
+  <rds-box>
+    <rds-button>I'm a button inside of a box.</rds-button>
+  </rds-box>
+</Canvas>
+
+```
+<RdsBox>
+  <RdsButton>I'm a button inside of a box.</RdsButton>
+</RdsBox>
+```
+
+Box has properties added to manipulate its margin, padding, text color, background color, and a catch-all _styles_ property that can add custom CSS directly to it. See each property explained in detail below.
+
+## Box Options
+
+### Display
+
+The `display` property adjusts the CSS display styles applied to the box. There are only three options to choose from: _block_, _inline-block_ and _inline_. It is set to **block** by default.
+
+The display property does not have flex support built in because the `RdsFlex` component is available to handle all flex options. Alternatively, raw CSS can be passed into box's _styles_ property.
+
+Below is an example of two box components, each with their default display value of _block_.
+
+<Canvas withSource="none">
+  <div>
+    <rds-box>
+      <rds-button>I am the first box's button.</rds-button>
+    </rds-box>
+    <rds-box>
+      <rds-button>I am the second box's button.</rds-button>
+    </rds-box>
+  </div>
+</Canvas>
+
+```
+<RdsBox>
+  <RdsButton>I am the first box's button.</RdsButton>
+</RdsBox>
+<RdsBox>
+  <RdsButton>I am the second box's button.</RdsButton>
+</RdsBox>
+```
+
+Below is an example of two box components that have had their display properties adjusted to inline, so they display next to each other.
+
+<Canvas withSource="none">
+  <div>
+    <rds-box display="inline">
+      <rds-button>I am the first box's button.</rds-button>
+    </rds-box>
+    <rds-box display="inline">
+      <rds-button>I am the second box's button.</rds-button>
+    </rds-box>
+  </div>
+</Canvas>
+
+```
+<RdsBox display="inline">
+  <RdsButton>I am the first box's button.</RdsButton>
+</RdsBox>
+<RdsBox display="inline">
+  <RdsButton>I am the second box's button.</RdsButton>
+</RdsBox>
+```
+
+### Margin
+
+The `margin` property adds CSS margin to the first div inside of the box component. It is recommended use pre-defined RDS spacing values to the margin property, but support is also built-in for valid CSS length values.
+
+For a list of all valid RDS spacing values, please see the table below.
+
+<rds-table>
+  <rds-table-row slot="head">
+    <rds-table-cell type="head">Type</rds-table-cell>
+    <rds-table-cell type="head">Value</rds-table-cell>
+  </rds-table-row>
+  <rds-table-row slot="body">
+    <rds-table-cell>auto</rds-table-cell>
+    <rds-table-cell>auto</rds-table-cell>
+  </rds-table-row>
+  <rds-table-row slot="body">
+    <rds-table-cell>0</rds-table-cell>
+    <rds-table-cell>0rem / 0px</rds-table-cell>
+  </rds-table-row>
+  <rds-table-row slot="body">
+    <rds-table-cell>sm</rds-table-cell>
+    <rds-table-cell>0.125rem / 2px</rds-table-cell>
+  </rds-table-row>
+  <rds-table-row slot="body">
+    <rds-table-cell>md</rds-table-cell>
+    <rds-table-cell>0.25rem / 4px</rds-table-cell>
+  </rds-table-row>
+  <rds-table-row slot="body">
+    <rds-table-cell>lg</rds-table-cell>
+    <rds-table-cell>0.5rem / 8px</rds-table-cell>
+  </rds-table-row>
+  <rds-table-row slot="body">
+    <rds-table-cell>xl</rds-table-cell>
+    <rds-table-cell>1rem / 16px</rds-table-cell>
+  </rds-table-row>
+  <rds-table-row slot="body">
+    <rds-table-cell>2xl</rds-table-cell>
+    <rds-table-cell>1.5rem / 24px</rds-table-cell>
+  </rds-table-row>
+  <rds-table-row slot="body">
+    <rds-table-cell>3xl</rds-table-cell>
+    <rds-table-cell>2rem / 32px</rds-table-cell>
+  </rds-table-row>
+  <rds-table-row slot="body">
+    <rds-table-cell>4xl</rds-table-cell>
+    <rds-table-cell>2.5rem / 40px</rds-table-cell>
+  </rds-table-row>
+  <rds-table-row slot="body">
+    <rds-table-cell>5xl</rds-table-cell>
+    <rds-table-cell>3rem / 48px</rds-table-cell>
+  </rds-table-row>
+</rds-table>
+
+Below are some examples of how to set margin.
+
+`margin="md"` (md margin on all sides)<br />
+`margin="sm md"` (sm = top/bottom margin, md = left/right margin)<br />
+`margin="sm lg md"` (sm = top margin, lg = left/right margin, md = bottom margin)<br />
+`margin="sm 0 0 0"` (sm = top margin, 0 = right/bottom/left margin)<br />
+
+<Canvas withSource="none">
+  <rds-box margin="xl">
+    <rds-button>I'm a button inside of a box.</rds-button>
+  </rds-box>
+</Canvas>
+
+```
+<RdsBox margin="xl">
+  <RdsButton>I'm a button inside of a box.</RdsButton>
+</RdsBox>
+```
+
+### Padding
+
+Like the margin property, the `padding` property adds CSS padding to the first div inside of the box component. It is recommended use pre-defined RDS spacing values to the padding property, but support is also built-in for valid CSS length values.
+
+For a list of all valid RDS spacing values, please see the table below.
+
+<rds-table>
+  <rds-table-row slot="head">
+    <rds-table-cell type="head">Type</rds-table-cell>
+    <rds-table-cell type="head">Value</rds-table-cell>
+  </rds-table-row>
+  <rds-table-row slot="body">
+    <rds-table-cell>0</rds-table-cell>
+    <rds-table-cell>0rem / 0px</rds-table-cell>
+  </rds-table-row>
+  <rds-table-row slot="body">
+    <rds-table-cell>sm</rds-table-cell>
+    <rds-table-cell>0.125rem / 2px</rds-table-cell>
+  </rds-table-row>
+  <rds-table-row slot="body">
+    <rds-table-cell>md</rds-table-cell>
+    <rds-table-cell>0.25rem / 4px</rds-table-cell>
+  </rds-table-row>
+  <rds-table-row slot="body">
+    <rds-table-cell>lg</rds-table-cell>
+    <rds-table-cell>0.5rem / 8px</rds-table-cell>
+  </rds-table-row>
+  <rds-table-row slot="body">
+    <rds-table-cell>xl</rds-table-cell>
+    <rds-table-cell>1rem / 16px</rds-table-cell>
+  </rds-table-row>
+  <rds-table-row slot="body">
+    <rds-table-cell>2xl</rds-table-cell>
+    <rds-table-cell>1.5rem / 24px</rds-table-cell>
+  </rds-table-row>
+  <rds-table-row slot="body">
+    <rds-table-cell>3xl</rds-table-cell>
+    <rds-table-cell>2rem / 32px</rds-table-cell>
+  </rds-table-row>
+  <rds-table-row slot="body">
+    <rds-table-cell>4xl</rds-table-cell>
+    <rds-table-cell>2.5rem / 40px</rds-table-cell>
+  </rds-table-row>
+  <rds-table-row slot="body">
+    <rds-table-cell>5xl</rds-table-cell>
+    <rds-table-cell>3rem / 48px</rds-table-cell>
+  </rds-table-row>
+</rds-table>
+
+Below are some examples of how to set padding.
+
+`padding="md"` (md padding on all sides)<br />
+`padding="sm md"` (sm = top/bottom padding, md = left/right padding)<br />
+`padding="sm lg md"` (sm = top padding, lg = left/right padding, md = bottom padding)<br />
+`padding="sm 0 0 0"` (sm = top padding, 0 = right/bottom/left padding)<br />
+
+<Canvas withSource="none">
+  <rds-box padding="xl">
+    <rds-button>I'm a button inside of a box.</rds-button>
+  </rds-box>
+</Canvas>
+
+```
+<RdsBox padding="xl">
+  <RdsButton>I'm a button inside of a box.</RdsButton>
+</RdsBox>
+```
+
+### Color
+
+The `color` property applies a text color to the box component and its slotted components. If the slotted components inherit its parent's text color, the text color will change when this property is updated.
+
+You can find the list of colors supported with the box component on our [Brand Identity/Colors page](/story/brand-identity-colors--page).
+
+Below is an example of the box component manipulating a slotted text component's color.
+
+<Canvas withSource="none">
+  <rds-box color="purple-600">
+    <rds-text>I'm a text component inside of a box.</rds-text>
+  </rds-box>
+</Canvas>
+
+```
+<RdsBox color="purple-600">
+  <RdsText>I'm a text component inside of a box.</RdsText>
+</RdsBox>
+```
+
+### Background
+
+The `bg` property applies a background color to the box component and its slotted components. If the slotted components inherit its parent's background color, the background color will change when this property is updated.
+
+You can find the list of colors supported with the box component on our [Brand Identity/Colors page](/story/brand-identity-colors--page).
+
+Below is an example of the box component manipulating a slotted card component's background.
+
+<Canvas withSource="none">
+  <rds-box bg="gray-200">
+    <rds-text>I'm a text component inside of a box.</rds-text>
+  </rds-box>
+</Canvas>
+
+```
+<RdsBox bg="gray-200">
+  <RdsText>I'm a text component inside of a box.</RdsText>
+</RdsBox>
+```
+
+## Usage Guidelines
+
+> **Use custom styles sparingly**
+
+This component was created to allow you to make occasional sizing/alignment exceptions to your components. The point is not to re-style any RDS components. Please work with your team's designer on any custom styling needs.
+
+> **Ensure color choices are accessible**
+
+If you are manipulating background or text colors, please reference the [Accessibility/Color Contrast page](/story/accessibility-color-contrast--page) to ensure your color choices are ADA compliant.
+
+<Description>{Readme}</Description>

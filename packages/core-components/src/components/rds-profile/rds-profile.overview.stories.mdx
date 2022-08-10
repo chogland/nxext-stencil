@@ -1,0 +1,32 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+
+<Meta title="Collections/Profile/Overview" />
+
+# Profile: Overview
+
+The `Profile` component is used to indicate which user’s view is being displayed.
+
+## Profile
+
+The profile component is comprised of the user’s avatar, name and a status indicator. It also includes a drop down menu that can contain menu items.
+
+<Canvas withSource="auto">
+  <Story id="collections-profile-stories--default-story"></Story>
+</Canvas>
+
+## Usage Guidelines
+
+> Profile
+
+The profile component is used to indicate that the content being displayed is relevant to the user indicated.
+
+> Status Indicator
+
+The status indicator communicates the user’s availability or status.
+
+> Avatar
+
+The avatar amy contain the user’s initials or an image of the user. It should not contain more than two letters.
+
+<Description>{Readme}</Description>

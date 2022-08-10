@@ -1,0 +1,74 @@
+:host {
+  @apply inline-flex items-center align-bottom;
+
+  ::slotted(*) {
+    @apply pointer-events-none;
+  }
+
+  .link-inner {
+    @apply flex items-center;
+  }
+
+  button {
+    @apply bg-none border-none appearance-none;
+  }
+
+  button,
+  a {
+    @apply inline-block font-inter font-medium rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2 focus:ring-offset-white;
+
+    // Small font size
+    &[size='sm'] {
+      @apply text-sm;
+    }
+
+    &.primary {
+      @apply text-purple-600;
+
+      ::slotted(*) {
+        @apply text-purple-400;
+      }
+
+      &:hover {
+        @apply text-purple-900;
+
+        ::slotted(*) {
+          @apply text-purple-600;
+        }
+      }
+    }
+
+    &.secondary {
+      @apply text-gray-600;
+
+      ::slotted(*) {
+        @apply text-gray-400;
+      }
+
+      &:hover {
+        @apply text-gray-900;
+
+        ::slotted(*) {
+          @apply text-gray-600;
+        }
+      }
+    }
+
+    // Disabled style
+    &:disabled {
+      @apply pointer-events-none text-gray-400;
+
+      ::slotted(*) {
+        @apply text-gray-200;
+      }
+    }
+
+    slot[name='start']::slotted(*) {
+      @apply mr-2;
+    }
+
+    slot[name='end']::slotted(*) {
+      @apply ml-2;
+    }
+  }
+}

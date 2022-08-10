@@ -1,0 +1,79 @@
+:host {
+  @apply font-inter;
+
+  [avatar-wrapper] {
+    @apply rounded-full bg-gray-500 text-white flex items-center text-center relative;
+
+    .indicator {
+      @apply absolute block;
+    }
+
+    // Size small
+    &[size='sm'] {
+      @apply w-6 h-6 text-xs;
+
+      .indicator {
+        right: 0;
+        bottom: -0.33rem;
+
+        ::slotted(*) {
+          @apply w-1.5 h-1.5;
+        }
+      }
+    }
+
+    // Size medium
+    &[size='md'] {
+      @apply w-8 h-8 text-sm;
+
+      .indicator {
+        right: 0.033rem;
+        bottom: -0.33rem;
+
+        ::slotted(*) {
+          @apply w-2 h-2;
+        }
+      }
+    }
+
+    // Size large
+    &[size='lg'] {
+      @apply w-10 h-10;
+
+      .indicator {
+        right: 0.05rem;
+        bottom: -0.375rem;
+      }
+    }
+
+    // Size extra large
+    &[size='xl'] {
+      @apply w-12 h-12 text-lg;
+
+      .indicator {
+        @apply right-0;
+
+        bottom: -0.45rem;
+
+        ::slotted(*) {
+          @apply w-3 h-3;
+        }
+      }
+    }
+
+    span {
+      @apply w-full leading-none;
+    }
+  }
+
+  img {
+    @apply rounded-full w-full h-full;
+  }
+}
+
+// Set background to transparent if there is an image
+:host([src]) {
+  [avatar-wrapper] {
+    @apply bg-transparent;
+  }
+}

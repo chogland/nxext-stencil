@@ -1,0 +1,87 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+
+<Meta title="Components/Hero Icon/Overview" />
+
+# Hero Icon: Overview
+
+`Hero Icons` are tailwind-made icons & are visual symbols used to represent ideas, objects or actions. They communicate messages at a glance, afford interactivity and draw attention to important information.
+
+## Sizes
+
+`Hero Icon` sizes range from medium to extra large.
+
+<Canvas withSource="auto">
+  <Story id="components-hero-icon-stories--size-medium"></Story>
+  <Story id="components-hero-icon-stories--size-large"></Story>
+  <Story id="components-hero-icon-stories--size-extra-large"></Story>
+</Canvas>
+
+### Color
+
+The `color` property applies a color to the icon.
+
+You can find the list of colors supported on our [Brand Identity/Colors page](/story/brand-identity-colors--page).
+
+The color of the icon will default to #000 or inherit from it's parent if you are not explicity setting a background color through the `bg` prop, or an icon color through the `color` prop.
+
+<Canvas isColumn withSource="auto">
+  <Story id="components-hero-icon-stories--color"></Story>
+</Canvas>
+
+## Backgrounds
+
+The hero icon has background color options that can be passed through the `bg` prop. Options include: gray, purple, blue, green, yellow and red.
+
+Depending on whether your icon has a `type` of solid or outline, the background and icon color will render differently.
+
+## Shapes
+
+When passing in a background color through the `bg` prop, you may also change the _shape_ of the background by utilizing the `shape` prop. By default, the background will display with rounded corners. You can change this by passing 'circle' into the prop.
+
+Below you can see examples of the purple rounded and purple circle backgrounds for both solid and outline icons types.
+
+<Canvas withSource="auto" style={{ backgroundColor: 'white' }}>
+  <Story id="components-hero-icon-stories--background-purple"></Story>
+</Canvas>
+
+## Icon Types
+
+### Solid
+
+<Canvas withSource="none">
+  <Story id="components-hero-icon-stories--solid"></Story>
+</Canvas>
+
+### Outline
+
+<Canvas withSource="none">
+  <Story id="components-hero-icon-stories--outline"></Story>
+</Canvas>
+
+## Usage Guidelines
+
+> Use supporting text
+
+<ul>
+  <li>Always provide supporting text next to an icon. The text can be collapsible, or hidden, at certain breakpoints, but it needs to be shown when the user needs it.</li>
+</ul>
+
+> Ensure color selection passes color contrast standards
+
+<ul>
+  <li>Use light icons on dark backgrounds.</li>
+  <li>Use dark icons on light backgrounds.</li>
+  <li>For color contrast information, please visit…</li>
+</ul>
+
+> Do not change styles
+
+<ul>
+  <li>
+    The sizes for the hero icon are pre-set and should not be changed. Adjusting width, height, padding or margin of the component will distort the paths and strokes used in the
+    SVG of this component. Please use the provided sizes only.
+  </li>
+</ul>
+
+<Description>{Readme}</Description>

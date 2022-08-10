@@ -1,0 +1,101 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsCheckboxGroup from '../../../../dist/collection/components/rds-form-elements/rds-checkbox-group/rds-checkbox-group';
+
+<Meta
+  title="Components/Form Elements/Validators/Stories/Constraint Validators/Checkbox Group"
+  component={RdsCheckboxGroup}
+  argTypes={{
+    label: {
+      control: { type: 'text' },
+      description: 'The label text shown for the checkbox group',
+    },
+    required: {
+      control: { type: 'boolean' },
+      description: 'Removes the optional indicator from the input and makes it required for form submission.',
+    },
+  }}
+/>
+
+export const TemplateGroup = args => (
+  <form>
+    <rds-checkbox-group {...args}>
+      <rds-checkbox for="public-access" label="Public access">
+        <rds-sub-label slot="sub-label">This project is fully available to anyone in the organization.</rds-sub-label>
+      </rds-checkbox>
+      <rds-checkbox for="link-access" label="Link access">
+        <rds-sub-label slot="sub-label">This project is available to anyone in the organization with a link.</rds-sub-label>
+      </rds-checkbox>
+      <rds-checkbox for="private-access" label="Private access">
+        <rds-sub-label slot="sub-label">This project is available to users in the organization that were given access.</rds-sub-label>
+      </rds-checkbox>
+    </rds-checkbox-group>
+  </form>
+);
+
+# Checkbox Group
+
+### Description List: Required
+
+<Canvas>
+  <Story
+    name="Description List: Required"
+    args={{
+      label: 'Access Type',
+      required: true,
+      validate: true,
+    }}
+  >
+    {TemplateGroup.bind({})}
+  </Story>
+</Canvas>
+
+### Default: Required
+
+<Canvas>
+  <Story
+    name="Default: Required"
+    args={{
+      label: 'Access Type',
+      required: true,
+      validate: true,
+      type: 'default',
+    }}
+  >
+    {TemplateGroup.bind({})}
+  </Story>
+</Canvas>
+
+### Small Card: Required
+
+<Canvas>
+  <Story
+    name="Small Card: Required"
+    args={{
+      label: 'Access Type',
+      required: true,
+      validate: true,
+      type: 'small-card',
+    }}
+  >
+    {TemplateGroup.bind({})}
+  </Story>
+</Canvas>
+
+### Card: Required
+
+<Canvas>
+  <Story
+    name="Card: Required"
+    args={{
+      label: 'Access Type',
+      required: true,
+      validate: true,
+      type: 'card',
+    }}
+  >
+    {TemplateGroup.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

@@ -1,0 +1,28 @@
+:host {
+  @apply flex items-center text-sm py-2 font-inter;
+
+  .name {
+    @apply font-semibold leading-4;
+  }
+
+  .detail,
+  .role {
+    @apply text-sm leading-5;
+  }
+
+  .contact-wrapper {
+    @apply flex-grow;
+  }
+
+  .actions {
+    @apply flex ml-8;
+
+    ::slotted([slot='action']:not(:last-of-type)) {
+      @apply mr-4;
+    }
+  }
+
+  rds-avatar {
+    @apply pr-4;
+  }
+}

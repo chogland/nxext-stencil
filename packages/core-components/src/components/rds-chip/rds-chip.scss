@@ -1,0 +1,53 @@
+:host {
+  @apply inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-gray-100 text-gray-800 font-inter border border-transparent select-none;
+
+  .rds-chip--icon {
+    @apply pr-2;
+  }
+
+  .close {
+    @apply ml-2 focus:outline-none inline-flex rounded-full bg-transparent p-0.5 pointer-events-none;
+  }
+}
+
+:host([clickable]) {
+  @apply cursor-pointer focus:outline-none border border-transparent;
+}
+
+:host(:hover[dismissible]:not([disabled])) {
+  @apply cursor-pointer;
+
+  .close {
+    @apply bg-gray-200 text-gray-500;
+  }
+}
+
+:host(:focus[clickable]:not([disabled])),
+:host(:focus[dismissible]:not([disabled])) {
+  @apply ring-2 ring-purple-500;
+
+  .close {
+    @apply bg-gray-500 text-gray-50;
+  }
+}
+
+:host([active]) {
+  @apply bg-purple-100 text-purple-800;
+
+  .dot {
+    @apply -ml-1 mr-1.5 h-2 w-2 text-purple-400;
+  }
+}
+
+:host([active][clickable]:hover) {
+  @apply bg-purple-200;
+}
+
+:host([disabled]),
+:host([disabled][active][clickable]),
+:host([disabled][dismissible]) {
+  @apply bg-gray-100 text-gray-400 cursor-default;
+  .dot {
+    @apply text-gray-400;
+  }
+}

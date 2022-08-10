@@ -1,0 +1,103 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsBanner from '../../../dist/collection/components/rds-banner/rds-banner';
+
+<Meta
+  title="Components/Banner/Stories"
+  component={RdsBanner}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: '',
+    },
+  }}
+  argTypes={{
+    appearance: {
+      options: ['non-rounded', 'rounded'],
+      control: { type: 'select' },
+    },
+  }}
+/>
+
+export const Primary = args => (
+  <rds-banner {...args}>
+    <div slot="content-left">
+      <rds-text color="white" weight="medium">
+        1/6 New Adjustment File
+      </rds-text>
+      <rds-text color="white" size="sm">
+        Get started by filling in the information below to create your new Adjustment File.
+      </rds-text>
+    </div>
+  </rds-banner>
+);
+
+export const Secondary = args => (
+  <rds-banner {...args}>
+    <div slot="content-left">
+      <rds-text color="white" weight="medium">
+        Congratulations! You've completed a recommendation and have acheived a risk improvement!
+      </rds-text>
+    </div>
+    <div slot="content-right">
+      <rds-button appearance="tertiary">View</rds-button>
+    </div>
+  </rds-banner>
+);
+
+export const NotDismissible = args => (
+  <rds-banner {...args}>
+    <div slot="content-left">
+      <rds-text color="white" weight="medium">
+        1/6 New Adjustment File
+      </rds-text>
+      <rds-text color="white" size="sm">
+        Get started by filling in the information below to create your new Adjustment File.
+      </rds-text>
+    </div>
+  </rds-banner>
+);
+
+# Banner
+
+### Primary
+
+<Canvas>
+  <Story
+    name="Non Rounded"
+    args={{
+      appearance: 'non-rounded',
+    }}
+  >
+    {Primary.bind({})}
+  </Story>
+</Canvas>
+
+### Secondary
+
+<Canvas>
+  <Story
+    name="Rounded"
+    args={{
+      appearance: 'rounded',
+    }}
+  >
+    {Secondary.bind({})}
+  </Story>
+</Canvas>
+
+### Not Dismissible
+
+<Canvas>
+  <Story
+    name="Not Dismissible"
+    args={{
+      appearance: 'non-rounded',
+      dismissible: false,
+    }}
+  >
+    {NotDismissible.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

@@ -1,0 +1,110 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsTextarea from '../../../../dist/collection/components/rds-form-elements/rds-textarea/rds-textarea';
+
+<Meta
+  title="Components/Form Elements/Validators/Stories/Constraint Validators/Textarea"
+  component={RdsTextarea}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/uYf4DWKd7OtQSx7BRfchZv/RDS-Components-for-Storybook?node-id=1409%3A43353',
+    },
+  }}
+  argTypes={{
+    label: {
+      control: { type: 'text' },
+      description: 'Text displayed as the label for the textarea.',
+    },
+    placeholder: {
+      control: { type: 'text' },
+      description: 'Text displayed as the placeholder for the textarea.',
+    },
+    name: {
+      control: { type: 'text' },
+      description: 'Name assigned to the textarea element.',
+      defaultValue: 'Default',
+    },
+    value: {
+      control: { type: 'text', options: ['number', 'text'] },
+      description: 'Default value is provided for the textarea element if needed.',
+    },
+    resize: {
+      control: { type: 'select', options: ['on', 'off', 'vertical', 'horizontal'] },
+      description: 'Controls the textarea resize.',
+    },
+    required: {
+      control: { type: 'boolean' },
+      description: 'Removes the optional indicator from the textarea and makes it required for form submission.',
+    },
+  }}
+/>
+
+export const Template = args => (
+  <rds-textarea {...args}>
+    <span slot="error-text">This field is required.</span>
+  </rds-textarea>
+);
+
+export const MinlengthTemplate = args => (
+  <rds-textarea {...args}>
+    <span slot="help-text">Comments must be greater than 10 characters.</span>
+    <span slot="error-text">Comments must be greater than 10 characters.</span>
+  </rds-textarea>
+);
+
+export const MaxlengthTemplate = args => (
+  <rds-textarea {...args}>
+    <span slot="help-text">Comments cannot be greater than 50 characters.</span>
+    <span slot="error-text">Comments cannot be greater than 50 characters.</span>
+  </rds-textarea>
+);
+
+# Text Area
+
+### Required
+
+<Canvas>
+  <Story
+    name="Required"
+    args={{
+      label: 'Comments',
+      required: true,
+      validate: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Minlength
+
+<Canvas>
+  <Story
+    name="Minlength"
+    args={{
+      label: 'Comments',
+      minlength: 10,
+      validate: true,
+    }}
+  >
+    {MinlengthTemplate.bind({})}
+  </Story>
+</Canvas>
+
+### Maxlength
+
+<Canvas>
+  <Story
+    name="Maxlength"
+    args={{
+      label: 'Comments',
+      maxlength: 50,
+      validate: true,
+    }}
+  >
+    {MaxlengthTemplate.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

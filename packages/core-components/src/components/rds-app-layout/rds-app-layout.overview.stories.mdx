@@ -1,0 +1,119 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+
+<Meta title="Components/App Layout/Overview" />
+
+# App Layout: Overview
+
+## App Layout
+
+The `App Layout` component is a frame for all of your page-level layout components. It is designed to ensure that our users will have a consistent experience across all FM Global applications. It is fully responsive and compliant with the Resilience Design grid and spacing requirements.
+
+### Usage Guidelines
+
+The three constants of an experience built in Resilience are the header, the content area and the footer. These three elements are the foundation upon which you build your experience.
+
+<div class="flex mt-8">
+  <div class="pr-10"><img class="thumbnail" src="/app-layout/header.jpg" alt="" /></div>
+  <div class="flex-grow"><h3>Header</h3>
+
+The header is for branding and app-level elements such as navigation, search, and account settings
+
+```
+<RdsHeader slot="app-header" />
+```
+
+  </div>
+</div>
+
+<div class="flex mt-8">
+  <div class="pr-10"><img class="thumbnail" src="/app-layout/content.jpg" alt="" /></div>
+  <div class="flex-grow"><h3>Content Area</h3>
+
+The content area is where users focus their attention the majority of the time; gathering information and performing tasks. As the largest portion of your experience, the content area is always visible
+
+```
+<div slot="app-content" />
+```
+
+  </div>
+</div>
+
+<div class="flex mt-8">
+  <div class="pr-10"><img class="thumbnail" src="/app-layout/content.jpg" alt="" /></div>
+  <div class="flex-grow"><h3>Full Content Area</h3>
+
+The Full Content area slot which allows the users to place their content in entire width.
+
+```
+<div slot="app-content-full" />
+```
+
+  </div>
+</div>
+
+<div class="flex my-8">
+  <div class="pr-10"><img class="thumbnail" src="/app-layout/footer.jpg" alt="" /></div>
+  <div><h3>Footer</h3>
+
+The footer is for secondary elements such as disclaimers, terms, agreements and copyright.
+
+```
+<RdsFooter slot="app-footer" />
+```
+
+  </div>
+</div>
+
+For additional slot guildelines, please navigate to the "Slots" section of this page.
+
+## Variations
+
+### Base Layout (Phase 2)
+
+The App Layout example seen below is recommended in most scenarios. It supports the latest design used across the organization and has a fully-responsive experience. There are various ways to customize the App Layout you see below to the needs of your team.
+
+To use this App Layout, set `type='base'` in your instance.
+
+See examples for a header that spans full-width, an example with or without a left and right sidebar, and an example with a flyout panel in the 'Stories' for this component.
+
+<Canvas withSource="auto">
+  <Story height="500px" id="components-app-layout-stories--base"></Story>
+</Canvas>
+
+### Workflow Layout
+
+The Workflow App Layout is intended for full-screen experiences. This example below pulls together the components: `WorkflowHeader`, `WorkflowFooter`, `Stepper`, `StepperItem`, `Button`, `Headline` and more to demonstrate the intended use case.
+
+If your use case calls for it, the content region's background color can be changed by setting _background-color_ on the app-layout to "white". Default is "gray".
+
+<Canvas withSource="auto">
+  <Story height="500px" id="components-app-layout-stories--workflow"></Story>
+</Canvas>
+
+## Responsiveness
+
+The App Layout component includes pre-defined media breakpoints, so that we can build complex responsive interfaces. There are five breakpoints by default, inspired by common device resolutions. The layout will scale to respond to the user's screen resolution.
+
+### Breakpoints
+
+```
+{
+    'sm': '640px',
+    // => @media (min-width: 640px) { ... }
+
+    'md': '768px',
+    // => @media (min-width: 768px) { ... }
+
+    'lg': '1024px',
+    // => @media (min-width: 1024px) { ... }
+
+    'xl': '1280px',
+    // => @media (min-width: 1280px) { ... }
+
+    '2xl': '1536px',
+    // => @media (min-width: 1536px) { ... }
+}
+```
+
+<Description>{Readme}</Description>

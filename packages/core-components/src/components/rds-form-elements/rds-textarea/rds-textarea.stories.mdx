@@ -1,0 +1,188 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsTextarea from '../../../../dist/collection/components/rds-form-elements/rds-textarea/rds-textarea';
+
+<Meta
+  title="Components/Form Elements/Textarea/Stories"
+  component={RdsTextarea}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=48%3A19571',
+    },
+  }}
+  argTypes={{
+    label: {
+      control: { type: 'text' },
+      description: 'Text displayed as the label for the textarea.',
+      defaultValue: 'Label',
+    },
+    placeholder: {
+      control: { type: 'text' },
+      description: 'Text displayed as the placeholder for the textarea.',
+    },
+    name: {
+      control: { type: 'text' },
+      description: 'Name assigned to the textarea element.',
+      defaultValue: 'Default',
+    },
+    value: {
+      control: { type: 'text', options: ['number', 'text'] },
+      description: 'Default value is provided for the textarea element if needed.',
+    },
+    resize: {
+      control: { type: 'select', options: ['on', 'off', 'vertical', 'horizontal'] },
+      description: 'Controls the textarea resize.',
+    },
+    required: {
+      control: { type: 'boolean' },
+      description: 'Removes the optional indicator from the textarea and makes it required for form submission.',
+    },
+    error: {
+      description: 'Displays the error text when true and a error-text slot is present.',
+      control: { type: 'boolean' },
+    },
+  }}
+/>
+
+export const Template = args => (
+  <rds-textarea {...args}>
+    <span slot="error-text">Error message</span>
+  </rds-textarea>
+);
+
+export const TemplateWithHelpText = args => (
+  <rds-textarea {...args}>
+    <span slot="help-text">Assistive text</span>
+    <span slot="error-text">Error message</span>
+  </rds-textarea>
+);
+
+# Text Area
+
+### Default
+
+<Canvas>
+  <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
+
+### Required
+
+<Canvas>
+  <Story
+    name="Required"
+    args={{
+      required: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Error
+
+<Canvas>
+  <Story
+    name="Error"
+    args={{
+      error: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Disabled
+
+<Canvas>
+  <Story
+    name="Disabled"
+    args={{
+      disabled: true,
+      value: 'I am a disabled textarea',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Readonly
+
+<Canvas>
+  <Story
+    name="Readonly"
+    args={{
+      readonly: true,
+      value: 'I am a readonly textarea',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### With Placeholder Text
+
+<Canvas>
+  <Story
+    name="With Placeholder Text"
+    args={{
+      placeholder: 'Placeholder',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### With Help Text
+
+<Canvas>
+  <Story
+    name="With Help Text"
+    args={{
+      helptext: true,
+    }}
+  >
+    {TemplateWithHelpText.bind({})}
+  </Story>
+</Canvas>
+
+### With Resize
+
+<Canvas>
+  <Story
+    name="With Resize"
+    args={{
+      resize: 'on',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### With Vertical Resize
+
+<Canvas>
+  <Story
+    name="With Vertical Resize"
+    args={{
+      resize: 'vertical',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### With Horizontal Resize
+
+<Canvas>
+  <Story
+    name="With Horizontal Resize"
+    args={{
+      resize: 'horizontal',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

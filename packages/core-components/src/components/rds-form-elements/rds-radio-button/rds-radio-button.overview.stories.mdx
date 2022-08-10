@@ -1,0 +1,79 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+
+<Meta title="Components/Form Elements/Radio Button/Overview" />
+
+# Radio Button: Overview
+
+`RadioButton` is used for mutually exclusive choices, not for multiple choices. Only one radio button can be selected at a time. When a user chooses a new item, the previous choice is automatically deselected.
+
+It is comprised of a set of clickable circles (the inputs) with text labels positioned to the right. If there is a group of radio buttons, a group label can be added.
+
+View the [Radio Button Group](?path=/story/components-form-elements-radio-button-group-overview--page) component.
+
+_A Form Wrapper component is coming soon_
+
+## Variations
+
+### Default
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-radio-button-stories--default-story"></Story>
+</Canvas>
+
+### Disabled
+
+_Disabled_ state can be used both with and without the _checked_ property to show a selected option that cannot be engaged by a user.
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-radio-button-stories--disabled"></Story>
+</Canvas>
+
+### Small Card
+
+The small card variation can be applied by applying the `type='small-card'` prop to your radio button. Below you can see the default and disabled variations.
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-radio-button-stories--small-card"></Story>
+  <Story id="components-form-elements-radio-button-stories--small-card-disabled"></Story>
+</Canvas>
+
+### Card
+
+The card variation can be applied by applying the `type='card'` prop to your checkbox. Below you can see the unchecked, checked, and disabled variations.
+
+The card variation can accept slotted content below the label by utilizing the `card-content` slot.
+
+<Canvas withSource="auto" isColumn="true">
+  <Story id="components-form-elements-radio-button-stories--card"></Story>
+  <Story id="components-form-elements-radio-button-stories--card-checked"></Story>
+  <Story id="components-form-elements-radio-button-stories--card-disabled"></Story>
+</Canvas>
+
+### With Sub-Label
+
+For the sub-label to appear within the radio button component, you must insert a `RdsSubLabel` component within the slot named `sub-label`.
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-radio-button-stories--with-sub-label"></Story>
+</Canvas>
+
+## Validations
+
+Visit the [validations overview page](?path=/story/components-form-elements-validators-overview--page) for information on validating radio button and radio button group components.
+
+## Usage Guidelines
+
+> **Be Concise**
+
+Use seven or fewer radios. The label of each radio should be kept to a single line of text.
+
+> **Use sentence case**
+
+Radio labels should always be in sentence case. Capitalization should never be used to give more prominence to a specific radio.
+
+> **Don't override color**
+
+Do not use custom colors for radios. The colors have been designed to be consistent and accessible.
+
+<Description>{Readme}</Description>

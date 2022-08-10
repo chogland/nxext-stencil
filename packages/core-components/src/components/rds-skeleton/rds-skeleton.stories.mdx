@@ -1,0 +1,94 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsSkeleton from '../../../dist/collection/components/rds-skeleton/rds-skeleton';
+
+<Meta
+  title="Components/Skeleton/Stories"
+  component={RdsSkeleton}
+  parameters={{
+    layout: 'fullscreen',
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=48%3A90728',
+    },
+  }}
+  argTypes={{
+    count: {
+      control: { type: 'number' },
+    },
+  }}
+/>
+
+export const Template = args => <rds-skeleton {...args}></rds-skeleton>;
+
+# Skeleton
+
+### Default
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      variant: 'text',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Circle
+
+<Canvas>
+  <Story
+    name="Circle"
+    args={{
+      variant: 'circle',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Circle Large
+
+<Canvas>
+  <Story
+    name="CircleLarge"
+    args={{
+      variant: 'circle',
+      width: '75px',
+      height: '75px',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Rectangle
+
+<Canvas>
+  <Story
+    name="Rect"
+    args={{
+      variant: 'rect',
+      height: '200px',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Count
+
+<Canvas>
+  <Story
+    name="Count"
+    args={{
+      count: 4,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

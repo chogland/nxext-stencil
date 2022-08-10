@@ -1,0 +1,41 @@
+:host {
+  @apply block;
+  display: block;
+}
+
+.progress-content {
+  @apply mt-2 flex;
+
+  .progress-content-icon {
+    @apply h-6 w-6;
+  }
+
+  .progress-content-file {
+    @apply flex pl-1 box-border flex-wrap w-64;
+
+    .progress-content-file-name {
+      @apply text-sm leading-5 font-medium text-gray-900;
+      width: calc(100% - 50px);
+    }
+
+    .progress-content-file-percentage {
+      @apply flex items-center justify-end text-xs leading-5 text-gray-300 w-12 text-right;
+
+      fw-icon {
+        @apply cursor-pointer;
+      }
+    }
+
+    .progress-content-progress-bar {
+      @apply relative h-1 w-full bg-gray-100 rounded-lg mt-1;
+
+      &-fill {
+        @apply h-1 rounded-md bg-purple-800;
+      }
+    }
+
+    .progress-content-error {
+      @apply text-xs p-0.5 text-purple-800;
+    }
+  }
+}

@@ -1,0 +1,508 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsPanel from '../../../dist/collection/components/rds-panel/rds-panel';
+
+<Meta
+  title="Components/Panel/Stories"
+  component={RdsPanel}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=48%3A25311',
+    },
+    docs: {
+      inlineStories: false,
+    },
+    layout: 'fullscreen',
+  }}
+  argTypes={{
+    disabled: {
+      control: {
+        type: 'boolean',
+      },
+    },
+    panelTitle: {
+      control: {
+        type: 'text',
+      },
+    },
+    noPadding: {
+      control: {
+        type: 'boolean',
+      },
+    },
+  }}
+/>
+
+export const Template = args => (
+  <rds-flex>
+    <rds-flex-item flex-grow="1" style={{ padding: '1rem 0', margin: '0 1rem' }}>
+      <div className="rds-bordered">
+        <rds-box padding="xl">
+          <rds-panel-toggle auto-hide="false">
+            <rds-button appearance="tertiary" label="Toggle Panel">
+              Toggle Panel
+            </rds-button>
+          </rds-panel-toggle>
+        </rds-box>
+      </div>
+    </rds-flex-item>
+    <rds-panel {...args} />
+  </rds-flex>
+);
+
+export const MultipleTemplate = args => (
+  <rds-flex>
+    <rds-flex-item flex-grow="1" style={{ padding: '1rem 0', margin: '0 1rem' }}>
+      <div className="rds-bordered">
+        <rds-box padding="xl">
+          <rds-panel-toggle panel="panel1" auto-hide="false">
+            <rds-button appearance="tertiary" label="Toggle Panel 1">
+              Toggle Panel 1
+            </rds-button>
+          </rds-panel-toggle>
+        </rds-box>
+        <rds-box padding="xl">
+          <rds-panel-toggle panel="panel2" auto-hide="false">
+            <rds-button appearance="tertiary" label="Toggle Panel 2">
+              Toggle Panel 2
+            </rds-button>
+          </rds-panel-toggle>
+        </rds-box>
+      </div>
+    </rds-flex-item>
+    <rds-panel panel-id="panel1">
+      <rds-text>Panel 1</rds-text>
+    </rds-panel>
+    <rds-panel panel-id="panel2">
+      <rds-text>Panel 2</rds-text>
+    </rds-panel>
+  </rds-flex>
+);
+
+export const TemplateCustomHeadline = args => (
+  <rds-flex>
+    <rds-flex-item flex-grow="1" style={{ padding: '1rem 0', margin: '0 1rem' }}>
+      <div className="rds-bordered">
+        <rds-box padding="xl">
+          <rds-panel-toggle auto-hide="false">
+            <rds-button appearance="tertiary" label="Toggle Panel">
+              Toggle Panel
+            </rds-button>
+          </rds-panel-toggle>
+        </rds-box>
+      </div>
+    </rds-flex-item>
+    <rds-panel {...args}>
+      <rds-flex slot="headline" align-items="center" justify-content="space-between" flex-grow={1}>
+        <rds-flex gap="sm">
+          <rds-hero-icon name="clipboard-check" type="outline" size="lg" color="purple-600" />
+          <rds-headline level={3}>Tasks</rds-headline>
+        </rds-flex>
+        <rds-button appearance="tertiary">
+          <rds-hero-icon name="plus" slot="start" />
+          New
+        </rds-button>
+      </rds-flex>
+    </rds-panel>
+  </rds-flex>
+);
+
+export const ContextualTemplate = args => (
+  <rds-panel {...args}>
+    <rds-text weight="semibold" slot="action-text">
+      Action text can go here.
+    </rds-text>
+    <rds-button slot="action-primary" size="sm">
+      Submit
+    </rds-button>
+    <rds-button slot="action-secondary" appearance="secondary" size="sm">
+      Cancel
+    </rds-button>
+    <div slot="panel-details">
+      <rds-grid type="flex" justifybetween>
+        <rds-box margin="xl 0 0 0">
+          <rds-pill>
+            <rds-indicator appearance="success" slot="indicator" /> Active
+          </rds-pill>
+        </rds-box>
+        <rds-grid type="flex" itemscenter justifyend>
+          <rds-hero-icon name="target" />
+          <rds-text size="sm" type="inline" weight="semibold">
+            <rds-box padding="0 0 0 sm">P2</rds-box>
+          </rds-text>
+        </rds-grid>
+      </rds-grid>
+      <rds-headline level={5}>Install automatic sprinkler protection and an adequate water supply.</rds-headline>
+      <rds-grid type="flex">
+        <rds-hero-icon name="calendar" type="outline" />
+        <rds-text size="sm" weight="semibold" type="inline">
+          <rds-box padding="0 lg 0 lg">Agreed Completion Date</rds-box>
+        </rds-text>
+        <rds-text size="sm" type="inline">
+          DD-MMM-YY
+        </rds-text>
+      </rds-grid>
+    </div>
+    <rds-box slot="panel-details" padding="xl 0 lg 0">
+      <rds-grid type="flex" itemscenter>
+        <rds-text type="inline">
+          Risk<em>Mark</em> Impact
+        </rds-text>
+        <rds-flex>
+          <rds-box color="blue-900" margin="0 0 0 sm">
+            <rds-tooltip text="Tooltip text" position="right">
+              <rds-hero-icon name="question-mark-circle" />
+            </rds-tooltip>
+          </rds-box>
+        </rds-flex>
+      </rds-grid>
+      <rds-headline color="green-600" spacing="sm" level={3}>
+        +5.32
+      </rds-headline>
+      <rds-box styles="height: .25rem" />
+      <rds-grid type="flex" itemscenter>
+        <rds-text type="inline">Loss Expectancy</rds-text>
+        <rds-flex>
+          <rds-box color="blue-900" margin="0 0 0 sm">
+            <rds-tooltip text="Tooltip text" position="right">
+              <rds-hero-icon name="question-mark-circle" />
+            </rds-tooltip>
+          </rds-box>
+        </rds-flex>
+      </rds-grid>
+      <rds-grid type="flex" itemscenter>
+        <rds-headline spacing="sm" level={3}>
+          $27M
+        </rds-headline>
+        <rds-box margin="0 lg 0 lg" color="gray-300">
+          <rds-hero-icon size="lg" name="arrow-right" />
+        </rds-box>
+        <rds-headline color="green-600" spacing="sm" level={3}>
+          $5M
+        </rds-headline>
+      </rds-grid>
+    </rds-box>
+    <div slot="panel-details">
+      <rds-text weight="bold">Account</rds-text>
+      <rds-headline level={5}>Globo Industries</rds-headline>
+      <rds-text>019273</rds-text>
+    </div>
+    <div slot="panel-details">
+      <rds-text weight="bold">Location</rds-text>
+      <rds-headline level={5}>Globo Manufacturing</rds-headline>
+      <rds-text>
+        123 Address Lane
+        <br />
+        City Name, MA 01283
+      </rds-text>
+    </div>
+    <rds-accordion>
+      <rds-accordion-item item-title="Line Item Content">
+        <rds-grid type="flex">
+          <rds-list>
+            <rds-list-item spacingY="sm">
+              <rds-text weight="bold" type="inline">
+                Line Header
+              </rds-text>
+            </rds-list-item>
+            <rds-list-item spacingY="sm">
+              <rds-text weight="bold" type="inline">
+                Line Header
+              </rds-text>
+            </rds-list-item>
+            <rds-list-item spacingY="sm">
+              <rds-text weight="bold" type="inline">
+                Line Header
+              </rds-text>
+            </rds-list-item>
+            <rds-list-item spacingY="sm">
+              <rds-text weight="bold" type="inline">
+                Line Header
+              </rds-text>
+            </rds-list-item>
+          </rds-list>
+          <rds-list>
+            <rds-list-item spacingY="sm">
+              <rds-text type="inline">Line Content</rds-text>
+            </rds-list-item>
+            <rds-list-item spacingY="sm">
+              <rds-text type="inline">Line Content</rds-text>
+            </rds-list-item>
+            <rds-list-item spacingY="sm">
+              <rds-text type="inline">Line Content</rds-text>
+            </rds-list-item>
+            <rds-list-item spacingY="sm">
+              <rds-text type="inline">Line Content</rds-text>
+            </rds-list-item>
+          </rds-list>
+        </rds-grid>
+      </rds-accordion-item>
+    </rds-accordion>
+    <rds-accordion>
+      <rds-accordion-item item-title="Contact Content">
+        <rds-contact
+          avatar-text="FE"
+          name="Frank Eason"
+          role="Field Engineer"
+          detail="Fire & Nat Haz"
+          avatar-url="https://fmzedstcontentrds01.blob.core.windows.net/rds/assets/storybook/images/avatar/avatar-image.PNG"
+        >
+          <rds-button slot="action-primary" appearance="tertiary" iconOnly>
+            <rds-hero-icon name="phone" />
+          </rds-button>
+          <rds-button slot="action-secondary" appearance="tertiary" iconOnly>
+            <rds-hero-icon name="mail" />
+          </rds-button>
+        </rds-contact>
+        <rds-contact
+          avatar-text="FE"
+          name="Frank Eason"
+          role="Field Engineer"
+          detail="Fire & Nat Haz"
+          avatar-url="https://fmzedstcontentrds01.blob.core.windows.net/rds/assets/storybook/images/avatar/avatar-image.PNG"
+        >
+          <rds-button slot="action-primary" appearance="tertiary" iconOnly>
+            <rds-hero-icon name="phone" />
+          </rds-button>
+          <rds-button slot="action-secondary" appearance="tertiary" iconOnly>
+            <rds-hero-icon name="mail" />
+          </rds-button>
+        </rds-contact>
+        <rds-contact avatar-text="FE" name="Frank Eason" role="Field Engineer" detail="Fire & Nat Haz">
+          <rds-button slot="action-primary" appearance="tertiary" iconOnly>
+            <rds-hero-icon name="phone" />
+          </rds-button>
+          <rds-button slot="action-secondary" appearance="tertiary" iconOnly>
+            <rds-hero-icon name="mail" />
+          </rds-button>
+        </rds-contact>
+        <rds-contact avatar-text="FE" name="Frank Eason" role="Field Engineer" detail="Fire & Nat Haz">
+          <rds-button slot="action-primary" appearance="tertiary" iconOnly>
+            <rds-hero-icon name="phone" />
+          </rds-button>
+          <rds-button slot="action-secondary" appearance="tertiary" iconOnly>
+            <rds-hero-icon name="mail" />
+          </rds-button>
+        </rds-contact>
+      </rds-accordion-item>
+    </rds-accordion>
+    <rds-accordion>
+      <rds-accordion-item item-title="Image and Lightbox">
+        <rds-text weight="bold" type="inline">
+          Image Detail
+        </rds-text>
+        <rds-lightbox>
+          <rds-image
+            alt="Image for testing"
+            caption="Custom caption for the test image."
+            detail="Screen Shot 2021-07-20 at 1.38.43 PM"
+            headline="Sample headline for image that is long and truncates"
+            src="https://via.placeholder.com/1500/6046B9/FFFFFF?text=RDS+for+placeholder+only"
+            thumbnail
+            size="lg"
+          />
+        </rds-lightbox>
+      </rds-accordion-item>
+    </rds-accordion>
+    <rds-accordion>
+      <rds-accordion-item item-title="Title and Text">
+        <rds-text weight="bold" spacing="sm">
+          Section Name
+        </rds-text>
+        <rds-text>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras posuere faucibus porttitor. Aenean eleifend nisi facilisis, blandit mauris nec, laoreet risus. Nulla blandit
+          vitae purus at feugiat. Proin id nisl velit.
+        </rds-text>
+      </rds-accordion-item>
+    </rds-accordion>
+    <rds-accordion>
+      <rds-accordion-item item-title="Small Image Thumbnail and Title">
+        <rds-lightbox>
+          <rds-image
+            size="sm"
+            alt="Image for testing"
+            caption="Custom caption for the test image."
+            detail="Screen Shot 2021-07-20 at 1.38.43 PM"
+            headline="Sample headline for image that is long and truncates"
+            src="https://via.placeholder.com/150/6046B9/FFFFFF?text=RDS+for+placeholder+only"
+            show-headline="true"
+            thumbnail="true"
+          />
+          <rds-image
+            size="sm"
+            alt="Image for testing"
+            caption="Custom caption for the test image."
+            detail="Screen Shot 2021-07-20 at 1.38.43 PM"
+            headline="Sample headline for image that is long and truncates"
+            src="https://via.placeholder.com/350/6046B9/FFFFFF?text=RDS+for+placeholder+only"
+            show-headline="true"
+            thumbnail="true"
+          />
+          <rds-image
+            size="sm"
+            alt="Image for testing"
+            caption="Custom caption for the test image."
+            detail="Screen Shot 2021-07-20 at 1.38.43 PM"
+            headline="Sample headline for image that is long and truncates"
+            src="https://via.placeholder.com/450/6046B9/FFFFFF?text=RDS+for+placeholder+only"
+            show-headline="true"
+            thumbnail="true"
+          />
+        </rds-lightbox>
+      </rds-accordion-item>
+    </rds-accordion>
+    <rds-accordion>
+      <rds-accordion-item item-title="Files" padding={false}>
+        <rds-file-list clickable>
+          <rds-icon icon="rds-file-excel" size="xlg" slot="icon"></rds-icon>
+          <rds-icon icon="rds-file-download" size="xlg" slot="hover-icon"></rds-icon>
+          <rds-text type="inline" weight="bold" slot="name">
+            File Name
+          </rds-text>
+          <rds-text type="inline" slot="subtitle">
+            Subtitle
+          </rds-text>
+          <rds-text type="inline" slot="detail">
+            00-XXX-0000
+          </rds-text>
+        </rds-file-list>
+        <rds-file-list clickable>
+          <rds-icon icon="rds-file-excel" size="xlg" slot="icon"></rds-icon>
+          <rds-icon icon="rds-file-download" size="xlg" slot="hover-icon"></rds-icon>
+          <rds-text type="inline" weight="bold" slot="name">
+            File Name
+          </rds-text>
+          <rds-text type="inline" slot="subtitle">
+            Subtitle
+          </rds-text>
+          <rds-text type="inline" slot="detail">
+            00-XXX-0000
+          </rds-text>
+        </rds-file-list>
+        <rds-file-list clickable>
+          <rds-icon icon="rds-file-excel" size="xlg" slot="icon"></rds-icon>
+          <rds-icon icon="rds-file-download" size="xlg" slot="hover-icon"></rds-icon>
+          <rds-text type="inline" weight="bold" slot="name">
+            File Name
+          </rds-text>
+          <rds-text type="inline" slot="subtitle">
+            Subtitle
+          </rds-text>
+          <rds-text type="inline" slot="detail">
+            00-XXX-0000
+          </rds-text>
+        </rds-file-list>
+        <rds-file-list>
+          <rds-icon icon="rds-file-excel" size="xlg" slot="icon"></rds-icon>
+          <rds-text type="inline" weight="bold" slot="name">
+            File Name
+          </rds-text>
+          <rds-text type="inline" slot="subtitle">
+            Not Clickable File
+          </rds-text>
+          <rds-text type="inline" slot="detail">
+            00-XXX-0000
+          </rds-text>
+        </rds-file-list>
+      </rds-accordion-item>
+    </rds-accordion>
+  </rds-panel>
+);
+
+# Panel
+
+### Default (Overlay Panel)
+
+<Canvas>
+  <Story
+    height="500px"
+    name="Default (Overlay Panel)"
+    args={{
+      'panel-title': 'Panel Header',
+      'no-padding': true,
+      'disable-body-scroll': false,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Push Panel
+
+<Canvas>
+  <Story
+    height="500px"
+    name="Push Panel"
+    args={{
+      'position': 'push',
+      'no-padding': true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Panel With Content
+
+<Canvas>
+  <Story
+    height="500px"
+    name="Panel with Content"
+    args={{
+      'no-padding': true,
+      'disable-body-scroll': false,
+    }}
+  >
+    {ContextualTemplate.bind({})}
+  </Story>
+</Canvas>
+
+### Panel With Custom Headline / Header
+
+<Canvas>
+  <Story
+    height="500px"
+    name="Panel With Custom Headline / Header"
+    args={{
+      'close-button': false,
+      'disable-body-scroll': false,
+    }}
+  >
+    {TemplateCustomHeadline.bind({})}
+  </Story>
+</Canvas>
+
+### Multiple Panels
+
+<Canvas>
+  <Story
+    height="500px"
+    name="Multiple Panels"
+    args={{
+      'no-padding': true,
+      'disable-body-scroll': false,
+    }}
+  >
+    {MultipleTemplate.bind({})}
+  </Story>
+</Canvas>
+
+### Wide Panel
+
+<Canvas>
+  <Story
+    height="500px"
+    name="Wide Panel"
+    args={{
+      'panel-title': 'Panel Header',
+      'no-padding': true,
+      'disable-body-scroll': false,
+      'wide': true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

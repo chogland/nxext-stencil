@@ -1,0 +1,25 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+
+<Meta title="Components/Form Elements/Label/Overview" />
+
+# Label: Overview
+
+Some Form Components already have `RdsLabel` incorporated. See [dependencies](#dependencies) below.
+
+`SubLabel` can also be used with form elements. See [SubLabel](?path=/story/components-form-elements-sub-label-overview--page) for usage and guidance.
+
+### Default
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-label-stories--default-story"></Story>
+</Canvas>
+
+## Usage Guidelines
+
+- Each field should have a `RdsLabel`. Never use a field's placeholder attribute as the primary way to label the field.
+- Only one label can be associated to each unique form element.
+- Label text should be short and in sentence case.
+- Avoid colons at the end of labels.
+
+<Description>{Readme}</Description>

@@ -1,0 +1,109 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsPill from '../../../dist/collection/components/rds-pill/rds-pill';
+
+<Meta
+  title="Components/Pill/Stories"
+  component={RdsPill}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=39%3A740',
+    },
+  }}
+  argTypes={{
+    appearance: {
+      control: { type: 'select' },
+      options: ['success', 'warning', 'alert', 'primary', 'secondary', 'tertiary'],
+      description: 'Controls the appearance of the indicator',
+    },
+  }}
+/>
+
+export const Template = args => (
+  <rds-pill>
+    <rds-indicator slot="indicator" appearance={args.appearance}></rds-indicator>Status
+  </rds-pill>
+);
+
+# Pill
+
+### Default
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      appearance: 'success',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Warning
+
+<Canvas>
+  <Story
+    name="Warning"
+    args={{
+      appearance: 'warning',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Alert
+
+<Canvas>
+  <Story
+    name="Alert"
+    args={{
+      appearance: 'alert',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Primary
+
+<Canvas>
+  <Story
+    name="Primary"
+    args={{
+      appearance: 'primary',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Secondary
+
+<Canvas>
+  <Story
+    name="Secondary"
+    args={{
+      appearance: 'secondary',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Tertiary
+
+<Canvas>
+  <Story
+    name="Tertiary"
+    args={{
+      appearance: 'tertiary',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

@@ -1,0 +1,26 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsLabel from '../../../../dist/collection/components/rds-form-elements/rds-label/rds-label';
+
+<Meta
+  title="Components/Form Elements/Label/Stories"
+  component={RdsLabel}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=48%3A18621',
+    },
+  }}
+/>
+
+export const Template = args => <rds-label>Label Sample</rds-label>;
+
+# Label
+
+### Default
+
+<Canvas>
+  <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

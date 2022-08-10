@@ -1,0 +1,189 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsBox from '../../../dist/collection/components/rds-box/rds-box';
+
+<Meta
+  title="Components/Box/Stories"
+  component={RdsBox}
+  argTypes={{
+    display: {
+      control: { type: 'select', options: ['block', 'inline-block', 'inline'] },
+      description: 'Sets the display type of the component.',
+    },
+    padding: {
+      control: { type: 'text' },
+      description: 'Explicitly controls the padding around the component. This can be set using pre-set padding size values, or can be pixel, em, rem, calc(), or % values.',
+    },
+    margin: {
+      control: { type: 'text' },
+      description: 'Explicitly controls the margin around the component. This can be set using pre-set margin size values, or can be pixel, em, rem, calc(), or % values.',
+    },
+    color: {
+      control: {
+        type: 'select',
+        options: [
+          undefined,
+          'black',
+          'white',
+          'gray-900',
+          'gray-800',
+          'gray-700',
+          'gray-600',
+          'gray-500',
+          'gray-400',
+          'gray-300',
+          'gray-200',
+          'gray-100',
+          'gray-50',
+          'purple-900',
+          'purple-800',
+          'purple-700',
+          'purple-600',
+          'purple-500',
+          'purple-400',
+          'purple-300',
+          'purple-200',
+          'purple-100',
+          'purple-50',
+          'blue-900',
+          'blue-800',
+          'blue-700',
+          'blue-600',
+          'blue-500',
+          'blue-400',
+          'blue-300',
+          'blue-200',
+          'blue-100',
+          'blue-50',
+          'green-900',
+          'green-800',
+          'green-700',
+          'green-600',
+          'green-500',
+          'green-400',
+          'green-300',
+          'green-200',
+          'green-100',
+          'green-50',
+          'yellow-900',
+          'yellow-800',
+          'yellow-700',
+          'yellow-600',
+          'yellow-500',
+          'yellow-400',
+          'yellow-300',
+          'yellow-200',
+          'yellow-100',
+          'yellow-50',
+          'red-900',
+          'red-800',
+          'red-700',
+          'red-600',
+          'red-500',
+          'red-400',
+          'red-300',
+          'red-200',
+          'red-100',
+          'red-50',
+        ],
+      },
+      description: 'Controls the text color of all slotted contents.',
+    },
+    bg: {
+      control: {
+        type: 'select',
+        options: [
+          undefined,
+          'black',
+          'white',
+          'gray-900',
+          'gray-800',
+          'gray-700',
+          'gray-600',
+          'gray-500',
+          'gray-400',
+          'gray-300',
+          'gray-200',
+          'gray-100',
+          'gray-50',
+          'purple-900',
+          'purple-800',
+          'purple-700',
+          'purple-600',
+          'purple-500',
+          'purple-400',
+          'purple-300',
+          'purple-200',
+          'purple-100',
+          'purple-50',
+          'blue-900',
+          'blue-800',
+          'blue-700',
+          'blue-600',
+          'blue-500',
+          'blue-400',
+          'blue-300',
+          'blue-200',
+          'blue-100',
+          'blue-50',
+          'green-900',
+          'green-800',
+          'green-700',
+          'green-600',
+          'green-500',
+          'green-400',
+          'green-300',
+          'green-200',
+          'green-100',
+          'green-50',
+          'yellow-900',
+          'yellow-800',
+          'yellow-700',
+          'yellow-600',
+          'yellow-500',
+          'yellow-400',
+          'yellow-300',
+          'yellow-200',
+          'yellow-100',
+          'yellow-50',
+          'red-900',
+          'red-800',
+          'red-700',
+          'red-600',
+          'red-500',
+          'red-400',
+          'red-300',
+          'red-200',
+          'red-100',
+          'red-50',
+        ],
+      },
+      description: 'Controls the background color of the component and its boundaries.',
+    },
+    styles: {
+      control: { type: 'text' },
+      description: 'Sets additional style properties. Use inline style syntax, e.g. `style="height: 100%; width: 100%;"`',
+    },
+  }}
+/>
+
+export const Template = args => (
+  <div>
+    <rds-box {...args}>
+      <rds-text>I am a text component inside of a box component.</rds-text>
+    </rds-box>
+    <rds-box {...args}>
+      <rds-text>I am a 2nd text component inside of a 2nd box component.</rds-text>
+    </rds-box>
+  </div>
+);
+
+# Box
+
+### Default
+
+<Canvas>
+  <Story name="Playground">{Template.bind({})}</Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

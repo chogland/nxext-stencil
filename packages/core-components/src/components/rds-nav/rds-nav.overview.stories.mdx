@@ -1,0 +1,57 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import ItemReadme from '../rds-nav-item/readme.md';
+
+<Meta title="Collections/Navigation/Overview" />
+
+# Navigation: Overview
+
+## With Expand/Collapse
+
+If your navigation has the properties of `type` equal to 'base', and `expanded` equal to true, your navigation will have its expand/collapse utility enabled. In this case, you _must_ pass icons to your individual nav items, as they will be all thats shown in the navigation's collapsed state.
+
+<Canvas withSource="auto">
+  <Story height="500px" id="collections-navigation-stories--base-with-expand-collapse"></Story>
+</Canvas>
+
+## With Sub Navigation
+
+To create a sub navigation under any `NavItem`, simply nest another `NavItem`(s) inside of it, and remove the `href` property from the parent.
+
+<Canvas withSource="auto">
+  <Story height="500px" id="collections-navigation-stories--base-with-sub-nav"></Story>
+</Canvas>
+
+## With Expand/Collapse and Sub Navigation
+
+When your `Nav` has expand/collapse enabled, you can still view the child `NavItem`s. Collapse the example below to see how the sub navigation renders.
+
+<Canvas withSource="auto">
+  <Story height="500px" id="collections-navigation-stories--base-with-sub-nav-and-icons"></Story>
+</Canvas>
+
+## Usage Guidelines
+
+> **Use for page navigation**
+
+Use this to display a navigation hierarchy with a single level.
+
+> **Use light information architecture**
+
+If the app has fewer than five pages, consider organizing the page without a navigational hierarchy like a Workflow layout.
+
+> **Existing navigation**
+
+If your page already has a horizontal and vertical navigation bar, consider ways to simplify your navigation system.
+
+> **Show the current page**
+
+Indicate where a user is within the navigational hierarchy. Use the “active” state to show users which page they have navigated to.
+
+> **Keep links concise**
+
+They can be shorter derivatives of page titles themselves.
+
+<Description>{Readme}</Description>
+
+<Description>{ItemReadme}</Description>

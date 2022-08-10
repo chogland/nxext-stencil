@@ -1,0 +1,55 @@
+:host {
+  #breakpoint {
+    @apply hidden;
+
+    &::before {
+      @apply hidden invisible;
+      content: 'xs';
+
+      @media (min-width: 640px) {
+        content: 'sm';
+      }
+
+      @media (min-width: 768px) {
+        content: 'md';
+      }
+
+      @media (min-width: 1024px) {
+        content: 'lg';
+      }
+
+      @media (min-width: 1280px) {
+        content: 'xl';
+      }
+
+      @media (min-width: 1536px) {
+        content: '2xl';
+      }
+    }
+  }
+}
+
+// Align Self
+:host(.align-self--auto) {
+  @apply self-auto;
+}
+
+:host(.align-self--flex-start) {
+  @apply self-start;
+}
+
+:host(.align-self--flex-end) {
+  @apply self-end;
+}
+
+:host(.align-self--center) {
+  @apply self-center;
+}
+
+:host(.align-self--baseline) {
+  @apply self-baseline;
+}
+
+:host(.align-self--stretch) {
+  @apply self-stretch;
+}

@@ -1,0 +1,271 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsMenu from '../../../dist/collection/components/rds-menu/rds-menu';
+import MenuItemReadme from './../rds-menu-item/readme.md';
+
+<Meta
+  title="Collections/Menu/Stories"
+  component={RdsMenu}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=48%3A23807',
+    },
+  }}
+  argTypes={{
+    position: {
+      control: { type: 'select', options: ['auto', 'top', 'bottom', 'right', 'left'] },
+      description: 'Menu panel position',
+    },
+    overlayPositioning: {
+      control: { type: 'text' },
+    },
+  }}
+/>
+
+export const Template = args => (
+  <rds-menu {...args}>
+    <rds-button slot="menu-trigger" appearance="tertiary">
+      Open Menu <rds-hero-icon name="chevron-down" slot="end"></rds-hero-icon>
+    </rds-button>
+    <rds-menu-item value="item-1" slot="menu-content">
+      Dropdown item 1
+    </rds-menu-item>
+    <rds-menu-item value="item-2" slot="menu-content">
+      Dropdown item 2
+    </rds-menu-item>
+  </rds-menu>
+);
+
+export const TemplateDividers = args => (
+  <rds-menu {...args}>
+    <rds-button slot="menu-trigger" appearance="tertiary">
+      Open Menu <rds-hero-icon name="chevron-down" slot="end"></rds-hero-icon>
+    </rds-button>
+    <rds-menu-item divider value="item-1" slot="menu-content">
+      Dropdown item
+    </rds-menu-item>
+    <rds-menu-item value="item-2" slot="menu-content">
+      Dropdown item 2
+    </rds-menu-item>
+  </rds-menu>
+);
+
+export const TemplateDisabled = args => (
+  <rds-menu {...args}>
+    <rds-button slot="menu-trigger" appearance="tertiary" id={args.id}>
+      Open Menu <rds-hero-icon name="chevron-down" slot="end"></rds-hero-icon>
+    </rds-button>
+    <rds-menu-item value="item-1" slot="menu-content" disabled>
+      Dropdown item
+    </rds-menu-item>
+    <rds-menu-item value="item-2" slot="menu-content" disabled>
+      Dropdown item 2
+    </rds-menu-item>
+  </rds-menu>
+);
+
+export const TemplateAllDisabled = args => (
+  <rds-menu disabled {...args}>
+    <rds-button slot="menu-trigger" appearance="tertiary">
+      Open Menu <rds-hero-icon name="chevron-down" slot="end"></rds-hero-icon>
+    </rds-button>
+    <rds-menu-item value="item-1" slot="menu-content">
+      Dropdown item
+    </rds-menu-item>
+    <rds-menu-item value="item-2" slot="menu-content">
+      Dropdown item 2
+    </rds-menu-item>
+  </rds-menu>
+);
+
+export const TemplateWithSelection = args => (
+  <rds-menu {...args} disable-close>
+    <rds-button slot="menu-trigger" appearance="tertiary">
+      Open Menu <rds-hero-icon name="chevron-down" slot="end"></rds-hero-icon>
+    </rds-button>
+    <rds-menu-item value="item-1" slot="menu-content">
+      <rds-checkbox slot="selection" label="This is a checkbox"></rds-checkbox>
+    </rds-menu-item>
+    <rds-menu-item value="item-2" slot="menu-content">
+      <rds-checkbox slot="selection" label="This is a checkbox"></rds-checkbox>
+    </rds-menu-item>
+  </rds-menu>
+);
+
+export const TemplateScrolling = args => (
+  <rds-menu {...args}>
+    <rds-button slot="menu-trigger" appearance="tertiary">
+      Open Menu <rds-hero-icon name="chevron-down" slot="end"></rds-hero-icon>
+    </rds-button>
+    <rds-menu-item value="item-1" slot="menu-content">
+      Dropdown item
+    </rds-menu-item>
+    <rds-menu-item value="item-2" slot="menu-content">
+      Dropdown item 2
+    </rds-menu-item>
+    <rds-menu-item value="item-3" slot="menu-content">
+      Dropdown item 3
+    </rds-menu-item>
+    <rds-menu-item value="item-4" slot="menu-content">
+      Dropdown item 4
+    </rds-menu-item>
+    <rds-menu-item value="item-5" slot="menu-content">
+      Dropdown item 5
+    </rds-menu-item>
+    <rds-menu-item value="item-6" slot="menu-content">
+      Dropdown item 6
+    </rds-menu-item>
+    <rds-menu-item value="item-6" slot="menu-content">
+      Dropdown item 7
+    </rds-menu-item>
+    <rds-menu-item value="item-6" slot="menu-content">
+      Dropdown item 8
+    </rds-menu-item>
+  </rds-menu>
+);
+
+# Menu
+
+### Default
+
+<Canvas>
+  <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
+
+### Open With Hover
+
+<Canvas>
+  <Story
+    name="Open With Hover"
+    args={{
+      hover: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Position Left
+
+<Canvas>
+  <Story
+    name="Position Left"
+    args={{
+      position: 'left',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Position Right
+
+<Canvas>
+  <Story
+    name="Position Right"
+    args={{
+      position: 'right',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Position Top
+
+<Canvas>
+  <Story
+    name="Position Top"
+    args={{
+      position: 'top',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Position Bottom
+
+<Canvas>
+  <Story
+    name="Position Bottom"
+    args={{
+      position: 'bottom',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Disabled Menu
+
+<Canvas>
+  <Story name="Disabled Menu">{TemplateAllDisabled.bind({})}</Story>
+</Canvas>
+
+### Disabled Menu Items
+
+<Canvas>
+  <Story name="Disabled Menu Items">{TemplateDisabled.bind({})}</Story>
+</Canvas>
+
+### With Selection
+
+<Canvas>
+  <Story name="With Selection">{TemplateWithSelection.bind({})}</Story>
+</Canvas>
+
+### With Scrolling
+
+<Canvas>
+  <Story
+    name="With Scrolling"
+    args={{
+      scrolling: true,
+    }}
+  >
+    {TemplateScrolling.bind({})}
+  </Story>
+</Canvas>
+
+### With Dividers
+
+<Canvas>
+  <Story name="With Dividers">{TemplateDividers.bind({})}</Story>
+</Canvas>
+
+### With Button Group Trigger
+
+<Canvas>
+  <Story
+    name="With Button Group Trigger"
+    height="500px"
+    loaders={[
+      () => ({
+        menuRef: React.createRef(),
+      }),
+    ]}
+  >
+    {(args, { loaded: { menuRef } }) => (
+      <rds-menu ref={menuRef}>
+        <rds-button-group slot="custom-trigger">
+          <rds-button group appearance="tertiary">
+            Open Menu
+          </rds-button>
+          <rds-button group iconOnly appearance="tertiary" onClick={() => menuRef.current.toggleMenu()}>
+            <rds-hero-icon name="chevron-down" />
+          </rds-button>
+        </rds-button-group>
+        <rds-menu-item value="item-1" slot="menu-content">
+          Dropdown item 1
+        </rds-menu-item>
+        <rds-menu-item value="item-2" slot="menu-content">
+          Dropdown item 2
+        </rds-menu-item>
+      </rds-menu>
+    )}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

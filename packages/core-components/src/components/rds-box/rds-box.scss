@@ -1,0 +1,27 @@
+:host {
+  @apply font-inter box-border;
+
+  #box-styled,
+  #box-custom-styled {
+    @apply inline-block;
+  }
+
+  #box-styled {
+    @apply w-full;
+    all: inherit;
+  }
+}
+
+// Display styles
+
+:host([display='block']) {
+  @apply block;
+}
+
+:host([display='inline-block']) {
+  @apply inline-block;
+}
+
+:host([display='inline']) {
+  @apply inline;
+}

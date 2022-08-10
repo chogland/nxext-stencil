@@ -1,0 +1,66 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import AccordionItemReadme from './../rds-accordion-item/readme.md';
+import RdsAccordion from '../../../dist/collection/components/rds-accordion/rds-accordion';
+
+<Meta title="Components/Accordion/Overview" />
+
+# Accordion: Overview
+
+`Accordion` contains a title and chevron that is displayed in order to expand additional content. The content for a given accordion can be placed directly inside of the `AccordionItem`. When the `AccordionItem`
+is expanded, the content within the item is displayed.
+
+## Variations
+
+### Default
+
+Default `Accordion` allows for the individual control of whichever item is selected.
+
+<Canvas withSource="auto">
+  <Story id="components-accordion-stories--default-story"></Story>
+</Canvas>
+
+### Item Title Slot
+
+For more complex accordion titles you may utilize the accordion item's `item-title` slot. A good use case for using the title slot rather than the prop which accepts a string, is if you want to add a leading icon to your accordion.
+
+<Canvas withSource="auto">
+  <Story id="components-accordion-stories--with-icon"></Story>
+</Canvas>
+
+### Multiple Accordion Items
+
+This `Accordion` is the default, which allows you to open and close each `AccordionItem` at will.
+
+<Canvas withSource="auto">
+  <Story id="components-accordion-stories--multiple"></Story>
+</Canvas>
+
+### Collapse Others (Single)
+
+The `Accordion` component accepts a selectionMode [prop](#properties) which can be set to _single_ or it's default of _multi_. Single, as shown below, only allows one `AccordionItem` to be expanded at a time.
+
+<Canvas withSource="auto">
+  <Story id="components-accordion-stories--single-open"></Story>
+</Canvas>
+
+## Usage Guidelines
+
+> **When to use an accordion**
+
+<ul>
+  <li>If users need specific content on a page, rather than all of it.</li>
+  <li>If you have a small area to display a lot of content.</li>
+  <li>If you need to organize related information.</li>
+</ul>
+
+> **What to put inside an accordion**
+
+<ul>
+  <li>You may put text, images and links in an accordion, in no specific layout.</li>
+  <li>You may not put complex layouts or another accordion inside of an accordion.</li>
+</ul>
+
+<Description>{Readme}</Description>
+
+<Description>{AccordionItemReadme}</Description>

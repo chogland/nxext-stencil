@@ -1,0 +1,136 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsAlert from '../../../dist/collection/components/rds-alert/rds-alert';
+
+<Meta
+  title="Components/Alert/Stories"
+  component={RdsAlert}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=50%3A2315',
+    },
+  }}
+  argTypes={{
+    appearance: {
+      control: { type: 'select', options: ['info', 'success', 'error', 'warning'] },
+      description: 'This property shows the type of alert that needs to be displayed',
+    },
+  }}
+/>
+
+export const Template = args => (
+  <rds-alert {...args}>
+    <span slot="title">Attention needed</span>
+    <span slot="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam quo totam eius aperiam dolorum.</span>
+  </rds-alert>
+);
+
+export const ListedTemplate = args => (
+  <rds-alert {...args}>
+    <span slot="title">Attention needed</span>
+    <span slot="message">
+      <rds-list type="unordered">
+        <rds-list-item>Your password must be at least 8 characters </rds-list-item>
+        <rds-list-item>Your password must included at least one pro wrestling finishing move</rds-list-item>
+      </rds-list>
+    </span>
+  </rds-alert>
+);
+
+export const ActionTemplate = args => (
+  <rds-alert {...args}>
+    <span slot="title">Attention needed</span>
+    <span slot="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam quo totam eius aperiam dolorum.</span>
+    <span slot="action-text">View Status</span>
+  </rds-alert>
+);
+
+# Alert
+
+### Default
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      appearance: 'info',
+      visible: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Success
+
+<Canvas>
+  <Story
+    name="Success"
+    args={{
+      appearance: 'success',
+      visible: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Warning
+
+<Canvas>
+  <Story
+    name="Warning"
+    args={{
+      appearance: 'warning',
+      visible: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Error
+
+<Canvas>
+  <Story
+    name="Error"
+    args={{
+      appearance: 'error',
+      visible: true,
+    }}
+  >
+    {ListedTemplate.bind({})}
+  </Story>
+</Canvas>
+
+### With Actions
+
+<Canvas>
+  <Story
+    name="With Actions"
+    args={{
+      appearance: 'info',
+      visible: true,
+    }}
+  >
+    {ActionTemplate.bind({})}
+  </Story>
+</Canvas>
+
+### Without Dismiss Button
+
+<Canvas>
+  <Story
+    name="Without Dismiss Button"
+    args={{
+      appearance: 'info',
+      visible: true,
+      dismissible: false,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

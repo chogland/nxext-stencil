@@ -1,0 +1,170 @@
+/* Default Checkbox */
+:host {
+  > div {
+    .rds-label {
+      @apply flex items-center;
+      > div {
+        @apply inline-flex ml-3;
+      }
+    }
+  }
+}
+
+// Error styles
+:host([role='alert']) {
+  input {
+    @apply border-red-600 focus:outline-none focus:border-red-600;
+  }
+}
+
+:host(.disabled) {
+  @apply pointer-events-none text-gray-300;
+
+  input {
+    @apply opacity-70;
+
+    + .rds-label {
+      @apply opacity-70;
+    }
+  }
+}
+
+input {
+  @apply border-gray-300 text-purple-600 rounded form-checkbox;
+
+  &:focus {
+    @apply ring-purple-600 ring-2 ring-offset-2;
+  }
+}
+
+.rds-label {
+  @apply inline-flex align-middle mr-3;
+}
+
+:host([sub-label='true']) {
+  > div {
+    .rds-label {
+      @apply flex items-start;
+      input {
+        @apply inline-flex mt-0;
+      }
+      > div {
+        @apply inline-flex flex flex-col ml-3;
+      }
+    }
+  }
+}
+
+/* Description List Checkbox */
+:host([type='description-list']) {
+  @apply relative border border-solid border-gray-200 bg-white p-4 flex outline-none;
+}
+:host([type='description-list'][aria-checked='true']) {
+  @apply bg-purple-100 border-purple-200;
+
+  rds-sub-label {
+    div {
+      @apply text-gray-900;
+    }
+  }
+}
+
+/* Small Card Checkbox */
+:host([type='small-card']) {
+  .rds-label {
+    @apply border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium uppercase sm:flex-1 cursor-default mx-0 bg-white border-gray-200 text-gray-900 hover:bg-gray-50 focus:outline-none;
+  }
+
+  .card-label {
+    @apply pointer-events-none;
+  }
+}
+:host([type='small-card'].disabled) {
+  .rds-label {
+    @apply bg-gray-50;
+  }
+
+  .card-label {
+    @apply text-gray-300;
+  }
+}
+:host([type='small-card'][aria-checked='true']) {
+  .rds-label {
+    @apply bg-purple-600 border-transparent text-white hover:bg-purple-700;
+  }
+
+  .card-label {
+    @apply text-white;
+  }
+}
+:host([type='small-card']:focus),
+:host([type='small-card']:focus-within) {
+  .rds-label {
+    @apply ring-2 ring-offset-2 ring-purple-500;
+  }
+}
+
+/* Card Checkbox */
+:host([type='card']) {
+  .rds-label {
+    @apply relative bg-white border border-gray-300 rounded-lg ml-0 shadow-sm p-4 flex cursor-pointer focus:outline-none;
+  }
+
+  .card-label {
+    @apply pointer-events-none pr-8;
+  }
+
+  .card-icon {
+    @apply absolute invisible pointer-events-none top-4 right-4;
+  }
+}
+:host([type='card'].disabled) {
+  .rds-label {
+    @apply bg-gray-50 pointer-events-none;
+  }
+
+  ::slotted(*) {
+    @apply opacity-30;
+  }
+
+  .card-label {
+    @apply text-gray-300;
+  }
+}
+:host([type='card'][aria-checked='true']) {
+  .rds-label {
+    @apply border-purple-600 ring-1 ring-purple-600 ring-offset-0;
+  }
+
+  .card-icon {
+    @apply visible;
+  }
+}
+
+:host([type='card'][aria-checked='false']:focus),
+:host([type='card'][aria-checked='false']:focus-within) {
+  .rds-label {
+    @apply border-purple-600 ring-1 ring-purple-600 ring-offset-0;
+  }
+}
+
+// Error styles
+:host([role='alert']) {
+  // Default
+  input {
+    @apply border-red-600 focus:outline-none focus:border-red-600;
+
+    &:checked {
+      @apply border-transparent focus:border-transparent;
+    }
+  }
+
+  // Small Card
+  .rds-label {
+    @apply border-red-600 focus:outline-none focus:border-red-600;
+
+    &:checked {
+      @apply border-transparent focus:border-transparent;
+    }
+  }
+}

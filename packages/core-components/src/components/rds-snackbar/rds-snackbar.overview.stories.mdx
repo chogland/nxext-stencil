@@ -1,0 +1,48 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+
+<Meta title="Components/Snackbar/Overview" />
+
+# Snackbar: Overview
+
+`Snackbar` shows a brief message about processes occuring on the page.
+
+## Variations
+
+### Default
+
+<Canvas withSource="auto">
+  <Story height="200px" id="components-snackbar-stories--default-story"></Story>
+</Canvas>
+
+### Success
+
+<Canvas withSource="auto">
+  <Story height="200px" id="components-snackbar-stories--success"></Story>
+</Canvas>
+
+### Error
+
+<Canvas withSource="auto">
+  <Story height="200px" id="components-snackbar-stories--error"></Story>
+</Canvas>
+
+## Usage Guidelines
+
+> **Usage**
+
+Snackbars inform users of a process that an app has performed or will perform. They appear temporarily, towards the bottom of the screen. They shouldn’t interrupt the user experience, and they don’t require user input to disappear.
+
+> **Frequency**
+
+Only one snackbar may be displayed at a time.
+
+> **Priority**
+
+Snackbars should be for low priority information. User interaction is completely optional as the snackbar will disappear on it’s own automatically
+
+> **Don't override color**
+
+Do not use custom colors for snackbar. The colors of the snackbar variations has been designed to be consistent and accessible.
+
+<Description>{Readme}</Description>

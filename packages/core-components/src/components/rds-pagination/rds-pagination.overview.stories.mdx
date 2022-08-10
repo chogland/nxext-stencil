@@ -1,0 +1,31 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+
+<Meta title="Patterns/Pagination/Overview" />
+
+# Pagination: Overview
+
+The `Pagination` component is designed to break data into pages to increase load times and give the user indication of where they are in the filtered results.
+
+## Variations
+
+### Default
+
+By default, the `Pagination` component is set to 10 items per page. You can change this by using the _items_ prop. See below.
+
+<Canvas withSource="auto">
+  <Story id="patterns-pagination-stories--default-story"></Story>
+</Canvas>
+
+### More items per page
+
+<Canvas withSource="auto">
+  <Story id="patterns-pagination-stories--increased-results-per-page"></Story>
+</Canvas>
+
+## Usage Guidelines
+
+- Pagination only includes navigation elements for paging and does not manipulate data or control the display of a data grid.
+- This control is used only to provide navigation and to indicate the current page and number of pages.
+
+<Description>{Readme}</Description>

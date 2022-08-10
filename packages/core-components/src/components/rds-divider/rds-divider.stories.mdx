@@ -1,0 +1,113 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsDivider from '../../../dist/collection/components/rds-divider/rds-divider';
+
+<Meta
+  title="Components/Divider/Stories"
+  component={RdsDivider}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=48%3A17498',
+    },
+    backgrounds: { default: 'White' },
+  }}
+  argTypes={{
+    type: {
+      control: { type: 'select', options: ['vertical', 'horizontal'] },
+      description: 'Sets which direction the divider is oriented.',
+      defaultValue: 'horizontal',
+    },
+    spacing: {
+      control: { type: 'select', options: ['sm', 'md', 'lg', 'none'] },
+      description:
+        'This determines the spacing around the divider. It will add margin to top/bottom for horizonal dividers. It will add margin to left/right for vertical dividers.',
+    },
+  }}
+/>
+
+export const Template = args => <rds-divider {...args} />;
+
+# Divider
+
+### Default
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      spacing: 'lg',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Vertical
+
+<Canvas>
+  <Story
+    name="Vertical"
+    args={{
+      type: 'vertical',
+      spacing: 'lg',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### No Spacing
+
+<Canvas>
+  <Story
+    name="No Spacing"
+    args={{
+      spacing: 'none',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Small Spacing
+
+<Canvas>
+  <Story
+    name="Small Spacing"
+    args={{
+      spacing: 'sm',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Medium Spacing
+
+<Canvas>
+  <Story
+    name="Medium Spacing"
+    args={{
+      spacing: 'md',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Large Spacing
+
+<Canvas>
+  <Story
+    name="Large Spacing"
+    args={{
+      type: 'horizontal',
+      spacing: 'lg',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

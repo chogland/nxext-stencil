@@ -1,0 +1,25 @@
+:host {
+  button {
+    @apply font-inter inline-flex bg-white rounded-full items-center border-gray-50 lg:border border-solid shadow hover:shadow-md max-w-2xs;
+  }
+
+  slot[name='name']::slotted(*) {
+    @apply pl-2 pr-2 hidden lg:block text-sm truncate font-semibold;
+  }
+
+  slot[name='avatar']::slotted(*) {
+    @apply p-1;
+  }
+
+  slot[name='icon']::slotted(*) {
+    @apply hidden md:flex md:pr-4 md:pl-4 lg:pl-1 text-gray-600;
+  }
+}
+
+:host(:focus) button {
+  @apply ring-offset-0 ring-inset ring-purple-600 ring-2 outline-none;
+}
+
+[rds-avatar] {
+  display: flex !important;
+}

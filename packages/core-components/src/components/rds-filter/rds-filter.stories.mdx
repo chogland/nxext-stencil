@@ -1,0 +1,89 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import { BADGE } from '@geometricpanda/storybook-addon-badges';
+import * as RdsFilter from '../../../dist/collection/components/rds-filter/rds-filter';
+
+<Meta
+  title="Components/Filter/Stories"
+  component={RdsFilter}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/mM3o6kbJ1r3wGAePQL8H3Z/RDS-Component-Library?node-id=3970%3A94598',
+    },
+    layout: 'none',
+    badges: [BADGE.DEPRECATED],
+  }}
+  argTypes={{
+    isToggled: {
+      control: { type: 'boolean' },
+    },
+    filterResults: {
+      control: { type: 'number' },
+    },
+  }}
+/>
+
+export const Template = args => (
+  <rds-filter {...args}>
+    <rds-checkbox-group slot="filter-list" label="Section Title">
+      <rds-checkbox label="Unchecked" for="unchecked" checked="false" disabled="false"></rds-checkbox>
+      <rds-checkbox label="Unchecked" for="unchecked" checked="false" disabled="false"></rds-checkbox>
+      <rds-checkbox label="Unchecked" for="unchecked" checked="false" disabled="false"></rds-checkbox>
+    </rds-checkbox-group>
+    <rds-checkbox-group slot="filter-list" label="Section Title">
+      <rds-checkbox label="Unchecked" for="unchecked" checked="false" disabled="false"></rds-checkbox>
+      <rds-checkbox label="Unchecked" for="unchecked" checked="false" disabled="false"></rds-checkbox>
+      <rds-checkbox label="Unchecked" for="unchecked" checked="false" disabled="false"></rds-checkbox>
+    </rds-checkbox-group>
+    <rds-checkbox-group slot="filter-list" label="Section Title">
+      <rds-checkbox label="Unchecked" for="unchecked" checked="false" disabled="false"></rds-checkbox>
+      <rds-checkbox label="Unchecked" for="unchecked" checked="false" disabled="false"></rds-checkbox>
+      <rds-checkbox label="Unchecked" for="unchecked" checked="false" disabled="false"></rds-checkbox>
+    </rds-checkbox-group>
+    <rds-checkbox-group slot="filter-list" label="Section Title">
+      <rds-checkbox label="Unchecked" for="unchecked" checked="false" disabled="false"></rds-checkbox>
+      <rds-checkbox label="Unchecked" for="unchecked" checked="false" disabled="false"></rds-checkbox>
+      <rds-checkbox label="Unchecked" for="unchecked" checked="false" disabled="false"></rds-checkbox>
+    </rds-checkbox-group>
+    <rds-checkbox-group slot="filter-list" label="Section Title">
+      <rds-checkbox label="Unchecked" for="unchecked" checked="false" disabled="false"></rds-checkbox>
+      <rds-checkbox label="Unchecked" for="unchecked" checked="false" disabled="false"></rds-checkbox>
+      <rds-checkbox label="Unchecked" for="unchecked" checked="false" disabled="false"></rds-checkbox>
+    </rds-checkbox-group>
+    <rds-checkbox-group slot="filter-list" label="Section Title">
+      <rds-checkbox label="Unchecked" for="unchecked" checked="false" disabled="false"></rds-checkbox>
+      <rds-checkbox label="Unchecked" for="unchecked" checked="false" disabled="false"></rds-checkbox>
+      <rds-checkbox label="Unchecked" for="unchecked" checked="false" disabled="false"></rds-checkbox>
+    </rds-checkbox-group>
+    <rds-checkbox-group slot="filter-list" label="Section Title">
+      <rds-checkbox label="Unchecked" for="unchecked" checked="false" disabled="false"></rds-checkbox>
+      <rds-checkbox label="Unchecked" for="unchecked" checked="false" disabled="false"></rds-checkbox>
+      <rds-checkbox label="Unchecked" for="unchecked" checked="false" disabled="false"></rds-checkbox>
+    </rds-checkbox-group>
+    <rds-button size="sm" appearance="primary" disabled slot="clear-filter">
+      Clear
+    </rds-button>
+    <rds-button size="sm" appearance="primary" slot="submit-filter">
+      Done
+    </rds-button>
+  </rds-filter>
+);
+
+# Filter
+
+### Default
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      isToggled: true,
+      filterResults: 7,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

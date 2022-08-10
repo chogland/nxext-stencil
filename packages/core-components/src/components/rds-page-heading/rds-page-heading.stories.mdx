@@ -1,0 +1,181 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsPageHeading from '../../../dist/collection/components/rds-page-heading/rds-page-heading';
+
+<Meta
+  title="Patterns/Page Heading/Stories"
+  component={RdsPageHeading}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=136%3A15860',
+    },
+    layout: 'padded',
+  }}
+  argTypes={{}}
+/>
+
+export const Template = args => <rds-page-heading {...args}></rds-page-heading>;
+
+export const ActionTemplate = args => (
+  <rds-page-heading {...args}>
+    <rds-button slot="action-secondary" appearance="secondary" size="sm">
+      Secondary
+    </rds-button>
+    <rds-button slot="action-primary" size="sm">
+      Primary
+    </rds-button>
+  </rds-page-heading>
+);
+
+export const BreadcrumbTemplate = args => (
+  <rds-page-heading {...args}>
+    <rds-breadcrumbs slot="breadcrumbs">
+      <rds-breadcrumb>
+        <rds-link text="First Breadcrumb" appearance="secondary"></rds-link>
+      </rds-breadcrumb>
+      <rds-breadcrumb>
+        <rds-link text="Second Breadcrumb" appearance="secondary"></rds-link>
+      </rds-breadcrumb>
+      <rds-breadcrumb>
+        <rds-link text="Current Page" appearance="secondary"></rds-link>
+      </rds-breadcrumb>
+    </rds-breadcrumbs>
+    <rds-button slot="action-secondary" appearance="secondary" size="sm">
+      Secondary
+    </rds-button>
+    <rds-button slot="action-primary" size="sm">
+      Primary
+    </rds-button>
+  </rds-page-heading>
+);
+
+export const BreadcrumbTemplateWithSlashSeparator = args => (
+  <rds-page-heading {...args}>
+    <rds-breadcrumbs slot="breadcrumbs" separator="slash">
+      <rds-breadcrumb>
+        <rds-link text="First Breadcrumb" appearance="secondary"></rds-link>
+      </rds-breadcrumb>
+      <rds-breadcrumb>
+        <rds-link text="Second Breadcrumb" appearance="secondary"></rds-link>
+      </rds-breadcrumb>
+      <rds-breadcrumb>
+        <rds-link text="Current Page" appearance="secondary"></rds-link>
+      </rds-breadcrumb>
+    </rds-breadcrumbs>
+    <rds-button slot="action-secondary" appearance="secondary" size="sm">
+      Secondary
+    </rds-button>
+    <rds-button slot="action-primary" size="sm">
+      Primary
+    </rds-button>
+  </rds-page-heading>
+);
+
+export const MetaTemplate = args => (
+  <rds-page-heading {...args}>
+    <rds-meta slot="meta" icon="briefcase">
+      Full-time
+    </rds-meta>
+    <rds-meta slot="meta" icon="location-marker">
+      Remote
+    </rds-meta>
+    <rds-meta slot="meta" icon="currency-dollar">
+      $120k - $140k
+    </rds-meta>
+    <rds-meta slot="meta" icon="calendar">
+      Closing on January 9, 2020
+    </rds-meta>
+    <rds-button slot="action-secondary" appearance="tertiary" size="sm">
+      Secondary
+    </rds-button>
+    <rds-button slot="action-secondary" appearance="tertiary" size="sm">
+      Secondary
+    </rds-button>
+    <rds-button slot="action-primary" size="sm">
+      Primary
+    </rds-button>
+  </rds-page-heading>
+);
+
+# Page Heading
+
+### Default
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      text: 'Page Heading Text',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### With Actions
+
+<Canvas>
+  <Story
+    name="With Actions"
+    args={{
+      text: 'Page Heading Text',
+    }}
+  >
+    {ActionTemplate.bind({})}
+  </Story>
+</Canvas>
+
+### With Actions
+
+<Canvas>
+  <Story
+    name="With Long Text and Actions"
+    args={{
+      text: 'A Very Long Title Text That Will Break To The Next Line If Necessary',
+    }}
+  >
+    {ActionTemplate.bind({})}
+  </Story>
+</Canvas>
+
+### With Breadcrumbs
+
+<Canvas>
+  <Story
+    name="With Breadcrumbs"
+    args={{
+      text: 'Page Heading Text',
+    }}
+  >
+    {BreadcrumbTemplate.bind({})}
+  </Story>
+</Canvas>
+
+### With Breadcrumbs Display Prop as Slash
+
+<Canvas>
+  <Story
+    name="BreadcrumbSeparatorWithSlash"
+    args={{
+      text: 'Page Heading Text',
+    }}
+  >
+    {BreadcrumbTemplateWithSlashSeparator.bind({})}
+  </Story>
+</Canvas>
+
+### With Meta
+
+<Canvas>
+  <Story
+    name="With Meta"
+    args={{
+      text: 'Page Heading Text',
+    }}
+  >
+    {MetaTemplate.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

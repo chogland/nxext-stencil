@@ -1,0 +1,69 @@
+:host {
+  @apply block;
+}
+
+.header {
+  @apply flex justify-between py-0 px-1 mb-2;
+
+  rds-button[aria-disabled='true'] {
+    @apply pointer-events-none;
+  }
+}
+
+.chevron {
+  @apply flex-grow-0 box-content outline-none px-1 -mx-1 border-none flex items-center justify-center cursor-pointer transition-all duration-150 ease-in-out;
+  width: calc(100% / 7);
+
+  &:hover,
+  &:focus {
+    @apply text-purple-900;
+  }
+
+  &:active {
+    @apply bg-purple-900;
+  }
+
+  &[aria-disabled='true'] {
+    @apply pointer-events-none opacity-0;
+  }
+}
+
+.text {
+  @apply flex-auto items-center justify-center leading-none my-auto text-center w-full;
+}
+
+.text--reverse {
+  @apply flex-row-reverse;
+}
+
+.month,
+.year,
+.suffix {
+  @apply font-medium leading-tight mx-1 my-auto inline-block;
+  font-size: inherit;
+}
+
+.year {
+  @apply rounded-sm text-center border-none w-12 bg-transparent relative outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2 focus:ring-offset-white;
+  z-index: 2;
+
+  &:hover {
+    @apply duration-100 ease-in-out;
+  }
+}
+
+.year--suffix {
+  @apply w-16 text-left;
+}
+
+.year-wrap {
+  @apply relative;
+}
+
+.suffix {
+  @apply absolute w-16 text-left top-0 left-0;
+}
+
+.suffix__invisible {
+  @apply invisible;
+}

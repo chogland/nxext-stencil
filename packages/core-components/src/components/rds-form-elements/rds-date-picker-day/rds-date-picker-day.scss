@@ -1,0 +1,147 @@
+:host {
+  @apply flex justify-center outline-none text-purple-900 cursor-pointer min-w-0;
+  width: calc(100% / 7);
+}
+
+.day-v-wrapper {
+  @apply flex-auto;
+}
+
+.day-wrapper {
+  @apply flex flex-col items-center;
+}
+
+.day {
+  @apply flex-1 border-0 rounded-lg cursor-pointer text-center text-gray-900 font-semibold text-sm p-2 justify-center items-center hover:bg-gray-100 w-full;
+  box-shadow: 0 0 0 2px transparent, 0 0 0 0px transparent;
+  min-width: 1rem;
+}
+
+.text {
+  @apply mt-px mr-0 mb-0 ml-px;
+}
+
+:host([current-month]) .day {
+  @apply opacity-100;
+}
+
+:host([disabled]) {
+  @apply opacity-25 cursor-default;
+}
+
+:host([active]:not([range])) {
+  & .day {
+    @apply bg-purple-900 text-white;
+  }
+}
+
+:host(:focus),
+:host([active]) {
+  z-index: 1;
+}
+
+:host([selected]) .day {
+  @apply font-medium bg-purple-900 text-white;
+  z-index: 1;
+}
+
+:host([range][selected]) {
+  .day-wrapper {
+    @apply bg-gray-200;
+  }
+}
+
+:host([start-of-range]) :not(.rds--rtl),
+:host([end-of-range]) .rds--rtl {
+  .day-wrapper {
+    border-top-left-radius: 40%;
+    border-bottom-left-radius: 40%;
+  }
+  .day {
+    opacity: 1;
+  }
+}
+
+:host([highlighted]) .day-wrapper {
+  @apply bg-gray-100;
+
+  .day {
+    @apply text-purple-900;
+  }
+}
+
+:host([highlighted]:not([active]:focus)) .day {
+  @apply rounded-none text-purple-900;
+}
+
+:host([range-hover]:not([selected])) {
+  .day-wrapper {
+    @apply bg-gray-200;
+  }
+
+  .day {
+    @apply rounded-none;
+  }
+}
+
+:host([end-of-range][range-hover]) :not(.rds--rtl) .day-wrapper,
+:host([start-of-range][range-hover]) .rds--rtl .day-wrapper {
+  @apply rounded-none shadow-none;
+}
+
+:host([start-of-range][range-hover]) :not(.rds--rtl) .day-wrapper,
+:host([end-of-range][range-hover]) .rds--rtl .day-wrapper {
+  @apply rounded-none shadow-none;
+}
+
+:host(:hover[end-of-range][range-hover]) :not(.rds--rtl) .day-wrapper,
+:host(:hover[start-of-range][range-hover]) .rds--rtl .day-wrapper {
+  @apply rounded-none shadow-none;
+}
+
+:host(:hover[start-of-range][range-hover]) :not(.rds--rtl) .day-wrapper,
+:host(:hover[end-of-range][range-hover]) .rds--rtl .day-wrapper {
+  @apply rounded-none shadow-none;
+}
+
+:host(:hover[range-hover]:not([selected]).focused--end) :not(.rds--rtl),
+:host(:hover[range-hover]:not([selected]).focused--start) .rds--rtl {
+  .day {
+    opacity: 1;
+  }
+}
+
+:host(:hover[range-hover]:not([selected]).focused--start) :not(.rds--rtl),
+:host(:hover[range-hover]:not([selected]).focused--end) .rds--rtl {
+  .day {
+    @apply rounded-none opacity-100;
+  }
+}
+
+:host(:hover[range-hover]:not([selected]).focused--start.hover--outside-range) :not(.rds--rtl),
+:host(:hover[range-hover]:not([selected]).focused--end.hover--outside-range) .rds--rtl {
+  .day {
+    @apply rounded-none opacity-100;
+  }
+}
+
+:host(:hover[range-hover]:not([selected]).focused--end.hover--outside-range) :not(.rds--rtl),
+:host(:hover[range-hover]:not([selected]).focused--start.hover--outside-range) .rds--rtl {
+  .day {
+    @apply rounded-none opacity-100;
+  }
+}
+
+:host(:hover[start-of-range].hover--inside-range.focused--end),
+:host(:hover[end-of-range].hover--inside-range.focused--start) {
+  .day-wrapper {
+    @apply bg-none;
+  }
+}
+
+:host([start-of-range].hover--inside-range.focused--end),
+:host([end-of-range].hover--inside-range.focused--start) {
+  .day-wrapper {
+    @apply bg-none;
+  }
+}

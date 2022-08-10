@@ -1,0 +1,96 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+
+<Meta title="Components/Text/Overview" />
+
+# Text: Overview
+
+`Text` creates a pre-styled `<p>` tag to use for text blocks.
+
+Setting the _type_ to "inline" will render a `<span>` instead. This is useful in wrapping smaller pieces of text.
+
+## Variations
+
+<Canvas withSource="auto">
+  <Story id="components-text-stories--default-story"></Story>
+</Canvas>
+
+### Font Weight
+
+To change the font-weight CSS property, update the `weight` prop to `normal` (default & 400), `medium` (500), `semibold` (600), `bold` (700), or `extrabold` (800).
+
+<Canvas withSource="auto" isColumn>
+  <Story id="components-text-stories--default-story"></Story>
+  <Story id="components-text-stories--weight-medium"></Story>
+  <Story id="components-text-stories--weight-semibold"></Story>
+  <Story id="components-text-stories--weight-bold"></Story>
+  <Story id="components-text-stories--weight-extrabold"></Story>
+</Canvas>
+
+### Font Size
+
+To change the font-size CSS property, update the `size` prop to `base` (default & 1rem), `xxs` (.5rem), `xs` (.75rem), `sm` (.875rem), `lg` (1.25rem), `xl` (1.5rem), `2xl` (1.875rem), `3xl` (2.25rem), `4xl` (3rem), `5xl` (3.75rem), `6xl` (4.5rem), or `7xl` (6rem).
+
+<Canvas withSource="auto" isColumn>
+  <Story id="components-text-stories--size-double-extra-small"></Story>
+  <Story id="components-text-stories--size-extra-small"></Story>
+  <Story id="components-text-stories--size-small"></Story>
+  <Story id="components-text-stories--default-story"></Story>
+  <Story id="components-text-stories--size-large"></Story>
+  <Story id="components-text-stories--size-extra-large"></Story>
+  <Story id="components-text-stories--size-2-xl"></Story>
+  <Story id="components-text-stories--size-3-xl"></Story>
+  <Story id="components-text-stories--size-4-xl"></Story>
+  <Story id="components-text-stories--size-5-xl"></Story>
+  <Story id="components-text-stories--size-6-xl"></Story>
+  <Story id="components-text-stories--size-7-xl"></Story>
+</Canvas>
+
+### Spacing (Top/Bottom Margin)
+
+To change the top and bottom margin CSS properties, update the `spacing` prop to `none` (0px), `sm` (8px), `md` (16px), or `lg` (24px).
+
+<Canvas withSource="auto" isColumn>
+  <Story id="components-text-stories--no-spacing"></Story>
+  <Story id="components-text-stories--small-spacing"></Story>
+  <Story id="components-text-stories--default-story"></Story>
+  <Story id="components-text-stories--large-spacing"></Story>
+</Canvas>
+
+### Color
+
+The `color` property applies a text color to the text component.
+
+You can find the list of colors supported with the text component on our [Brand Identity/Colors page](/story/brand-identity-colors--page).
+
+<Canvas isColumn withSource="auto">
+  <Story id="components-text-stories--text-color"></Story>
+</Canvas>
+
+### Text Align
+
+To change the text-align CSS property, update the align prop to `left`, `center`, `right`, or `justify`.
+
+<Canvas>
+  <Story id="components-text-stories--text-align-left"></Story>
+</Canvas>
+
+<Canvas>
+  <Story id="components-text-stories--text-align-center"></Story>
+</Canvas>
+
+<Canvas>
+  <Story id="components-text-stories--text-align-right"></Story>
+</Canvas>
+
+<Canvas>
+  <Story id="components-text-stories--text-align-justify"></Story>
+</Canvas>
+
+## Usage Guidelines
+
+> Custom styles
+
+The new RDS font, Inter, is automatically applied to the `RdsText` component, as well as pre-defined rules for spacing, font-weight, and font-size. You should not add any custom style within the component, **unless**, you want to add a color to the text. In that case, refer to the 'With Custom Color' story above to see how to add a span inside of the component for the acheived look and feel.
+
+<Description>{Readme}</Description>

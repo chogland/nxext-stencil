@@ -1,0 +1,52 @@
+:host {
+  @apply block bg-white font-inter w-full box-border rounded-t-full;
+
+  .icon {
+    @apply rounded-full bg-gray-100 inline-flex p-4 mt-2 ml-4;
+  }
+
+  .header-wrapper {
+    @apply -ml-4 -mt-2 flex md:items-center justify-between flex-wrap sm:flex-nowrap items-baseline;
+
+    .title-desc-wrapper {
+      @apply ml-4 mt-2 flex-grow;
+    }
+
+    slot[name='title']::slotted(*) {
+      @apply block text-gray-900;
+    }
+
+    slot[name='description']::slotted(*) {
+      @apply mt-1 text-sm text-gray-600 font-medium;
+    }
+
+    .content {
+      @apply justify-between flex-grow flex md:inline-flex md:justify-items-start;
+    }
+
+    .titleDep {
+      @apply flex;
+    }
+  }
+
+  .actions {
+    @apply ml-4 -mr-4 flex-shrink-0 mt-2 sm:mt-0;
+
+    slot[name='actions']::slotted(*) {
+      @apply mr-4;
+    }
+  }
+
+  slot[name='auxiliary-text']::slotted(*) {
+    @apply ml-4 text-gray-600;
+  }
+}
+
+:host(.padded) {
+  @apply sm:px-6 px-4 py-5;
+}
+
+:host(.rule) {
+  @apply border-b border-gray-200;
+  border-bottom-style: solid;
+}

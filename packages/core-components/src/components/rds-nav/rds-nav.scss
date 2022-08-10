@@ -1,0 +1,78 @@
+// Phase 1
+nav {
+  @apply sm:h-full bg-gray-100 hidden md:block transition-transform duration-300 lg:left-0;
+
+  @media (min-width: 640px) {
+    min-height: calc(100vh - 91px - 125px);
+  }
+
+  &.open {
+    @apply block absolute sm:relative left-0 z-order3 bg-transparent w-full;
+  }
+
+  .backdrop {
+    @apply block md:hidden absolute top-0 inset-0 bg-gray-700 bg-opacity-75 h-full -z-1;
+  }
+}
+
+// Phase 2
+:host([type='base']) {
+  @apply h-full;
+
+  nav {
+    @apply bg-white flex flex-col justify-between flex-1 px-2 pb-4 font-inter min-h-0 border-b border-gray-200 lg:border-b-0 pt-2 lg:fixed overflow-y-auto;
+
+    height: calc(100vh - 4rem);
+
+    &.expanded {
+      @media (min-width: 1025px) {
+        width: calc(16rem - 1px);
+      }
+    }
+
+    &::-webkit-scrollbar {
+      @apply w-1;
+    }
+
+    &::-webkit-scrollbar-track {
+      @apply bg-white mr-1;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      @apply bg-gray-300 rounded-3xl mr-1;
+    }
+
+    a {
+      @apply hover:text-gray-900 hover:font-extrabold;
+    }
+
+    ::slotted([slot='tools']) {
+      @apply block mb-5;
+    }
+
+    .user-menu {
+      @apply block lg:hidden border-t border-gray-200 -mx-2 px-2 pt-4;
+    }
+
+    .tools-heading {
+      @apply pt-10 pb-2 pl-2 text-gray-500 text-xs font-semibold;
+    }
+
+    slot[name='user-menu']::slotted(rds-contact) {
+      @apply px-4;
+    }
+  }
+}
+
+// Adjust the width for collapsed nav
+:host([type='base'][collapsible]) nav {
+  @media (max-width: 1023px) {
+    .sr-only {
+      @apply relative w-auto h-auto p-0 m-0;
+    }
+  }
+
+  rds-action {
+    @apply text-gray-600 hidden relative lg:block;
+  }
+}

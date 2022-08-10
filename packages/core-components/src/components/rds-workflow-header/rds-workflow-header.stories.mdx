@@ -1,0 +1,63 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsWorkflowHeader from '../../../dist/collection/components/rds-workflow-header/rds-workflow-header';
+
+<Meta
+  title="Patterns/Workflow Header/Stories"
+  component={RdsWorkflowHeader}
+  parameters={{
+    layout: 'fullscreen',
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=136%3A16959',
+    },
+  }}
+/>
+
+export const Template = args => (
+  <rds-workflow-header>
+    <rds-text weight="semibold" slot="title">
+      Workflow Header
+    </rds-text>
+    <rds-button appearance="secondary" size="sm" slot="action">
+      Save & Exit
+    </rds-button>
+  </rds-workflow-header>
+);
+
+export const DescriptionTemplate = args => (
+  <rds-workflow-header>
+    <rds-text weight="semibold" slot="title">
+      Workflow Header
+    </rds-text>
+    <rds-text size="sm" spacing="none" slot="description">
+      Descriptive Text / <rds-link>Embedded Link</rds-link>
+    </rds-text>
+    <rds-link label="Refresh" slot="action">
+      <rds-hero-icon size="lg" name="refresh" />
+    </rds-link>
+    <rds-link label="Close" slot="action">
+      <rds-hero-icon size="lg" name="x" />
+    </rds-link>
+  </rds-workflow-header>
+);
+
+# Workflow Header
+
+### Default
+
+<Canvas>
+  <Story name="Default" args={{}}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### With Description
+
+<Canvas>
+  <Story name="With Description" args={{}}>
+    {DescriptionTemplate.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

@@ -14,7 +14,13 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@rds-core/core-components": ["dist/libs/core-components"],
+      "@rds-core/core-components/*": [
+        "dist/libs/core-components/dist/components/*"
+      ],
+      "@rds-core/core-components/loader": ["dist/libs/core-components/loader"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

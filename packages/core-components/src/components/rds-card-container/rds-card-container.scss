@@ -1,0 +1,32 @@
+:host {
+  @apply block bg-white font-inter w-full overflow-hidden;
+}
+
+:host([shadow]) {
+  @apply shadow;
+}
+
+:host([rounded]) {
+  @apply rounded-xl;
+}
+
+::slotted(rds-card-body) {
+  @apply block font-inter;
+}
+
+:host([type='watchlist']) {
+  ::slotted(rds-card-body) {
+    @apply flex p-0 pb-4;
+  }
+}
+
+:host([padded='false']) {
+  ::slotted(rds-card-body) {
+    @apply p-0;
+  }
+}
+
+:host([simple]),
+:host([simple='true']) {
+  @apply p-6 w-auto;
+}

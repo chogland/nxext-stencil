@@ -1,0 +1,75 @@
+:host {
+  @apply inline-block relative max-w-full cursor-pointer;
+
+  .rds-popper-anim {
+    @apply bg-gray-50 rounded;
+  }
+
+  #rds-menu-manager {
+    @apply relative inline-block;
+  }
+
+  slot[name='menu-trigger']::slotted(*) {
+    @apply cursor-pointer max-w-full;
+  }
+
+  slot[name='menu-header']::slotted(*) {
+    @apply px-6 py-4;
+  }
+
+  .menu-panel {
+    @apply bg-white rounded-md shadow-md py-1 z-order1 w-max max-w-xs overflow-visible;
+
+    &.hasSearch {
+      @apply w-80;
+    }
+  }
+
+  .menu-scroll-wrapper {
+    @apply overflow-y-auto max-h-80;
+
+    slot[name='menu-content']::slotted(*) {
+      @apply m-1;
+    }
+  }
+
+  .select-button {
+    @apply px-6 py-4;
+
+    rds-button a,
+    rds-button button {
+      @apply w-full;
+    }
+  }
+}
+
+:host(.hover) {
+  .menu-panel {
+    @apply bg-transparent rounded-none shadow-none py-0 z-order1 w-max max-w-xs overflow-hidden;
+
+    > div {
+      @apply bg-white rounded-md shadow-md py-1 z-order1 w-max max-w-xs overflow-visible;
+    }
+  }
+}
+
+:host(.disabled) {
+  @apply pointer-events-none;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--tw-gray-300) var(--tw-white);
+}
+
+*::-webkit-scrollbar {
+  @apply w-2;
+}
+
+*::-webkit-scrollbar-track {
+  @apply bg-white;
+}
+
+*::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 rounded-3xl;
+}

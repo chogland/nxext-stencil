@@ -1,0 +1,302 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import { BADGE } from '@geometricpanda/storybook-addon-badges';
+import * as RdsIcon from '../../../dist/collection/components/rds-icon/rds-icon';
+
+<Meta
+  title="Components/Icon/Stories"
+  component={RdsIcon}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/uYf4DWKd7OtQSx7BRfchZv/Storybook-Integration?node-id=6%3A19653',
+    },
+    badges: [BADGE.DEPRECATED],
+  }}
+  argTypes={{
+    size: {
+      control: { type: 'select' },
+      options: ['md', 'lg', 'xlg'],
+      description: 'The size of the icon',
+      defaultValue: 'xlg',
+    },
+  }}
+/>
+
+export const Arrows = args => (
+  <div>
+    <rds-icon {...args} icon="rds-circle-up"></rds-icon>
+    <rds-icon {...args} icon="rds-circle-down"></rds-icon>
+    <rds-icon {...args} icon="rds-circle-left"></rds-icon>
+    <rds-icon {...args} icon="rds-circle-right"></rds-icon>
+    <rds-icon {...args} icon="rds-chevron-up"></rds-icon>
+    <rds-icon {...args} icon="rds-chevron-right"></rds-icon>
+    <rds-icon {...args} icon="rds-chevron-left"></rds-icon>
+    <rds-icon {...args} icon="rds-chevron-down"></rds-icon>
+    <rds-icon {...args} icon="rds-arrow-up"></rds-icon>
+    <rds-icon {...args} icon="rds-arrow-right"></rds-icon>
+    <rds-icon {...args} icon="rds-arrow-left"></rds-icon>
+    <rds-icon {...args} icon="rds-arrow-down"></rds-icon>
+    <rds-icon {...args} icon="rds-caret-up"></rds-icon>
+    <rds-icon {...args} icon="rds-caret-right"></rds-icon>
+    <rds-icon {...args} icon="rds-caret-left"></rds-icon>
+    <rds-icon {...args} icon="rds-caret-down"></rds-icon>
+  </div>
+);
+
+export const Communication = args => (
+  <div>
+    <rds-icon {...args} icon="rds-comment"></rds-icon>
+    <rds-icon {...args} icon="rds-desktop"></rds-icon>
+    <rds-icon {...args} icon="rds-laptop"></rds-icon>
+    <rds-icon {...args} icon="rds-phone-slash"></rds-icon>
+    <rds-icon {...args} icon="rds-phone"></rds-icon>
+    <rds-icon {...args} icon="rds-microphone"></rds-icon>
+    <rds-icon {...args} icon="rds-microphone-slash"></rds-icon>
+  </div>
+);
+
+export const Engineering = args => (
+  <div>
+    <rds-icon {...args} icon="rds-smoking"></rds-icon>
+    <rds-icon {...args} icon="rds-no-smoking"></rds-icon>
+    <rds-icon {...args} icon="rds-wind"></rds-icon>
+    <rds-icon {...args} icon="rds-radiation"></rds-icon>
+    <rds-icon {...args} icon="rds-flood"></rds-icon>
+    <rds-icon {...args} icon="rds-smog"></rds-icon>
+    <rds-icon {...args} icon="rds-temperature-low"></rds-icon>
+    <rds-icon {...args} icon="rds-fire-extinguisher"></rds-icon>
+    <rds-icon {...args} icon="rds-temperature-high"></rds-icon>
+    <rds-icon {...args} icon="rds-bolt"></rds-icon>
+    <rds-icon {...args} icon="rds-fire"></rds-icon>
+    <rds-icon {...args} icon="rds-biohazard"></rds-icon>
+    <rds-icon {...args} icon="rds-rain"></rds-icon>
+  </div>
+);
+
+export const Files = args => (
+  <div>
+    <rds-icon {...args} icon="rds-file-image"></rds-icon>
+    <rds-icon {...args} icon="rds-file-upload"></rds-icon>
+    <rds-icon {...args} icon="rds-file-export"></rds-icon>
+    <rds-icon {...args} icon="rds-file-signature"></rds-icon>
+    <rds-icon {...args} icon="rds-file-excel"></rds-icon>
+    <rds-icon {...args} icon="rds-file-powerpoint"></rds-icon>
+    <rds-icon {...args} icon="rds-file-folder"></rds-icon>
+    <rds-icon {...args} icon="rds-file-images"></rds-icon>
+    <rds-icon {...args} icon="rds-file-pdf"></rds-icon>
+    <rds-icon {...args} icon="rds-file-add"></rds-icon>
+    <rds-icon {...args} icon="rds-file-minus"></rds-icon>
+    <rds-icon {...args} icon="rds-file-contract"></rds-icon>
+    <rds-icon {...args} icon="rds-file-new"></rds-icon>
+    <rds-icon {...args} icon="rds-file-folder-open"></rds-icon>
+    <rds-icon {...args} icon="rds-file-audio"></rds-icon>
+    <rds-icon {...args} icon="rds-file-archive"></rds-icon>
+    <rds-icon {...args} icon="rds-file-invoice"></rds-icon>
+    <rds-icon {...args} icon="rds-file-word"></rds-icon>
+    <rds-icon {...args} icon="rds-file-default"></rds-icon>
+    <rds-icon {...args} icon="rds-file-import"></rds-icon>
+    <rds-icon {...args} icon="rds-file-video"></rds-icon>
+    <rds-icon {...args} icon="rds-file-download"></rds-icon>
+  </div>
+);
+
+export const Location = args => (
+  <div>
+    <rds-icon {...args} icon="rds-university"></rds-icon>
+    <rds-icon {...args} icon="rds-tree"></rds-icon>
+    <rds-icon {...args} icon="rds-building"></rds-icon>
+    <rds-icon {...args} icon="rds-truck"></rds-icon>
+  </div>
+);
+
+export const Ui = args => (
+  <div>
+    <rds-icon {...args} icon="rds-close"></rds-icon>
+    <rds-icon {...args} icon="rds-close-circle"></rds-icon>
+    <rds-icon {...args} icon="rds-add"></rds-icon>
+    <rds-icon {...args} icon="rds-add-circle"></rds-icon>
+    <rds-icon {...args} icon="rds-minus"></rds-icon>
+    <rds-icon {...args} icon="rds-minus-circle"></rds-icon>
+    <rds-icon {...args} icon="rds-check"></rds-icon>
+    <rds-icon {...args} icon="rds-check-circle"></rds-icon>
+    <rds-icon {...args} icon="rds-edit"></rds-icon>
+    <rds-icon {...args} icon="rds-sync"></rds-icon>
+    <rds-icon {...args} icon="rds-undo"></rds-icon>
+    <rds-icon {...args} icon="rds-redo"></rds-icon>
+    <rds-icon {...args} icon="rds-link"></rds-icon>
+    <rds-icon {...args} icon="rds-unlink"></rds-icon>
+    <rds-icon {...args} icon="rds-unlock"></rds-icon>
+    <rds-icon {...args} icon="rds-question-circle"></rds-icon>
+    <rds-icon {...args} icon="rds-info-circle"></rds-icon>
+    <rds-icon {...args} icon="rds-tag"></rds-icon>
+    <rds-icon {...args} icon="rds-trash"></rds-icon>
+    <rds-icon {...args} icon="rds-heart"></rds-icon>
+    <rds-icon {...args} icon="rds-share"></rds-icon>
+    <rds-icon {...args} icon="rds-reply"></rds-icon>
+    <rds-icon {...args} icon="rds-reply-all"></rds-icon>
+    <rds-icon {...args} icon="rds-flag"></rds-icon>
+    <rds-icon {...args} icon="rds-list"></rds-icon>
+    <rds-icon {...args} icon="rds-grid"></rds-icon>
+    <rds-icon {...args} icon="rds-ban"></rds-icon>
+    <rds-icon {...args} icon="rds-search"></rds-icon>
+    <rds-icon {...args} icon="rds-zoom-in"></rds-icon>
+    <rds-icon {...args} icon="rds-zoom-out"></rds-icon>
+    <rds-icon {...args} icon="rds-save"></rds-icon>
+    <rds-icon {...args} icon="rds-calendar"></rds-icon>
+    <rds-icon {...args} icon="rds-ellipsis"></rds-icon>
+    <rds-icon {...args} icon="rds-filter"></rds-icon>
+    <rds-icon {...args} icon="rds-show"></rds-icon>
+    <rds-icon {...args} icon="rds-hide"></rds-icon>
+    <rds-icon {...args} icon="rds-attach"></rds-icon>
+    <rds-icon {...args} icon="rds-copy"></rds-icon>
+    <rds-icon {...args} icon="rds-caution"></rds-icon>
+    <rds-icon {...args} icon="rds-bookmark"></rds-icon>
+    <rds-icon {...args} icon="rds-mail"></rds-icon>
+    <rds-icon {...args} icon="rds-inbox"></rds-icon>
+    <rds-icon {...args} icon="rds-sliders"></rds-icon>
+    <rds-icon {...args} icon="rds-cog"></rds-icon>
+    <rds-icon {...args} icon="rds-bell"></rds-icon>
+    <rds-icon {...args} icon="rds-print"></rds-icon>
+    <rds-icon {...args} icon="rds-cloud-download"></rds-icon>
+    <rds-icon {...args} icon="rds-cloud-upload"></rds-icon>
+    <rds-icon {...args} icon="rds-map-marker"></rds-icon>
+    <rds-icon {...args} icon="rds-hamburger"></rds-icon>
+    <rds-icon {...args} icon="rds-send"></rds-icon>
+    <rds-icon {...args} icon="rds-home"></rds-icon>
+    <rds-icon {...args} icon="rds-aggregation"></rds-icon>
+    <rds-icon {...args} icon="rds-arrows"></rds-icon>
+    <rds-icon {...args} icon="rds-chart"></rds-icon>
+    <rds-icon {...args} icon="rds-color-picker"></rds-icon>
+    <rds-icon {...args} icon="rds-cut"></rds-icon>
+    <rds-icon {...args} icon="rds-filter"></rds-icon>
+    <rds-icon {...args} icon="rds-pivot"></rds-icon>
+    <rds-icon {...args} icon="rds-maximize"></rds-icon>
+    <rds-icon {...args} icon="rds-minimize"></rds-icon>
+  </div>
+);
+
+export const User = args => (
+  <div>
+    <rds-icon {...args} icon="rds-users"></rds-icon>
+    <rds-icon {...args} icon="rds-add-user"></rds-icon>
+    <rds-icon {...args} icon="rds-user-security"></rds-icon>
+    <rds-icon {...args} icon="rds-user"></rds-icon>
+    <rds-icon {...args} icon="rds-user-settings"></rds-icon>
+    <rds-icon {...args} icon="rds-user-circle"></rds-icon>
+    <rds-icon {...args} icon="rds-user-wide"></rds-icon>
+    <rds-icon {...args} icon="rds-user-edit"></rds-icon>
+    <rds-icon {...args} icon="rds-user-remove"></rds-icon>
+    <rds-icon {...args} icon="rds-user-walking"></rds-icon>
+    <rds-icon {...args} icon="rds-wheelchair"></rds-icon>
+  </div>
+);
+
+export const Template = args => <rds-icon {...args}></rds-icon>;
+
+# Icons
+
+### Arrows
+
+<Canvas>
+  <Story name="Arrows" args={{}}>
+    {Arrows.bind({})}
+  </Story>
+</Canvas>
+
+### Communication
+
+<Canvas>
+  <Story name="Communication" args={{}}>
+    {Communication.bind({})}
+  </Story>
+</Canvas>
+
+### Engineering
+
+<Canvas>
+  <Story name="Engineering" args={{}}>
+    {Engineering.bind({})}
+  </Story>
+</Canvas>
+
+### Files
+
+<Canvas>
+  <Story name="Files" args={{}}>
+    {Files.bind({})}
+  </Story>
+</Canvas>
+
+### Location
+
+<Canvas>
+  <Story name="Location" args={{}}>
+    {Location.bind({})}
+  </Story>
+</Canvas>
+
+### UI
+
+<Canvas>
+  <Story name="UI" args={{}}>
+    {Ui.bind({})}
+  </Story>
+</Canvas>
+
+### User
+
+<Canvas>
+  <Story name="User" args={{}}>
+    {User.bind({})}
+  </Story>
+</Canvas>
+
+### Sizes
+
+<Canvas>
+  <Story
+    name="Small"
+    args={{
+      size: 'sm',
+      icon: 'rds-download',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Medium"
+    args={{
+      size: 'md',
+      icon: 'rds-download',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Large"
+    args={{
+      size: 'lg',
+      icon: 'rds-download',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Colors
+
+<Canvas>
+  <Story
+    name="Colors"
+    args={{
+      size: 'lg',
+      icon: 'rds-download',
+      color: 'purple-900',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

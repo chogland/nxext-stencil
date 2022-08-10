@@ -1,0 +1,35 @@
+:host {
+  @apply block bg-gray-300;
+}
+
+:host([type='vertical']) {
+  @apply absolute h-full w-px mx-2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+}
+
+:host([type='horizontal']) {
+  @apply h-px w-full;
+}
+
+:host(.v-sm) {
+  @apply mx-4;
+}
+
+:host(.v-md) {
+  @apply mx-6;
+}
+
+:host(.v-lg) {
+  @apply mx-8;
+}
+
+:host(.sm) {
+  @apply my-4;
+}
+
+:host(.md) {
+  @apply my-6;
+}
+
+:host(.lg) {
+  @apply my-8;
+}

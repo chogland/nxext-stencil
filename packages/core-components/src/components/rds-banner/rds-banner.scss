@@ -1,0 +1,44 @@
+:host {
+  @apply font-inter;
+
+  .banner-wrapper {
+    @apply flex items-center justify-between flex-wrap w-full p-3 gap-x-4 bg-purple-600 sm:p-4;
+  }
+  rds-button {
+    @apply justify-end order-2 sm:order-3;
+
+    span {
+      @apply sr-only;
+    }
+  }
+}
+
+:host slot[name='content-left']::slotted(*) {
+  @apply flex-1 justify-start items-start order-1;
+}
+
+:host slot[name='content-right']::slotted(*) {
+  @apply w-full sm:w-auto justify-end order-3;
+}
+
+:host(.dismissed) {
+  @apply hidden;
+}
+
+// Appearance - Non Rounded
+:host([appearance='non-rounded']) {
+  rds-button {
+    @apply self-start;
+  }
+}
+
+// Appearance - Rounded
+:host([appearance='rounded']) {
+  .banner-wrapper {
+    @apply rounded-lg shadow-lg;
+  }
+
+  rds-button {
+    @apply self-center;
+  }
+}

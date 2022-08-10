@@ -1,0 +1,75 @@
+:host {
+  @include popperElemAnim('.menu-container');
+  @apply shadow-none
+    inline-block
+    align-top
+    w-full
+    relative
+    overflow-visible;
+}
+
+.calendar-picker-wrapper {
+  @apply rounded-lg inline-block bg-white shadow-lg p-4 w-full;
+  transform: translate3d(0, 0, 0);
+}
+
+.input-wrapper {
+  @apply relative;
+}
+
+:host([range]) {
+  .input-container {
+    @apply flex;
+  }
+
+  .input-wrapper {
+    @apply flex-auto;
+  }
+
+  .horizontal-arrow-container {
+    @apply py-0
+      px-4
+      flex
+      items-center;
+  }
+}
+
+:host([range][layout='vertical']) {
+  .input-wrapper {
+    @apply w-full;
+  }
+
+  .input-container {
+    @apply flex-col
+      items-start;
+  }
+
+  .calendar-picker-wrapper--end {
+    transform: translate3d(0, 0, 0);
+  }
+
+  .vertical-arrow-container {
+    top: theme('spacing.6');
+    @apply left-0 px-2.5 mx-px absolute z-order0;
+  }
+}
+
+.menu-container {
+  @include popperContainer();
+  @apply invisible
+    pointer-events-none;
+}
+:host([active]) .menu-container {
+  @apply visible
+    pointer-events-auto;
+}
+
+.input .rds-input__wrapper {
+  @apply mt-0;
+}
+
+:host([range][layout='vertical'][active]) {
+  .vertical-arrow-container {
+    @apply hidden;
+  }
+}

@@ -1,0 +1,340 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsList from '../../../dist/collection/components/rds-list/rds-list';
+
+<Meta
+  title="Collections/List/Stories/Stacked Lists"
+  component={RdsList}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=48%3A23782',
+    },
+  }}
+/>
+
+export const NarrowTemplate = args => (
+  <rds-list narrow type="stacked">
+    <rds-list-item>
+      <rds-flex gap="sm">
+        <rds-flex-item>
+          <rds-avatar text="CH" size="lg" />
+        </rds-flex-item>
+        <rds-flex-item>
+          <rds-text inline size="sm" weight="medium" spacing="none">
+            Calvin Hawkins
+          </rds-text>
+          <rds-box color="gray-500">
+            <rds-text size="sm" spacing="none">
+              calvin.hawkins@example.com
+            </rds-text>
+          </rds-box>
+        </rds-flex-item>
+      </rds-flex>
+    </rds-list-item>
+    <rds-list-item>
+      <rds-flex gap="sm">
+        <rds-flex-item>
+          <rds-avatar text="KR" size="lg" />
+        </rds-flex-item>
+        <rds-flex-item>
+          <rds-text inline size="sm" weight="medium" spacing="none">
+            Kristen Ramos
+          </rds-text>
+          <rds-box color="gray-500">
+            <rds-text size="sm" spacing="none">
+              kristen.ramos@example.com
+            </rds-text>
+          </rds-box>
+        </rds-flex-item>
+      </rds-flex>
+    </rds-list-item>
+    <rds-list-item>
+      <rds-flex gap="sm">
+        <rds-flex-item>
+          <rds-avatar text="TF" size="lg" />
+        </rds-flex-item>
+        <rds-flex-item>
+          <rds-text inline size="sm" weight="medium" spacing="none">
+            Ted Fox
+          </rds-text>
+          <rds-box color="gray-500">
+            <rds-text size="sm" spacing="none">
+              ted.fox@example.com
+            </rds-text>
+          </rds-box>
+        </rds-flex-item>
+      </rds-flex>
+    </rds-list-item>
+  </rds-list>
+);
+
+export const TwoColumnTemplate = args => (
+  <div style={{ width: '700px' }}>
+    <rds-list type="stacked">
+      <rds-list-item>
+        <div slot="stacked-column">
+          <rds-flex align-items="center" gap="sm">
+            <rds-flex-item>
+              <rds-avatar text="RC" size="xl" />
+            </rds-flex-item>
+            <rds-flex-item>
+              <rds-flex height="100%" direction="column" justify-content="space-between">
+                <rds-text inline size="sm" weight="medium" spacing="none">
+                  Ricardo Cooper
+                </rds-text>
+                <rds-box color="gray-500">
+                  <rds-text size="sm" spacing="none">
+                    ricardo.cooper@example.com
+                  </rds-text>
+                </rds-box>
+              </rds-flex>
+            </rds-flex-item>
+          </rds-flex>
+        </div>
+        <div slot="stacked-column">
+          <rds-flex height="100%" direction="column" justify-content="space-between">
+            <rds-text size="sm" spacing="sm">
+              Applied on January 7, 2020
+            </rds-text>
+            <rds-flex gap="8px">
+              <rds-box color="green-400">
+                <rds-hero-icon size="lg" name="check-circle" />
+              </rds-box>
+              <rds-box color="gray-500">
+                <rds-text size="sm" spacing="none">
+                  Completed phone screening
+                </rds-text>
+              </rds-box>
+            </rds-flex>
+          </rds-flex>
+        </div>
+      </rds-list-item>
+      <rds-list-item>
+        <div slot="stacked-column">
+          <rds-flex align-items="center" gap="sm">
+            <rds-flex-item>
+              <rds-avatar text="KR" size="xl" />
+            </rds-flex-item>
+            <rds-flex-item>
+              <rds-flex height="100%" direction="column" justify-content="space-between">
+                <rds-text inline size="sm" weight="medium" spacing="none">
+                  Kristen Ramos
+                </rds-text>
+                <rds-box color="gray-500">
+                  <rds-text size="sm" spacing="none">
+                    kristen.ramos@example.com
+                  </rds-text>
+                </rds-box>
+              </rds-flex>
+            </rds-flex-item>
+          </rds-flex>
+        </div>
+        <div slot="stacked-column">
+          <rds-flex height="100%" direction="column" justify-content="space-between">
+            <rds-text size="sm" spacing="sm">
+              Applied on January 7, 2020
+            </rds-text>
+            <rds-flex gap="8px">
+              <rds-box color="green-400">
+                <rds-hero-icon size="lg" name="check-circle" />
+              </rds-box>
+              <rds-box color="gray-500">
+                <rds-text size="sm" spacing="none">
+                  Completed phone screening
+                </rds-text>
+              </rds-box>
+            </rds-flex>
+          </rds-flex>
+        </div>
+      </rds-list-item>
+      <rds-list-item>
+        <div slot="stacked-column">
+          <rds-flex align-items="center" gap="sm">
+            <rds-flex-item>
+              <rds-avatar text="TF" size="xl" />
+            </rds-flex-item>
+            <rds-flex-item>
+              <rds-flex height="100%" direction="column" justify-content="space-between">
+                <rds-text inline size="sm" weight="medium" spacing="none">
+                  Ted Fox
+                </rds-text>
+                <rds-box color="gray-500">
+                  <rds-text size="sm" spacing="none">
+                    ted.fox@example.com
+                  </rds-text>
+                </rds-box>
+              </rds-flex>
+            </rds-flex-item>
+          </rds-flex>
+        </div>
+        <div slot="stacked-column">
+          <rds-flex height="100%" direction="column" justify-content="space-between">
+            <rds-text size="sm" spacing="sm">
+              Applied on January 7, 2020
+            </rds-text>
+            <rds-flex gap="8px">
+              <rds-box color="green-400">
+                <rds-hero-icon size="lg" name="check-circle" />
+              </rds-box>
+              <rds-box color="gray-500">
+                <rds-text size="sm" spacing="none">
+                  Completed phone screening
+                </rds-text>
+              </rds-box>
+            </rds-flex>
+          </rds-flex>
+        </div>
+      </rds-list-item>
+    </rds-list>
+  </div>
+);
+
+export const TwoColumnTemplateWithLink = args => (
+  <div style={{ width: '700px' }}>
+    <rds-list type="stacked">
+      <rds-list-item href="#">
+        <div slot="stacked-column">
+          <rds-flex align-items="center" gap="sm">
+            <rds-flex-item>
+              <rds-avatar text="RC" size="xl" />
+            </rds-flex-item>
+            <rds-flex-item>
+              <rds-flex height="100%" direction="column" justify-content="space-between">
+                <rds-box color="purple-600">
+                  <rds-text inline size="sm" weight="medium" spacing="none">
+                    Ricardo Cooper
+                  </rds-text>
+                </rds-box>
+                <rds-box color="gray-500">
+                  <rds-text size="sm" spacing="none">
+                    ricardo.cooper@example.com
+                  </rds-text>
+                </rds-box>
+              </rds-flex>
+            </rds-flex-item>
+          </rds-flex>
+        </div>
+        <div slot="stacked-column">
+          <rds-flex height="100%" direction="column" justify-content="space-between">
+            <rds-text size="sm" spacing="sm">
+              Applied on January 7, 2020
+            </rds-text>
+            <rds-flex gap="8px">
+              <rds-box color="green-400">
+                <rds-hero-icon size="lg" name="check-circle" />
+              </rds-box>
+              <rds-box color="gray-500">
+                <rds-text size="sm" spacing="none">
+                  Completed phone screening
+                </rds-text>
+              </rds-box>
+            </rds-flex>
+          </rds-flex>
+        </div>
+      </rds-list-item>
+      <rds-list-item href="#">
+        <div slot="stacked-column">
+          <rds-flex align-items="center" gap="sm">
+            <rds-flex-item>
+              <rds-avatar text="KR" size="xl" />
+            </rds-flex-item>
+            <rds-flex-item>
+              <rds-flex height="100%" direction="column" justify-content="space-between">
+                <rds-box color="purple-600">
+                  <rds-text inline size="sm" weight="medium" spacing="none">
+                    Kristen Ramos
+                  </rds-text>
+                </rds-box>
+                <rds-box color="gray-500">
+                  <rds-text size="sm" spacing="none">
+                    kristen.ramos@example.com
+                  </rds-text>
+                </rds-box>
+              </rds-flex>
+            </rds-flex-item>
+          </rds-flex>
+        </div>
+        <div slot="stacked-column">
+          <rds-flex height="100%" direction="column" justify-content="space-between">
+            <rds-text size="sm" spacing="sm">
+              Applied on January 7, 2020
+            </rds-text>
+            <rds-flex gap="8px">
+              <rds-box color="green-400">
+                <rds-hero-icon size="lg" name="check-circle" />
+              </rds-box>
+              <rds-box color="gray-500">
+                <rds-text size="sm" spacing="none">
+                  Completed phone screening
+                </rds-text>
+              </rds-box>
+            </rds-flex>
+          </rds-flex>
+        </div>
+      </rds-list-item>
+      <rds-list-item href="#">
+        <div slot="stacked-column">
+          <rds-flex align-items="center" gap="sm">
+            <rds-flex-item>
+              <rds-avatar text="TF" size="xl" />
+            </rds-flex-item>
+            <rds-flex-item>
+              <rds-flex height="100%" direction="column" justify-content="space-between">
+                <rds-box color="purple-600">
+                  <rds-text inline size="sm" weight="medium" spacing="none">
+                    Ted Fox
+                  </rds-text>
+                </rds-box>
+                <rds-box color="gray-500">
+                  <rds-text size="sm" spacing="none">
+                    ted.fox@example.com
+                  </rds-text>
+                </rds-box>
+              </rds-flex>
+            </rds-flex-item>
+          </rds-flex>
+        </div>
+        <div slot="stacked-column">
+          <rds-flex height="100%" direction="column" justify-content="space-between">
+            <rds-text size="sm" spacing="sm">
+              Applied on January 7, 2020
+            </rds-text>
+            <rds-flex gap="8px">
+              <rds-box color="green-400">
+                <rds-hero-icon size="lg" name="check-circle" />
+              </rds-box>
+              <rds-box color="gray-500">
+                <rds-text size="sm" spacing="none">
+                  Completed phone screening
+                </rds-text>
+              </rds-box>
+            </rds-flex>
+          </rds-flex>
+        </div>
+      </rds-list-item>
+    </rds-list>
+  </div>
+);
+
+# Stacked List
+
+### Narrow
+
+<Canvas>
+  <Story name="Narrow">{NarrowTemplate.bind({})}</Story>
+</Canvas>
+
+### Two-Column
+
+<Canvas>
+  <Story name="Two-Column">{TwoColumnTemplate.bind({})}</Story>
+</Canvas>
+
+### Two-Column With Link
+
+<Canvas>
+  <Story name="Two-Column With Link">{TwoColumnTemplateWithLink.bind({})}</Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

@@ -1,0 +1,40 @@
+:host {
+  @apply block w-auto text-left font-inter text-sm select-none overflow-visible border-4 border-transparent px-6 py-4;
+}
+
+:host(:hover) {
+  @apply bg-gray-50;
+}
+
+:host(.selected) {
+  @apply font-semibold;
+}
+
+:host(:focus),
+:host(.focus) {
+  @apply ring-offset-0 ring-inset ring-purple-600 ring-2 outline-none rounded-md;
+
+  li {
+    @apply outline-none;
+  }
+}
+
+:host([disabled]) {
+  @apply text-gray-400;
+}
+
+:host([disabled='false']) {
+  @apply text-gray-900;
+}
+
+:host(.divider) {
+  @apply border-b border-t-0 border-l-0 border-r-0 border-solid border-b-gray-50;
+}
+
+:host([selection]) {
+  @apply py-0;
+
+  ::slotted(*:first-of-type) {
+    @apply px-6 py-4;
+  }
+}

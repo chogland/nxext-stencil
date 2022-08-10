@@ -1,0 +1,7 @@
+:host {
+  @apply bg-gray-100 h-2 overflow-hidden rounded-full block;
+
+  div {
+    @apply w-0 rounded-full overflow-hidden h-full bg-green-500 transition-all duration-500 ease-out;
+  }
+}

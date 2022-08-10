@@ -1,0 +1,32 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+
+<Meta title="Components/Progress Bar/Overview" />
+
+# Progress Bar: Overview
+
+A `Progress Bar` includes a track that fills from left to right to show the progression of a task with a known duration. Progress bars are not interactive.
+
+## Progress Bar
+
+<Canvas withSource="auto" style={{ backgroundColor: 'white' }}>
+  <Story id="components-progress-bar-stories--no-value"></Story>
+</Canvas>
+
+<Canvas withSource="auto" style={{ backgroundColor: 'white' }}>
+  <Story id="components-progress-bar-stories--partial"></Story>
+</Canvas>
+
+<Canvas withSource="auto" style={{ backgroundColor: 'white' }}>
+  <Story id="components-progress-bar-stories--full"></Story>
+</Canvas>
+
+## Usage Guidelines
+
+> Always report progress accurately.
+
+> Only use progress bars for tasks that are quantifiable.
+
+> Use progress bars for tasks with a well-defined duration.
+
+<Description>{Readme}</Description>

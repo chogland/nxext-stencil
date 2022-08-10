@@ -1,0 +1,7 @@
+:host {
+  @apply inline-flex bg-white rounded-xl px-3.5 py-0.5 text-sm border-solid border border-gray-300 font-inter not-italic font-medium items-center leading-5 align-top;
+
+  slot[name='indicator']::slotted(*) {
+    @apply mr-2 h-1.5 w-1.5;
+  }
+}

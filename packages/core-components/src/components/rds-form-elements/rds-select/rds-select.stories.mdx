@@ -1,0 +1,209 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import { useState } from 'react';
+import Readme from './readme.md';
+
+<Meta
+  title="Components/Form Elements/Select/Stories"
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=48%3A19019',
+    },
+  }}
+  argTypes={{
+    onFocus: { action: 'onRdsOnFocus', table: { disable: true } },
+    onBlur: { action: 'onRdsOnBlur', table: { disable: true } },
+    onChange: { action: 'onRdsOnChange', table: { disable: true } },
+    label: {
+      control: { type: 'text' },
+      description: 'Text displayed as the label for the select.',
+      defaultValue: 'Assigned to',
+    },
+    required: {
+      control: { type: 'boolean' },
+      description: 'Sets the select as required.',
+    },
+    helptext: {
+      control: { type: 'boolean' },
+      description: 'Displays the help text when true and a help-text slot is present.',
+    },
+    disabled: {
+      control: { type: 'boolean' },
+      description: 'If true, the select is displayed as disabled.',
+    },
+    multiple: {
+      control: { type: 'boolean' },
+      description: 'If true, multiple item can be selected.',
+    },
+    validate: {
+      control: { type: 'boolean' },
+    },
+  }}
+/>
+
+# Select
+
+export const Template = args => (
+  <rds-select {...args}>
+    <option value="ca">Canada</option>
+    <option value="nyc">New York</option>
+    <option value="sfo">SFO</option>
+    <option value="verylongname">Verylongname goes here</option>
+    <span slot="help-text">Help text here</span>
+    <span slot="error-text">Error text here</span>
+  </rds-select>
+);
+
+export const TemplateWithDisabled = args => (
+  <rds-select {...args}>
+    <option value="ca">Canada</option>
+    <option value="nyc">New York</option>
+    <option value="sfo" disabled>
+      SFO
+    </option>
+    <option value="verylongname" disabled>
+      Verylongname goes here
+    </option>
+    <span slot="help-text">Help text here</span>
+    <span slot="error-text">Error text here</span>
+  </rds-select>
+);
+
+export const TemplateWithSelected = args => (
+  <rds-select {...args}>
+    <option value="ca">Canada</option>
+    <option value="nyc" selected>
+      New York
+    </option>
+    <option value="sfo">SFO</option>
+    <option value="verylongname">Verylongname goes here</option>
+    <span slot="help-text">Help text here</span>
+    <span slot="error-text">Error text here</span>
+  </rds-select>
+);
+
+export const Custom = args => (
+  <rds-select {...args} native="false">
+    <option value="ca">Canada</option>
+    <option value="nyc">New York</option>
+    <option value="sfo">SFO</option>
+    <option value="verylongname">Verylongname goes here</option>
+    <span slot="help-text">Help text here</span>
+    <span slot="error-text">Error text here</span>
+  </rds-select>
+);
+
+### Default
+
+<Canvas>
+  <Story name="Native">{Template.bind({})}</Story>
+</Canvas>
+
+### Custom
+
+<Canvas>
+  <Story name="Custom">{Custom.bind({})}</Story>
+</Canvas>
+
+### Required
+
+<Canvas>
+  <Story
+    name="Required"
+    args={{
+      required: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Multiple
+
+<Canvas>
+  <Story
+    name="Multiple"
+    args={{
+      multiple: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Error
+
+<Canvas>
+  <Story
+    name="Error"
+    args={{
+      error: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### With Help Text
+
+<Canvas>
+  <Story
+    name="With Help Text"
+    args={{
+      helptext: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Disabled
+
+<Canvas>
+  <Story
+    name="Disabled"
+    args={{
+      disabled: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### With Disabled Options - Native
+
+<Canvas>
+  <Story name="With Disabled Options - Native">{TemplateWithDisabled.bind({})}</Story>
+</Canvas>
+
+### With Disabled Options - Custom
+
+<Canvas>
+  <Story
+    name="With Disabled Options - Custom"
+    args={{
+      native: false,
+    }}
+  >
+    {TemplateWithDisabled.bind({})}
+  </Story>
+</Canvas>
+
+### With Pre-Selected Option - Native
+
+<Canvas>
+  <Story name="With Pre-Selected Option - Native">{TemplateWithSelected.bind({})}</Story>
+</Canvas>
+
+### With Pre-Selected Option - Custom
+
+<Canvas>
+  <Story
+    name="With Pre-Selected Option - Custom"
+    args={{
+      native: false,
+    }}
+  >
+    {TemplateWithSelected.bind({})}
+  </Story>
+</Canvas>

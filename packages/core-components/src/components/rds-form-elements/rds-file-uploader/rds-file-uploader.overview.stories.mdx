@@ -1,0 +1,29 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import ProgressReadme from './progress/readme.md';
+import FileReadme from './file/readme.md';
+import RdsFileUploader from '../../../../dist/collection/components/rds-form-elements/rds-file-uploader/rds-file-uploader';
+
+<Meta title="Components/Form Elements/File Uploader/Overview" />
+
+# File Uploader: Overview
+
+`RdsFileUploader` is a component that handles the uploading of files to a server.
+
+## Variations
+
+### Single
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-file-uploader-stories--default-story"></Story>
+</Canvas>
+
+### Multiple
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-file-uploader-stories--multiple-files"></Story>
+</Canvas>
+
+<Description>{Readme}</Description>
+<Description>{ProgressReadme}</Description>
+<Description>{FileReadme}</Description>

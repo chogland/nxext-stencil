@@ -1,0 +1,248 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsNav from '../../../dist/collection/components/rds-nav/rds-nav';
+
+<Meta
+  title="Collections/Navigation/Stories"
+  component={RdsNav}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=131%3A13658',
+    },
+    layout: 'fullscreen',
+    docs: {
+      inlineStories: false,
+    },
+  }}
+/>
+
+export const BaseTemplate = args => (
+  <rds-nav {...args}>
+    <rds-nav-item active href="#">
+      <rds-hero-icon slot="icon" name="home" size="lg" />
+      Overview
+    </rds-nav-item>
+    <rds-nav-item href="#">
+      <rds-hero-icon slot="icon" name="location-marker" size="lg" />
+      Locations
+    </rds-nav-item>
+    <rds-nav-item href="#">
+      <rds-hero-icon slot="icon" name="menu-alt-4" size="lg" />
+      Recommendations
+    </rds-nav-item>
+    <rds-nav-item href="#">
+      <rds-hero-icon slot="icon" name="document" size="lg" />
+      My Policies
+    </rds-nav-item>
+    <rds-nav-item href="#">
+      <rds-hero-icon slot="icon" name="presentation-chart-line" size="lg" />
+      Policy Renewals
+    </rds-nav-item>
+    <rds-nav-item slot="tools" href="#">
+      <rds-hero-icon slot="icon" size="lg" name="users" />
+      User Management
+    </rds-nav-item>
+  </rds-nav>
+);
+
+export const BaseTemplateExpandCollapse = args => (
+  <rds-nav {...args}>
+    <rds-nav-item active href="#">
+      <rds-hero-icon slot="icon" name="home" size="lg" />
+      Overview
+    </rds-nav-item>
+    <rds-nav-item href="#">
+      <rds-hero-icon slot="icon" name="location-marker" size="lg" />
+      Second Nav Item
+    </rds-nav-item>
+  </rds-nav>
+);
+
+export const BaseTemplateWithSubNav = args => (
+  <rds-nav {...args}>
+    <rds-nav-item active href="#">
+      Overview
+    </rds-nav-item>
+    <rds-nav-item>
+      Locations
+      <rds-nav-item href="#" slot="child">
+        Overview
+      </rds-nav-item>
+      <rds-nav-item href="#" slot="child">
+        Location 1
+      </rds-nav-item>
+      <rds-nav-item href="#" slot="child">
+        Location 2
+      </rds-nav-item>
+      <rds-nav-item href="#" slot="child">
+        Location 3
+      </rds-nav-item>
+    </rds-nav-item>
+    <rds-nav-item href="#">Recommendations</rds-nav-item>
+    <rds-nav-item href="#">My Policies</rds-nav-item>
+    <rds-nav-item href="#">Policy Renewals</rds-nav-item>
+    <rds-nav-item slot="tools" href="#">
+      User Management
+    </rds-nav-item>
+  </rds-nav>
+);
+
+export const BaseTemplateWithSubNavAndIcons = args => (
+  <rds-nav {...args}>
+    <rds-nav-item active href="#">
+      <rds-hero-icon slot="icon" name="home" size="lg" />
+      Overview
+    </rds-nav-item>
+    <rds-nav-item>
+      <rds-hero-icon slot="icon" name="location-marker" size="lg" />
+      Locations
+      <rds-nav-item href="#" slot="child">
+        Overview
+      </rds-nav-item>
+      <rds-nav-item href="#" slot="child">
+        Location 1
+      </rds-nav-item>
+      <rds-nav-item href="#" slot="child">
+        Location 2
+      </rds-nav-item>
+      <rds-nav-item href="#" slot="child">
+        Location 3
+      </rds-nav-item>
+    </rds-nav-item>
+    <rds-nav-item href="#">
+      <rds-hero-icon slot="icon" name="menu-alt-4" size="lg" />
+      Recommendations
+    </rds-nav-item>
+    <rds-nav-item href="#">
+      <rds-hero-icon slot="icon" name="document" size="lg" />
+      My Policies
+    </rds-nav-item>
+    <rds-nav-item href="#">
+      <rds-hero-icon slot="icon" name="presentation-chart-line" size="lg" />
+      Policy Renewals
+    </rds-nav-item>
+    <rds-nav-item slot="tools" href="#">
+      <rds-hero-icon slot="icon" size="lg" name="users" />
+      User Management
+    </rds-nav-item>
+  </rds-nav>
+);
+
+export const BaseTemplateWithActiveSubNav = args => (
+  <rds-nav {...args}>
+    <rds-nav-item href="#">
+      <rds-hero-icon slot="icon" name="home" size="lg" />
+      Overview
+    </rds-nav-item>
+    <rds-nav-item active>
+      <rds-hero-icon slot="icon" name="location-marker" size="lg" />
+      Locations
+      <rds-nav-item href="#" slot="child">
+        Overview
+      </rds-nav-item>
+      <rds-nav-item href="#" slot="child">
+        Location 1
+      </rds-nav-item>
+      <rds-nav-item href="#" slot="child">
+        Location 2
+      </rds-nav-item>
+      <rds-nav-item href="#" slot="child">
+        Location 3
+      </rds-nav-item>
+    </rds-nav-item>
+    <rds-nav-item href="#">
+      <rds-hero-icon slot="icon" name="menu-alt-4" size="lg" />
+      Recommendations
+    </rds-nav-item>
+    <rds-nav-item href="#">
+      <rds-hero-icon slot="icon" name="document" size="lg" />
+      My Policies
+    </rds-nav-item>
+    <rds-nav-item href="#">
+      <rds-hero-icon slot="icon" name="presentation-chart-line" size="lg" />
+      Policy Renewals
+    </rds-nav-item>
+    <rds-nav-item slot="tools" href="#">
+      <rds-hero-icon slot="icon" size="lg" name="users" />
+      User Management
+    </rds-nav-item>
+  </rds-nav>
+);
+
+# Navigation
+
+### Base Navigation
+
+<Canvas>
+  <Story
+    name="Base"
+    args={{
+      type: 'base',
+    }}
+  >
+    {BaseTemplate.bind({})}
+  </Story>
+</Canvas>
+
+### Base With Expand/Collapse
+
+<Canvas>
+  <Story
+    name="Base With Expand/Collapse"
+    args={{
+      type: 'base',
+      expanded: false,
+      collapsible: true,
+    }}
+  >
+    {BaseTemplateExpandCollapse.bind({})}
+  </Story>
+</Canvas>
+
+### Base With Sub Nav
+
+<Canvas>
+  <Story
+    name="Base With Sub Nav"
+    args={{
+      type: 'base',
+      expanded: true,
+      collapsible: false,
+    }}
+  >
+    {BaseTemplateWithSubNav.bind({})}
+  </Story>
+</Canvas>
+
+### Base With Sub Nav & Icons
+
+<Canvas>
+  <Story
+    name="Base With Sub Nav and Icons"
+    args={{
+      type: 'base',
+      expanded: true,
+      collapsible: false,
+    }}
+  >
+    {BaseTemplateWithSubNavAndIcons.bind({})}
+  </Story>
+</Canvas>
+
+### Base With Active Sub Nav
+
+<Canvas>
+  <Story
+    name="Base With Active Sub Nav"
+    args={{
+      type: 'base',
+      expanded: true,
+      collapsible: false,
+    }}
+  >
+    {BaseTemplateWithActiveSubNav.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

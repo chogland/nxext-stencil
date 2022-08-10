@@ -1,0 +1,13 @@
+:host {
+  @apply block;
+
+  slot {
+    @include truncate-inherit;
+  }
+}
+
+:host([focused]) {
+  ::slotted(*) {
+    @apply outline-none rounded-md ring-2 ring-purple-600 ring-offset-2;
+  }
+}

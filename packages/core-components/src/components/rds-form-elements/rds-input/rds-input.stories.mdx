@@ -1,0 +1,417 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsInput from '../../../../dist/collection/components/rds-form-elements/rds-input/rds-input';
+
+<Meta
+  title="Components/Form Elements/Input/Stories"
+  component={RdsInput}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=48%3A18596',
+    },
+  }}
+  argTypes={{
+    label: {
+      control: { type: 'text' },
+      description: 'Text displayed as the label for the input.',
+    },
+    placeholder: {
+      control: { type: 'text' },
+      description: 'Text displayed as the placeholder for the input.',
+    },
+    type: {
+      control: { type: 'select', options: ['email', 'file', 'number', 'password', 'tel', 'url', 'text'] },
+      description: 'Type of the input to be entered.',
+    },
+    name: {
+      control: { type: 'text' },
+      description: 'Name assigned to the input element.',
+    },
+    value: {
+      control: { type: 'text', options: ['number', 'text'] },
+      description: 'Default value is provided for the input element if needed.',
+    },
+    required: {
+      control: { type: 'boolean' },
+      description: 'Removes the optional indicator from the input and makes it required for form submission.',
+    },
+    readonly: {
+      description: 'Shows the input as normal but the value cannot be changed.',
+      control: { type: 'boolean' },
+    },
+    error: {
+      description: 'Displays the error text when true and a error-text slot is present.',
+      control: { type: 'boolean' },
+    },
+    disabled: {
+      control: { type: 'boolean' },
+    },
+  }}
+/>
+
+export const Template = args => (
+  <rds-input {...args}>
+    <span slot="error-text">Error message</span>
+  </rds-input>
+);
+
+export const TemplateWithHelpText = args => (
+  <rds-input {...args}>
+    <span slot="help-text">Assistive text</span>
+    <span slot="error-text">Error message</span>
+  </rds-input>
+);
+
+export const TemplateWithLeadingIcon = args => (
+  <rds-input {...args}>
+    <rds-hero-icon slot="icon-start" name="mail" />
+    <span slot="error-text">Error message</span>
+  </rds-input>
+);
+
+export const TemplateWithTrailingIcon = args => (
+  <rds-input {...args}>
+    <rds-hero-icon slot="icon-end" name="question-mark-circle" />
+    <span slot="error-text">Error message</span>
+  </rds-input>
+);
+
+export const TemplateWithTrailingSelect = args => (
+  <rds-input {...args}>
+    <rds-select label="Currency" slot="select-end">
+      <option>USD</option>
+      <option>CAD</option>
+      <option>EUR</option>
+    </rds-select>
+    <span slot="error-text">Value must be less than or equal to 2,500</span>
+  </rds-input>
+);
+
+export const TemplateWithLeadingAddon = args => (
+  <rds-input {...args}>
+    <span slot="addon-start">http://</span>
+    <span slot="error-text">Error message</span>
+  </rds-input>
+);
+
+export const TemplateWithTrailingAddon = args => (
+  <rds-input {...args}>
+    <span slot="addon-end">USD</span>
+    <span slot="error-text">Error message</span>
+  </rds-input>
+);
+
+export const TemplateWithLeadingAndTrailingAddon = args => (
+  <rds-input {...args}>
+    <span slot="addon-start">$</span>
+    <span slot="addon-end">USD</span>
+    <span slot="error-text">Error message</span>
+  </rds-input>
+);
+
+export const TemplateWithInlineLeadingAddon = args => (
+  <rds-input {...args}>
+    <span slot="addon-start">http://</span>
+    <span slot="error-text">Error message</span>
+  </rds-input>
+);
+
+export const TemplateWithInlineTrailingAddon = args => (
+  <rds-input {...args}>
+    <span slot="addon-end">USD</span>
+    <span slot="error-text">Error message</span>
+  </rds-input>
+);
+
+export const TemplateWithInlineLeadingAndTrailingAddon = args => (
+  <rds-input {...args}>
+    <span slot="addon-start">$</span>
+    <span slot="addon-end">USD</span>
+    <span slot="error-text">Error message</span>
+  </rds-input>
+);
+
+# Input
+
+### Default
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      type: 'text',
+      name: 'Default',
+      label: 'Label',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Required
+
+<Canvas>
+  <Story
+    name="Required"
+    args={{
+      type: 'text',
+      name: 'Default',
+      label: 'Label',
+      required: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Error
+
+<Canvas>
+  <Story
+    name="Error"
+    args={{
+      type: 'text',
+      name: 'Default',
+      label: 'Label',
+      error: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Disabled
+
+<Canvas>
+  <Story
+    name="Disabled"
+    args={{
+      type: 'text',
+      name: 'Default',
+      label: 'Label',
+      disabled: true,
+      value: 'I am a disabled text input',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Readonly
+
+<Canvas>
+  <Story
+    name="Readonly"
+    args={{
+      type: 'text',
+      name: 'Default',
+      label: 'Label',
+      readonly: true,
+      value: 'I am a readonly text input',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### With Placeholder Text
+
+<Canvas>
+  <Story
+    name="With Placeholder Text"
+    args={{
+      placeholder: 'Placeholder',
+      type: 'text',
+      label: 'Label',
+      name: 'Default',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### With Help Text
+
+<Canvas>
+  <Story
+    name="With Help Text"
+    args={{
+      type: 'text',
+      label: 'Label',
+      name: 'Default',
+    }}
+  >
+    {TemplateWithHelpText.bind({})}
+  </Story>
+</Canvas>
+
+### With Leading Icon
+
+<Canvas>
+  <Story
+    name="With Leading Icon"
+    args={{
+      placeholder: 'Placeholder',
+      type: 'text',
+      label: 'Label',
+      name: 'Default',
+    }}
+  >
+    {TemplateWithLeadingIcon.bind({})}
+  </Story>
+</Canvas>
+
+### With Trailing Icon
+
+<Canvas>
+  <Story
+    name="With Trailing Icon"
+    args={{
+      placeholder: 'Placeholder',
+      type: 'text',
+      label: 'Label',
+      name: 'Default',
+    }}
+  >
+    {TemplateWithTrailingIcon.bind({})}
+  </Story>
+</Canvas>
+
+### With Trailing Select
+
+<Canvas>
+  <Story
+    name="With Trailing Select"
+    args={{
+      type: 'number',
+      label: 'Amount',
+      name: 'amount',
+      min: '0.01',
+      step: '0.01',
+      max: '2500',
+      value: '0.00',
+      validate: true,
+    }}
+  >
+    {TemplateWithTrailingSelect.bind({})}
+  </Story>
+</Canvas>
+
+### Autocomplete
+
+<Canvas>
+  <Story
+    name="Autocomplete"
+    args={{
+      type: 'text',
+      name: 'Default',
+      label: 'Email',
+      autocomplete: 'email',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### With Leading Addon
+
+<Canvas>
+  <Story
+    name="With Leading Addon"
+    args={{
+      'type': 'url',
+      'label': 'Label',
+      'name': 'Default',
+      'inline-leading': false,
+      'placeholder': 'www.examples.com',
+    }}
+  >
+    {TemplateWithLeadingAddon.bind({})}
+  </Story>
+</Canvas>
+
+### With Trailing Addon
+
+<Canvas>
+  <Story
+    name="With Trailing Addon"
+    args={{
+      'type': 'number',
+      'label': 'Label',
+      'name': 'Default',
+      'inline-trailing': false,
+      'value': '0.00',
+    }}
+  >
+    {TemplateWithTrailingAddon.bind({})}
+  </Story>
+</Canvas>
+
+### With Leading and Trailing Addon
+
+<Canvas>
+  <Story
+    name="With Leading and Trailing Addon"
+    args={{
+      'type': 'number',
+      'label': 'Label',
+      'name': 'Default',
+      'inline-leading': false,
+      'inline-trailing': false,
+      'value': '0.00',
+    }}
+  >
+    {TemplateWithLeadingAndTrailingAddon.bind({})}
+  </Story>
+</Canvas>
+
+### With Inline Leading Addon
+
+<Canvas>
+  <Story
+    name="With Inline Leading Addon"
+    args={{
+      type: 'url',
+      label: 'Label',
+      name: 'Default',
+      placeholder: 'www.example.com',
+    }}
+  >
+    {TemplateWithInlineLeadingAddon.bind({})}
+  </Story>
+</Canvas>
+
+### With Inline Trailing Addon
+
+<Canvas>
+  <Story
+    name="With Inline Trailing Addon"
+    args={{
+      type: 'number',
+      label: 'Label',
+      name: 'Default',
+      value: '0.00',
+    }}
+  >
+    {TemplateWithInlineTrailingAddon.bind({})}
+  </Story>
+</Canvas>
+
+### With Inline Leading and Trailing Addon
+
+<Canvas>
+  <Story
+    name="With Inline Leading and Trailing Addon"
+    args={{
+      type: 'number',
+      label: 'Label',
+      name: 'Default',
+      value: '0.00',
+    }}
+  >
+    {TemplateWithInlineLeadingAndTrailingAddon.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

@@ -1,0 +1,93 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsBreadcrumbs from '../../../dist/collection/components/rds-breadcrumbs/rds-breadcrumbs';
+
+<Meta
+  title="Collections/Breadcrumbs/Stories"
+  component={RdsBreadcrumbs}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=48%3A16958',
+    },
+    layout: 'padded',
+  }}
+/>
+
+export const TemplateWithTwo = args => (
+  <rds-breadcrumbs {...args}>
+    <rds-breadcrumb>
+      <rds-link text="Previous" appearance="secondary"></rds-link>
+    </rds-breadcrumb>
+    <rds-breadcrumb>
+      <rds-link text="Current" appearance="secondary"></rds-link>
+    </rds-breadcrumb>
+  </rds-breadcrumbs>
+);
+
+export const TemplateWithThree = args => (
+  <rds-breadcrumbs {...args}>
+    <rds-breadcrumb>
+      <rds-link text="Previous 2" appearance="secondary"></rds-link>
+    </rds-breadcrumb>
+    <rds-breadcrumb>
+      <rds-link text="Previous 1" appearance="secondary"></rds-link>
+    </rds-breadcrumb>
+    <rds-breadcrumb>
+      <rds-link text="Current" appearance="secondary"></rds-link>
+    </rds-breadcrumb>
+  </rds-breadcrumbs>
+);
+
+export const SlashTemplateWithTwo = args => (
+  <rds-breadcrumbs {...args} separator="slash">
+    <rds-breadcrumb>
+      <rds-link text="Previous" appearance="secondary"></rds-link>
+    </rds-breadcrumb>
+    <rds-breadcrumb>
+      <rds-link text="Current" appearance="secondary"></rds-link>
+    </rds-breadcrumb>
+  </rds-breadcrumbs>
+);
+
+export const SlashTemplateWithThree = args => (
+  <rds-breadcrumbs {...args} separator="slash">
+    <rds-breadcrumb>
+      <rds-link text="Previous 2" appearance="secondary"></rds-link>
+    </rds-breadcrumb>
+    <rds-breadcrumb>
+      <rds-link text="Previous 1" appearance="secondary"></rds-link>
+    </rds-breadcrumb>
+    <rds-breadcrumb>
+      <rds-link text="Current" appearance="secondary"></rds-link>
+    </rds-breadcrumb>
+  </rds-breadcrumbs>
+);
+
+# Breadcrumbs
+
+### Two Breadcrumbs
+
+<Canvas>
+  <Story name="Two Breadcrumbs">{TemplateWithTwo.bind({})}</Story>
+</Canvas>
+
+### Three Breadcrumbs
+
+<Canvas>
+  <Story name="Three Breadcrumbs">{TemplateWithThree.bind({})}</Story>
+</Canvas>
+
+### Two Breadcrumbs as slash-front type
+
+<Canvas>
+  <Story name="Two Breadcrumbs with slash ">{SlashTemplateWithTwo.bind({})}</Story>
+</Canvas>
+
+### Three Breadcrumbs as slash-front type
+
+<Canvas>
+  <Story name="Three Breadcrumbs with slash">{SlashTemplateWithThree.bind({})}</Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

@@ -1,0 +1,43 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsLightbox from '../../../dist/collection/components/rds-lightbox/rds-lightbox';
+
+<Meta
+  title="Patterns/Lightbox/Stories"
+  component={RdsLightbox}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=48%3A22089',
+    },
+  }}
+/>
+
+export const Template = args => (
+  <rds-lightbox>
+    <rds-image
+      headline="Sample 1 headline for image that is long and truncates"
+      detail="Screen Shot 2021-07-20 at 1.38.43 PM"
+      caption="Image 1 Custom caption for the test image."
+      alt="Image for testing"
+      src="https://via.placeholder.com/200/6046B9/FFFFFF?text=RDS+for+placeholder+only"
+    />
+    <rds-image
+      headline="Sample 2 headline for image that is long and truncates"
+      detail="Screen Shot 2019-07-20 at 1.38.43 PM"
+      caption="Image 2 Custom caption for the test image."
+      alt="Image for testing"
+      src="https://via.placeholder.com/250/6046B9/FFFFFF?text=RDS+for+placeholder+only"
+    />
+  </rds-lightbox>
+);
+
+# Lightbox
+
+### Default
+
+<Canvas>
+  <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

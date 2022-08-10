@@ -1,0 +1,317 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import ItemReadme from './../rds-accordion-item/readme.md';
+import * as RdsAccordion from '../../../dist/collection/components/rds-accordion/rds-accordion';
+
+<Meta
+  title="Components/Accordion/Stories"
+  component={RdsAccordion}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=50%3A5481',
+    },
+  }}
+  argTypes={{
+    selectionMode: {
+      description: 'View other stories or Accordion Overview to see the selectionMode differences.',
+      control: false,
+    },
+  }}
+/>
+
+# Accordion
+
+export const Template = args => (
+  <rds-accordion {...args}>
+    <rds-accordion-item item-title="Accordion Sample Title" active>
+      Sample Content
+    </rds-accordion-item>
+  </rds-accordion>
+);
+
+export const TemplateWithIcon = args => (
+  <rds-accordion {...args}>
+    <rds-accordion-item active>
+      <rds-flex gap="sm" slot="item-title">
+        <rds-hero-icon name="information-circle" /> Accordion Sample Title
+      </rds-flex>
+      Sample Content
+    </rds-accordion-item>
+  </rds-accordion>
+);
+
+export const Multiple = args => (
+  <rds-accordion {...args}>
+    <rds-accordion-item item-title="Accordion 1 Title" active>
+      1 Content
+    </rds-accordion-item>
+    <rds-accordion-item item-title="Accordion 2 Title">2 Content</rds-accordion-item>
+    <rds-accordion-item item-title="Accordion 3 Title">3 Content</rds-accordion-item>
+    <rds-accordion-item item-title="Accordion 4 Title">4 Content</rds-accordion-item>
+  </rds-accordion>
+);
+
+export const Image = args => (
+  <rds-accordion {...args}>
+    <rds-accordion-item item-title="Sample Accordion with Content Example">
+      <rds-lightbox>
+        <rds-image
+          headline="Sample headline for image that is long and truncates"
+          detail="Screen Shot 2021-07-20 at 1.38.43 PM"
+          caption="Custom caption for the test image."
+          alt="Image for testing"
+          src="https://via.placeholder.com/150/6046B9/FFFFFF?text=RDS+for+placeholder+only"
+        />
+      </rds-lightbox>
+    </rds-accordion-item>
+  </rds-accordion>
+);
+
+export const LineItems = args => (
+  <rds-accordion>
+    <rds-accordion-item item-title="Line Item Content">
+      <rds-grid type="flex">
+        <rds-list>
+          <rds-list-item spacingY="sm">
+            <rds-text weight="bold" type="inline">
+              Line Header
+            </rds-text>
+          </rds-list-item>
+          <rds-list-item spacingY="sm">
+            <rds-text weight="bold" type="inline">
+              Line Header
+            </rds-text>
+          </rds-list-item>
+          <rds-list-item spacingY="sm">
+            <rds-text weight="bold" type="inline">
+              Line Header
+            </rds-text>
+          </rds-list-item>
+          <rds-list-item spacingY="sm">
+            <rds-text weight="bold" type="inline">
+              Line Header
+            </rds-text>
+          </rds-list-item>
+        </rds-list>
+        <rds-list>
+          <rds-list-item spacingY="sm">
+            <rds-text type="inline">Line Content</rds-text>
+          </rds-list-item>
+          <rds-list-item spacingY="sm">
+            <rds-text type="inline">Line Content</rds-text>
+          </rds-list-item>
+          <rds-list-item spacingY="sm">
+            <rds-text type="inline">Line Content</rds-text>
+          </rds-list-item>
+          <rds-list-item spacingY="sm">
+            <rds-text type="inline">Line Content</rds-text>
+          </rds-list-item>
+        </rds-list>
+      </rds-grid>
+    </rds-accordion-item>
+  </rds-accordion>
+);
+
+export const ContactContent = args => (
+  <rds-accordion>
+    <rds-accordion-item item-title="Contact Content">
+      <rds-contact avatar-text="FE" name="Frank Eason" role="Field Engineer" detail="Fire & Nat Haz"></rds-contact>
+      <rds-contact avatar-text="FE" name="Frank Eason" role="Field Engineer" detail="Fire & Nat Haz"></rds-contact>
+      <rds-contact avatar-text="FE" name="Frank Eason" role="Field Engineer" detail="Fire & Nat Haz"></rds-contact>
+      <rds-contact avatar-text="FE" name="Frank Eason" role="Field Engineer" detail="Fire & Nat Haz"></rds-contact>
+      <rds-contact avatar-text="FE" name="Frank Eason" role="Field Engineer" detail="Fire & Nat Haz"></rds-contact>
+    </rds-accordion-item>
+  </rds-accordion>
+);
+
+export const LargeImageThumb = args => (
+  <rds-accordion>
+    <rds-accordion-item item-title="Large Image Thumbnail and Title (Lightbox)">
+      <rds-text weight="bold" type="inline">
+        Image Detail
+      </rds-text>
+      <rds-lightbox>
+        <rds-image
+          alt="Image for testing"
+          caption="Custom caption for the test image."
+          detail="Screen Shot 2021-07-20 at 1.38.43 PM"
+          headline="Sample headline for image that is long and truncates"
+          src="https://via.placeholder.com/1500/6046B9/FFFFFF?text=RDS+for+placeholder+only"
+          thumbnail
+          size="lg"
+        />
+      </rds-lightbox>
+    </rds-accordion-item>
+  </rds-accordion>
+);
+
+export const SmallImageThumbList = args => (
+  <rds-accordion>
+    <rds-accordion-item item-title="Small Image Thumbnail and Title">
+      <rds-lightbox>
+        <rds-image
+          size="sm"
+          alt="Image for testing"
+          caption="Custom caption for the test image."
+          detail="Screen Shot 2021-07-20 at 1.38.43 PM"
+          headline="Sample headline for image that is long and truncates"
+          src="https://via.placeholder.com/150/6046B9/FFFFFF?text=RDS+for+placeholder+only"
+          show-headline="true"
+          thumbnail="true"
+        />
+        <rds-image
+          size="sm"
+          alt="Image for testing"
+          caption="Custom caption for the test image."
+          detail="Screen Shot 2021-07-20 at 1.38.43 PM"
+          headline="Sample headline for image that is long and truncates"
+          src="https://via.placeholder.com/350/6046B9/FFFFFF?text=RDS+for+placeholder+only"
+          show-headline="true"
+          thumbnail="true"
+        />
+        <rds-image
+          size="sm"
+          alt="Image for testing"
+          caption="Custom caption for the test image."
+          detail="Screen Shot 2021-07-20 at 1.38.43 PM"
+          headline="Sample headline for image that is long and truncates"
+          src="https://via.placeholder.com/450/6046B9/FFFFFF?text=RDS+for+placeholder+only"
+          show-headline="true"
+          thumbnail="true"
+        />
+      </rds-lightbox>
+    </rds-accordion-item>
+  </rds-accordion>
+);
+
+export const FileList = args => (
+  <rds-accordion>
+    <rds-accordion-item item-title="Files">
+      <rds-file-list>
+        <rds-icon icon="rds-file-excel" size="xlg" slot="icon"></rds-icon>
+        <rds-text type="inline" weight="bold" slot="name">
+          File Name
+        </rds-text>
+        <rds-text type="inline" slot="subtitle">
+          Subtitle
+        </rds-text>
+        <rds-text type="inline" slot="detail">
+          00-XXX-0000
+        </rds-text>
+      </rds-file-list>
+      <rds-file-list>
+        <rds-icon icon="rds-file-excel" size="xlg" slot="icon"></rds-icon>
+        <rds-text type="inline" weight="bold" slot="name">
+          File Name
+        </rds-text>
+        <rds-text type="inline" slot="subtitle">
+          Subtitle
+        </rds-text>
+        <rds-text type="inline" slot="detail">
+          00-XXX-0000
+        </rds-text>
+      </rds-file-list>
+      <rds-file-list>
+        <rds-icon icon="rds-file-excel" size="xlg" slot="icon"></rds-icon>
+        <rds-text type="inline" weight="bold" slot="name">
+          File Name
+        </rds-text>
+        <rds-text type="inline" slot="subtitle">
+          Subtitle
+        </rds-text>
+        <rds-text type="inline" slot="detail">
+          00-XXX-0000
+        </rds-text>
+      </rds-file-list>
+      <rds-file-list>
+        <rds-icon icon="rds-file-excel" size="xlg" slot="icon"></rds-icon>
+        <rds-text type="inline" weight="bold" slot="name">
+          File Name
+        </rds-text>
+        <rds-text type="inline" slot="subtitle">
+          Subtitle
+        </rds-text>
+        <rds-text type="inline" slot="detail">
+          00-XXX-0000
+        </rds-text>
+      </rds-file-list>
+    </rds-accordion-item>
+  </rds-accordion>
+);
+
+### Default
+
+<Canvas>
+  <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
+
+### With Icon
+
+<Canvas>
+  <Story name="With Icon">{TemplateWithIcon.bind({})}</Story>
+</Canvas>
+
+### Multiple Accordion in a list
+
+<Canvas>
+  <Story name="Multiple">{Multiple.bind({})}</Story>
+</Canvas>
+
+### Accordion - Single
+
+<Canvas>
+  <Story
+    name="Single Open"
+    args={{
+      selectionMode: 'single',
+    }}
+  >
+    {Multiple.bind({})}
+  </Story>
+</Canvas>
+
+### Accordion - Content Example
+
+<Canvas>
+  <Story
+    name="Content: Image"
+    args={{
+      selectionMode: 'single',
+    }}
+  >
+    {Image.bind({})}
+  </Story>
+</Canvas>
+
+### List Items
+
+<Canvas>
+  <Story name="List Items">{LineItems.bind({})}</Story>
+</Canvas>
+
+### Contact List
+
+<Canvas>
+  <Story name="Contact List">{ContactContent.bind({})}</Story>
+</Canvas>
+
+### File List
+
+<Canvas>
+  <Story name="File List">{FileList.bind({})}</Story>
+</Canvas>
+
+### Large Thumbnail
+
+<Canvas>
+  <Story name="Large Thumbnail">{LargeImageThumb.bind({})}</Story>
+</Canvas>
+
+### Small Thumbnails
+
+<Canvas>
+  <Story name="Small Thumbnails">{SmallImageThumbList.bind({})}</Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

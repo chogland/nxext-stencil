@@ -1,0 +1,298 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import { BADGE } from '@geometricpanda/storybook-addon-badges';
+import * as RdsGrid from '../../../dist/collection/components/rds-grid/rds-grid';
+
+<Meta
+  title="Components/Grid/Stories"
+  component={RdsGrid}
+  parameters={{
+    layout: 'padded',
+    badges: [BADGE.DEPRECATED],
+  }}
+  argTypes={{
+    colspan: {
+      control: { type: 'number', max: 12 },
+      description: 'The number of columns a column will span',
+    },
+    collapseGaps: {
+      control: { type: 'boolean' },
+      description: 'Removes space between columns.',
+    },
+  }}
+/>
+
+export const Template = args => (
+  <div>
+    <rds-grid collapsegaps={args.collapseGaps}>
+      <rds-grid-col {...args}>
+        <rds-box padding="xl">1</rds-box>
+      </rds-grid-col>
+    </rds-grid>
+    <rds-grid collapsegaps={args.collapseGaps}>
+      <rds-grid-col>
+        <rds-box padding="xl">2</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">2</rds-box>
+      </rds-grid-col>
+    </rds-grid>
+    <rds-grid collapsegaps={args.collapseGaps}>
+      <rds-grid-col>
+        <rds-box padding="xl">3</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">3</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">3</rds-box>
+      </rds-grid-col>
+    </rds-grid>
+    <rds-grid collapsegaps={args.collapseGaps}>
+      <rds-grid-col>
+        <rds-box padding="xl">4</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">4</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">4</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">4</rds-box>
+      </rds-grid-col>
+    </rds-grid>
+    <rds-grid collapsegaps={args.collapseGaps}>
+      <rds-grid-col>
+        <rds-box padding="xl">5</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">5</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">5</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">5</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">5</rds-box>
+      </rds-grid-col>
+    </rds-grid>
+    <rds-grid collapsegaps={args.collapseGaps}>
+      <rds-grid-col>
+        <rds-box padding="xl">6</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">6</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">6</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">6</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">6</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">6</rds-box>
+      </rds-grid-col>
+    </rds-grid>
+    <rds-grid collapsegaps={args.collapseGaps}>
+      <rds-grid-col>
+        <rds-box padding="xl">7</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">7</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">7</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">7</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">7</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">7</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">7</rds-box>
+      </rds-grid-col>
+    </rds-grid>
+    <rds-grid collapsegaps={args.collapseGaps}>
+      <rds-grid-col>
+        <rds-box padding="xl">8</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">8</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">8</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">8</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">8</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">8</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">8</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">8</rds-box>
+      </rds-grid-col>
+    </rds-grid>
+    <rds-grid collapsegaps={args.collapseGaps}>
+      <rds-grid-col>
+        <rds-box padding="xl">9</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">9</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">9</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">9</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">9</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">9</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">9</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">9</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">9</rds-box>
+      </rds-grid-col>
+    </rds-grid>
+    <rds-grid collapsegaps={args.collapseGaps}>
+      <rds-grid-col>
+        <rds-box padding="xl">10</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">10</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">10</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">10</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">10</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">10</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">10</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">10</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">10</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">10</rds-box>
+      </rds-grid-col>
+    </rds-grid>
+    <rds-grid collapsegaps={args.collapseGaps}>
+      <rds-grid-col>
+        <rds-box padding="xl">11</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">11</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">11</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">11</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">11</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">11</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">11</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">11</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">11</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">11</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">11</rds-box>
+      </rds-grid-col>
+    </rds-grid>
+    <rds-grid collapsegaps={args.collapseGaps}>
+      <rds-grid-col>
+        <rds-box padding="xl">12</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">12</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">12</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">12</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">12</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">12</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">12</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">12</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">12</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">12</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">12</rds-box>
+      </rds-grid-col>
+      <rds-grid-col>
+        <rds-box padding="xl">12</rds-box>
+      </rds-grid-col>
+    </rds-grid>
+  </div>
+);
+
+# Grid
+
+### Default
+
+<Canvas>
+  <Story name="Default" args={{}}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

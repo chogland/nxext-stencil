@@ -1,0 +1,85 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import RowReadme from './../rds-table-row/readme.md';
+import CellReadme from './../rds-table-cell/readme.md';
+
+<Meta title="Components/Table/Overview" />
+
+# Table: Overview
+
+A table displays information in a grid of rows and columns providing a method of organizing information in way that facilitates comparisons to discover patterns and insights.
+
+## Variants
+
+### For Table Headers
+
+See the property "type" to set `RdsTableCell` to header cells. The `RdsTableCell` defaults to type of "data".
+
+<Canvas withSource="auto">
+  <Story id="components-table-stories--default-story"></Story>
+</Canvas>
+
+### Striped Rows
+
+Set the `striped` prop to true for the row's background color to alternate.
+
+<Canvas withSource="auto">
+  <Story id="components-table-stories--striped"></Story>
+</Canvas>
+
+### Compact Padding
+
+Set the `compact` prop to true to lessen the padding on the table cells.
+
+<Canvas withSource="auto">
+  <Story id="components-table-stories--compact"></Story>
+</Canvas>
+
+### Table: Multi-line
+
+<Canvas withSource="auto">
+  <Story id="components-table-stories--multi-line-content"></Story>
+</Canvas>
+
+### Vertical Lines
+
+Set the `verticalLines` prop to true to display vertical lines on the table cells.
+
+<Canvas withSource="auto">
+  <Story id="components-table-stories--vertical-lines"></Story>
+</Canvas>
+
+### Hiding Columns on Mobile
+
+Set the `mobileHide` prop to true on each header cell that you would like hidden on mobile. This will hide the entire column
+when under 640px.
+
+<Canvas withSource="auto">
+  <Story id="components-table-stories--hiding-columns-on-mobile"></Story>
+</Canvas>
+
+### Stacking Top Columns on Mobile
+
+Set the `mobileStacked` prop to true to stack columns on mobile view. This will stack the top columns when under 640px.
+
+<Canvas withSource="auto">
+  <Story id="components-table-stories--stacked-columns-on-mobile"></Story>
+</Canvas>
+
+### Table: With Grouped Rows
+
+Set the `groupedRows` prop to true to group the rows in the table. Assign `group` prop to `"true"` so the cell will take its own full space to cover all the table row.
+
+<Canvas withSource="auto">
+  <Story id="components-table-stories--grouped-rows"></Story>
+</Canvas>
+
+## Usage Guidelines
+
+Use the table styles wherever you need to present static data in a tabular format.
+
+For advanced features like sorting, filtering, pagination etc. see [AG Grid](?path=/story/vendors-ag-grid--page).
+
+<Description>{Readme}</Description>
+<Description>{RowReadme}</Description>
+<Description>{CellReadme}</Description>

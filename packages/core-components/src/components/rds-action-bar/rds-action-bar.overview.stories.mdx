@@ -1,0 +1,39 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import ActionReadme from '../rds-action/readme.md';
+import Readme from './readme.md';
+import RdsActionBar from '../../../dist/collection/components/rds-action-bar/rds-action-bar';
+
+<Meta title="Collections/Action Bar/Overview" />
+
+# Action Bar: Overview
+
+The `ActionBar` component is made up of multiple `Action` in the form of clickable icons. The action bar can be expanded to view actions with descriptive text or made smaller to view with just icons.
+
+## Variations
+
+### Default
+
+<Canvas withSource="auto">
+  <Story id="collections-action-bar-stories--default-story"></Story>
+</Canvas>
+
+### Collapsed
+
+<Canvas withSource="auto">
+  <Story id="collections-action-bar-stories--collapsed"></Story>
+</Canvas>
+
+## Usage Guidelines
+
+> Although actions may change, the placement of the bar should persist until the task is successfully submitted.
+
+> Action Bars can contain one or more distinct actions.
+
+> The actions should be of high or medium emphasis. The bottom section should be used for less important actions.
+
+> Actions placed in Action Bars should be grouped logically, either by usage or importance.
+
+> To distinguish actions, take use of the [Hero Icons](?path=/story/components-hero-icons-overview--page).
+
+<Description>{ActionReadme}</Description>
+<Description>{Readme}</Description>

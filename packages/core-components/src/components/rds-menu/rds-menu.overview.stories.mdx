@@ -1,0 +1,148 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import MenuItemReadme from './../rds-menu-item/readme.md';
+
+<Meta title="Collections/Menu/Overview" />
+
+# Menu: Overview
+
+`Menu` presents a list of options from which a user can select only one option. By either clicking on or hovering over a menu trigger, a list of menu items will appear.
+
+A menu pattern is comprised of 2 separate components -- `Menu` and `MenuItem`. Multiple `MenuItem` components can be placed inside of one `Menu` component.
+
+## Variations
+
+### Default
+
+By default, `Menu` will attempt to open on the bottom of the trigger, but there is a fall-back in place to auto position the menu incase the menu would be cut off. To ensure the menu is always positioned in the view of the user, we take advantage of [PopperJS](https://popper.js.org/).
+
+The default menu is opened with a click on the menu trigger. See the variation below for a menu that opens on hover.
+
+<Canvas withSource="auto">
+  <Story height="200px" id="collections-menu-stories--default-story"></Story>
+</Canvas>
+
+### Open With Hover
+
+By updating the `hover` property to true, the menu will open on hover.
+
+<Canvas withSource="auto">
+  <Story height="200px" id="collections-menu-stories--open-with-hover"></Story>
+</Canvas>
+
+### Position Fallback
+
+You can set the position to 'top', 'right', 'bottom' or 'left', or 'auto' to see which position works first. If the elements around cause the menu to overflow, it will auto position to remain in the parent element to avoid the cut-off of menu items.
+
+#### Bottom
+
+<Canvas withSource="auto">
+  <Story height="200px" id="collections-menu-stories--position-bottom"></Story>
+</Canvas>
+
+#### Top
+
+<Canvas withSource="auto">
+  <Story height="200px" id="collections-menu-stories--position-top"></Story>
+</Canvas>
+
+#### Left
+
+<Canvas withSource="auto">
+  <Story height="200px" id="collections-menu-stories--position-left"></Story>
+</Canvas>
+
+#### Right
+
+<Canvas withSource="auto">
+  <Story height="200px" id="collections-menu-stories--position-right"></Story>
+</Canvas>
+
+### Disabled Menu
+
+You can disabled the entire menu by adding the `disabled` attribute to `Menu`.
+
+<Canvas withSource="auto">
+  <Story id="collections-menu-stories--disabled-menu"></Story>
+</Canvas>
+
+### Disabled Menu Item(s)
+
+You can disable menu item/s by adding the `disabled` attribute to `MenuItem`.
+
+<Canvas withSource="auto">
+  <Story height="200px" id="collections-menu-stories--disabled-menu-items"></Story>
+</Canvas>
+
+### Divided Menu Item(s)
+
+You can add a divider to menu item/s by adding the `divider` attribute to `MenuItem`.
+
+<Canvas withSource="auto">
+  <Story height="200px" id="collections-menu-stories--with-dividers"></Story>
+</Canvas>
+
+### With Selection
+
+The with selection menu enables use of rds-checkbox-item instead of rds-menu-item. It is recommended pass the _disable-close_ prop to disable the automatic closing of the menu when multiple items may be selected. When automatic closing is disabled, the user can click the menu's trigger or outside elements to close the menu.You can see this in the example below.
+
+<Canvas withSource="auto">
+  <Story height="200px" id="collections-menu-stories--with-selection"></Story>
+</Canvas>
+
+### With Scrolling
+
+By adding the `scrolling` prop, you can add a scrollbar to your opened menu.
+
+<Canvas withSource="auto">
+  <Story height="200px" id="collections-menu-stories--with-scrolling"></Story>
+</Canvas>
+
+### With Button Group as Trigger
+
+<rds-link href="/?path=/story/collections-menu-stories--with-button-group-trigger">See an example</rds-link> of how to use an `RdsButtonGroup` or another collection/nested element as the trigger. The toggling of the menu is not built into the custom trigger. In order to toggle your custom trigger you must hook into a menu ref and call that ref's `toggleMenu()` method on onClick.
+
+Below is a code example of how to set up a custom trigger:
+
+```jsx
+// Scripts
+const menuRef: React.Ref<HTMLRdsMenuElement> = React.createRef();
+
+// Component Code
+<RdsMenu ref={menuRef}>
+  <RdsButtonGroup slot="custom-trigger">
+    <RdsButton appearance="tertiary" group>
+      Open Menu
+    </RdsButton>
+    <RdsButton
+      appearance="tertiary"
+      group
+      iconOnly
+      onClick={() => {
+        menuRef.current.toggleMenu();
+      }}
+    >
+      <RdsHeroIcon name="chevron-down" />
+    </RdsButton>
+  </RdsButtonGroup>
+  <RdsMenuItem slot="menu-content" value="item-1">
+    Dropdown item 1
+  </RdsMenuItem>
+  <RdsMenuItem slot="menu-content" value="item-2">
+    Dropdown item 2
+  </RdsMenuItem>
+</RdsMenu>;
+```
+
+## Usage Guidelines
+
+> **A menu should always be closed by default**
+
+A menu panel should only appear when users interact with a button, action, or other menu trigger.
+
+> **Display action items as disabled if they can only be used in certain conditions**
+
+Rather than removing them, disabling them indicates to the user something needs to be done to satisfy a requirement.
+
+<Description>{Readme}</Description>
+<Description>{MenuItemReadme}</Description>

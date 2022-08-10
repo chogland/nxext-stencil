@@ -1,0 +1,42 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsFileUploader from '../../../../dist/collection/components/rds-form-elements/rds-file-uploader/rds-file-uploader';
+
+<Meta
+  title="Components/Form Elements/File Uploader/Stories"
+  component={RdsFileUploader}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: '',
+    },
+  }}
+/>
+
+export const Default = args => (
+  <rds-file-uploader max-file-size={100} {...args}>
+    <div slot="hint">File up to 100MB</div>
+  </rds-file-uploader>
+);
+
+export const Multiple = args => (
+  <rds-file-uploader files-limit={2} max-file-size={100} multiple {...args}>
+    <div slot="hint">Select one or multiple files up to 100MB</div>
+  </rds-file-uploader>
+);
+
+# File Uploader
+
+### Default
+
+<Canvas>
+  <Story name="Default">{Default.bind({})}</Story>
+</Canvas>
+
+### Multiple Files
+
+<Canvas>
+  <Story name="Multiple Files">{Multiple.bind({})}</Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

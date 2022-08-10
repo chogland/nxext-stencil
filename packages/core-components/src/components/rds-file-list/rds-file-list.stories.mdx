@@ -1,0 +1,95 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import * as RdsFileList from '../../../dist/collection/components/rds-file-list/rds-file-list';
+
+<Meta
+  title="Patterns/File List/Stories"
+  component={RdsFileList}
+  parameters={{
+    backgrounds: {
+      default: 'White',
+    },
+    layout: 'fullscreen',
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=48%3A17796',
+    },
+  }}
+  argTypes={{}}
+/>
+
+export const Template = args => (
+  <rds-file-list>
+    <rds-hero-icon name="document-text" size="xl" slot="icon"></rds-hero-icon>
+    <rds-text type="inline" weight="bold" slot="name">
+      File Name
+    </rds-text>
+    <rds-text type="inline" slot="subtitle">
+      Subtitle
+    </rds-text>
+    <rds-text type="inline" slot="detail">
+      00-XXX-0000
+    </rds-text>
+  </rds-file-list>
+);
+
+export const ClickableWithButton = args => (
+  <rds-file-list {...args}>
+    <rds-hero-icon name="document-text" size="xl" slot="icon"></rds-hero-icon>
+    <rds-button slot="hover-action" size="sm" appearance="tertiary">
+      <rds-hero-icon name="download" slot="start"></rds-hero-icon>Download
+    </rds-button>
+    <rds-text type="inline" weight="bold" slot="name">
+      File Name
+    </rds-text>
+    <rds-text type="inline" slot="subtitle">
+      Subtitle
+    </rds-text>
+    <rds-text type="inline" slot="detail">
+      00-XXX-0000
+    </rds-text>
+  </rds-file-list>
+);
+
+export const ActionFileList = args => (
+  <rds-file-list {...args}>
+    <rds-hero-icon name="document-text" size="xl" slot="icon"></rds-hero-icon>
+    <rds-text type="inline" weight="bold" slot="name">
+      File Name
+    </rds-text>
+    <rds-text type="inline" slot="subtitle">
+      Subtitle
+    </rds-text>
+    <rds-button slot="detail" size="sm" appearance="tertiary">
+      <rds-hero-icon name="download" slot="start"></rds-hero-icon>Download
+    </rds-button>
+  </rds-file-list>
+);
+
+# File List
+
+### Default
+
+<Canvas>
+  <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
+
+### Clickable
+
+<Canvas>
+  <Story
+    name="Clickable"
+    args={{
+      clickable: true,
+    }}
+  >
+    {ClickableWithButton.bind({})}
+  </Story>
+</Canvas>
+
+### Action
+
+<Canvas>
+  <Story name="Action">{ActionFileList.bind({})}</Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

@@ -1,0 +1,50 @@
+:host {
+  @apply min-w-full;
+
+  rds-card-container {
+    @apply p-6 block box-border md:justify-between font-inter md:items-center;
+  }
+  rds-card-body {
+    @apply px-0 pb-0;
+  }
+
+  rds-divider {
+    @apply -mx-6 w-auto;
+  }
+
+  rds-card-footer {
+    @apply pt-6;
+  }
+
+  .wrapper {
+    @apply grid md:flex flex-grow py-4 justify-center;
+  }
+
+  .text {
+    @apply md:w-1/2;
+  }
+
+  .more-info {
+    @apply absolute -top-3 right-0 text-blue-500 cursor-pointer;
+  }
+
+  .locations,
+  .recommendations {
+    @apply text-center;
+  }
+
+  .location-number,
+  .recommendations-number {
+    @apply block rounded-lg py-4 px-6 text-center font-semibold text-5xl text-gray-700 relative;
+  }
+
+  .error-outer {
+    @apply text-center;
+  }
+}
+
+:host([show-locations]) {
+  .wrapper {
+    @apply grid md:flex justify-around;
+  }
+}

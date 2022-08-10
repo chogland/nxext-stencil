@@ -1,0 +1,94 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import TabReadme from './../rds-tab/readme.md';
+
+<Meta title="Collections/Tabs/Overview" />
+
+# Tabs: Overview
+
+`Tabs` organize and allow navigation between groups of content that are related and at the same level of hierarchy. It includes a `Tab` component for the individual tab and its props.
+
+`Tab` accepts it's own properties and a slot for the `RdsHeroIcon` component. See the links above for 'Tab Properties' and 'Tab Slots' to learn more.
+
+## Variations
+
+You can change the appearance of the primary tabs to the secondary or tertiary styles by changing the `appearance` prop.
+
+<Canvas withSource="auto">
+  <Story id="collections-tabs-stories--primary"></Story>
+</Canvas>
+
+<Canvas withSource="auto">
+  <Story id="collections-tabs-stories--secondary"></Story>
+</Canvas>
+
+<Canvas withSource="auto">
+  <Story id="collections-tabs-stories--tertiary"></Story>
+</Canvas>
+
+### With Icons
+
+The appearance variations accept an optional slot to pass in a `RdsHeroIcon`.
+
+<Canvas withSource="auto">
+  <Story id="collections-tabs-stories--primary-with-icons"></Story>
+</Canvas>
+
+<Canvas withSource="auto">
+  <Story id="collections-tabs-stories--secondary-with-icons"></Story>
+</Canvas>
+
+<Canvas withSource="auto">
+  <Story id="collections-tabs-stories--tertiary-with-icons"></Story>
+</Canvas>
+
+### Mobile Tabs
+
+Tabs will turn into a custom (non-native) Select when there are more than 2 tabs. Desktop's true tabs, and mobile's select tabs will remain in sync, meaning, if a user updates desktop, mobile will reflect that active tab, and vice-versa.
+
+To view the mobile-friendly "select" tabs, please view the [Tabs Playground](?path=/story/components-tabs-stories--primary) and select a mobile viewport in Storybook's toolbar, or view the [Section Heading with Tabs](?path=/story/patterns-section-heading-stories--with-tabs) story in a mobile viewport.
+
+### Overflow
+
+The tabs container overflows horizontally when the parent element's width is smaller than the tabs' width. For example, when tabs are placed inside of a `RdsPanel` or other smaller-width component, the tabs will not break the layout and will automatically overflow.
+
+<Canvas withSource="auto">
+  <Story id="collections-tabs-stories--overflow"></Story>
+</Canvas>
+
+## States
+
+Active can be set on a tab to load with an active state. Additional [properties](#properties) can be found below.
+
+- `Selected` (Active) - User has clicked/tapped on the Tab label.
+- `Unselected` - Ready to be selected.
+
+<Canvas withSource="auto">
+  <Story id="collections-tabs-stories--active-tab"></Story>
+</Canvas>
+
+## Usage Guidelines
+
+> **Accessible Labels**
+
+Use the prop "label" to set a meaningful, accessible label for the set of tabs.
+
+> **Keep views within the same context**
+
+Use tabs to alternate between views within the same context, not to navigate to different areas. This is especially important, because staying in place while alternating views is the reason we have tabs in the first place.
+
+> **Use when content _can_ be hidden**
+
+Having users switch back and forth to find information for one singular task puts an added burden on their short-term memory, increases cognitive load and interaction cost, and lowers usability compared to a design that puts everything on one big page. We recommend using tabs when the additional information is only supplemental, rather than necessary..
+
+> **Write short labels**
+
+Tab labels should usually be 1–2 words. Short labels are easily scannable for the user; if you need longer labels, it is likely that the choices are too complicated for a tab control.
+
+> **Do not use all caps for labels**
+
+Use 'Title Case' or 'Sentence case' on tab labels for readability, and use them consistently.
+
+<Description>{Readme}</Description>
+
+<Description>{TabReadme}</Description>

@@ -1,0 +1,210 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsBadge from '../../../dist/collection/components/rds-badge/rds-badge';
+
+<Meta
+  title="Components/Badge/Stories"
+  component={RdsBadge}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=48%3A17095',
+    },
+    backgrounds: { default: 'White' },
+  }}
+  argTypes={{
+    value: {
+      control: { type: 'number' },
+      description: 'This is the value displayed inside of the badge. If it is 100 or more, it will display "99+"',
+    },
+    color: {
+      control: { type: 'select', options: ['gray', 'red', 'yellow', 'green', 'blue', 'purple'] },
+    },
+  }}
+/>
+
+export const Template = args => <rds-badge {...args}></rds-badge>;
+
+export const TemplateIconSlot = args => (
+  <rds-badge {...args}>
+    <rds-hero-icon name="arrow-sm-up" slot="icon"></rds-hero-icon>
+  </rds-badge>
+);
+
+# Badge
+
+### Default Badges
+
+<Canvas>
+  <Story
+    name="Default: Gray"
+    args={{
+      value: 100,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Default: Red"
+    args={{
+      value: 100,
+      color: 'red',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Default: Yellow"
+    args={{
+      value: 120,
+      color: 'yellow',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Default: Green"
+    args={{
+      value: 100,
+      color: 'green',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Default: Blue"
+    args={{
+      value: 100,
+      color: 'blue',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Default: Purple"
+    args={{
+      value: 100,
+      color: 'purple',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Badges With Icons
+
+<Canvas>
+  <Story
+    name="With Icon: Gray"
+    args={{
+      value: 100,
+    }}
+  >
+    {TemplateIconSlot.bind({})}
+  </Story>
+  <Story
+    name="With Icon: Red"
+    args={{
+      value: 100,
+      color: 'red',
+    }}
+  >
+    {TemplateIconSlot.bind({})}
+  </Story>
+  <Story
+    name="With Icon: Yellow"
+    args={{
+      value: 100,
+      color: 'yellow',
+    }}
+  >
+    {TemplateIconSlot.bind({})}
+  </Story>
+  <Story
+    name="With Icon: Green"
+    args={{
+      value: 100,
+      color: 'green',
+    }}
+  >
+    {TemplateIconSlot.bind({})}
+  </Story>
+  <Story
+    name="With Icon: Blue"
+    args={{
+      value: 100,
+      color: 'blue',
+    }}
+  >
+    {TemplateIconSlot.bind({})}
+  </Story>
+  <Story
+    name="With Icon: Purple"
+    args={{
+      value: 100,
+      color: 'purple',
+    }}
+  >
+    {TemplateIconSlot.bind({})}
+  </Story>
+</Canvas>
+
+### Badges With Text
+
+<Canvas>
+  <Story
+    name="Text: Gray"
+    args={{
+      text: 'Inactive',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Text: Red"
+    args={{
+      text: 'Busy',
+      color: 'red',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Text: Yellow"
+    args={{
+      text: 'Pending',
+      color: 'yellow',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Text: Green"
+    args={{
+      text: 'Active',
+      color: 'green',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Text: Blue"
+    args={{
+      text: 'Waiting',
+      color: 'blue',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Text: Purple"
+    args={{
+      text: 'Away',
+      color: 'purple',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

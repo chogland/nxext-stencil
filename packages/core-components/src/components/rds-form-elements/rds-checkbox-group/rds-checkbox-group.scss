@@ -1,0 +1,52 @@
+:host {
+  rds-label {
+    @apply text-base font-medium text-gray-900 block mb-3;
+  }
+
+  ::slotted(*:focus) {
+    @apply outline-none;
+  }
+
+  .vertical {
+    @apply flex flex-col gap-3;
+  }
+
+  .horizontal {
+    @apply flex flex-row gap-3;
+  }
+}
+
+// Error styles
+:host([role='alert'][type='description-list']) {
+  > div {
+    @apply border-red-600 focus:outline-none focus:border-red-600 border rounded-md;
+  }
+}
+
+:host([type='default']) {
+  .horizontal {
+    @apply gap-5;
+  }
+}
+
+:host([type='description-list']) {
+  .vertical,
+  .horiztontal {
+    @apply flex flex-col gap-0;
+  }
+
+  // First slotted checkbox
+  ::slotted(*:first-of-type) {
+    @apply rounded-tl-md rounded-tr-md;
+  }
+
+  // All slotted checkboxes except for the first
+  ::slotted(:not(*:first-of-type)) {
+    @apply border-t-0;
+  }
+
+  // Last slotted checkbox
+  ::slotted(*:last-of-type) {
+    @apply rounded-bl-md rounded-br-md;
+  }
+}

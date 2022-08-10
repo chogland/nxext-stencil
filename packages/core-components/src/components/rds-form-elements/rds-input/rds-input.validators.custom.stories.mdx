@@ -1,0 +1,70 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsInput from '../../../../dist/collection/components/rds-form-elements/rds-input/rds-input';
+
+<Meta
+  title="Components/Form Elements/Validators/Stories/Custom Validators/Input"
+  component={RdsInput}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/uYf4DWKd7OtQSx7BRfchZv/RDS-Components-for-Storybook?node-id=1207%3A43033',
+    },
+  }}
+  argTypes={{
+    label: {
+      control: { type: 'text' },
+      description: 'Text displayed as the label for the input.',
+    },
+    placeholder: {
+      control: { type: 'text' },
+      description: 'Text displayed as the placeholder for the input.',
+    },
+    type: {
+      control: { type: 'select', options: ['email', 'file', 'number', 'password', 'tel', 'url', 'text'] },
+      description: 'Type of the input to be entered.',
+    },
+    name: {
+      control: { type: 'text' },
+      description: 'Name assigned to the input element.',
+    },
+    value: {
+      control: { type: 'text', options: ['number', 'text'] },
+      description: 'Default value is provided for the input element if needed.',
+    },
+    required: {
+      control: { type: 'boolean' },
+      description: 'Removes the optional indicator from the input and makes it required for form submission.',
+    },
+    readonly: {
+      description: 'Shows the input as normal but the value cannot be changed.',
+      control: { type: 'boolean' },
+    },
+    disabled: {
+      control: { type: 'boolean' },
+      description: 'Disables the input.',
+    },
+  }}
+/>
+
+export const Template = args => <rds-input {...args} />;
+
+# Input
+
+### Length
+
+<Canvas>
+  <Story
+    name="Length"
+    args={{
+      name: 'length',
+      label: 'Zip',
+      type: 'number',
+      validator: '[{"name":"length", "options": {"min": 5, "max": 5}}]',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

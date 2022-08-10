@@ -1,0 +1,138 @@
+:host {
+  @apply flex;
+
+  #breakpoint {
+    @apply hidden;
+
+    &::before {
+      @apply hidden invisible;
+      content: 'xs';
+
+      @media (min-width: 640px) {
+        content: 'sm';
+      }
+
+      @media (min-width: 768px) {
+        content: 'md';
+      }
+
+      @media (min-width: 1024px) {
+        content: 'lg';
+      }
+
+      @media (min-width: 1280px) {
+        content: 'xl';
+      }
+
+      @media (min-width: 1536px) {
+        content: '2xl';
+      }
+    }
+  }
+}
+
+// Direction
+:host(.direction--row) {
+  @apply flex-row;
+}
+
+:host(.direction--row-reverse) {
+  @apply flex-row-reverse;
+}
+
+:host(.direction--column) {
+  @apply flex-col;
+}
+
+:host(.direction--column-reverse) {
+  @apply flex-col-reverse;
+}
+
+// Inline
+:host(.inline--inline) {
+  @apply inline-flex;
+}
+
+:host(.inline--no-inline) {
+  @apply flex;
+}
+
+// Wrap
+:host(.wrap--wrap) {
+  @apply flex-wrap;
+}
+
+:host(.wrap--no-wrap) {
+  @apply flex-nowrap;
+}
+
+// Align Items
+:host(.align-items--flex-start) {
+  @apply items-start;
+}
+
+:host(.align-items--flex-end) {
+  @apply items-end;
+}
+
+:host(.align-items--center) {
+  @apply items-center;
+}
+
+:host(.align-items--stretch) {
+  @apply items-stretch;
+}
+
+:host(.align-items--baseline) {
+  @apply items-baseline;
+}
+
+// Align Content
+:host(.align-content--flex-start) {
+  @apply content-start;
+}
+
+:host(.align-content--flex-end) {
+  @apply content-end;
+}
+
+:host(.align-content--center) {
+  @apply content-center;
+}
+
+:host(.align-content--space-evenly) {
+  @apply content-evenly;
+}
+
+:host(.align-content--space-between) {
+  @apply content-between;
+}
+
+:host(.align-content--space-around) {
+  @apply content-around;
+}
+
+// Justify Content
+:host(.justify-content--flex-start) {
+  @apply justify-start;
+}
+
+:host(.justify-content--flex-end) {
+  @apply justify-end;
+}
+
+:host(.justify-content--center) {
+  @apply justify-center;
+}
+
+:host(.justify-content--space-evenly) {
+  @apply justify-evenly;
+}
+
+:host(.justify-content--space-between) {
+  @apply justify-between;
+}
+
+:host(.justify-content--space-around) {
+  @apply justify-around;
+}

@@ -1,0 +1,54 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+
+<Meta title="Patterns/Page Heading/Overview" />
+
+# Page Heading: Overview
+
+### Usage Guidelines
+
+<div class="flex mt-8">
+  <div class="pr-10"><img class="thumbnail" src="/app-layout/header.jpg" alt="" /></div>
+  <div class="flex-grow"><h3>Page Headings</h3>
+
+Every page has a high level title where page wide actions would also live
+
+Besides the `text` property, you also have a variety of slots to choose from. Some examples of components and slots to apply to them.
+
+```
+<RdsBreadcrumbs slot="breadcrumbs" />
+<RdsButton slot="action-primary" />
+<RdsButton slot="action-secondary" />
+<RdsMeta slot="meta" />
+```
+
+  </div>
+</div>
+
+## Page Heading: Basic
+
+<Canvas withSource="auto">
+  <Story id="patterns-page-heading-stories--default-story"></Story>
+</Canvas>
+
+## Page Heading: With Actions
+
+<Canvas withSource="auto">
+  <Story id="patterns-page-heading-stories--with-actions"></Story>
+</Canvas>
+
+## Page Heading: With Breadcrumbs
+
+<Canvas withSource="auto">
+  <Story id="patterns-page-heading-stories--with-breadcrumbs"></Story>
+</Canvas>
+
+## Page Heading: With Meta
+
+`Meta` accepts one property called 'icon'. Just pass the icon name from `HeroIcon`!
+
+<Canvas withSource="auto">
+  <Story id="patterns-page-heading-stories--with-meta"></Story>
+</Canvas>
+
+<Description>{Readme}</Description>

@@ -1,0 +1,29 @@
+:host {
+  @apply flex flex-row justify-between bg-gray-50 px-4 pb-4 md:items-center;
+
+  > div {
+    &:nth-of-type(3) {
+      @apply text-left mt-2 md:mt-0 md:text-right;
+    }
+  }
+
+  .header-text-wrapper {
+    @apply md:flex md:items-center md:grow;
+
+    > div {
+      @apply flex;
+
+      &:nth-of-type(2) {
+        @apply text-center md:grow md:justify-evenly;
+      }
+    }
+  }
+
+  .actions {
+    @apply pt-4 md:p-0;
+
+    ::slotted([slot='action']) {
+      @apply ml-2;
+    }
+  }
+}

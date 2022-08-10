@@ -1,0 +1,81 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsToggle from '../../../dist/collection/components/rds-toggle/rds-toggle';
+
+<Meta
+  title="Components/Toggle/Stories"
+  component={RdsToggle}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=48%3A97557',
+    },
+    layout: 'centered',
+  }}
+  argTypes={{
+    switched: {
+      options: ['true', null],
+      control: { type: 'select' },
+    },
+  }}
+/>
+
+export const Template = args => <rds-toggle {...args}>Sample Toggle</rds-toggle>;
+
+# Toggle
+
+### Default
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      label: 'Toggle Label',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Switched
+
+<Canvas>
+  <Story
+    name="Switched"
+    args={{
+      label: 'Toggle Label',
+      switched: 'true',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Disabled
+
+<Canvas>
+  <Story
+    name="Disabled"
+    args={{
+      label: 'Toggle Label',
+      disabled: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### With Label
+
+<Canvas>
+  <Story
+    name="With Label"
+    args={{
+      label: 'Toggle Label',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

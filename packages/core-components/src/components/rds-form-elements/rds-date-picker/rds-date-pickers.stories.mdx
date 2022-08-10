@@ -1,0 +1,122 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsDatePicker from '../../../../dist/collection/components/rds-form-elements/rds-date-picker/rds-date-picker';
+import { locales } from '../../../utils/locale';
+
+<Meta
+  title="Components/Form Elements/Date Picker/Stories"
+  component={RdsDatePicker}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: '',
+    },
+  }}
+  argTypes={{
+    locale: {
+      control: {
+        type: 'select',
+        options: [
+          'ar',
+          'bs',
+          'ca',
+          'da',
+          'de-CH',
+          'de',
+          'el',
+          'en-AU',
+          'en-CA',
+          'en-GB',
+          'en',
+          'es-MX',
+          'es',
+          'et',
+          'fi',
+          'fr-CH',
+          'fr',
+          'he',
+          'hi',
+          'hr',
+          'hu',
+          'id',
+          'it-CH',
+          'it',
+          'ja',
+          'ko',
+          'lt',
+          'lv',
+          'mk',
+          'nb',
+          'nl',
+          'pl',
+          'pt-PT',
+          'pt',
+          'ro',
+          'ru',
+          'sk',
+          'sl',
+          'sr',
+          'sv',
+          'th',
+          'tr',
+          'uk',
+          'vi',
+          'zh-CN',
+          'zh-HK',
+          'zh-TW',
+        ],
+      },
+      description: 'Locale to use for the date picker.',
+    },
+  }}
+/>
+
+export const Default = args => (
+  <rds-label>
+    Date
+    <rds-input-date-picker required validate {...args}></rds-input-date-picker>
+  </rds-label>
+);
+
+export const DateRange = args => (
+  <rds-label>
+    Date Range
+    <rds-input-date-picker
+      min="2020-08-09"
+      max="2020-12-18"
+      intl-next-month="Next month"
+      intl-prev-month="Previous month"
+      range
+      required
+      validate
+      {...args}
+    ></rds-input-date-picker>
+  </rds-label>
+);
+
+export const WithTrailingCalendarIcon = args => (
+  <rds-label>
+    Date
+    <rds-input-date-picker required validate {...args} icon-start="false"></rds-input-date-picker>
+  </rds-label>
+);
+
+# Datepicker
+
+### Default
+
+<Canvas>
+  <Story name="Default" height="500px">
+    {Default.bind({})}
+  </Story>
+</Canvas>
+
+### WithTrailingCalendarIcon
+
+<Canvas>
+  <Story name="Trailing Calendar Icon" height="500px">
+    {WithTrailingCalendarIcon.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

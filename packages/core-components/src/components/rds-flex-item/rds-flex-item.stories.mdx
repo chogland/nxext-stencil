@@ -1,0 +1,156 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsFlex from '../../../dist/collection/components/rds-flex/rds-flex';
+
+<Meta
+  title="Components/Flex/Stories/Flex Item"
+  component={RdsFlex}
+  parameters={{
+    layout: 'fullscreen',
+  }}
+  argTypes={{
+    'flex-shrink': {
+      control: { type: 'number' },
+      description: '',
+    },
+    'flex-grow': {
+      control: { type: 'number' },
+      description: '',
+    },
+    'flex-basis': {
+      control: { type: 'text' },
+      description: '',
+    },
+    'order': {
+      control: { type: 'number' },
+      description: '',
+    },
+  }}
+/>
+
+export const Template = args => (
+  <rds-flex height="300px">
+    <rds-flex-item {...args}>
+      <rds-box bg="purple-100" padding="4xl">
+        <rds-headline level={1}>1</rds-headline>
+        <rds-text>Manipulate this flex-item through the storybook controls.</rds-text>
+      </rds-box>
+    </rds-flex-item>
+    <rds-flex-item flex-basis="25%">
+      <rds-box bg="purple-200" padding="4xl">
+        <rds-headline level={1}>2</rds-headline>
+      </rds-box>
+    </rds-flex-item>
+    <rds-flex-item flex-grow={1} flex-basis="25%">
+      <rds-box bg="purple-300" padding="4xl">
+        <rds-headline level={1}>3</rds-headline>
+      </rds-box>
+    </rds-flex-item>
+    <rds-flex-item flex-grow={1} flex-basis="25%">
+      <rds-box bg="purple-400" padding="4xl">
+        <rds-headline level={1}>4</rds-headline>
+      </rds-box>
+    </rds-flex-item>
+  </rds-flex>
+);
+
+export const OrderTemplate = args => (
+  <rds-flex>
+    <rds-flex-item order={4}>
+      <rds-box bg="purple-100" padding="4xl">
+        <rds-headline level={1}>1</rds-headline>
+      </rds-box>
+    </rds-flex-item>
+    <rds-flex-item order={2}>
+      <rds-box bg="purple-200" padding="4xl">
+        <rds-headline level={1}>2</rds-headline>
+      </rds-box>
+    </rds-flex-item>
+    <rds-flex-item order={3}>
+      <rds-box bg="purple-300" padding="4xl">
+        <rds-headline level={1}>3</rds-headline>
+      </rds-box>
+    </rds-flex-item>
+    <rds-flex-item order={1}>
+      <rds-box bg="purple-400" padding="4xl">
+        <rds-headline level={1}>4</rds-headline>
+      </rds-box>
+    </rds-flex-item>
+  </rds-flex>
+);
+
+# Flex Item
+
+### Playground
+
+<Canvas>
+  <Story
+    name="Playground"
+    args={{
+      'flex-grow': 1,
+      'flex-basis': '25%',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Order
+
+<Canvas>
+  <Story name="Order">{OrderTemplate.bind({})}</Story>
+</Canvas>
+
+### Align Self
+
+<Canvas>
+  <Story
+    name="Align Self"
+    args={{
+      'align-self': 'flex-end',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Flex Grow
+
+<Canvas>
+  <Story
+    name="Flex Grow"
+    args={{
+      'flex-grow': 3,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Flex Shrink
+
+<Canvas>
+  <Story
+    name="Flex Shrink"
+    args={{
+      'flex-shrink': 3,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Flex Basis
+
+<Canvas>
+  <Story
+    name="Flex Basis"
+    args={{
+      'flex-basis': '300px',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

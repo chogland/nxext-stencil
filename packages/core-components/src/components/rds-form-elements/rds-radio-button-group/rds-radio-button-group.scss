@@ -1,0 +1,45 @@
+:host {
+  rds-label {
+    @apply text-base font-medium text-gray-900 block mb-3;
+  }
+
+  ::slotted(*:focus) {
+    @apply outline-none;
+  }
+
+  .vertical {
+    @apply flex flex-col gap-3;
+  }
+
+  .horizontal {
+    @apply flex flex-row gap-3;
+  }
+}
+
+:host([type='default']) {
+  .horizontal {
+    @apply gap-5;
+  }
+}
+
+:host([type='description-list']) {
+  .vertical,
+  .horiztontal {
+    @apply flex flex-col gap-0;
+  }
+
+  // First slotted radio button
+  ::slotted(*:first-of-type) {
+    @apply rounded-tl-md rounded-tr-md;
+  }
+
+  // All slotted radio buttons except for the first
+  ::slotted(:not(*:first-of-type)) {
+    @apply border-t-0;
+  }
+
+  // Last slotted radio button
+  ::slotted(*:last-of-type) {
+    @apply rounded-bl-md rounded-br-md;
+  }
+}

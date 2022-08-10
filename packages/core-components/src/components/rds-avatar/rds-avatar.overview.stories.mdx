@@ -1,0 +1,60 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import RdsAvatar from '../../../dist/collection/components/rds-avatar/rds-avatar';
+
+<Meta title="Components/Avatar/Overview" />
+
+# Avatar: Overview
+
+`Avatar` is a graphical representation of a user. It can contain the user's initials or an image of the user.
+
+The avatar has been upgraded according to the Phase 2 experience.
+
+Phase 2 Avatar does not support the _shadow_ property. All other functionality remains the same.
+
+## Variations
+
+### Default
+
+<Canvas withSource="auto">
+  <Story id="components-avatar-stories--default-story"></Story>
+</Canvas>
+
+### With Image
+
+The _src_ property can be passed to the `Avatar` in order to use a user's image as the avatar.
+
+<Canvas withSource="auto">
+  <Story id="components-avatar-stories--with-image"></Story>
+</Canvas>
+
+### With Indicator
+
+An indicator can be added in order to display the user's status. Use the slot with `name='indicator'`.
+
+<Canvas withSource="auto">
+  <Story id="components-avatar-stories--with-indicator"></Story>
+</Canvas>
+
+### Sizes
+
+Sizes for `Avatar` are _sm_, _md_, _lg_, and _xl_, respectively.
+
+<Canvas withSource="auto">
+  <Story id="components-avatar-stories--size-small"></Story>
+  <Story id="components-avatar-stories--size-medium"></Story>
+  <Story id="components-avatar-stories--size-large"></Story>
+  <Story id="components-avatar-stories--size-extra-large"></Story>
+</Canvas>
+
+## Usage Guidelines
+
+> **Don't override color**
+
+Do not use custom colors for avatars. The color has been designed to be consistent and accessible.
+
+> **Be consise**
+
+Avatar text should be concise: 1 or 2 letters. Don’t use punctuation marks such as periods or exclamation points.
+
+<Description>{Readme}</Description>

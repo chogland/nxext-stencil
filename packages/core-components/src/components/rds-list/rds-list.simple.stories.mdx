@@ -1,0 +1,72 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsList from '../../../dist/collection/components/rds-list/rds-list';
+
+<Meta
+  title="Collections/List/Stories/Simple Lists"
+  component={RdsList}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=48%3A23782',
+    },
+  }}
+  argTypes={{
+    type: {
+      control: { type: 'select' },
+      options: ['ordered', 'unordered', 'none'],
+      description: 'Type determines the semantic tag used for the list.',
+    },
+  }}
+/>
+
+export const Template = args => (
+  <rds-list {...args}>
+    <rds-list-item>Item 1</rds-list-item>
+    <rds-list-item>Item 2</rds-list-item>
+    <rds-list-item>Item 3</rds-list-item>
+  </rds-list>
+);
+
+# List
+
+### Unordered
+
+<Canvas>
+  <Story
+    name="Unordered"
+    args={{
+      type: 'unordered',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Ordered
+
+<Canvas>
+  <Story
+    name="Ordered"
+    args={{
+      type: 'ordered',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Unstyled
+
+<Canvas>
+  <Story
+    name="Unstyled"
+    args={{
+      type: 'none',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

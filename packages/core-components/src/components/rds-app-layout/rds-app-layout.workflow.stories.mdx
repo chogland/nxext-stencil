@@ -1,0 +1,126 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import { action } from '@storybook/addon-actions';
+import Readme from './readme.md';
+import * as RdsAppLayout from '../../../dist/collection/components/rds-app-layout/rds-app-layout';
+import * as RdsStepper from '../../../dist/collection/components/rds-stepper/rds-stepper';
+
+<Meta
+  title="Components/App Layout/Stories"
+  component={RdsAppLayout}
+  parameters={{
+    layout: 'fullscreen',
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=170%3A17916',
+    },
+    backgrounds: {
+      default: 'White',
+    },
+    docs: {
+      inlineStories: false,
+    },
+  }}
+  argTypes={{
+    sidebar: {
+      control: {
+        type: 'radio',
+        options: ['left', 'right', 'both', 'none'],
+        defaultValue: 'left',
+      },
+    },
+  }}
+/>
+
+export const WorkflowTemplate = args => (
+  <rds-app-layout background-color="white" {...args}>
+    <rds-workflow-header slot="app-header">
+      <rds-headline level="5" slot="title">
+        Workflow Header
+      </rds-headline>
+      <rds-button appearance="secondary" size="sm">
+        Save & Exit
+      </rds-button>
+    </rds-workflow-header>
+    <rds-box padding="0 xl 0 xl" slot="app-main">
+      <rds-stepper type="complex">
+        <rds-stepper-item icon="check" text="Renewals Start" description="Completed: 04-Aug-2021" complete>
+          <rds-text>I am content within the first step.</rds-text>
+          <rds-panel-toggle auto-hide="false" panel="panel1">
+            <rds-button appearance="secondary" size="sm">
+              Toggle Panel 1
+            </rds-button>
+          </rds-panel-toggle>
+        </rds-stepper-item>
+        <rds-stepper-item icon="chart-square-bar" text="Values Received" description="Completed: 25-Aug-2021" complete>
+          <rds-text>I am content within the second step.</rds-text>
+          <rds-panel-toggle auto-hide="false" panel="panel2">
+            <rds-button appearance="secondary" size="sm">
+              Toggle Panel 2
+            </rds-button>
+          </rds-panel-toggle>
+        </rds-stepper-item>
+        <rds-stepper-item icon="mail-open" text="Proposal Delivery" description="Completed: 22-Sep-2021" active>
+          I am content within the third step.
+        </rds-stepper-item>
+        <rds-stepper-item icon="link" text="Order to Bind" description="Target Date: 17-Nov-2021">
+          I am content within the fourth step.
+        </rds-stepper-item>
+        <rds-stepper-item icon="clipboard-check" text="Policy Issuance" description="Target Date: 31-Dec-2021">
+          I am content within the fifth step.
+        </rds-stepper-item>
+      </rds-stepper>
+    </rds-box>
+    <rds-panel no-padding slot="app-sidebar-right" position="push" panel-id="panel1" close-button={false} disabled>
+      <div slot="headline">
+        <rds-panel-toggle auto-hide="false" panel="panel1">
+          <rds-button appearance="tertiary" iconOnly label="Close Panel">
+            <rds-hero-icon name="chevron-double-right" type="solid" size="lg" />
+          </rds-button>
+        </rds-panel-toggle>
+      </div>
+      <rds-text weight="semibold" slot="action-text">
+        Panel 1
+      </rds-text>
+    </rds-panel>
+    <rds-panel no-padding slot="app-sidebar-right" position="push" panel-id="panel2" close-button={false} disabled>
+      <div slot="headline">
+        <rds-panel-toggle auto-hide="false" panel="panel2">
+          <rds-button appearance="tertiary" iconOnly label="Close Panel">
+            <rds-hero-icon name="chevron-double-right" type="solid" size="lg" />
+          </rds-button>
+        </rds-panel-toggle>
+      </div>
+      <rds-text weight="semibold" slot="action-text">
+        Panel 2
+      </rds-text>
+    </rds-panel>
+    <rds-workflow-footer slot="app-footer">
+      <rds-button appearance="secondary" size="sm" slot="action-start">
+        Back
+      </rds-button>
+      <rds-headline level="5" weight="normal" spacing="sm" slot="narration">
+        Narration Note goes here.
+      </rds-headline>
+      <rds-button slot="action-end" size="sm">
+        Next
+      </rds-button>
+    </rds-workflow-footer>
+  </rds-app-layout>
+);
+
+# App Layout
+
+### Workflow
+
+<Canvas withSource="auto">
+  <Story
+    name="Workflow"
+    args={{
+      sidebar: 'right',
+    }}
+  >
+    {WorkflowTemplate.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

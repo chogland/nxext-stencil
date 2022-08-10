@@ -1,0 +1,149 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsFlex from '../../../dist/collection/components/rds-flex/rds-flex';
+
+<Meta
+  title="Components/Flex/Stories"
+  component={RdsFlex}
+  parameters={{
+    layout: 'fullscreen',
+  }}
+  argTypes={{
+    'align-items': {
+      control: { type: 'select', options: ['center', 'flex-start', 'flex-end', 'stretch', 'baseline'] },
+      description: 'Space between and around flex items along the cross-axis of the container.',
+    },
+    'align-content': {
+      control: { type: 'select', options: ['center', 'flex-start', 'flex-end', 'space-around', 'space-between', 'space-evenly'] },
+      description:
+        'Space between and around flex items along the main-axis of the container, when the flex items span multiple lines. This only takes effect when `wrap` is set to true.',
+    },
+    'justify-content': {
+      control: { type: 'select', options: ['center', 'flex-start', 'flex-end', 'space-around', 'space-between', 'space-evenly', 'stretch'] },
+      description: 'Space between and around flex items along the main axis of the container.',
+    },
+    'direction': {
+      control: { type: 'select', options: ['row', 'row-reverse', 'column', 'column-reverse'] },
+      description: 'The direction of the main axis.',
+    },
+    'wrap': {
+      control: { type: 'boolean' },
+      description: 'Whether or not the flex items should wrap to a new line when necessary.',
+    },
+    'inline': {
+      control: { type: 'boolean' },
+      description: 'If true, the flex container is displayed at inline level rather than block level.',
+    },
+    'gap': {
+      control: { type: 'text' },
+      description: 'Explicitly controls the space between flex items. It applies that spacing only between items not on the outer edges.',
+    },
+    'height': {
+      control: { type: 'text' },
+      description: 'Explicitly controls the height of the flex component.',
+    },
+  }}
+/>
+
+export const Template = args => (
+  <rds-flex {...args}>
+    <rds-box bg="purple-100" padding="4xl">
+      <rds-headline level={1}>1</rds-headline>
+    </rds-box>
+    <rds-box bg="purple-200" padding="4xl">
+      <rds-headline level={1}>2</rds-headline>
+    </rds-box>
+    <rds-box bg="purple-300" padding="4xl">
+      <rds-headline level={1}>3</rds-headline>
+    </rds-box>
+  </rds-flex>
+);
+
+export const TemplateInline = args => (
+  <div>
+    <rds-flex inline>
+      <rds-box bg="purple-100" padding="4xl">
+        <rds-headline level={1}>1</rds-headline>
+      </rds-box>
+      <rds-box bg="purple-200" padding="4xl">
+        <rds-headline level={1}>2</rds-headline>
+      </rds-box>
+      <rds-box bg="purple-300" padding="4xl">
+        <rds-headline level={1}>3</rds-headline>
+      </rds-box>
+    </rds-flex>
+    <rds-flex inline>
+      <rds-box bg="purple-100" padding="4xl">
+        <rds-headline level={1}>1</rds-headline>
+      </rds-box>
+      <rds-box bg="purple-200" padding="4xl">
+        <rds-headline level={1}>2</rds-headline>
+      </rds-box>
+      <rds-box bg="purple-300" padding="4xl">
+        <rds-headline level={1}>3</rds-headline>
+      </rds-box>
+    </rds-flex>
+  </div>
+);
+
+export const TemplateWrap = args => (
+  <rds-flex wrap {...args}>
+    <rds-box bg="purple-100" padding="4xl">
+      <rds-headline level={1}>1</rds-headline>
+    </rds-box>
+    <rds-box bg="purple-200" padding="4xl">
+      <rds-headline level={1}>2</rds-headline>
+    </rds-box>
+    <rds-box bg="purple-300" padding="4xl">
+      <rds-headline level={1}>3</rds-headline>
+    </rds-box>
+    <rds-box bg="purple-400" padding="4xl">
+      <rds-headline level={1}>4</rds-headline>
+    </rds-box>
+    <rds-box bg="purple-500" padding="4xl">
+      <rds-headline level={1}>5</rds-headline>
+    </rds-box>
+    <rds-box bg="purple-600" padding="4xl">
+      <rds-headline level={1}>6</rds-headline>
+    </rds-box>
+    <rds-box bg="purple-700" padding="4xl">
+      <rds-headline level={1}>7</rds-headline>
+    </rds-box>
+    <rds-box bg="purple-800" padding="4xl">
+      <rds-headline level={1}>8</rds-headline>
+    </rds-box>
+    <rds-box bg="purple-900" padding="4xl">
+      <rds-headline level={1}>9</rds-headline>
+    </rds-box>
+  </rds-flex>
+);
+
+# Flex
+
+### Default
+
+<Canvas>
+  <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
+
+### Inline
+
+<Canvas>
+  <Story name="Inline">{TemplateInline.bind({})}</Story>
+</Canvas>
+
+### Wrap
+
+<Canvas>
+  <Story name="Wrap">{TemplateWrap.bind({})}</Story>
+</Canvas>
+
+### Gap
+
+<Canvas>
+  <Story name="Gap" args={{ gap: 'sm' }}>
+    {TemplateWrap.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

@@ -1,0 +1,56 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+
+<Meta title="Components/Form Elements/Sub-Label/Overview" />
+
+# Sub-Label: Overview
+
+`Sub-Label` is a component that can be used in conjunction with RDS form components to convey additional information to the user.
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-sub-label-stories--default-story"></Story>
+</Canvas>
+
+## In Context
+
+Below, you can see the sub-label component used alongside the Headline, Checkbox, and Radio Button components.
+
+### With Headline
+
+If you are using sub-label with a headline, please set the `type` property to `headline` to inherit the sub-label color intended for this scenario.
+
+<rds-headline level={4} spacing="none">Form Headline</rds-headline>
+<rds-sub-label type="headline">I am a sub-label component</rds-sub-label>
+
+```
+<rds-headline level={4} spacing="none">Form Headline</rds-headline>
+<rds-sub-label type="headline">I am a sub-label component</rds-sub-label>
+```
+
+### With Checkbox
+
+For the sub-label to appear within the checkbox component, insert a `RdsSubLabel` component within the slot named `sub-label`.
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-checkbox-stories--with-sub-label"></Story>
+</Canvas>
+
+### With Radio Button
+
+For the sub-label to appear within the radio button component, insert a `RdsSubLabel` component within the slot named `sub-label`.
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-radio-button-stories--with-sub-label"></Story>
+</Canvas>
+
+## Usage Guidelines
+
+> **Use with forms**
+
+Sub-labels should appear alongside a form header or within a slot provided by a form element. Use it to explain why a piece of information is being requested, address security and privacy concerns, or to suggest ways of providing answers other than providing formatting examples.
+
+> **Keep length to a minimum**
+
+While the component will automatically wrap text to the next line if needed, it is recommend to keep the sub-label to a maximum length of one sentence. This way the visual flow of the form is not interrupted and the user will be inclined to read the sub-label.
+
+<Description>{Readme}</Description>

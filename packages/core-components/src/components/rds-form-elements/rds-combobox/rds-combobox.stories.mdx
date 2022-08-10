@@ -1,0 +1,250 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsCombobox from '../../../../dist/collection/components/rds-form-elements/rds-combobox/rds-combobox';
+import { useState } from 'react';
+
+<Meta
+  title="Components/Form Elements/Combobox/Stories"
+  component={RdsCombobox}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: '',
+    },
+  }}
+/>
+
+export const Default = args => (
+  <rds-combobox label="State" placeholder="Placeholder text" {...args}>
+    <rds-combobox-item value="alabama" text-label="Alabama"></rds-combobox-item>
+    <rds-combobox-item value="alaska" text-label="Alaska"></rds-combobox-item>
+    <rds-combobox-item value="arizona" text-label="Arizona"></rds-combobox-item>
+    <rds-combobox-item value="california" text-label="California"></rds-combobox-item>
+    <rds-combobox-item value="colorado" text-label="Colorado"></rds-combobox-item>
+    <rds-combobox-item value="connecticut" text-label="Connecticut"></rds-combobox-item>
+    <rds-combobox-item value="delaware" text-label="Delaware"></rds-combobox-item>
+    <rds-combobox-item value="florida" text-label="Florida"></rds-combobox-item>
+    <rds-combobox-item value="georgia" text-label="Georgia"></rds-combobox-item>
+    <rds-combobox-item value="hawaii" text-label="Hawaii"></rds-combobox-item>
+    <rds-combobox-item value="idaho" text-label="Idaho"></rds-combobox-item>
+    <rds-combobox-item value="illinois" text-label="Illinois"></rds-combobox-item>
+    <rds-combobox-item value="indiana" text-label="Indiana"></rds-combobox-item>
+    <rds-combobox-item value="iowa" text-label="Iowa"></rds-combobox-item>
+    <rds-combobox-item value="kansas" text-label="Kansas"></rds-combobox-item>
+    <rds-combobox-item value="kentucky" text-label="Kentucky"></rds-combobox-item>
+    <rds-combobox-item value="louisiana" text-label="Louisiana"></rds-combobox-item>
+    <rds-combobox-item value="maine" text-label="Maine"></rds-combobox-item>
+    <rds-combobox-item value="maryland" text-label="Maryland"></rds-combobox-item>
+    <rds-combobox-item value="massachusetts" text-label="Massachusetts"></rds-combobox-item>
+    <rds-combobox-item value="michigan" text-label="Michigan"></rds-combobox-item>
+    <rds-combobox-item value="minnesota" text-label="Minnesota"></rds-combobox-item>
+    <rds-combobox-item value="mississippi" text-label="Mississippi"></rds-combobox-item>
+    <rds-combobox-item value="missouri" text-label="Missouri"></rds-combobox-item>
+    <rds-combobox-item value="montana" text-label="Montana"></rds-combobox-item>
+    <rds-combobox-item value="nebraska" text-label="Nebraska"></rds-combobox-item>
+    <rds-combobox-item value="nevada" text-label="Nevada"></rds-combobox-item>
+    <rds-combobox-item value="new-hampshire" text-label="New Hampshire"></rds-combobox-item>
+    <rds-combobox-item value="new-jersey" text-label="New Jersey"></rds-combobox-item>
+    <rds-combobox-item value="new-mexico" text-label="New Mexico"></rds-combobox-item>
+    <rds-combobox-item value="new-york" text-label="New York"></rds-combobox-item>
+    <rds-combobox-item value="north-carolina" text-label="North Carolina"></rds-combobox-item>
+    <rds-combobox-item value="ohio" text-label="Ohio"></rds-combobox-item>
+    <rds-combobox-item value="oklahoma" text-label="Oklahoma"></rds-combobox-item>
+    <rds-combobox-item value="oregon" text-label="Oregon"></rds-combobox-item>
+    <rds-combobox-item value="pennsylvania" text-label="Pennsylvania"></rds-combobox-item>
+    <rds-combobox-item value="rhode-island" text-label="Rhode Island"></rds-combobox-item>
+    <rds-combobox-item value="south-carolina" text-label="South Carolina"></rds-combobox-item>
+    <rds-combobox-item value="south-dakota" text-label="South Dakota"></rds-combobox-item>
+    <rds-combobox-item value="tennessee" text-label="Tennessee"></rds-combobox-item>
+    <rds-combobox-item value="texas" text-label="Texas"></rds-combobox-item>
+    <rds-combobox-item value="utah" text-label="Utah"></rds-combobox-item>
+    <rds-combobox-item value="vermont" text-label="Vermont"></rds-combobox-item>
+    <rds-combobox-item value="washington" text-label="Washington"></rds-combobox-item>
+    <rds-combobox-item value="west-virginia" text-label="West Virginia"></rds-combobox-item>
+    <rds-combobox-item value="wisconsin" text-label="Wisconsin"></rds-combobox-item>
+    <rds-combobox-item value="wyoming" text-label="Wyoming"></rds-combobox-item>
+  </rds-combobox>
+);
+
+export const HelpText = args => (
+  <rds-combobox label="State" placeholder="Placeholder text" {...args}>
+    <rds-combobox-item value="alabama" text-label="Alabama"></rds-combobox-item>
+    <rds-combobox-item value="alaska" text-label="Alaska"></rds-combobox-item>
+    <rds-combobox-item value="arizona" text-label="Arizona"></rds-combobox-item>
+    <rds-combobox-item value="california" text-label="California"></rds-combobox-item>
+    <rds-combobox-item value="colorado" text-label="Colorado"></rds-combobox-item>
+    <rds-combobox-item value="connecticut" text-label="Connecticut"></rds-combobox-item>
+    <rds-combobox-item value="delaware" text-label="Delaware"></rds-combobox-item>
+    <rds-combobox-item value="florida" text-label="Florida"></rds-combobox-item>
+    <rds-combobox-item value="georgia" text-label="Georgia"></rds-combobox-item>
+    <rds-combobox-item value="hawaii" text-label="Hawaii"></rds-combobox-item>
+    <rds-combobox-item value="idaho" text-label="Idaho"></rds-combobox-item>
+    <rds-combobox-item value="illinois" text-label="Illinois"></rds-combobox-item>
+    <rds-combobox-item value="indiana" text-label="Indiana"></rds-combobox-item>
+    <rds-combobox-item value="iowa" text-label="Iowa"></rds-combobox-item>
+    <rds-combobox-item value="kansas" text-label="Kansas"></rds-combobox-item>
+    <rds-combobox-item value="kentucky" text-label="Kentucky"></rds-combobox-item>
+    <rds-combobox-item value="louisiana" text-label="Louisiana"></rds-combobox-item>
+    <rds-combobox-item value="maine" text-label="Maine"></rds-combobox-item>
+    <rds-combobox-item value="maryland" text-label="Maryland"></rds-combobox-item>
+    <rds-combobox-item value="massachusetts" text-label="Massachusetts"></rds-combobox-item>
+    <rds-combobox-item value="michigan" text-label="Michigan"></rds-combobox-item>
+    <rds-combobox-item value="minnesota" text-label="Minnesota"></rds-combobox-item>
+    <rds-combobox-item value="mississippi" text-label="Mississippi"></rds-combobox-item>
+    <rds-combobox-item value="missouri" text-label="Missouri"></rds-combobox-item>
+    <rds-combobox-item value="montana" text-label="Montana"></rds-combobox-item>
+    <rds-combobox-item value="nebraska" text-label="Nebraska"></rds-combobox-item>
+    <rds-combobox-item value="nevada" text-label="Nevada"></rds-combobox-item>
+    <rds-combobox-item value="new-hampshire" text-label="New Hampshire"></rds-combobox-item>
+    <rds-combobox-item value="new-jersey" text-label="New Jersey"></rds-combobox-item>
+    <rds-combobox-item value="new-mexico" text-label="New Mexico"></rds-combobox-item>
+    <rds-combobox-item value="new-york" text-label="New York"></rds-combobox-item>
+    <rds-combobox-item value="north-carolina" text-label="North Carolina"></rds-combobox-item>
+    <rds-combobox-item value="ohio" text-label="Ohio"></rds-combobox-item>
+    <rds-combobox-item value="oklahoma" text-label="Oklahoma"></rds-combobox-item>
+    <rds-combobox-item value="oregon" text-label="Oregon"></rds-combobox-item>
+    <rds-combobox-item value="pennsylvania" text-label="Pennsylvania"></rds-combobox-item>
+    <rds-combobox-item value="rhode-island" text-label="Rhode Island"></rds-combobox-item>
+    <rds-combobox-item value="south-carolina" text-label="South Carolina"></rds-combobox-item>
+    <rds-combobox-item value="south-dakota" text-label="South Dakota"></rds-combobox-item>
+    <rds-combobox-item value="tennessee" text-label="Tennessee"></rds-combobox-item>
+    <rds-combobox-item value="texas" text-label="Texas"></rds-combobox-item>
+    <rds-combobox-item value="utah" text-label="Utah"></rds-combobox-item>
+    <rds-combobox-item value="vermont" text-label="Vermont"></rds-combobox-item>
+    <rds-combobox-item value="washington" text-label="Washington"></rds-combobox-item>
+    <rds-combobox-item value="west-virginia" text-label="West Virginia"></rds-combobox-item>
+    <rds-combobox-item value="wisconsin" text-label="Wisconsin"></rds-combobox-item>
+    <rds-combobox-item value="wyoming" text-label="Wyoming"></rds-combobox-item>
+    <div slot="help-text">Enter a valid U.S. state</div>
+  </rds-combobox>
+);
+
+export const DataLoading = args => {
+  const [data, setdata] = useState([]);
+  const [loading, setloading] = useState(false);
+  const handleapicall = e => {
+    setloading(true);
+    fetch('http://universities.hipolabs.com/search?country=United+States')
+      .then(response => response.json())
+      .then(data => {
+        setdata(data);
+        setloading(false);
+      });
+  };
+  return (
+    <rds-combobox label="University" placeholder="Universities in U.S.A" {...args} loading={loading} onInput={e => handleapicall(e)}>
+      {data?.map(university => (
+        <rds-combobox-item value={university.name} text-label={university.name}></rds-combobox-item>
+      ))}
+    </rds-combobox>
+  );
+};
+
+export const ErrorFromSource = args => {
+  const [data, setdata] = useState([]);
+  const [loading, setloading] = useState(false);
+  const [error, seterror] = useState(false);
+  const handleapicall = e => {
+    setloading(true);
+    seterror(false);
+    fetch('http://universities.hipolabs.com/srch?country=United+States')
+      .then(response => response.json())
+      .then(
+        data => {
+          setdata(data);
+          setloading(false);
+        },
+        err => {
+          setloading(false);
+          seterror(true);
+        },
+      );
+  };
+  return (
+    <rds-combobox label="University" placeholder="Universities in U.S.A" {...args} loading={loading} error={error} onInput={e => handleapicall(e)}>
+      {data?.map(university => (
+        <rds-combobox-item value={university.name} text-label={university.name}></rds-combobox-item>
+      ))}
+    </rds-combobox>
+  );
+};
+
+export const NoDataFromAPI = args => {
+  const [data, setdata] = useState([]);
+  const [loading, setloading] = useState(false);
+  const [error, seterror] = useState(false);
+  const [noresult, setnoresult] = useState(false);
+  const handleapicall = e => {
+    setloading(true);
+    seterror(false);
+    setnoresult(false);
+    fetch('http://universities.hipolabs.com/search?country=United+States')
+      .then(response => response.json())
+      .then(
+        data => {
+          setdata([]);
+          setloading(false);
+          setnoresult(true);
+        },
+        err => {
+          setloading(false);
+          seterror(true);
+        },
+      );
+  };
+  return (
+    <rds-combobox label="University" no-result={noresult} placeholder="Universities in U.S.A" {...args} loading={loading} error={error} onInput={e => handleapicall(e)}>
+      {data?.map(university => (
+        <rds-combobox-item value={university.name} text-label={university.name}></rds-combobox-item>
+      ))}
+    </rds-combobox>
+  );
+};
+
+# Combobox
+
+### Single
+
+<Canvas>
+  <Story name="Default">{Default.bind({})}</Story>
+</Canvas>
+
+### Required
+
+<Canvas>
+  <Story
+    name="Required"
+    args={{
+      required: true,
+      validate: true,
+    }}
+  >
+    {Default.bind({})}
+  </Story>
+</Canvas>
+
+### With Help Text
+
+<Canvas>
+  <Story name="With Help Text">{HelpText.bind({})}</Story>
+</Canvas>
+
+### With Data from API Source
+
+<Canvas>
+  <Story name="With Data from API Source">{DataLoading.bind({})}</Story>
+</Canvas>
+
+### Error from API Source
+
+<Canvas>
+  <Story name="Error from API Source">{ErrorFromSource.bind({})}</Story>
+</Canvas>
+
+### No Data From API Source
+
+<Canvas>
+  <Story name="No Data From API Source">{NoDataFromAPI.bind({})}</Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

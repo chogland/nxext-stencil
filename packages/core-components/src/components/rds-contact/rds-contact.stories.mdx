@@ -1,0 +1,64 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsContact from '../../../dist/collection/components/rds-contact/rds-contact';
+
+<Meta
+  title="Patterns/Contact/Stories"
+  component={RdsContact}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=48%3A17410',
+    },
+  }}
+  argTypes={{}}
+/>
+
+export const Template = args => <rds-contact {...args}></rds-contact>;
+export const Actions = args => (
+  <rds-contact {...args}>
+    <rds-button slot="action" appearance="tertiary" iconOnly>
+      <rds-hero-icon name="phone" />
+    </rds-button>
+    <rds-button slot="action" appearance="tertiary" iconOnly>
+      <rds-hero-icon name="mail" />
+    </rds-button>
+  </rds-contact>
+);
+
+# Contact
+
+### Default
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      'avatar-text': 'FE',
+      'name': 'Frank Eason',
+      'role': 'Field Engineer',
+      'detail': 'Fire & Nat Haz',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Actions
+
+<Canvas>
+  <Story
+    args={{
+      'avatar-text': 'FE',
+      'name': 'Frank Eason',
+      'role': 'Field Engineer',
+      'detail': 'Fire & Nat Haz',
+      'avatar-url': 'https://fmzedstcontentrds01.blob.core.windows.net/rds/assets/storybook/images/avatar/avatar-image.PNG',
+    }}
+    name="Actions"
+  >
+    {Actions.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

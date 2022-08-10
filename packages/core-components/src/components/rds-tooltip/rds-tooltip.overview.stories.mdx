@@ -1,0 +1,77 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import ManagerReadme from './../rds-tooltip-manager/readme.md';
+
+<Meta title="Components/Tooltip/Overview" />
+
+# Tooltip: Overview
+
+`Tooltip` displays informative text when users tap and hold an element (on mobile) or click or hover over it (desktop). The tooltip is continuously displayed as long as the user continues to press or hover over the element.
+
+The Tooltip component is comprised of text and a container. The container will expand vertically and horizontally to accomodate the text content.
+
+## Variations
+
+### NEW: Auto Positioned Tooltip
+
+By default, `Tooltip` now is set to auto position. To ensure the tooltip is always positioned in the view of the user, we take advantage of [PopperJS](https://popper.js.org/).
+
+<Story id="components-tooltip-stories--default-story"></Story>
+
+The `Tooltip` can be placed to the left, right, top, and bottom of the container for more accurate placement and better readability. To see it in action, visit the [Playground](?path=/story/components-tooltip-stories--default-story).
+
+### Tooltip Manager
+
+It is required that the element being engaged to be placed inside of the `TooltipManager`. The element inside of `TooltipManager` should also have an 'id' that matches the `reference-element` of the Tooltip.
+
+```html
+<RdsTooltip referenceElement="element-id" position="auto" label="Tooltip Label"> This is a tooltip message. </RdsTooltip>
+<RdsTooltipManager>
+  <RdsHeroIcon name="information-circle" type="outline" size="lg" id="element-id"></RdsHeroIcon>
+</RdsTooltipManager>
+```
+
+### Arrow
+
+The arrow in the tooltip always positions itself to remain aimed at the element that is being hovered.
+
+If adequate space is available then the arrow will center within the tooltip on the side that matches the 'position'.
+
+To see this in effect, visit the [Tooltip Default Story](?path=/story/components-tooltip-stories--default-story)
+
+### Position Fallback
+
+Aside from 'Auto', you can set the position to 'top', 'right', 'bottom' or 'left'. If the elements around cause the tooltip to overflow, it will auto position to remain in the parent element to avoid
+tooltips from becoming cut off.
+
+<Canvas withSource="auto">
+  <div class="flex justify-between">
+    <Story id="components-tooltip-stories--top"></Story>
+    <Story id="components-tooltip-stories--left"></Story>
+    <Story id="components-tooltip-stories--bottom"></Story>
+    <Story id="components-tooltip-stories--right"></Story>
+  </div>
+</Canvas>
+
+## Usage Guidelines
+
+> Use a Visual Indicator
+
+A tooltip manager should never be plain text. Use an `RdsHeroIcon` or other visual cue to show that a tooltip is present on hover.
+
+> Be Concise
+
+Tooltips text should be brief and informative.
+
+> Placement
+
+Should always be placed adjacent to the element with which they are associated.
+
+> Style
+
+- Do not use custom colors for the container or text. The colors have been designed to be consistent and accessible.
+- Do not add a shadow to the Tooltip.
+
+<Description>{Readme}</Description>
+
+<Description>{ManagerReadme}</Description>

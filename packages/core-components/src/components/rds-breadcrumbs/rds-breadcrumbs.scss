@@ -1,0 +1,21 @@
+:host {
+  @apply text-gray-600 flex items-center;
+
+  nav {
+    @apply flex;
+  }
+
+  ol {
+    @apply flex items-center space-x-4;
+
+    // Remove pointer events from the final breadcrumb (current page)
+    slot::slotted(*:last-child) {
+      @apply pointer-events-none;
+    }
+
+    // Hide all breadcrumbs except the second to last on mobile
+    slot::slotted(*:not(:nth-last-child(2))) {
+      @apply hidden md:block;
+    }
+  }
+}

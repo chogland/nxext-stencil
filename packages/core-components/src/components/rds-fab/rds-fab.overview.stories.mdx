@@ -1,0 +1,32 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+
+<Meta title="Components/FAB (Floating Action Button)/Overview" />
+
+# FAB (Floating Action Button): Overview
+
+### Default
+
+`FAB` is a fixed container that accepts text, size and icon to be displayed. It renders an `RdsIcon` as well as a `RdsButton`.
+
+<Canvas withSource="auto">
+  <Story id="components-fab-floating-action-button-stories--size-small"></Story>
+  <Story id="components-fab-floating-action-button-stories--default-story"></Story>
+  <Story id="components-fab-floating-action-button-stories--size-large"></Story>
+</Canvas>
+
+## Usage Guidelines
+
+> **Represent the most common primary action with a FAB**
+
+This should also be a positive experience, such as drafting an message, or opening a menu.
+
+> **Only display one per screen**
+
+FABs are position fixed. If you display more than one they will overlap eachother.
+
+> **Do not display on every page**
+
+FABs should be carefully placed in your application. They will get in the user's way if they are used on every page/screen.
+
+<Description>{Readme}</Description>

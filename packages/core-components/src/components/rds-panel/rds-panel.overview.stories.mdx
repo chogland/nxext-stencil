@@ -1,0 +1,88 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import ToggleReadme from '../rds-panel-toggle/readme.md';
+
+<Meta title="Components/Panel/Overview" />
+
+# Panel: Overview
+
+The `Panel` is a drawer that slides in from the right side of the current view. By default, the panel is fixed or 'floating'.
+
+> Panel's 'position' property can be set to 'push' to push content as it slides in, becoming relatively positioned.
+
+There can be any number of panels attached to the content. A 'panel-id' can be provided to the panel in order to trigger a particular panel, or if no panel-id is provided, it will find the first panel. The `Panel` can be controlled from the templates, or programmatically using the PanelController.
+
+Scrolling will be available when more content is displayed vertically and a custom scrollbar will be displayed.
+
+## Variants
+
+### Default
+
+By default, a panel's position is fixed and the window's scrollbar is disabled when the panel is open. To change the default scrollbar behavior, set the `disableBodyScroll` prop to 'false'.
+
+<Canvas withSource="auto">
+  <Story height="500px" id="components-panel-stories--default-overlay-panel"></Story>
+</Canvas>
+
+### Pushed
+
+When the panel's `position` is set to 'push', it will become relative and sit next to content as opposed to overlaying content.
+
+<Canvas withSource="auto">
+  <Story height="500px" id="components-panel-stories--push-panel"></Story>
+</Canvas>
+
+### Wide Panel
+
+When the panel's `wide` prop is set to true, it will become wider. Wide panel is meant for 'overlay' type only.
+
+<Canvas withSource="auto">
+  <Story height="500px" id="components-panel-stories--wide-panel"></Story>
+</Canvas>
+
+### Styling Option
+
+- Remove padding on inner-wrapper of the Panel.
+
+```
+<RdsPanel noPadding>
+</RdsPanel>
+```
+
+## Controlling the Panel
+
+### Panel Toggle
+
+Panel Toggle accepts a 'panel' property which can accept the 'panel-id' of `Panel` to control a particular panel. If this property is not used, `PanelToggle` will toggle the first panel that is open. For more information on the panel toggle, view the `rds-panel-toggle` docs at the bottom of the page.
+
+Note: When multiple panels exist on a screen, only one is allowed open at a time.
+
+```jsx
+<RdsPanelToggle autoHide="false">
+  <RdsButton appearance="tertiary" label="Toggle Panel">
+    <RdsHeroIcon name="x"></RdsHeroIcon>
+  </RdsButton>
+</RdsPanelToggle>
+```
+
+### Panel Close Button
+
+The Panel has a property called `closeButton` that can be used to display the close button which will control itself by default. You can place your own close button or method by using the `Panel Toggle` component.
+
+### Responsive Behavior
+
+The panel maintains the same behavior all the way down to the extra small breakpoint, at which point it begins taking up 100% of the viewport width.
+
+## Usage Guidelines
+
+> **An overlay panel's tasks should be independent of page content**
+
+Because the overlay panel hides page content, it is important to use the 'push' panel when a user needs to see both page and panel content to complete a task.
+
+> **Panel is designed for momentary tasks**
+
+The panel is intended to be opened/closed when the user needs it. Therefore, do not hide any lengthy, required tasks within a panel.
+
+<Description>{Readme}</Description>
+
+<Description>{ToggleReadme}</Description>

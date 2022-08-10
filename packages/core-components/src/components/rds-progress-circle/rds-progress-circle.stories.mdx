@@ -1,0 +1,111 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsProgressCircle from '../../../dist/collection/components/rds-progress-circle/rds-progress-circle';
+
+<Meta
+  title="Components/Progress Circle/Stories"
+  component={RdsProgressCircle}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=48%3A90529',
+    },
+  }}
+  argTypes={{
+    value: {
+      control: { type: 'range', min: 0, max: 100, step: 1 },
+      description: 'The progress bar value',
+    },
+    size: {
+      control: { type: 'select', options: ['sm', 'md', 'lg'] },
+      description: 'The progress bar value',
+    },
+  }}
+/>
+
+export const Template = args => <rds-progress-circle {...args}></rds-progress-circle>;
+
+# Progress Circle
+
+### No Value
+
+<Canvas>
+  <Story
+    name="No Value"
+    args={{
+      value: 0,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Partial
+
+<Canvas>
+  <Story
+    name="Partial"
+    args={{
+      value: 30,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Full
+
+<Canvas>
+  <Story
+    name="Full"
+    args={{
+      value: 100,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Small
+
+<Canvas>
+  <Story
+    name="Small"
+    args={{
+      value: 75,
+      size: 'sm',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Medium
+
+<Canvas>
+  <Story
+    name="Medium"
+    args={{
+      value: 75,
+      size: 'md',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Large
+
+<Canvas>
+  <Story
+    name="Large"
+    args={{
+      value: 75,
+      size: 'lg',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

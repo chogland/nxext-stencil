@@ -1,0 +1,128 @@
+:host {
+  @apply block font-inter text-gray-900 text-current;
+
+  h1 {
+    @apply text-3xl;
+  }
+
+  h2 {
+    @apply text-2xl;
+  }
+
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-xl;
+  }
+}
+
+:host(.text-inherit) {
+  h1,
+  h2 {
+    @include text-inherit;
+  }
+}
+
+:host([weight='normal']) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-normal;
+  }
+}
+
+:host([weight='medium']) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-medium;
+  }
+}
+
+:host([weight='semibold']) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-semibold;
+  }
+}
+
+:host([weight='bold']) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold;
+  }
+}
+
+:host([weight='extrabold']) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-extrabold;
+  }
+}
+
+:host([spacing='none']) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply my-0;
+  }
+}
+
+:host([spacing='sm']) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply my-2;
+  }
+}
+
+:host([spacing='md']) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply my-4;
+  }
+}
+
+:host([spacing='lg']) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply my-6;
+  }
+}
+
+:host([color='green']) {
+  @apply text-green-700;
+}

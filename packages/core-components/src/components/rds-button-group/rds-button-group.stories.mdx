@@ -1,0 +1,120 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsButtonGroup from '../../../dist/collection/components/rds-button-group/rds-button-group';
+
+<Meta
+  title="Components/Button Group/Stories"
+  component={RdsButtonGroup}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=48%3A17194',
+    },
+    layout: 'padded',
+  }}
+  argTypes={{}}
+/>
+
+export const Template = args => (
+  <rds-button-group {...args}>
+    <rds-button group appearance="tertiary">
+      First
+    </rds-button>
+    <rds-button group appearance="tertiary">
+      Middle
+    </rds-button>
+    <rds-button group appearance="tertiary">
+      Last
+    </rds-button>
+  </rds-button-group>
+);
+
+export const IconGroup = args => (
+  <rds-button-group {...args}>
+    <rds-button appearance="tertiary" group>
+      <rds-hero-icon type="solid" size="md" name="bookmark" slot="start" /> Bookmark
+    </rds-button>
+    <rds-button appearance="tertiary" group>
+      <rds-hero-icon type="solid" size="md" name="bookmark" slot="start" /> Bookmark
+    </rds-button>
+    <rds-button appearance="tertiary" group>
+      <rds-hero-icon type="solid" size="md" name="bookmark" slot="start" /> Bookmark
+    </rds-button>
+  </rds-button-group>
+);
+
+export const IconOnlyGroup = args => (
+  <rds-button-group {...args}>
+    <rds-button appearance="tertiary" group>
+      <rds-hero-icon type="solid" name="chevron-left" />
+    </rds-button>
+    <rds-button appearance="tertiary" group>
+      <rds-hero-icon type="solid" name="plus" />
+    </rds-button>
+    <rds-button appearance="tertiary" group>
+      <rds-hero-icon type="solid" name="chevron-right" />
+    </rds-button>
+  </rds-button-group>
+);
+
+export const ActiveButton = args => (
+  <rds-button-group {...args}>
+    <rds-button group appearance="tertiary" active>
+      First
+    </rds-button>
+    <rds-button group appearance="tertiary">
+      Middle
+    </rds-button>
+    <rds-button group appearance="tertiary">
+      Last
+    </rds-button>
+  </rds-button-group>
+);
+
+export const TemplateWithMobileView = args => (
+  <rds-button-group {...args} mobile-full-width="true">
+    <rds-button group appearance="tertiary">
+      First
+    </rds-button>
+    <rds-button group appearance="tertiary">
+      Middle
+    </rds-button>
+    <rds-button group appearance="tertiary">
+      Last
+    </rds-button>
+  </rds-button-group>
+);
+
+# Button Group
+
+### Default
+
+<Canvas>
+  <Story name="Primary">{Template.bind({})}</Story>
+</Canvas>
+
+### With Icon
+
+<Canvas>
+  <Story name="With Icon">{IconGroup.bind({})}</Story>
+</Canvas>
+
+### Icon Only
+
+<Canvas>
+  <Story name="Icon Only">{IconOnlyGroup.bind({})}</Story>
+</Canvas>
+
+### With Active Button
+
+<Canvas>
+  <Story name="Active">{ActiveButton.bind({})}</Story>
+</Canvas>
+
+### Template With Mobile View
+
+<Canvas>
+  <Story name="With Full-Width Buttons on Mobile">{TemplateWithMobileView.bind({})}</Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

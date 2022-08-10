@@ -1,0 +1,77 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import { BADGE } from '@geometricpanda/storybook-addon-badges';
+
+<Meta title="Components/Icon/Overview" parameters={{ badges: [BADGE.DEPRECATED] }} />
+
+# Icon: Overview
+
+**Please see the [`RdsHeroIcon` component](?path=/story/components-hero-icon-overview--page).**
+
+`Icons` are visual symbols used to represent ideas, objects or actions. They communicate messages at a glance, afford interactivity and draw attention to important information.
+
+## Sizes
+
+`Icon` sizes range from small to large.
+
+<Canvas withSource="auto">
+  <Story id="components-icon-stories--small"></Story>
+  <Story id="components-icon-stories--medium"></Story>
+  <Story id="components-icon-stories--large"></Story>
+</Canvas>
+
+## Colors
+
+You can provide any color in the RDS color palette to the icon to change its color. _If a color isn't provided it will default to #000 or inherit from it's parent_
+
+<Canvas withSource="auto">
+  <Story id="components-icon-stories--colors"></Story>
+</Canvas>
+
+## Icon Sets
+
+### Arrows
+
+<Canvas withSource="auto">
+  <Story id="components-icon-stories--arrows"></Story>
+</Canvas>
+
+### Communication
+
+<Canvas withSource="auto">
+  <Story id="components-icon-stories--communication"></Story>
+</Canvas>
+
+### Engineering
+
+<Canvas withSource="auto">
+  <Story id="components-icon-stories--engineering"></Story>
+</Canvas>
+
+### Files
+
+<Canvas withSource="auto">
+  <Story id="components-icon-stories--files"></Story>
+</Canvas>
+
+### Location
+
+<Canvas withSource="auto">
+  <Story id="components-icon-stories--location"></Story>
+</Canvas>
+
+### UI
+
+<Canvas withSource="auto">
+  <Story id="components-icon-stories--ui"></Story>
+</Canvas>
+
+### User
+
+<Canvas withSource="auto">
+  <Story id="components-icon-stories--user"></Story>
+</Canvas>
+
+## Usage Guidelines
+
+<Description>{Readme}</Description>

@@ -1,0 +1,68 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+
+<Meta title="Components/Divider/Overview" />
+
+# Divider: Overview
+
+`Divider` is a horizontal or vertical rule used to group content in lists and layouts.
+
+## Variations
+
+### Default
+
+By default, the divider spans horizontally and has a size _medium (24px)_ margin applied to its top and bottom.
+
+<Canvas withSource="auto">
+  <Story id="components-divider-stories--default-story"></Story>
+</Canvas>
+
+### Vertical
+
+You can change the direction of the divider from horizontal to vertical by changing the `type` property to _true_.
+
+<Canvas withSource="auto">
+  <Story id="components-divider-stories--vertical" height="300px"></Story>
+</Canvas>
+
+### Spacing
+
+The spacing property controls the top/bottom margin for horizontal dividers, and the left/right margin for vertical dividers. This spacing property has 4 different options: none, sm, md, and lg. See examples below for a horizontal divider.
+
+#### No Spacing
+
+<Canvas withSource="auto">
+  <Story id="components-divider-stories--no-spacing"></Story>
+</Canvas>
+
+#### Small Spacing (16px)
+
+<Canvas withSource="auto">
+  <Story id="components-divider-stories--small-spacing"></Story>
+</Canvas>
+
+#### Medium Spacing (24px)
+
+Note: Medium is the divider's default spacing.
+
+<Canvas withSource="auto">
+  <Story id="components-divider-stories--medium-spacing"></Story>
+</Canvas>
+
+#### Large Spacing (32px)
+
+<Canvas withSource="auto">
+  <Story id="components-divider-stories--large-spacing"></Story>
+</Canvas>
+
+## Usage Guidelines
+
+> **Use secondary to white space**
+
+Use a divider if elements cannot be separated appropriately with white space alone.
+
+> **Use infrequently**
+
+Use dividers sparingly, to create groupings rather than separate items. Frequent use of dividers is a jarring experience for the end-user.
+
+<Description>{Readme}</Description>

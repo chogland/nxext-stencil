@@ -1,0 +1,108 @@
+:host {
+  @apply opacity-0 fixed bg-white w-full shadow-md md:w-100 text-gray-900 flex-col duration-1000 ease-in-out z-order0 h-full top-0 transition-[left];
+
+  .inner-wrapper {
+    @apply bg-white w-full p-4 items-start justify-between overflow-y-scroll relative flex-grow flex-shrink h-full;
+    flex-basis: auto;
+
+    &::-webkit-scrollbar {
+      @apply w-2;
+    }
+
+    &::-webkit-scrollbar-track {
+      @apply bg-white mr-1;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      @apply bg-gray-300 rounded-3xl mr-1;
+    }
+
+    ::slotted([slot='panel-details']) {
+      @apply py-4;
+    }
+  }
+
+  .action {
+    @apply flex justify-between px-6 py-4 bg-gray-50 text-gray-900 font-inter text-sm items-center;
+
+    ::slotted([slot='action-text']) {
+      @apply flex-grow;
+    }
+
+    ::slotted([slot='action-primary']) {
+      @apply pl-4;
+    }
+  }
+
+  .header {
+    @apply flex sticky px-6 py-2 border-b border-gray-50 flex-grow-0 flex-shrink;
+    flex-basis: auto;
+    border-bottom-style: solid;
+
+    .headline {
+      @apply flex-grow text-xl leading-7;
+    }
+  }
+  ::slotted([slot='panel-details']) {
+    @apply px-6 border-0 border-b border-gray-50 border-solid border-opacity-100;
+  }
+
+  ::slotted([slot='headline']) {
+    @apply flex items-center flex-grow;
+  }
+}
+
+:host(:not(.panel-enabled)) {
+  left: calc(100% + 480px) !important;
+}
+
+:host(.panel-enabled) {
+  @apply flex left-0;
+
+  @media (min-width: 768px) {
+    left: calc(100% - 480px);
+  }
+
+  @media (max-width: 767px) {
+    left: 0 !important;
+  }
+}
+
+:host(.no-padding) {
+  .inner-wrapper {
+    @apply p-0;
+  }
+}
+
+:host(.thumbnail) {
+  @apply w-full h-52 bg-center;
+}
+
+:host(.panel-app-right) {
+  @apply lg:border-r lg:border-r-gray-200 lg:border-solid lg:border-l-0 lg:border-t-0 lg:border-b-0 lg:z-order1;
+}
+
+// Push Panel Styles
+:host([position='push']) {
+  @apply inline-block h-full overflow-x-hidden md:top-0 md:left-auto md:relative md:z-auto md:w-0 md:h-full md:min-h-screen;
+
+  @media (min-width: 768px) {
+    @apply transition-[width];
+  }
+
+  .inner-wrapper {
+    @apply p-0 w-full;
+  }
+}
+
+:host([position='push'].panel-enabled) {
+  @apply max-w-full w-full md:left-auto md:w-100;
+}
+
+:host(.wide) {
+  @apply pointer-events-auto w-screen max-w-2xl;
+
+  @media (min-width: 768px) {
+    left: calc(100% - 42rem);
+  }
+}

@@ -1,0 +1,37 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+
+<Meta title="Components/Pill/Overview" />
+
+# Pill: Overview
+
+The `Pill` component is used to indicate the status of an active process.
+
+## Pill
+
+The `Pill` component is comprised of a status `Indicator` and a label.
+
+<Canvas withSource="auto">
+  <Story id="components-pill-stories--default-story"></Story>
+  <Story id="components-pill-stories--warning"></Story>
+  <Story id="components-pill-stories--alert"></Story>
+  <Story id="components-pill-stories--primary"></Story>
+  <Story id="components-pill-stories--secondary"></Story>
+  <Story id="components-pill-stories--tertiary"></Story>
+</Canvas>
+
+## Usage Guidelines
+
+> Indicator
+
+The status indicator should accurately reflect the current status of the process and automatically update to reflect status changes.
+
+> Pill
+
+The Pill is not a button and should not be used as an interactive element.
+
+> Color
+
+Do not change the background color of the pill.
+
+<Description>{Readme}</Description>

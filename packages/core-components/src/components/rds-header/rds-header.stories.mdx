@@ -1,0 +1,46 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsHeader from '../../../dist/collection/components/rds-header/rds-header';
+
+<Meta
+  title="Patterns/Global Header/Stories"
+  component={RdsHeader}
+  parameters={{
+    layout: 'fullscreen',
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=136%3A15388',
+    },
+  }}
+  argTypes={{
+    nav: false,
+  }}
+/>
+
+export const Base = args => (
+  <rds-header {...args}>
+    <rds-search slot="search" />
+    <rds-menu shadow="true" slot="profile">
+      <rds-avatar size="lg" slot="avatar" text="TU" slot="menu-trigger"></rds-avatar>
+      <div slot="name">Test User</div>
+      <rds-hero-icon icon="chevron-down" size="lg" slot="icon" />
+      <rds-menu-item slot="menu-content">Dropdown&nbsp;item</rds-menu-item>
+      <rds-menu-item slot="menu-content">Dropdown&nbsp;item&nbsp;2</rds-menu-item>
+    </rds-menu>
+  </rds-header>
+);
+
+### Base
+
+<Canvas>
+  <Story
+    name="Base"
+    args={{
+      type: 'base',
+    }}
+  >
+    {Base.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

@@ -1,0 +1,78 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+
+<Meta title="Components/Modal/Overview" />
+
+# Modal: Overview
+
+`Modals` are positioned over every other element in the page and are used to inform users about a task or decisive information that requires immediate attention.
+
+To activate the Modal, simply use the controls in side of the [Playground](?path=/story/components-modal-stories--default-story) to set the _visible_ prop to true, or interact with the modal trigger below to open an example modal.
+
+<Canvas withSource="auto">
+  <Story height="300px" id="components-modal-stories--with-modal-trigger"></Story>
+</Canvas>
+
+## Variants
+
+### Default
+
+<Canvas withSource="auto">
+  <Story height="300px" id="components-modal-stories--default-story"></Story>
+</Canvas>
+
+### With Icon and Action Items
+
+A slot is provided for an icon as well as action items. See [slots](#slots) below for more details.
+
+<Canvas withSource="auto">
+  <Story height="300px" id="components-modal-stories--with-icon"></Story>
+</Canvas>
+
+### Custom HTML Headline
+
+You can change the default title of the modal into a custom html headline using the [_headline_ slot](#slots).
+[View the story for this example.](?path=/story/components-modal-stories--custom-html-headline)
+
+### Fullscreen
+
+You can create a fullscreen modal by setting the `fullScreen` prop to true. We recommend disabling the close button by setting `closeButton` to false and utilizing the default slot for all modal content.
+
+<Canvas withSource="auto">
+  <Story height="300px" id="components-modal-stories--fullscreen"></Story>
+</Canvas>
+
+### Disable Overlay's Close
+
+In order to disable the overlay from closing the modal on-click, set the _disableOverlayClose_ prop to true. [View the story for this example.](?path=/story/components-modal-stories--no-overlay-close)
+
+### Opening the Modal
+
+To open a modal, simply set the _visible_ property to true, or call the _openModal()_ method.
+
+### Dismissing the Modal
+
+- Clicking/tapping anywhere on the overlay. _Note_ This can be disabled. See _disableOverlayClose_ property below.
+- Clicking/tapping on buttons, if present. _Note_ This requires an `RdsButton` to call a method to set _visible_ property.
+
+## Usage Guidelines
+
+You may consider using a modal window when you need to:
+
+> **Seek User Attention**
+
+Use when you want to interrupt a user's current task to catch the user's full attention to something more important.
+
+> **Workflows**
+
+To break down a complex workflow into a series of less complicated steps. Not to include the entire workflow.
+
+> **Accessibility**
+
+To cater for both mouse and keyboard interactions we've included numerous ways to dismiss a modal dialog:
+
+- click an Action in the footer
+- press Esc on a keyboard
+- click anywhere on the overlay (unless disabled, see [properties](#properties))
+
+<Description>{Readme}</Description>

@@ -1,0 +1,23 @@
+@include popperHost(999);
+@include popperArrow();
+
+.container {
+  @apply relative bg-gray-800 flex justify-start flex-col font-medium  text-white py-3 px-4 overflow-hidden rounded font-inter max-w-xs max-h-80;
+}
+
+.rds-popper-anim {
+  @apply bg-gray-50 rounded;
+}
+
+.arrow::before {
+  @apply border-4 border-gray-800 bg-gray-800;
+}
+
+:host([rds-hydrated-hidden]) {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+:host(:focus) {
+  @apply outline-none;
+}

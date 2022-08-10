@@ -1,0 +1,401 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import { action } from '@storybook/addon-actions';
+import Readme from './readme.md';
+import * as RdsAppLayout from '../../../dist/collection/components/rds-app-layout/rds-app-layout';
+
+<Meta
+  title="Components/App Layout/Stories"
+  component={RdsAppLayout}
+  parameters={{
+    layout: 'fullscreen',
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=170%3A17916',
+    },
+    backgrounds: {
+      default: 'White',
+    },
+    docs: {
+      inlineStories: false,
+    },
+  }}
+  argTypes={{
+    sidebar: {
+      control: {
+        type: 'radio',
+        options: ['left', 'right', 'both', 'none'],
+        defaultValue: 'left',
+      },
+    },
+  }}
+/>
+
+export const BaseTemplate = args => (
+  <rds-app-layout {...args}>
+    <img slot="app-logo" src="/assets/images/logos/logo-only-fm.svg" alt="FM Global" />
+    <span slot="app-title">FM Global</span>
+    <rds-header slot="app-header" type="base">
+      <rds-search slot="search" />
+      <rds-menu slot="profile">
+        <rds-avatar size="lg" slot="avatar" text="TU" slot="menu-trigger"></rds-avatar>
+        <rds-menu-item slot="menu-content">Dropdown item</rds-menu-item>
+        <rds-menu-item slot="menu-content">Dropdown item 2</rds-menu-item>
+      </rds-menu>
+    </rds-header>
+    <rds-nav slot="app-nav" type="base">
+      <rds-nav-item active>
+        <rds-hero-icon slot="icon" name="home" size="lg" />
+        Overview
+      </rds-nav-item>
+      <rds-nav-item>
+        <rds-hero-icon slot="icon" name="location-marker" size="lg" />
+        Locations
+      </rds-nav-item>
+      <rds-nav-item>
+        <rds-hero-icon slot="icon" name="menu-alt-4" size="lg" />
+        Recommendations
+      </rds-nav-item>
+      <rds-nav-item>
+        <rds-hero-icon slot="icon" name="document" size="lg" />
+        My Policies
+      </rds-nav-item>
+      <rds-nav-item>
+        <rds-hero-icon slot="icon" name="presentation-chart-line" size="lg" />
+        Policy Renewals
+      </rds-nav-item>
+      <rds-nav-item slot="tools">
+        <rds-hero-icon slot="icon" size="lg" name="users" />
+        User Management
+      </rds-nav-item>
+      <rds-contact slot="user-menu" avatar-text="FE" name="Frank Eason" role="Field Engineer"></rds-contact>
+      <rds-nav-item slot="user-menu">Your profile</rds-nav-item>
+      <rds-nav-item slot="user-menu">Settings</rds-nav-item>
+      <rds-nav-item slot="user-menu">Sign out</rds-nav-item>
+    </rds-nav>
+    <div slot="app-hero">
+      <rds-box bg="purple-200" color="purple-600" padding="5xl" styles="width: 100%">
+        <rds-flex justify-content="center" align-items="center">
+          <rds-text weight="medium" size="2xl">
+            Hero Section
+          </rds-text>
+        </rds-flex>
+      </rds-box>
+    </div>
+    <div slot="app-content">
+      <rds-alert visible>
+        <span slot="title">Attention needed</span>
+        <span slot="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam quo totam eius aperiam dolorum.</span>
+        <span slot="action-text">View Status</span>
+        <span slot="dismiss-text">Dismiss</span>
+      </rds-alert>
+      <rds-page-heading text="Page Heading Text">
+        <rds-panel-toggle auto-hide="false" slot="action-primary">
+          <rds-button appearance="tertiary" label="Toggle Panel">
+            Toggle Panel
+          </rds-button>
+        </rds-panel-toggle>
+      </rds-page-heading>
+      <rds-panel disabled panel-title="Panel Header" no-padding disable-body-scroll={false} />
+      <rds-panel-toggle auto-hide="false" slot="action-primary">
+        <rds-fab text="Toggle Panel"></rds-fab>
+      </rds-panel-toggle>
+      <rds-box padding="xl 0 xl 0" margin="0 auto 0 auto" styles="width: 100%; max-width: 80rem;">
+        <div className="rds-bordered"></div>
+      </rds-box>
+    </div>
+    <rds-footer slot="app-footer" />
+  </rds-app-layout>
+);
+
+export const BaseTemplateFullWidthHeader = args => (
+  <rds-app-layout {...args}>
+    <rds-header slot="app-header" type="base">
+      <rds-flex gap="sm">
+        <rds-flex-item flex-grow="1" align-self="center">
+          <img src="/assets/images/logos/logo-only-fm.svg" alt="FM Global" />
+        </rds-flex-item>
+        <rds-flex-item flex-grow="2" align-self="center">
+          <rds-text size="lg" spacing="none" weight="extrabold">
+            FM Global
+          </rds-text>
+        </rds-flex-item>
+      </rds-flex>
+      <rds-menu slot="profile">
+        <rds-avatar size="lg" slot="avatar" text="TU" slot="menu-trigger"></rds-avatar>
+        <rds-menu-item slot="menu-content">Dropdown item</rds-menu-item>
+        <rds-menu-item slot="menu-content">Dropdown item 2</rds-menu-item>
+      </rds-menu>
+    </rds-header>
+    <rds-nav slot="app-nav" type="base" expanded={true} collapsible>
+      <rds-nav-item active>
+        <rds-hero-icon slot="icon" name="home" size="lg" />
+        Overview
+      </rds-nav-item>
+      <rds-nav-item>
+        <rds-hero-icon slot="icon" name="location-marker" size="lg" />
+        Locations
+      </rds-nav-item>
+      <rds-nav-item>
+        <rds-hero-icon slot="icon" name="menu-alt-4" size="lg" />
+        Recommendations
+      </rds-nav-item>
+      <rds-nav-item>
+        <rds-hero-icon slot="icon" name="document" size="lg" />
+        My Policies
+      </rds-nav-item>
+      <rds-nav-item>
+        <rds-hero-icon slot="icon" name="presentation-chart-line" size="lg" />
+        Policy Renewals
+      </rds-nav-item>
+      <rds-nav-item slot="tools">
+        <rds-hero-icon slot="icon" size="lg" name="users" />
+        User Management
+      </rds-nav-item>
+      <rds-contact slot="user-menu" avatar-text="FE" name="Frank Eason" role="Field Engineer"></rds-contact>
+      <rds-nav-item slot="user-menu">Your profile</rds-nav-item>
+      <rds-nav-item slot="user-menu">Settings</rds-nav-item>
+      <rds-nav-item slot="user-menu">Sign out</rds-nav-item>
+    </rds-nav>
+    <div slot="app-content">
+      <rds-page-heading text="Page Heading Text" />
+      <rds-box padding="xl 0 xl 0" margin="0 auto 0 auto" styles="width: 100%; max-width: 80rem;">
+        <div className="rds-bordered"></div>
+      </rds-box>
+    </div>
+    <rds-footer slot="app-footer" />
+  </rds-app-layout>
+);
+
+export const BaseTemplateFullWidthHeaderAndPanel = args => (
+  <rds-app-layout {...args}>
+    <rds-header slot="app-header" type="base">
+      <rds-flex gap="sm">
+        <rds-flex-item flex-grow="1" align-self="center">
+          <img src="/assets/images/logos/logo-only-fm.svg" alt="FM Global" />
+        </rds-flex-item>
+        <rds-flex-item flex-grow="2" align-self="center">
+          <rds-text size="lg" spacing="none" weight="extrabold">
+            FM Global
+          </rds-text>
+        </rds-flex-item>
+      </rds-flex>
+      <rds-menu slot="profile">
+        <rds-avatar size="lg" slot="avatar" text="TU" slot="menu-trigger"></rds-avatar>
+        <rds-menu-item slot="menu-content">Dropdown item</rds-menu-item>
+        <rds-menu-item slot="menu-content">Dropdown item 2</rds-menu-item>
+      </rds-menu>
+    </rds-header>
+    <rds-nav slot="app-nav" type="base" expanded={false}>
+      <rds-nav-item active>
+        <rds-hero-icon slot="icon" name="home" size="lg" />
+        Overview
+      </rds-nav-item>
+      <rds-nav-item>
+        <rds-hero-icon slot="icon" name="location-marker" size="lg" />
+        Locations
+      </rds-nav-item>
+      <rds-nav-item>
+        <rds-hero-icon slot="icon" name="menu-alt-4" size="lg" />
+        Recommendations
+      </rds-nav-item>
+      <rds-nav-item>
+        <rds-hero-icon slot="icon" name="document" size="lg" />
+        My Policies
+      </rds-nav-item>
+      <rds-nav-item>
+        <rds-hero-icon slot="icon" name="presentation-chart-line" size="lg" />
+        Policy Renewals
+      </rds-nav-item>
+      <rds-nav-item slot="tools">
+        <rds-hero-icon slot="icon" size="lg" name="users" />
+        User Management
+      </rds-nav-item>
+      <rds-contact slot="user-menu" avatar-text="FE" name="Frank Eason" role="Field Engineer"></rds-contact>
+      <rds-nav-item slot="user-menu">Your profile</rds-nav-item>
+      <rds-nav-item slot="user-menu">Settings</rds-nav-item>
+      <rds-nav-item slot="user-menu">Sign out</rds-nav-item>
+    </rds-nav>
+    <rds-action-bar slot="app-right" collapsible="false">
+      <rds-action icon="view-grid" label="Label Text" text="My Action Test" />
+      <rds-action active icon="scissors" label="Label Text" text="My Action Test" />
+      <rds-action icon="office-building" label="Label Text" text="My Action Test" />
+      <rds-action icon="question-mark-circle" label="Label Text" slot="bottom-action" text="My Action Test" />
+    </rds-action-bar>
+    <div slot="app-content">
+      <rds-alert visible>
+        <span slot="title">Attention needed</span>
+        <span slot="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam quo totam eius aperiam dolorum.</span>
+        <span slot="action-text">View Status</span>
+        <span slot="dismiss-text">Dismiss</span>
+      </rds-alert>
+      <rds-page-heading text="Page Heading Text">
+        <rds-panel-toggle auto-hide="false" slot="action-primary">
+          <rds-button appearance="tertiary" label="Toggle Panel">
+            Toggle Panel
+          </rds-button>
+        </rds-panel-toggle>
+      </rds-page-heading>
+      <rds-panel panel-title="Panel Header" no-padding disable-body-scroll="false" wide="true" />
+      <rds-box padding="xl 0 xl 0" margin="0 auto 0 auto" styles="width: 100%; max-width: 80rem;">
+        <div className="rds-bordered"></div>
+      </rds-box>
+    </div>
+    <rds-footer slot="app-footer" />
+  </rds-app-layout>
+);
+
+export const BaseWithFullAppContent = args => (
+  <rds-app-layout {...args}>
+    <img slot="app-logo" src="/assets/images/logos/logo-only-fm.svg" alt="FM Global" />
+    <span slot="app-title">FM Global</span>
+    <rds-header slot="app-header" type="base">
+      <rds-search slot="search" />
+      <rds-menu slot="profile">
+        <rds-avatar size="lg" slot="avatar" text="TU" slot="menu-trigger"></rds-avatar>
+        <rds-menu-item slot="menu-content">Dropdown item</rds-menu-item>
+        <rds-menu-item slot="menu-content">Dropdown item 2</rds-menu-item>
+      </rds-menu>
+    </rds-header>
+    <rds-nav slot="app-nav" type="base">
+      <rds-nav-item active>
+        <rds-hero-icon slot="icon" name="home" size="lg" />
+        Overview
+      </rds-nav-item>
+      <rds-nav-item>
+        <rds-hero-icon slot="icon" name="location-marker" size="lg" />
+        Locations
+      </rds-nav-item>
+      <rds-nav-item>
+        <rds-hero-icon slot="icon" name="menu-alt-4" size="lg" />
+        Recommendations
+      </rds-nav-item>
+      <rds-nav-item>
+        <rds-hero-icon slot="icon" name="document" size="lg" />
+        My Policies
+      </rds-nav-item>
+      <rds-nav-item>
+        <rds-hero-icon slot="icon" name="presentation-chart-line" size="lg" />
+        Policy Renewals
+      </rds-nav-item>
+      <rds-nav-item slot="tools">
+        <rds-hero-icon slot="icon" size="lg" name="users" />
+        User Management
+      </rds-nav-item>
+      <rds-contact slot="user-menu" avatar-text="FE" name="Frank Eason" role="Field Engineer"></rds-contact>
+      <rds-nav-item slot="user-menu">Your profile</rds-nav-item>
+      <rds-nav-item slot="user-menu">Settings</rds-nav-item>
+      <rds-nav-item slot="user-menu">Sign out</rds-nav-item>
+    </rds-nav>
+    <div slot="app-hero">
+      <rds-box bg="purple-200" color="purple-600" padding="5xl" styles="width: 100%">
+        <rds-flex justify-content="center" align-items="center">
+          <rds-text weight="medium" size="2xl">
+            Hero Section
+          </rds-text>
+        </rds-flex>
+      </rds-box>
+    </div>
+    <div slot="app-content-full">
+      <rds-alert visible>
+        <span slot="title">Attention needed</span>
+        <span slot="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam quo totam eius aperiam dolorum.</span>
+        <span slot="action-text">View Status</span>
+        <span slot="dismiss-text">Dismiss</span>
+      </rds-alert>
+      <rds-page-heading text="Page Heading Text">
+        <rds-panel-toggle auto-hide="false" slot="action-primary">
+          <rds-button appearance="tertiary" label="Toggle Panel">
+            Toggle Panel
+          </rds-button>
+        </rds-panel-toggle>
+      </rds-page-heading>
+      <rds-panel disabled panel-title="Panel Header" no-padding disable-body-scroll={false} />
+      <rds-panel-toggle auto-hide="false" slot="action-primary">
+        <rds-fab text="Toggle Panel"></rds-fab>
+      </rds-panel-toggle>
+      <rds-box padding="xl 0 xl 0" margin="0 auto 0 auto" styles="width: 100%">
+        <div className="rds-bordered"></div>
+      </rds-box>
+    </div>
+    <rds-footer slot="app-footer" />
+  </rds-app-layout>
+);
+
+# App Layout
+
+### Base
+
+<Canvas withSource="auto">
+  <Story
+    name="Base"
+    height="500px"
+    args={{
+      type: 'base',
+    }}
+  >
+    {BaseTemplate.bind({})}
+  </Story>
+</Canvas>
+
+### Base Without Sidebar
+
+<Canvas withSource="auto">
+  <Story
+    name="Base Without Sidebar"
+    height="500px"
+    args={{
+      type: 'base',
+      sidebar: 'none',
+    }}
+  >
+    {BaseTemplate.bind({})}
+  </Story>
+</Canvas>
+
+### Base With Full-Width Header
+
+<Canvas withSource="auto">
+  <Story
+    name="Base With Full-Width Header"
+    height="500px"
+    args={{
+      'type': 'base',
+      'header-width': 'full',
+    }}
+  >
+    {BaseTemplateFullWidthHeader.bind({})}
+  </Story>
+</Canvas>
+
+### Base With Full-Width Header + Both Sidebars + Panel
+
+<Canvas withSource="auto">
+  <Story
+    name="Base With Full-Width Header + Both Sidebars + Panel"
+    height="500px"
+    args={{
+      'type': 'base',
+      'header-width': 'full',
+      'sidebar': 'both',
+    }}
+  >
+    {BaseTemplateFullWidthHeaderAndPanel.bind({})}
+  </Story>
+</Canvas>
+
+### Base WithAppFullContent
+
+<Canvas withSource="auto">
+  <Story
+    name="Base With Full App Content"
+    height="500px"
+    args={{
+      type: 'base',
+      sidebar: 'none',
+    }}
+  >
+    {BaseWithFullAppContent.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

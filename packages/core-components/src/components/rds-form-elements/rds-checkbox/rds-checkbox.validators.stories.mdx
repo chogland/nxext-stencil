@@ -1,0 +1,68 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsCheckbox from '../../../../dist/collection/components/rds-form-elements/rds-checkbox/rds-checkbox';
+
+<Meta
+  title="Components/Form Elements/Validators/Stories/Constraint Validators/Checkbox"
+  component={RdsCheckbox}
+  argTypes={{
+    label: {
+      control: { type: 'text' },
+      description: 'The label text shown for the checkbox group',
+    },
+    required: {
+      control: { type: 'boolean' },
+      description: 'Removes the optional indicator from the input and makes it required for form submission.',
+    },
+  }}
+/>
+
+export const Template = args => <rds-checkbox {...args} label="I agree to the terms and conditions" />;
+
+# Checkbox
+
+### Default: Required
+
+<Canvas>
+  <Story
+    name="Default: Required"
+    args={{
+      required: true,
+      validate: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Small Card: Required
+
+<Canvas>
+  <Story
+    name="Small Card: Required"
+    args={{
+      required: true,
+      validate: true,
+      type: 'small-card',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Card: Required
+
+<Canvas>
+  <Story
+    name="Card: Required"
+    args={{
+      required: true,
+      validate: true,
+      type: 'card',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

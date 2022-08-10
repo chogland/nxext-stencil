@@ -1,0 +1,112 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+
+<Meta title="Components/Form Elements/Select/Overview" />
+
+# Select: Overview
+
+`RdsSelect` is a native select element that can be used to build forms.
+
+## Variations
+
+### Native
+
+The default `RdsSelect` component is a native HTML select element does not display any helper text and is an optional field. If you would like to change these default properties, see the below examples and available props below.
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-select-stories--native"></Story>
+</Canvas>
+
+### Required
+
+When the `required` prop is set to true, the optional indicator will disappear and the user will need to complete the select in order to submit the form this select is a part of.
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-select-stories--required"></Story>
+</Canvas>
+
+### Help Text
+
+When the `helptext` prop is set to true and the `help-text` slot is present, the text will be shown below the select. Use plain text only in this slot.
+
+Help text describes additional guidance about the select field. It should only take up a single line and should be persistently visible.
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-select-stories--with-help-text"></Story>
+</Canvas>
+
+### Error / Invalid State
+
+When the `error` prop is set to true, the select field will be displayed in error mode. You can set the error message using the `error-text` slot. Error messages are displayed below the select field, replacing help text until fixed.
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-select-stories--error"></Story>
+</Canvas>
+
+### Multiple Select
+
+When the `multiple` prop is set to true, the select field will render in multi-select mode. Meaning, users can select multiple optional items.
+
+On a desktop computer, there are a number of ways to choose multiple options in a select element with a multiple attribute:
+
+Mouse users can hold the Ctrl, Command, or Shift keys (depending on what makes sense for your operating system) and then click multiple options to select/deselect them.
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-select-stories--multiple"></Story>
+</Canvas>
+
+### Custom
+
+When the `native` prop is set to false, the native select field will be hidden, and controlled by a custom select field using a button and list element for better styling options. The `error`, `disabled`, `helptext`, `required` prop functionality complies with the custom select. The `multiple` prop variation **does not** comply with the custom select.
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-select-stories--custom" height="250px"></Story>
+</Canvas>
+
+### Disabled
+
+When the `disabled` prop is set to true, the select field will display in disabled mode and cannot be interacted with.
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-select-stories--disabled"></Story>
+</Canvas>
+
+### With Disabled Options - Native
+
+You can also disable one or more `<option>s` by adding the `disabled` prop directly to the options you would like disabled.
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-select-stories--with-disabled-options-native" height="250px"></Story>
+</Canvas>
+
+### With Disabled Options - Custom
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-select-stories--with-disabled-options-custom" height="250px"></Story>
+</Canvas>
+
+### With Pre-Selected Option - Native
+
+You can update the selected option by adding the `selected` prop directly to an option.
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-select-stories--with-pre-selected-option-native" height="250px"></Story>
+</Canvas>
+
+### With Pre-Selected Option - Custom
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-select-stories--with-pre-selected-option-custom" height="250px"></Story>
+</Canvas>
+
+## Validations
+
+Visit the [validations overview page](?path=/story/components-form-elements-validators-overview--page) for information on validating select components.
+
+## Usage Guidelines
+
+> **Wait to validate**
+
+Only show error validation messages or stylings after a user has interacted with the select.
+
+<Description>{Readme}</Description>

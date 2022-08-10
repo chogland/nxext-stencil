@@ -1,0 +1,261 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import FlexReadme from './readme.md';
+import FlexItemReadme from '../rds-flex-item/readme.md';
+
+<Meta title="Components/Flex/Overview" />
+
+# Flex: Overview
+
+`Flex` is a component used to create flex layouts. The Flex component has all CSS FlexBox attributes baked-in as properties.
+
+<Canvas withSource="auto">
+  <Story id="components-flex-stories--default-story"></Story>
+</Canvas>
+
+The flex component is a _wrapper_ component, meaning that it should always have children. If you would like to take advantage of any flex item attributes, such as CSS's flex-grow, flex-shrink, order, or flex-basis, you can use the `FlexItem` component and use the respective props that correspond to each attribute.
+
+On the other hand, for simpler flex layouts that only account for simple flex container manipulation, any DOM Element or RDS component can reside as a child of `Flex`.
+
+## Responsiveness
+
+The flex component is designed to respond to viewport size, based on the TailwindCSS's breakpoint values. Every flex option described below has responsive support built-in. If any property listed below should display differently at specific breakpoints, please refer to the table below for setting up the property.
+
+<rds-table>
+  <rds-table-row slot="head">
+    <rds-table-cell type="head">Breakpoint Name</rds-table-cell>
+    <rds-table-cell type="head">Breakpoint Index</rds-table-cell>
+    <rds-table-cell type="head">Breakpoint Value</rds-table-cell>
+  </rds-table-row>
+  <rds-table-row slot="body">
+    <rds-table-cell>xs</rds-table-cell>
+    <rds-table-cell>0</rds-table-cell>
+    <rds-table-cell>
+      0px
+      <br /> // => @media (min-width: 0)
+      <br />
+      // or all breakpoints if no other is specified
+    </rds-table-cell>
+  </rds-table-row>
+  <rds-table-row slot="body">
+    <rds-table-cell>sm</rds-table-cell>
+    <rds-table-cell>1</rds-table-cell>
+    <rds-table-cell>
+      640px
+      <br />
+      // => @media (min-width: 640px)
+    </rds-table-cell>
+  </rds-table-row>
+  <rds-table-row slot="body">
+    <rds-table-cell>md</rds-table-cell>
+    <rds-table-cell>2</rds-table-cell>
+    <rds-table-cell>
+      768px
+      <br />
+      // => @media (min-width: 768px)
+    </rds-table-cell>
+  </rds-table-row>
+  <rds-table-row slot="body">
+    <rds-table-cell>lg</rds-table-cell>
+    <rds-table-cell>3</rds-table-cell>
+    <rds-table-cell>
+      1024px
+      <br />
+      // => @media (min-width: 1024px)
+    </rds-table-cell>
+  </rds-table-row>
+  <rds-table-row slot="body">
+    <rds-table-cell>xl</rds-table-cell>
+    <rds-table-cell>4</rds-table-cell>
+    <rds-table-cell>
+      1280px
+      <br />
+      // => @media (min-width: 1280px)
+    </rds-table-cell>
+  </rds-table-row>
+  <rds-table-row slot="body">
+    <rds-table-cell>2xl</rds-table-cell>
+    <rds-table-cell>5</rds-table-cell>
+    <rds-table-cell>
+      1536px
+      <br />
+      // => @media (min-width: 1536px)
+    </rds-table-cell>
+  </rds-table-row>
+</rds-table>
+
+Below is an illustrative example of how you would set up the `direction` flex option responsively:
+
+```
+<RdsFlex
+  direction="column" // always column (non-responsive)
+/>
+
+<RdsFlex
+  direction={[
+    'column', // column breakpoint xs
+    'row', // row at breakpoint sm
+    'row-reverse' // row-reverse at breakpoint md and up
+  ]}
+/>
+
+<RdsFlex
+  direction={[
+    'column', // column breakpoint xs
+    null, // skip sm breakpoint (still column)
+    'row' // row at breakpoint md and up
+  ]}
+/>
+```
+
+## Flex Options
+
+Below you can view a sample story for all of the flex component props available to you. You can view more options in the individual stories for this component.
+
+### Inline
+
+The `inline` property makes the flex component display inline. This is necessary for when you would like your flex container to display inline with another component or element
+
+There is absolutely no difference in the affect on flex items; flex layout is identical whether the flex container is block-level or inline-level. You cannot display flex items inline; otherwise you don't actually have a flex layout.
+
+<Canvas withSource="auto">
+  <Story id="components-flex-stories--inline"></Story>
+</Canvas>
+
+### Wrap
+
+The `wrap` property sets whether flex items are forced onto one line or can wrap onto multiple lines.
+
+<Canvas withSource="auto">
+  <Story id="components-flex-stories--wrap"></Story>
+</Canvas>
+
+### Gap
+
+The `gap` property sets the gaps (gutters) between flex rows and columns. This one gap property is a shorthand for setting both row and column gaps. You can use any of the pre-defined spacing values below, or a CSS length value for further customization.
+
+<rds-table>
+  <rds-table-row slot="head">
+    <rds-table-cell type="head">Type</rds-table-cell>
+    <rds-table-cell type="head">Value</rds-table-cell>
+  </rds-table-row>
+  <rds-table-row slot="body">
+    <rds-table-cell>sm</rds-table-cell>
+    <rds-table-cell>1rem / 16px</rds-table-cell>
+  </rds-table-row>
+  <rds-table-row slot="body">
+    <rds-table-cell>md</rds-table-cell>
+    <rds-table-cell>1.5rem / 24px</rds-table-cell>
+  </rds-table-row>
+  <rds-table-row slot="body">
+    <rds-table-cell>lg</rds-table-cell>
+    <rds-table-cell>2rem / 32px</rds-table-cell>
+  </rds-table-row>
+  <rds-table-row slot="body">
+    <rds-table-cell>xl</rds-table-cell>
+    <rds-table-cell>3rem / 48px</rds-table-cell>
+  </rds-table-row>
+  <rds-table-row slot="body">
+    <rds-table-cell>2xl</rds-table-cell>
+    <rds-table-cell>4rem / 64px</rds-table-cell>
+  </rds-table-row>
+  <rds-table-row slot="body">
+    <rds-table-cell>3xl</rds-table-cell>
+    <rds-table-cell>6rem / 96px</rds-table-cell>
+  </rds-table-row>
+  <rds-table-row slot="body">
+    <rds-table-cell>4xl</rds-table-cell>
+    <rds-table-cell>8rem / 128px</rds-table-cell>
+  </rds-table-row>
+</rds-table>
+
+Below are some examples of how to set gap.
+
+`gap="md"` (md = both row gap and column gap)<br />
+`gap="sm md"` (md = row gap, sm = column gap)<br />
+
+<Canvas withSource="auto">
+  <Story id="components-flex-stories--gap"></Story>
+</Canvas>
+
+### Direction
+
+The `flexDirection` property sets how items are placed in the flex component defining the main axis and the direction (normal or reversed). Below is an example of setting the value to 'column'.
+
+<Canvas withSource="auto">
+  <Story id="components-flex-stories-direction--column"></Story>
+</Canvas>
+
+### Align Items
+
+The `alignItems` property sets the `alignSelf` value on all direct children of the component as a group. It controls the alignment of items on the cross-axis. Below is an example of setting the value to 'flex-end'.
+
+<Canvas withSource="auto">
+  <Story height="300px" id="components-flex-stories-align-items--flex-end"></Story>
+</Canvas>
+
+### Align Content
+
+The `alignContent` property sets the distribution of space between and around content items along a cross-axis. But `alignContent` differs from `alignItems` because it is for multi line flexible boxes. It has no effect when items are in a single line. It aligns the whole structure according to its value. Below is an example of setting the value to 'space-around'.
+
+<Canvas withSource="auto">
+  <Story height="400px" id="components-flex-stories-align-content--space-around"></Story>
+</Canvas>
+
+### Justify Content
+
+The `justifyContent` property defines how the browser distributes space between and around content items along the main-axis of a flex component. Below is an example of setting the value to 'flex-end'.
+
+<Canvas withSource="auto">
+  <Story id="components-flex-stories-justify-content--flex-end"></Story>
+</Canvas>
+
+## Flex Item Options
+
+Below you can view a sample story for all of the flex item component props available to you. There are more stories available in the sub-navigation folder for this component, and additionally, you may change the default options for each story by using storybook controls.
+
+### Order
+
+The `order` property sets the order to lay out a child component and/or DOM element in a flex component. Items in a component are sorted by ascending order value and then by their source code order.
+
+<Canvas withSource="auto">
+  <Story id="components-flex-stories-flex-item--order"></Story>
+</Canvas>
+
+### Flex Grow
+
+The `flexGrow` property sets the flex grow factor of a flex item's main size.
+
+<Canvas withSource="auto">
+  <Story id="components-flex-stories-flex-item--flex-grow"></Story>
+</Canvas>
+
+### Flex Shrink
+
+The `flexShrink` property sets the flex shrink factor of a flex item's main size.
+
+<Canvas withSource="auto">
+  <Story id="components-flex-stories-flex-item--flex-shrink"></Story>
+</Canvas>
+
+### Flex Basis
+
+The `flexBasis` property sets the initial main size of a flex item. It sets the size of the content box unless otherwise set with box-sizing. Below is an example where the value is set to '300px'.
+
+<Canvas withSource="auto">
+  <Story id="components-flex-stories-flex-item--flex-basis"></Story>
+</Canvas>
+
+### Align Self
+
+The `alignSelf` property overrides a grid or flex item's `alignItems` value.
+
+### Height
+
+The `height` property will apply a string height value to the flex component in case you want to adjust it from the default value of 'auto'.
+
+## Additional Information
+
+> If you are interested in further details of CSS's FlexBox, a comprehensive guide can be found at:<br />[CSS Tricks - A Guide to FlexBox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
+
+<Description>{FlexReadme}</Description>
+<Description>{FlexItemReadme}</Description>

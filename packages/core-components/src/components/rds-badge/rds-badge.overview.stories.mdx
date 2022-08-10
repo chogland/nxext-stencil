@@ -1,0 +1,60 @@
+import { Meta, Story, Canvas, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import RdsBadge from '../../../dist/collection/components/rds-badge/rds-badge';
+
+<Meta title="Components/Badge/Overview" />
+
+# Badge: Overview
+
+`Badges` are status modifiers to other elements which display the numerical value of an element either next to it or inside the element itself.
+
+## Variations
+
+### Default
+
+`Badge` has a max _value_ displayed of 99. Any _value_ that exceeds 99 will display 99+. Alternatively you can set the `Badge` to text. See below.
+
+<Canvas style={{ backgroundColor: 'white' }}>
+  <Story id="components-badge-stories--default-gray"></Story>
+  <Story id="components-badge-stories--default-red"></Story>
+  <Story id="components-badge-stories--default-yellow"></Story>
+  <Story id="components-badge-stories--default-green"></Story>
+  <Story id="components-badge-stories--default-blue"></Story>
+  <Story id="components-badge-stories--default-purple"></Story>
+</Canvas>
+
+### Optional: With Text
+
+Using the _text_ property allows you to set the `Badge` to show text instead of a number. Here are some examples.
+
+<Canvas style={{ backgroundColor: 'white' }}>
+  <Story id="components-badge-stories--text-gray"></Story>
+  <Story id="components-badge-stories--text-red"></Story>
+  <Story id="components-badge-stories--text-yellow"></Story>
+  <Story id="components-badge-stories--text-green"></Story>
+  <Story id="components-badge-stories--text-blue"></Story>
+  <Story id="components-badge-stories--text-purple"></Story>
+</Canvas>
+
+### Optional: With Icon
+
+<Canvas style={{ backgroundColor: 'white' }}>
+  <Story id="components-badge-stories--with-icon-gray"></Story>
+  <Story id="components-badge-stories--with-icon-red"></Story>
+  <Story id="components-badge-stories--with-icon-yellow"></Story>
+  <Story id="components-badge-stories--with-icon-green"></Story>
+  <Story id="components-badge-stories--with-icon-blue"></Story>
+  <Story id="components-badge-stories--with-icon-purple"></Story>
+</Canvas>
+
+## Usage Guidelines
+
+> **Be Concise**
+
+Badges should never contain more than two numerals. When displaying a number over 99, `Badge` will only show 99 with a following “+”.
+
+> **Icons**
+
+Icons can be placed before the text or number value for the badge. We recommend `arrow-sm-*` to show increase or decrease in value. The icon color is inherited automatically and should only be changed by changing the color property of `Badge`.
+
+<Description>{Readme}</Description>

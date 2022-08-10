@@ -1,0 +1,52 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsPagination from '../../../dist/collection/components/rds-pagination/rds-pagination';
+
+<Meta
+  title="Patterns/Pagination/Stories"
+  component={RdsPagination}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=48%3A25197',
+    },
+    layout: 'fullscreen',
+  }}
+  argTypes={{}}
+/>
+
+export const Template = args => <rds-pagination {...args}></rds-pagination>;
+
+# Pagination
+
+### Default
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      start: 1,
+      items: 10,
+      total: 100,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Increased Results Per Page
+
+<Canvas>
+  <Story
+    name="Increased Results Per Page"
+    args={{
+      start: 1,
+      items: 100,
+      total: 1000,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

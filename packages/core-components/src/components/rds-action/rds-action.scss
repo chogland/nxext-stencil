@@ -1,0 +1,54 @@
+:host {
+  @apply block font-inter;
+
+  &:focus-visible {
+    @apply border-2 border-purple-900;
+  }
+}
+
+:host([active]) button,
+:host([active]) button:hover,
+:host([active]) button:focus {
+  @apply text-purple-600 bg-purple-50;
+}
+
+:host([disabled]) button,
+:host([disabled]) button:hover,
+:host([disabled]) button:focus {
+  @apply text-gray-400 bg-white cursor-default pointer-events-none;
+}
+
+:host([disabled]) {
+  @apply overflow-hidden;
+}
+
+button {
+  @apply bg-white p-4 text-gray-600 border-0 focus:outline-none flex items-center justify-center cursor-pointer w-full rounded-md my-1;
+
+  &:hover {
+    @apply bg-gray-50 text-gray-700;
+  }
+
+  &:focus-visible {
+    @apply rounded-md ring-2 ring-purple-600 ring-offset-2;
+  }
+
+  &:active {
+    @apply text-purple-600 bg-purple-50;
+  }
+
+  > div {
+    @apply flex;
+  }
+}
+
+.text-container {
+  @apply leading-4 truncate m-0 w-0 ease-in-out duration-150 transition-opacity font-medium hidden;
+
+  transition-property: margin;
+  transition-property: width;
+}
+
+.text-container--visible {
+  @apply flex-auto w-auto pl-2 flex;
+}

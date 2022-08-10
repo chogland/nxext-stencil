@@ -1,0 +1,66 @@
+:host {
+  @apply block font-inter w-full;
+}
+
+div.file-uploader-container {
+  @apply flex justify-center px-6 py-6 border-2 border-gray-300 border-dashed rounded-md;
+
+  .dropzone,
+  .progress,
+  .files {
+    @apply relative flex flex-col w-full justify-center;
+  }
+
+  .dropzone {
+    @apply items-center cursor-pointer rounded-md outline-none focus-visible:ring-2 focus-visible:ring-purple-600;
+
+    &-center {
+      @apply flex flex-col w-full h-full justify-between;
+
+      .drop-clickable {
+        @apply flex flex-col items-center justify-center mx-auto my-0 -translate-y-1;
+
+        .drop-clickable-container {
+          @apply flex text-sm text-gray-600;
+        }
+
+        .drop-clickable-text {
+          @apply relative cursor-pointer rounded-md font-medium text-purple-600 hover:text-purple-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-purple-500;
+        }
+
+        .drop-clickable-hint {
+          @apply pl-1;
+        }
+
+        .drop-clickable-icon {
+          @apply h-12 w-12 rounded-full text-gray-400;
+        }
+      }
+
+      .dropzone-hint {
+        @apply text-center text-xs text-gray-500;
+      }
+
+      .dropzone-error {
+        @apply leading-3 text-xs text-center py-1 px-0 box-border;
+
+        span {
+          @apply block text-red-600;
+        }
+      }
+    }
+  }
+
+  .progress,
+  .files {
+    @apply box-border justify-center;
+
+    &-center {
+      @apply flex flex-col;
+    }
+
+    &-title {
+      @apply text-xs text-gray-500 font-medium;
+    }
+  }
+}

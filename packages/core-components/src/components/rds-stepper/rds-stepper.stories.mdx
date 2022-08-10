@@ -1,0 +1,185 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as StepperItemReadme from './../rds-stepper-item/readme.md';
+import * as RdsStepper from '../../../dist/collection/components/rds-stepper/rds-stepper';
+
+<Meta
+  title="Collections/Stepper/Stories"
+  component={RdsStepper}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=48%3A91039',
+    },
+    layout: 'fullscreen',
+  }}
+/>
+
+export const SimpleTemplate = args => (
+  <rds-stepper>
+    <rds-stepper-item text="Step One Line">I am content within the first step.</rds-stepper-item>
+    <rds-stepper-item text="Step Two Line">I am content within the second step.</rds-stepper-item>
+    <rds-stepper-item text="Step Three Line">I am content within the third step.</rds-stepper-item>
+  </rds-stepper>
+);
+
+export const SimpleManyTemplate = args => (
+  <rds-stepper>
+    <rds-stepper-item text="Step One" complete>
+      I am content within the first step.
+    </rds-stepper-item>
+    <rds-stepper-item text="Step Two" active>
+      I am content within the second step.
+    </rds-stepper-item>
+    <rds-stepper-item text="Step Three">I am content within the third step.</rds-stepper-item>
+    <rds-stepper-item text="Step Four">I am content within the fourth step.</rds-stepper-item>
+    <rds-stepper-item text="Step Five">I am content within the fifth step.</rds-stepper-item>
+    <rds-stepper-item text="Step Six">I am content within the sixth step.</rds-stepper-item>
+  </rds-stepper>
+);
+
+export const BulletCircleTemplate = args => (
+  <rds-stepper {...args}>
+    <rds-stepper-item complete />
+    <rds-stepper-item complete />
+    <rds-stepper-item active />
+    <rds-stepper-item />
+  </rds-stepper>
+);
+
+export const BulletAndTextTemplate = args => (
+  <rds-stepper {...args} vertical>
+    <rds-stepper-item text="Create account" complete />
+    <rds-stepper-item text="Profile information" active />
+    <rds-stepper-item text="Theme" />
+    <rds-stepper-item text="Preview" />
+  </rds-stepper>
+);
+
+export const CircleAndTextTemplate = args => (
+  <rds-stepper {...args} vertical>
+    <rds-stepper-item text="Create account" complete>
+      <div slot="description">Completed: 04-Aug-2021</div>
+      <rds-hero-icon name="chevron-right" slot="action" />
+    </rds-stepper-item>
+    <rds-stepper-item text="Profile information" active>
+      <div slot="description">Target Date: 25-Aug-2021</div>
+      <rds-hero-icon name="chevron-right" slot="action" />
+    </rds-stepper-item>
+    <rds-stepper-item text="Theme">
+      <div slot="description">Target Date: 22-Sep-2021</div>
+      <rds-hero-icon name="chevron-right" slot="action" />
+    </rds-stepper-item>
+    <rds-stepper-item text="Preview">
+      <div slot="description">Target Date: 17-Nov-2021</div>
+      <rds-hero-icon name="chevron-right" slot="action" />
+    </rds-stepper-item>
+  </rds-stepper>
+);
+
+export const ComplexTemplate = args => (
+  <rds-stepper type="complex" {...args}>
+    <rds-stepper-item icon="check" text="Renewals Start" complete>
+      <div slot="description">Completed: 04-Aug-2021</div>I am content within the first step.
+    </rds-stepper-item>
+    <rds-stepper-item icon="chart-square-bar" text="Values Received" complete>
+      <div slot="description">Completed: 25-Aug-2021</div>I am content within the second step.
+    </rds-stepper-item>
+    <rds-stepper-item icon="mail-open" text="Proposal Delivery" active>
+      <div slot="description">Completed: 22-Sep-2021</div>I am content within the third step.
+    </rds-stepper-item>
+    <rds-stepper-item icon="link" text="Order to Bind">
+      <div slot="description">Target Date: 07-Nov-2021</div>I am content within the fourth step.
+    </rds-stepper-item>
+    <rds-stepper-item icon="clipboard-check" text="Policy Issuance">
+      <div slot="description">Target Date: 31-Dec-2021</div>I am content within the fifth step.
+    </rds-stepper-item>
+  </rds-stepper>
+);
+
+# Stepper
+
+### Simple
+
+<Canvas>
+  <Story name="Simple">{SimpleTemplate.bind({})}</Story>
+</Canvas>
+
+### Simple - Many Items
+
+<Canvas>
+  <Story name="Simple - Many Items">{SimpleManyTemplate.bind({})}</Story>
+</Canvas>
+
+### Complex
+
+<Canvas>
+  <Story name="Complex">{ComplexTemplate.bind({})}</Story>
+</Canvas>
+
+### Vertical Complex
+
+<Canvas>
+  <Story
+    name="Vertical Complex"
+    args={{
+      vertical: true,
+    }}
+  >
+    {ComplexTemplate.bind({})}
+  </Story>
+</Canvas>
+
+### Bullets
+
+<Canvas>
+  <Story
+    name="Bullets"
+    args={{
+      type: 'bullet',
+    }}
+  >
+    {BulletCircleTemplate.bind({})}
+  </Story>
+</Canvas>
+
+### Vertical Bullets
+
+<Canvas>
+  <Story
+    name="Vertical Bullets"
+    args={{
+      type: 'bullet',
+    }}
+  >
+    {BulletAndTextTemplate.bind({})}
+  </Story>
+</Canvas>
+
+### Circles
+
+<Canvas>
+  <Story
+    name="Circles"
+    args={{
+      type: 'circle',
+    }}
+  >
+    {BulletCircleTemplate.bind({})}
+  </Story>
+</Canvas>
+
+### Vertical Circles
+
+<Canvas>
+  <Story
+    name="Vertical Circles"
+    args={{
+      type: 'circle',
+    }}
+  >
+    {CircleAndTextTemplate.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

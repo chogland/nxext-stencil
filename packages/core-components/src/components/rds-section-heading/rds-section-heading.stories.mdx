@@ -1,0 +1,174 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsSectionHeading from '../../../dist/collection/components/rds-section-heading/rds-section-heading';
+
+<Meta
+  title="Patterns/Section Heading/Stories"
+  component={RdsSectionHeading}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=136%3A16535',
+    },
+    layout: 'padded',
+  }}
+  argTypes={{}}
+/>
+
+export const Default = args => <rds-section-heading {...args} />;
+
+export const WithText = args => (
+  <rds-section-heading {...args}>
+    <rds-text size="sm" spacing="none" slot="content">
+      Workcation is a property rental website. Etiam ullamcorper massa viverra consequat, consectetur id nulla tempus. Fringilla egestas justo massa purus sagittis malesuada.
+    </rds-text>
+  </rds-section-heading>
+);
+
+export const WithActions = args => (
+  <rds-section-heading {...args}>
+    <rds-button size="sm" slot="action-primary">
+      Create
+    </rds-button>
+    <rds-button size="sm" appearance="tertiary" slot="action-secondary">
+      Share
+    </rds-button>
+  </rds-section-heading>
+);
+
+export const WithTextAndActions = args => (
+  <rds-section-heading {...args}>
+    <rds-text size="sm" spacing="none" slot="content">
+      Workcation is a property rental website. Etiam ullamcorper massa viverra consequat, consectetur id nulla tempus. Fringilla egestas justo massa purus sagittis malesuada.
+    </rds-text>
+    <rds-button size="sm" slot="action-primary">
+      Create
+    </rds-button>
+    <rds-button size="sm" appearance="tertiary" slot="action-secondary">
+      Share
+    </rds-button>
+  </rds-section-heading>
+);
+
+export const WithTabs = args => (
+  <rds-section-heading {...args}>
+    <rds-tabs slot="content">
+      <rds-tab tab="tab1">My account</rds-tab>
+      <rds-tab tab="tab2">Company</rds-tab>
+      <rds-tab tab="tab3">Team members</rds-tab>
+      <rds-tab tab="tab4">Billing</rds-tab>
+    </rds-tabs>
+  </rds-section-heading>
+);
+
+export const WithTabsAndActions = args => (
+  <rds-section-heading {...args}>
+    <rds-tabs slot="content">
+      <rds-tab tab="tab1">My account</rds-tab>
+      <rds-tab tab="tab2">Company</rds-tab>
+      <rds-tab tab="tab3">Team members</rds-tab>
+      <rds-tab tab="tab4">Billing</rds-tab>
+    </rds-tabs>
+    <rds-button size="sm" slot="action-primary">
+      Create
+    </rds-button>
+    <rds-button size="sm" appearance="tertiary" slot="action-secondary">
+      Share
+    </rds-button>
+  </rds-section-heading>
+);
+
+# Section Heading
+
+### Default
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      text: 'Section Heading Text',
+    }}
+  >
+    {Default.bind({})}
+  </Story>
+</Canvas>
+
+### With Text
+
+<Canvas>
+  <Story
+    name="With Text"
+    args={{
+      text: 'Section Heading Text',
+    }}
+  >
+    {WithText.bind({})}
+  </Story>
+</Canvas>
+
+### With Actions
+
+<Canvas>
+  <Story
+    name="With Actions"
+    args={{
+      text: 'Section Heading Text',
+    }}
+  >
+    {WithActions.bind({})}
+  </Story>
+</Canvas>
+
+### With Text and Actions
+
+<Canvas>
+  <Story
+    name="With Text and Actions"
+    args={{
+      text: 'Section Heading Text',
+    }}
+  >
+    {WithTextAndActions.bind({})}
+  </Story>
+</Canvas>
+
+### With Long Text and Actions
+
+<Canvas>
+  <Story
+    name="With Long Text and Actions"
+    args={{
+      text: 'A Very Long Title Text That Will Break To The Next Line If Necessary',
+    }}
+  >
+    {WithTextAndActions.bind({})}
+  </Story>
+</Canvas>
+
+### With Tabs
+
+<Canvas>
+  <Story
+    name="With Tabs"
+    args={{
+      text: 'Section Heading Text',
+    }}
+  >
+    {WithTabs.bind({})}
+  </Story>
+</Canvas>
+
+### With Tabs and Actions
+
+<Canvas>
+  <Story
+    name="With Tabs and Actions"
+    args={{
+      text: 'Section Heading Text',
+    }}
+  >
+    {WithTabsAndActions.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

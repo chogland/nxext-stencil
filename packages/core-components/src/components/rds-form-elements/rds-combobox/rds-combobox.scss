@@ -1,0 +1,79 @@
+:host {
+  @apply relative block;
+}
+
+.wrapper {
+  @apply flex;
+}
+
+.grid-input {
+  @apply flex flex-grow flex-wrap items-center p-0;
+}
+
+.input {
+  @apply flex-grow appearance-none border-none bg-transparent p-0;
+
+  &:focus {
+    @apply outline-none;
+  }
+}
+
+.input--transparent {
+  @apply opacity-0;
+}
+
+.input--hidden {
+  @apply pointer-events-none;
+}
+
+.input-wrap {
+  @apply relative;
+}
+
+.label {
+  @apply pointer-events-none flex max-w-full flex-auto truncate p-0 font-normal;
+}
+
+.label--spaced {
+  @apply py-0;
+}
+
+.popper-container {
+  @apply w-full;
+  @include popperContainer();
+  @include popperWrapper();
+}
+
+@include popperElemAnim('.popper-container');
+
+.popper-container--active {
+  @include popperWrapperActive();
+}
+
+.list-container {
+  @apply overflow-y-auto absolute z-order1 mt-1 max-h-56 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm;
+}
+
+.list {
+  @apply m-0 block p-0;
+}
+
+.list--hide {
+  @apply h-0;
+}
+
+.item {
+  @apply block;
+}
+
+.no-items {
+  @apply py-2 px-3 font-inter text-sm text-gray-900;
+}
+
+.label-container {
+  @apply flex justify-between items-center;
+}
+
+.optional {
+  @apply text-sm text-gray-600 font-medium font-inter;
+}

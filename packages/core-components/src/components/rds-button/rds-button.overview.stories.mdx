@@ -1,0 +1,106 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import RdsButton from '../../../dist/collection/components/rds-button/rds-button';
+
+<Meta title="Components/Button/Overview" />
+
+# Buttons: Overview
+
+`Buttons` allow users to perform an action or to navigate to another page. They have multiple styles for various needs, and are ideal for calling attention to where a user needs to do something in order to move forward in a flow.
+
+### UPDATES
+
+- Button types `link` and `outline` are deprecated and will not appear as the updated `tertiary` button, if you do not change your code.
+
+<Canvas withSource="auto">
+  <Story id="components-button-stories--tertiary"></Story>
+</Canvas>
+
+Phase 2 RDS has a **NEW** `RdsLink` component that can be easily added to your code. More details and a working example of `RdsLink` can be found at the link below
+
+[Go to `RDSLink` Overview Page](?path=/story/components-links-overview--page)
+
+<Canvas withSource="auto">
+  <Story id="components-link-stories--primary"></Story>
+  <Story id="components-link-stories--secondary"></Story>
+</Canvas>
+
+### Button Types
+
+<Canvas withSource="auto">
+  <Story id="components-button-stories--primary"></Story>
+  <Story id="components-button-stories--secondary"></Story>
+  <Story id="components-button-stories--tertiary"></Story>
+</Canvas>
+
+### Disabled Buttons
+
+<Canvas withSource="auto">
+  <Story id="components-button-stories--primary-disabled"></Story>
+  <Story id="components-button-stories--secondary-disabled"></Story>
+  <Story id="components-button-stories--tertiary-disabled"></Story>
+</Canvas>
+
+### Active Buttons
+
+The `active` property applies styles to the _secondary_ and _tertiary_ buttons to make them appear 'active' when necessary, such as when you are filtering or using the button as part of a menu.
+
+<Canvas withSource="auto">
+  <Story id="components-button-stories--secondary-active"></Story>
+  <Story id="components-button-stories--tertiary-active"></Story>
+</Canvas>
+
+### Button sizes
+
+In the phase 2 button, `size="xl"` will create a button that takes the full width of the button's parent.
+
+<Canvas withSource="auto">
+  <Story id="components-button-stories--size-small"></Story>
+  <Story id="components-button-stories--size-medium"></Story>
+  <Story id="components-button-stories--size-large"></Story>
+</Canvas>
+
+<Canvas withSource="auto">
+  <Story id="components-button-stories--size-extra-large"></Story>
+</Canvas>
+
+### Button with Icons Only
+
+<Canvas withSource="auto">
+  <Story id="components-button-stories--primary-small-icon-only"></Story>
+  <Story id="components-button-stories--primary-icon-only"></Story>
+</Canvas>
+
+### Buttons with Text and Icons
+
+<Canvas withSource="auto">
+  <Story id="components-button-stories--primary-with-leading-icon"></Story>
+  <Story id="components-button-stories--primary-with-trailing-icon"></Story>
+</Canvas>
+
+### Danger and Danger Lite Buttons
+
+<Canvas withSource="auto">
+  <Story id="components-button-stories--danger"></Story>
+  <Story id="components-button-stories--danger-lite"></Story>
+</Canvas>
+
+## Usage Guidelines
+
+> **Be Concise**
+
+Button text should be concise: 1 or 2 words, no longer than 4 words, with fewer than 20 characters including spaces. Don't use punctuation marks such as periods or exclamation points.
+
+> **Use sentence case**
+
+Button text should always be in sentence case. Capitalization should never be used to give more prominence to a specific button.
+
+> **Don't override color**
+
+Do not use custom colors for buttons. The colors of different button variations have been designed to be consistent and accessible.
+
+> **Use sentence case**
+
+Icons can be used in buttons when additional clarity is required and the icon is highly relevant to the action. Icons should not be used for decoration.
+
+<Description>{Readme}</Description>

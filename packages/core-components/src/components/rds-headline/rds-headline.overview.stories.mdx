@@ -1,0 +1,82 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+
+<Meta title="Components/Headline/Overview" />
+
+# Headline: Overview
+
+`Headline` creates a `<h[#]>` tag that corresponds to the level required by your content and accessiblity needs. While each headline comes with pre-defined styles including font family, font size and line-height, you should use headline for strictly semantic usage on your page.
+
+Please refer to the [Text Component](?path=/docs/components-text-overview--page) for all of your strictly visual text needs.
+
+Please refer to the [Typography Headings Page](?path=/docs/brand-identity-typography-headings--page) for more information on our typography rules.
+
+## Variations
+
+Headline levels 1-3 are pre-styled based on a visual hierachy as you can see below. After level 3, levels 4-6 will visually look the same as level 3.
+
+<Canvas isColumn withSource="auto">
+  <Story id="components-headline-stories--level-1"></Story>
+  <Story id="components-headline-stories--level-2"></Story>
+  <Story id="components-headline-stories--level-3"></Story>
+  <rds-headline level={4}>Headline - Level 4</rds-headline>
+  <rds-headline level={5}>Headline - Level 5</rds-headline>
+  <rds-headline level={6}>Headline - Level 6</rds-headline>
+</Canvas>
+
+## Weight
+
+The `weight` property updates the defaulted semibold font-weight on the headline component. Below you can see variations for weight.
+
+<Canvas isColumn withSource="auto">
+  <Story id="components-headline-stories--weight-normal"></Story>
+  <Story id="components-headline-stories--weight-medium"></Story>
+  <Story id="components-headline-stories--weight-semibold"></Story>
+  <Story id="components-headline-stories--weight-bold"></Story>
+  <Story id="components-headline-stories--weight-extrabold"></Story>
+</Canvas>
+
+## Spacing
+
+The `spacing` property updates the spacing on the top and bottom of the headline component. Below you can see variations for spacing.
+
+<Canvas isColumn withSource="auto">
+  <Story id="components-headline-stories--no-spacing"></Story>
+  <Story id="components-headline-stories--small-spacing"></Story>
+  <Story id="components-headline-stories--medium-spacing"></Story>
+  <Story id="components-headline-stories--large-spacing"></Story>
+</Canvas>
+
+## Color
+
+The `color` property applies a text color to the headline component.
+
+You can find the list of colors supported with the headline component on our [Brand Identity/Colors page](/story/brand-identity-colors--page).
+
+<Canvas isColumn withSource="auto">
+  <Story id="components-headline-stories--headline-color"></Story>
+</Canvas>
+
+## Usage Guidelines
+
+> **Use one Level 1 Headline per page**
+
+As per our accessiblity guidelines, there can only be one `<h1>` tag for each page. Please use levels 2-6 for additional headline needs and use the level 1 headline at the page header level.
+
+> **Subheadings must be in a hierarchical order**
+
+Subheadings should be nested in a hierarchical order (i.e. `<h2>` are subheads of `<h1>`, `<h3>` are subheads of `<h2>`, etc.).
+
+> **Avoid skipping levels**
+
+Headline levels should always start from `<h1>`, followed by `<h2>` and so on.
+
+> **Avoid using headline components to resize text**
+
+Please refer to the [Text component](?path=/story/components-text-overview--page) in scenarios where you want styled text that is not a true headline. The text component has many more options for resizing text and does not impact the accessibility of the page.
+
+> **Use purposeful content**
+
+Always use heading markup for content that serves the purpose of a heading
+
+<Description>{Readme}</Description>

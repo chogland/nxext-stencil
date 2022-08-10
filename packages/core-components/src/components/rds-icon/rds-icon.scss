@@ -1,0 +1,29 @@
+:host {
+  @apply inline-flex items-center;
+}
+
+.icon {
+  @apply inline-flex;
+
+  &[size='sm'] {
+    @apply w-3 h-3;
+  }
+
+  &[size='md'] {
+    @apply w-4 h-4;
+  }
+
+  &[size='lg'] {
+    @apply w-6 h-6;
+  }
+
+  &[size='xlg'] {
+    @apply w-8 h-8;
+  }
+
+  @apply fill-current;
+}
+
+.svgLoad {
+  @apply hidden opacity-0;
+}

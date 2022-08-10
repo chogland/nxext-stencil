@@ -1,0 +1,139 @@
+:host {
+  @apply font-inter block w-full;
+
+  .label-container {
+    @apply flex justify-between;
+
+    .optional {
+      @apply text-sm text-gray-600 font-medium;
+    }
+  }
+
+  .input-container {
+    @apply mt-1 relative;
+
+    input {
+      @apply shadow-sm text-gray-600 focus:outline-none focus:ring-1 border focus:ring-purple-600 focus:border-purple-600 block w-full sm:text-sm border-gray-600 rounded-md py-3 md:py-2 px-3;
+
+      &[disabled] {
+        @apply bg-gray-100 text-gray-400 pointer-events-none;
+      }
+
+      &:active {
+        @apply border-purple-600 ring-purple-600;
+      }
+
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        @apply m-0;
+        -webkit-appearance: none;
+      }
+
+      &[type='number'] {
+        -moz-appearance: textfield;
+      }
+    }
+  }
+
+  // Help Text
+  ::slotted([slot='help-text']) {
+    @apply mt-2 text-gray-600 text-sm block font-inter;
+  }
+
+  // Leading Icon
+  ::slotted([slot='icon-start']) {
+    @apply text-gray-400 flex;
+  }
+
+  .icon-start {
+    @apply absolute top-1/2 left-3 -translate-y-1/2;
+
+    + .icon-end + input,
+    + input {
+      @apply pl-9;
+    }
+  }
+
+  // Trailing Icon
+  ::slotted([slot='icon-end']) {
+    @apply text-gray-400 flex;
+  }
+
+  .icon-end {
+    @apply absolute top-1/2 right-3 -translate-y-1/2;
+
+    + input {
+      @apply pr-9;
+    }
+  }
+}
+
+// Error styles
+:host([role='alert']) {
+  .error-icon-container {
+    @apply absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none text-red-500;
+  }
+
+  input {
+    @apply pr-10 border-red-600 text-red-900 placeholder-red-600 focus:outline-none focus:ring-red-600 focus:border-red-600;
+  }
+
+  // Error Text
+  ::slotted([slot='error-text']),
+  .validation-error-text {
+    @apply mt-2 text-red-600 text-sm block font-inter;
+  }
+
+  // Hides trailing icon on error state only
+  ::slotted([slot='icon-end']) {
+    @apply hidden;
+  }
+}
+
+:host([disabled='false']),
+:host([readonly='false']) {
+  @apply pointer-events-auto;
+}
+
+// Trailing Select
+:host {
+  .select-end {
+    @apply absolute inset-y-0 right-px flex items-center;
+
+    + .error-icon-container {
+      @apply hidden;
+    }
+  }
+}
+
+// Trailing and Leading Addon
+:host {
+  .addon-start {
+    @apply absolute inset-y-0 pl-3 flex items-center text-gray-400 sm:text-sm pointer-events-none;
+  }
+  .addon-end {
+    @apply absolute inset-y-0 right-3 flex items-center text-gray-400 sm:text-sm pointer-events-none;
+  }
+}
+
+:host([inline-leading='false']) {
+  .addon-start {
+    @apply pr-3 bg-gray-50 text-gray-500 border border-gray-600 rounded-l-md;
+    z-index: 1;
+  }
+
+  input {
+    @apply pl-3 relative z-0;
+  }
+}
+
+:host([inline-trailing='false']) {
+  .addon-end {
+    @apply px-3 bg-gray-50 text-gray-500 border border-gray-600 rounded-r-md right-0;
+    z-index: 1;
+  }
+
+  input {
+    @apply pr-3 relative z-0;
+  }
+}

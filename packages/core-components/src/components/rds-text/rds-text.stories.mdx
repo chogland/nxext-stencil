@@ -1,0 +1,432 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsText from '../../../dist/collection/components/rds-text/rds-text';
+
+<Meta
+  title="Components/Text/Stories"
+  component={RdsText}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=48%3A97505',
+    },
+  }}
+  argTypes={{
+    size: {
+      control: { type: 'select', options: ['xxs', 'xs', 'sm', 'base', 'lg', 'xl', '2xl', '3xl', '4xl', '5xl', '6xl', '7xl'] },
+      description: 'The size of the text.',
+    },
+    type: {
+      control: { type: 'select', options: ['p', 'inline'] },
+      description: 'The type of text to be displayed.',
+    },
+    spacing: {
+      control: { type: 'select', options: ['none', 'sm', 'md', 'lg'] },
+      description: 'The spacing (top/bottom margin) of the text.',
+    },
+    align: {
+      control: { type: 'select', options: ['left', 'right', 'center', 'justify'] },
+      description: 'The alignment of text to be displayed.',
+    },
+    color: {
+      control: {
+        type: 'select',
+        options: [
+          undefined,
+          'black',
+          'white',
+          'gray-900',
+          'gray-800',
+          'gray-700',
+          'gray-600',
+          'gray-500',
+          'gray-400',
+          'gray-300',
+          'gray-200',
+          'gray-100',
+          'gray-50',
+          'purple-900',
+          'purple-800',
+          'purple-700',
+          'purple-600',
+          'purple-500',
+          'purple-400',
+          'purple-300',
+          'purple-200',
+          'purple-100',
+          'purple-50',
+          'blue-900',
+          'blue-800',
+          'blue-700',
+          'blue-600',
+          'blue-500',
+          'blue-400',
+          'blue-300',
+          'blue-200',
+          'blue-100',
+          'blue-50',
+          'green-900',
+          'green-800',
+          'green-700',
+          'green-600',
+          'green-500',
+          'green-400',
+          'green-300',
+          'green-200',
+          'green-100',
+          'green-50',
+          'yellow-900',
+          'yellow-800',
+          'yellow-700',
+          'yellow-600',
+          'yellow-500',
+          'yellow-400',
+          'yellow-300',
+          'yellow-200',
+          'yellow-100',
+          'yellow-50',
+          'red-900',
+          'red-800',
+          'red-700',
+          'red-600',
+          'red-500',
+          'red-400',
+          'red-300',
+          'red-200',
+          'red-100',
+          'red-50',
+        ],
+      },
+      description: 'Controls the text color.',
+    },
+  }}
+/>
+
+export const Default = args => (
+  <rds-text {...args}>The default `RdsText` component is rendered as a `p` tag with a base font-size, medium spacing, and a normal font-weight.</rds-text>
+);
+export const Template = args => <rds-text {...args}>I am a text component.</rds-text>;
+
+# Text
+
+### Default
+
+<Canvas>
+  <Story name="Default" args={{}}>
+    {Default.bind({})}
+  </Story>
+</Canvas>
+
+### Inline Text
+
+<Canvas>
+  <Story
+    name="Inline Text"
+    args={{
+      type: 'inline',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### No Spacing
+
+<Canvas>
+  <Story
+    name="No Spacing"
+    args={{
+      spacing: 'none',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Small Spacing
+
+<Canvas>
+  <Story
+    name="Small Spacing"
+    args={{
+      spacing: 'sm',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Large Spacing
+
+<Canvas>
+  <Story
+    name="Large Spacing"
+    args={{
+      spacing: 'lg',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Size Double Extra Small
+
+<Canvas>
+  <Story
+    name="Size Double Extra Small"
+    args={{
+      size: 'xxs',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Size Extra Small
+
+<Canvas>
+  <Story
+    name="Size Extra Small"
+    args={{
+      size: 'xs',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Size Small
+
+<Canvas>
+  <Story
+    name="Size Small"
+    args={{
+      size: 'sm',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Size Large
+
+<Canvas>
+  <Story
+    name="Size Large"
+    args={{
+      size: 'lg',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Size Extra Large
+
+<Canvas>
+  <Story
+    name="Size Extra Large"
+    args={{
+      size: 'xl',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Size 2xl
+
+<Canvas>
+  <Story
+    name="Size 2xl"
+    args={{
+      size: '2xl',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Size 3xl
+
+<Canvas>
+  <Story
+    name="Size 3xl"
+    args={{
+      size: '3xl',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Size 4xl
+
+<Canvas>
+  <Story
+    name="Size 4xl"
+    args={{
+      size: '4xl',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Size 5xl
+
+<Canvas>
+  <Story
+    name="Size 5xl"
+    args={{
+      size: '5xl',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Size 6xl
+
+<Canvas>
+  <Story
+    name="Size 6xl"
+    args={{
+      size: '6xl',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Size 7xl
+
+<Canvas>
+  <Story
+    name="Size 7xl"
+    args={{
+      size: '7xl',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Weight Medium
+
+<Canvas>
+  <Story
+    name="Weight Medium"
+    args={{
+      weight: 'medium',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Weight Semibold
+
+<Canvas>
+  <Story
+    name="Weight Semibold"
+    args={{
+      weight: 'semibold',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Weight Bold
+
+<Canvas>
+  <Story
+    name="Weight Bold"
+    args={{
+      weight: 'bold',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Weight Extrabold
+
+<Canvas>
+  <Story
+    name="Weight Extrabold"
+    args={{
+      weight: 'extrabold',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Text Align Left
+
+<Canvas>
+  <Story
+    name="Text Align Left"
+    args={{
+      align: 'left',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Text Align Right
+
+<Canvas>
+  <Story
+    name="Text Align Right"
+    args={{
+      align: 'right',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Text Align Center
+
+<Canvas>
+  <Story
+    name="Text Align Center"
+    args={{
+      align: 'center',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Text Align justify
+
+<Canvas>
+  <Story
+    name="Text Align Justify"
+    args={{
+      align: 'justify',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Text Color
+
+<Canvas>
+  <Story
+    name="Text Color"
+    args={{
+      color: 'purple-600',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

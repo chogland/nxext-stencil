@@ -1,0 +1,36 @@
+:host {
+  @apply block max-w-full w-full relative;
+
+  .tag {
+    @apply bg-black text-white px-5 py-1 font-inter font-bold absolute left-0 top-4 rounded-r-full text-sm tracking-wide truncate;
+    max-width: 50%;
+  }
+
+  .image {
+    @apply bg-cover bg-center bg-no-repeat;
+  }
+}
+
+:host([size='xs']) {
+  .image {
+    @apply h-36;
+  }
+}
+
+:host([size='sm']) {
+  .image {
+    @apply h-52;
+  }
+}
+
+:host([size='md']) {
+  .image {
+    @apply h-72;
+  }
+}
+
+:host([size='lg']) {
+  .image {
+    @apply h-96;
+  }
+}

@@ -1,0 +1,41 @@
+:host {
+  @apply text-gray-600 font-inter overflow-hidden md:text-center;
+
+  ol {
+    list-style-type: lower-alpha;
+    padding: revert;
+
+    ol {
+      list-style-type: lower-roman;
+    }
+  }
+
+  ul {
+    list-style-type: disc;
+    padding: revert;
+  }
+
+  .footer-wrapper {
+    @apply px-4 py-8 lg:pt-12 bg-white;
+  }
+
+  .footer-position {
+    @apply fixed z-order2 bottom-0 left-0 right-0;
+  }
+
+  .footer-links {
+    @apply pb-12 lg:pb-0 lg:flex lg:justify-center;
+
+    rds-link {
+      @apply my-4 lg:my-2 lg:mx-4 flex;
+    }
+  }
+
+  .footer-copyright {
+    @apply text-xs pt-8 border-t border-l-0 border-r-0 border-b-0 border-solid border-gray-200 lg:border-none;
+  }
+
+  .keep-together {
+    @apply whitespace-nowrap;
+  }
+}

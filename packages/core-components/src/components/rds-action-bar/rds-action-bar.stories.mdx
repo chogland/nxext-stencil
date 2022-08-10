@@ -1,0 +1,64 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsActionBar from '../../../dist/collection/components/rds-action-bar/rds-action-bar';
+
+<Meta
+  title="Collections/Action Bar/Stories"
+  component={RdsActionBar}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=53%3A10268',
+    },
+  }}
+  argTypes={{
+    collapsible: {
+      control: { type: 'boolean' },
+    },
+  }}
+/>
+
+export const Template = args => (
+  <rds-action-bar {...args}>
+    <rds-action label="Label Text" text="My Action Test" icon="view-grid"></rds-action>
+    <rds-action label="Label Text" text="My Action Test" icon="scissors" active></rds-action>
+    <rds-action label="Label Text" text="My Action Test" icon="office-building"></rds-action>
+    <rds-divider spacing="none" />
+    <rds-action label="Label Text" text="My Action Test" icon="arrow-circle-up" disabled></rds-action>
+    <rds-action label="Label Text" text="My Action Test" icon="arrow-circle-down" disabled></rds-action>
+    <rds-action label="Label Text" text="My Action Test" icon="arrow-circle-right" disabled></rds-action>
+    <rds-action label="Label Text" text="My Action Test" icon="arrow-circle-left" disabled></rds-action>
+  </rds-action-bar>
+);
+
+export const TemplateCollapsed = args => (
+  <rds-action-bar {...args}>
+    <rds-action label="Label Text" text="My Action Test" icon="view-grid"></rds-action>
+    <rds-action label="Label Text" text="My Action Test" icon="scissors" active></rds-action>
+    <rds-action label="Label Text" text="My Action Test" icon="office-building"></rds-action>
+    <rds-action slot="bottom-action" text="My Action Test" icon="question-mark-circle" label="Label Text"></rds-action>
+  </rds-action-bar>
+);
+
+# Action bar
+
+### Default
+
+<Canvas>
+  <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
+
+### Collapsed
+
+<Canvas>
+  <Story
+    name="Collapsed"
+    args={{
+      collapsible: false,
+    }}
+  >
+    {TemplateCollapsed.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

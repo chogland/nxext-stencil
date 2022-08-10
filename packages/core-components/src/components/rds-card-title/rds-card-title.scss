@@ -1,0 +1,7 @@
+:host {
+  @apply block flex-1;
+
+  .card-title {
+    @apply text-xl leading-7;
+  }
+}

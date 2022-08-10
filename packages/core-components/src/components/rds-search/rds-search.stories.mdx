@@ -1,0 +1,52 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsSearch from '../../../dist/collection/components/rds-search/rds-search';
+
+<Meta
+  title="Components/Search/Stories"
+  component={RdsSearch}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=48%3A90606',
+    },
+  }}
+  argTypes={{}}
+/>
+
+export const Template = args => <rds-search {...args}></rds-search>;
+
+# Search
+
+### Default
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      disabled: false,
+      placeholder: 'Search',
+      debounce: 250,
+      value: '',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Disabled
+
+<Canvas>
+  <Story
+    name="Disabled"
+    args={{
+      disabled: true,
+      placeholder: 'Search',
+      value: '',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

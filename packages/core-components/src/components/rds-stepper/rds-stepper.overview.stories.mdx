@@ -1,0 +1,130 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import StepperItemReadme from '../rds-stepper-item/readme.md';
+
+<Meta title="Collections/Stepper/Overview" />
+
+# Stepper: Overview
+
+The `Stepper` component is used to indicate a step workflow. The `Stepper` component is comprised of `StepperItem`s. See [methods](#methods) for how to call next/prev step or to go to a particular step on component load. These methods would be called from a button in the slot of the `Workflow Header` and/or `Workflow Footer` through a click event.
+
+`StepperItems` accept _active_, _complete_, _disabled_, and other [properties](#properties) in order to control the stepper state.
+
+## Variations
+
+### Simple Stepper
+
+The simple stepper is the default variation of the component.
+
+<Canvas withSource="auto">
+  <Story id="collections-stepper-stories--simple"></Story>
+</Canvas>
+
+### Complex Stepper
+
+The complex stepper has the same functionality as the simple stepper, with some additional visual elements and responsiveness.
+
+The _icon_ `StepperItem` property is exclusive to the complex stepper.
+
+In order to use the complex stepper, change the _type_ property to 'complex'.
+
+<Canvas withSource="auto">
+  <Story id="collections-stepper-stories--complex"></Story>
+</Canvas>
+
+The _vertical_ `StepperItem` property is exclusive to the complex, bullet, and circle steppers, and a vertical variation can be seen in the following example.
+
+### Vertical Complex Stepper
+
+The complex stepper will display vertically on all breakpoints when the property _vertical_ is present.
+
+<Canvas withSource="auto">
+  <Story id="collections-stepper-stories--vertical-complex"></Story>
+</Canvas>
+
+### Bullet Stepper
+
+The bullet stepper takes up minimal space on your screen, making it a great option for both mobile and desktop views, or when you do not want the stepper to take up a lot of space.
+
+By default, the _text_ value is not displayed visually and only exist in the DOM to meet RDS's accessibility criteria.
+
+In order to use the bullet stepper, change the _type_ property to 'bullet'.
+
+<Canvas withSource="auto">
+  <Story id="collections-stepper-stories--bullets"></Story>
+</Canvas>
+
+### Vertical Bullet Stepper
+
+The bullet stepper will display vertically and with its stepper item text when the property _vertical_ is present.
+
+<Canvas withSource="auto">
+  <Story id="collections-stepper-stories--vertical-bullets"></Story>
+</Canvas>
+
+### Circle Stepper
+
+The horizontal circle stepper does not include any title or descriptive text and is a good option for stepper content that is clearly labeled and need visual representation only.
+
+By default, the _text_ prop value and _description_ slot is not displayed visually and only exist in the DOM to meet RDS's accessibility criteria.
+
+In order to use the circle stepper, change the _type_ property to 'circle'.
+
+The _vertical_ `StepperItem` property is exclusive to the circle and bullet steppers, and the vertical variation can be seen in the following example.
+
+<Canvas withSource="auto">
+  <Story id="collections-stepper-stories--circles"></Story>
+</Canvas>
+
+### Vertical Circle Stepper
+
+The circle stepper will display vertically with its title contents when the property _vertical_ is present.
+
+<Canvas withSource="auto">
+  <Story id="collections-stepper-stories--vertical-circles"></Story>
+</Canvas>
+
+## Responsiveness
+
+When on mobile viewports (under 640px), the simple stepper displays the active item title with a "#/#" for current/totalStepperItems.
+
+When on small tablet and mobile viewports (under 1024px), the complex stepper stacks verically instead of horizontally.
+
+### Stepper Content
+
+Content can be placed inside of the `StepperItem` in order to display that content when a certain step is _active_.
+
+<Canvas withSource="auto">
+  <Story id="collections-stepper-stories--simple"></Story>
+</Canvas>
+
+### Stepper Content Event Support
+
+Code placed inside the stepper items gets appended to the parent component for each active step. In this process, events bound in the JSX code are removed.
+
+In order to keep events bound to your code, you must dynamically add stepper content to your stepper.
+
+See the example below:
+
+```jsx
+// Bind your stepper content when the stepper item is selected like this showStepperContent example function.
+
+<RdsStepper>
+  <RdsStepperItem onRdsStepperItemSelect={ev => this.showStepperContent(ev)}></RdsStepperItem>
+  <RdsStepperItem></RdsStepperItem>
+  <RdsStepperItem></RdsStepperItem>
+</RdsStepper>
+```
+
+## Usage Guidelines
+
+> **Stepper Titles**
+
+Stepper titles should be few short words at most.
+
+> **Be mindful of placement**
+
+Don't embed steppers within steppers or use multiple steppers on one page.
+
+<Description>{Readme}</Description>
+<Description>{StepperItemReadme}</Description>

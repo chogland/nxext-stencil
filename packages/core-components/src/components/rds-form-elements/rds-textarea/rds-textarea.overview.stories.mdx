@@ -1,0 +1,86 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+
+<Meta title="Components/Form Elements/Textarea/Overview" />
+
+# Textarea: Overview
+
+`RdsTextarea` is a basic textarea element that can be used to build forms.
+
+## Variations
+
+### Default
+
+The default `RdsTextarea` component does not display any helper text, placeholder text, and is an optional field. If you would like to change these default properties, see the below examples and available props below.
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-textarea-stories--default-story"></Story>
+</Canvas>
+
+### Required
+
+When the `required` prop is set to true, the optional indicator will disappear and the user will need to complete the textarea's requirements in order to submit the form this textarea is a part of.
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-textarea-stories--required"></Story>
+</Canvas>
+
+### Help Text
+
+When the `helptext` prop is set to true and the `help-text` slot is present, the text will be shown below the textarea. Use plain text only in this slot.
+
+Help text describes additional guidance about the textarea field. It should only take up a single line and should be persistently visible.
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-textarea-stories--with-help-text"></Story>
+</Canvas>
+
+### Error / Invalid State
+
+When the `error` prop is set to true, the textarea will be displayed in error mode. This prop should only be set to true when the textarea's conditions have been attempted and are not been met. You can set the error message using the `error-text` slot. Error messages are displayed below the textarea field, replacing any help text until conditions are met.
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-textarea-stories--error"></Story>
+</Canvas>
+
+### Helper Text
+
+When maxlength is provided it renders the current length of text entered and limits to the maximum length.
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-validators-stories-constraint-validators-textarea--maxlength"></Story>
+</Canvas>
+
+### With Resize
+
+The component has a `resize` prop that has four options: 'off' (default), 'on' (both horizontal and vertical), 'horizontal', and 'vertical', which will set the resize direction(s) respectively. View the examples below to see it in action.
+
+#### Resize 'On'
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-textarea-stories--with-resize"></Story>
+</Canvas>
+
+#### Resize 'Horizontal'
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-textarea-stories--with-horizontal-resize"></Story>
+</Canvas>
+
+#### Resize 'Vertical'
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-textarea-stories--with-vertical-resize"></Story>
+</Canvas>
+
+## Validations
+
+Visit the [validations overview page](?path=/story/components-form-elements-validators-overview--page) for information on validating textarea components.
+
+## Usage Guidelines
+
+> **Wait to validate**
+
+Only show error validation messages or stylings after a user has interacted with the textarea.
+
+<Description>{Readme}</Description>

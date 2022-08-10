@@ -1,0 +1,21 @@
+.calender {
+  @apply mb-1;
+}
+
+.week-headers {
+  @apply flex mb-1;
+}
+
+.week-header {
+  @apply text-center h-6 leading-6 text-sm font-medium text-gray-500;
+  width: calc(100% / 7);
+}
+
+.week-days {
+  @apply outline-none
+    flex
+    flex-row
+    py-0;
+  padding-left: 6px;
+  padding-right: 6px;
+}

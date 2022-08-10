@@ -1,0 +1,39 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+
+<Meta title="Components/Spinner/Overview" />
+
+# Spinner: Overview
+
+`Spinner` can be used to show the loading state in your projects. Their sizing can be easily customized with the 'size' property.
+
+For accessibility purposes, each loader here includes role="status" and a nested `<span class="sr-only">Loading...</span>`.
+
+## Variations
+
+### Default
+
+<!-- By default the `RdsSkeleton` pulses. It will take up a 20px tall and spans full width of its parent element. -->
+
+<Canvas withSource="auto">
+  <Story id="components-spinner-stories--small"></Story>
+  <Story id="components-spinner-stories--default-story"></Story>
+  <Story id="components-spinner-stories--large"></Story>
+  <Story id="components-spinner-stories--extra-large"></Story>
+</Canvas>
+
+## Usage Guidelines
+
+> **Indicate Loading**
+
+Spinners should be used to show that something is happening behind the scenes, even if we don’t necessarily know how long it will take.
+
+> **Order of Operations**
+
+If the design allows for a skeleton to be used or that a more specific method of communication is available, opt for that. Spinners should be reserved for more generic “loading” states.
+
+> **Don't override color**
+
+Do not use custom colors for spinners. The color of the spinner has been designed to be consistent and accessible.
+
+<Description>{Readme}</Description>

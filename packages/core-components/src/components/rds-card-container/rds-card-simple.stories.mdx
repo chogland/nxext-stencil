@@ -1,0 +1,412 @@
+import { Meta, Story, Canvas, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsCardContainer from '../../../dist/collection/components/rds-card-container/rds-card-container';
+
+<Meta
+  title="Collections/Card/Stories/Simple"
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=48%3A17219',
+    },
+  }}
+/>
+
+# Simple Card
+
+### Default
+
+<Canvas>
+  <Story name="Default">
+    <rds-card-container simple>
+      <rds-flex gap="16px" align-items="center">
+        <rds-flex-item align-self="flex-start">
+          <rds-hero-icon size="lg" name="users" />
+        </rds-flex-item>
+        <rds-flex direction="column" gap="4px">
+          <rds-flex>
+            <rds-text type="inline" color="gray-600" weight="medium" size="sm">
+              Total Subscribers
+            </rds-text>
+            <rds-box margin="sm 0 0 lg" color="purple-600">
+              <rds-hero-icon name="question-mark-circle" />
+            </rds-box>
+          </rds-flex>
+          <rds-text type="inline" weight="semibold" size="2xl">
+            71,897
+          </rds-text>
+          <rds-text type="inline" color="gray-600" weight="medium" size="sm">
+            from 70,946
+          </rds-text>
+        </rds-flex>
+        <rds-flex-item flex-grow="1">
+          <rds-flex justify-content="flex-end">
+            <rds-badge color="green" value={100}>
+              <rds-hero-icon name="arrow-sm-up" slot="icon" />
+            </rds-badge>
+          </rds-flex>
+        </rds-flex-item>
+      </rds-flex>
+    </rds-card-container>
+  </Story>
+</Canvas>
+
+### Variation 2
+
+<Canvas>
+  <Story name="Variation 2">
+    <rds-card-container simple>
+      <rds-flex gap="16px" align-items="center">
+        <rds-flex-item align-self="flex-start">
+          <rds-hero-icon size="lg" name="users" />
+        </rds-flex-item>
+        <rds-flex direction="column" gap="4px">
+          <rds-text type="inline" color="gray-600" weight="medium" size="sm">
+            Total Subscribers
+          </rds-text>
+          <rds-text type="inline" weight="semibold" size="2xl">
+            71,897
+          </rds-text>
+          <rds-text type="inline" color="gray-600" weight="medium" size="sm">
+            from 70,946
+          </rds-text>
+        </rds-flex>
+        <rds-flex-item flex-grow="1">
+          <rds-flex justify-content="flex-end">
+            <rds-badge color="green" value={100}>
+              <rds-hero-icon name="arrow-sm-up" slot="icon" />
+            </rds-badge>
+          </rds-flex>
+        </rds-flex-item>
+      </rds-flex>
+    </rds-card-container>
+  </Story>
+</Canvas>
+
+### Variation 3
+
+<Canvas>
+  <Story name="Variation 3">
+    <rds-card-container simple>
+      <rds-flex gap="16px" align-items="flex-end">
+        <rds-flex-item align-self="flex-start">
+          <rds-hero-icon size="lg" name="users" />
+        </rds-flex-item>
+        <rds-flex direction="column" gap="4px">
+          <rds-flex>
+            <rds-text type="inline" color="gray-600" weight="medium" size="sm">
+              Total Subscribers
+            </rds-text>
+            <rds-box margin="sm 0 0 lg" color="purple-600">
+              <rds-hero-icon name="question-mark-circle" />
+            </rds-box>
+          </rds-flex>
+          <rds-text type="inline" weight="semibold" size="2xl">
+            71,897
+          </rds-text>
+        </rds-flex>
+        <rds-flex-item flex-grow="1">
+          <rds-flex justify-content="flex-end">
+            <rds-badge color="green" value={100}>
+              <rds-hero-icon name="arrow-sm-up" slot="icon" />
+            </rds-badge>
+          </rds-flex>
+        </rds-flex-item>
+      </rds-flex>
+    </rds-card-container>
+  </Story>
+</Canvas>
+
+### Variation 4
+
+<Canvas>
+  <Story name="Variation 4">
+    <rds-card-container simple>
+      <rds-flex gap="16px" align-items="flex-end">
+        <rds-flex-item align-self="flex-start">
+          <rds-hero-icon size="lg" name="users" />
+        </rds-flex-item>
+        <rds-flex direction="column" gap="4px">
+          <rds-text type="inline" color="gray-600" weight="medium" size="sm">
+            Total Subscribers
+          </rds-text>
+          <rds-text type="inline" weight="semibold" size="2xl">
+            71,897
+          </rds-text>
+        </rds-flex>
+        <rds-flex-item flex-grow="1">
+          <rds-flex justify-content="flex-end">
+            <rds-badge color="green" value={100}>
+              <rds-hero-icon name="arrow-sm-up" slot="icon" />
+            </rds-badge>
+          </rds-flex>
+        </rds-flex-item>
+      </rds-flex>
+    </rds-card-container>
+  </Story>
+</Canvas>
+
+### Variation 5
+
+<Canvas>
+  <Story name="Variation 5">
+    <rds-card-container simple>
+      <rds-flex gap="16px" align-items="flex-end">
+        <rds-flex direction="column" gap="4px">
+          <rds-flex>
+            <rds-text type="inline" color="gray-600" weight="medium" size="sm">
+              Total Subscribers
+            </rds-text>
+            <rds-box margin="sm 0 0 lg" color="purple-600">
+              <rds-hero-icon name="question-mark-circle" />
+            </rds-box>
+          </rds-flex>
+          <rds-text type="inline" weight="semibold" size="2xl">
+            71,897
+          </rds-text>
+        </rds-flex>
+        <rds-flex-item flex-grow="1">
+          <rds-flex justify-content="flex-end">
+            <rds-badge color="green" value={100}>
+              <rds-hero-icon name="arrow-sm-up" slot="icon" />
+            </rds-badge>
+          </rds-flex>
+        </rds-flex-item>
+      </rds-flex>
+    </rds-card-container>
+  </Story>
+</Canvas>
+
+### Variation 6
+
+<Canvas>
+  <Story name="Variation 6">
+    <rds-card-container simple>
+      <rds-flex gap="16px" align-items="flex-end">
+        <rds-flex direction="column" gap="4px">
+          <rds-text type="inline" color="gray-600" weight="medium" size="sm">
+            Total Subscribers
+          </rds-text>
+          <rds-text type="inline" weight="semibold" size="2xl">
+            71,897
+          </rds-text>
+        </rds-flex>
+        <rds-flex-item flex-grow="1">
+          <rds-flex justify-content="flex-end">
+            <rds-badge color="green" value={100}>
+              <rds-hero-icon name="arrow-sm-up" slot="icon" />
+            </rds-badge>
+          </rds-flex>
+        </rds-flex-item>
+      </rds-flex>
+    </rds-card-container>
+  </Story>
+</Canvas>
+
+### Variation 7
+
+<Canvas>
+  <Story name="Variation 7">
+    <rds-card-container simple>
+      <rds-flex gap="16px" align-items="center">
+        <rds-flex-item align-self="flex-start">
+          <rds-hero-icon size="lg" name="users" />
+        </rds-flex-item>
+        <rds-flex direction="column" gap="4px">
+          <rds-flex>
+            <rds-text type="inline" color="gray-600" weight="medium" size="sm">
+              Total Subscribers
+            </rds-text>
+            <rds-box margin="sm 0 0 lg" color="purple-600">
+              <rds-hero-icon name="question-mark-circle" />
+            </rds-box>
+          </rds-flex>
+          <rds-flex align-items="flex-end">
+            <rds-text type="inline" weight="semibold" size="2xl">
+              71,897
+            </rds-text>
+            <rds-box margin="0 0 0 sm">
+              <rds-text type="inline" color="gray-600" weight="medium" size="sm">
+                from 70,946
+              </rds-text>
+            </rds-box>
+          </rds-flex>
+        </rds-flex>
+      </rds-flex>
+    </rds-card-container>
+  </Story>
+</Canvas>
+
+### Variation 8
+
+<Canvas>
+  <Story name="Variation 8">
+    <rds-card-container simple>
+      <rds-flex gap="16px" align-items="center">
+        <rds-flex-item align-self="flex-start">
+          <rds-hero-icon size="lg" name="users" />
+        </rds-flex-item>
+        <rds-flex direction="column" gap="4px">
+          <rds-text type="inline" color="gray-600" weight="medium" size="sm">
+            Total Subscribers
+          </rds-text>
+          <rds-flex align-items="flex-end">
+            <rds-text type="inline" weight="semibold" size="2xl">
+              71,897
+            </rds-text>
+            <rds-text type="inline" weight="medium" size="sm" color="gray-600">
+              <rds-box margin="0 0 0 sm">from 70,946</rds-box>
+            </rds-text>
+          </rds-flex>
+        </rds-flex>
+      </rds-flex>
+    </rds-card-container>
+  </Story>
+</Canvas>
+
+### Variation 9
+
+<Canvas>
+  <Story name="Variation 9">
+    <rds-card-container simple>
+      <rds-flex gap="16px" align-items="center">
+        <rds-flex-item align-self="flex-start">
+          <rds-hero-icon size="lg" name="users" />
+        </rds-flex-item>
+        <rds-flex direction="column" gap="4px">
+          <rds-flex>
+            <rds-text type="inline" color="gray-600" weight="medium" size="sm">
+              Total Subscribers
+            </rds-text>
+            <rds-box margin="sm 0 0 lg" color="purple-600">
+              <rds-hero-icon name="question-mark-circle" />
+            </rds-box>
+          </rds-flex>
+          <rds-text type="inline" weight="semibold" size="2xl">
+            71,897
+          </rds-text>
+        </rds-flex>
+      </rds-flex>
+    </rds-card-container>
+  </Story>
+</Canvas>
+
+### Variation 10
+
+<Canvas>
+  <Story name="Variation 10">
+    <rds-card-container simple>
+      <rds-flex gap="16px" align-items="center">
+        <rds-flex-item align-self="flex-start">
+          <rds-hero-icon size="lg" name="users" />
+        </rds-flex-item>
+        <rds-flex direction="column" gap="4px">
+          <rds-text type="inline" color="gray-600" weight="medium" size="sm">
+            Total Subscribers
+          </rds-text>
+          <rds-text type="inline" weight="semibold" size="2xl">
+            71,897
+          </rds-text>
+        </rds-flex>
+      </rds-flex>
+    </rds-card-container>
+  </Story>
+</Canvas>
+
+### Variation 11
+
+<Canvas>
+  <Story name="Variation 11">
+    <rds-card-container simple>
+      <rds-flex gap="16px" align-items="center">
+        <rds-flex direction="column" gap="4px">
+          <rds-flex>
+            <rds-text type="inline" color="gray-600" weight="medium" size="sm">
+              Total Subscribers
+            </rds-text>
+            <rds-box margin="sm 0 0 lg" color="purple-600">
+              <rds-hero-icon name="question-mark-circle" />
+            </rds-box>
+          </rds-flex>
+          <rds-flex align-items="flex-end">
+            <rds-text type="inline" weight="semibold" size="2xl">
+              71,897
+            </rds-text>
+            <rds-text type="inline" weight="medium" size="sm" color="gray-600">
+              <rds-box margin="0 0 0 sm">from 70,946</rds-box>
+            </rds-text>
+          </rds-flex>
+        </rds-flex>
+      </rds-flex>
+    </rds-card-container>
+  </Story>
+</Canvas>
+
+### Variation 12
+
+<Canvas>
+  <Story name="Variation 12">
+    <rds-card-container simple>
+      <rds-flex gap="16px" align-items="center">
+        <rds-flex direction="column" gap="4px">
+          <rds-text type="inline" color="gray-600" weight="medium" size="sm">
+            Total Subscribers
+          </rds-text>
+          <rds-flex align-items="flex-end">
+            <rds-text type="inline" weight="semibold" size="2xl">
+              71,897
+            </rds-text>
+            <rds-text type="inline" weight="medium" size="sm" color="gray-600">
+              <rds-box margin="0 0 0 sm">from 70,946</rds-box>
+            </rds-text>
+          </rds-flex>
+        </rds-flex>
+      </rds-flex>
+    </rds-card-container>
+  </Story>
+</Canvas>
+
+### Variation 13
+
+<Canvas>
+  <Story name="Variation 13">
+    <rds-card-container simple>
+      <rds-flex gap="16px" align-items="center">
+        <rds-flex direction="column" gap="4px">
+          <rds-flex>
+            <rds-text type="inline" weight="medium" size="sm" color="gray-600">
+              Total Subscribers
+            </rds-text>
+            <rds-box margin="sm 0 0 lg" color="purple-600">
+              <rds-hero-icon name="question-mark-circle" />
+            </rds-box>
+          </rds-flex>
+          <rds-text type="inline" weight="semibold" size="2xl">
+            71,897
+          </rds-text>
+        </rds-flex>
+      </rds-flex>
+    </rds-card-container>
+  </Story>
+</Canvas>
+
+### Variation 14
+
+<Canvas>
+  <Story name="Variation 14">
+    <rds-card-container simple>
+      <rds-flex gap="16px" align-items="center">
+        <rds-flex direction="column" gap="4px">
+          <rds-text type="inline" color="gray-600" weight="medium" size="sm">
+            Total Subscribers
+          </rds-text>
+          <rds-text type="inline" weight="semibold" size="2xl">
+            71,897
+          </rds-text>
+        </rds-flex>
+      </rds-flex>
+    </rds-card-container>
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

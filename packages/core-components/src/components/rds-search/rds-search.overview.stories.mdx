@@ -1,0 +1,32 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+
+<Meta title="Components/Search/Overview" />
+
+# Search: Overview
+
+`Search` is a native input that handles search functionality. Using the `RdsSearch` events and properties allows you to get the user input and apply to your search results.
+
+### Default
+
+By default the `Search` has a leading icon that is presentational to alert the user this input is for searching.
+
+The trailing icon is built in and shown when the user has began typing. The trailing icon can be used to clear the input.
+
+<Canvas withSource="auto">
+  <Story id="components-search-stories--default-story"></Story>
+</Canvas>
+
+### Disabled
+
+<Canvas withSource="auto">
+  <Story id="components-search-stories--disabled"></Story>
+</Canvas>
+
+## Usage Guidelines
+
+> Search offers users a way to explore a website or application using keywords.
+
+> Search can be used as the primary means of discovering content, or as a filter to aid the user in finding content.
+
+<Description>{Readme}</Description>

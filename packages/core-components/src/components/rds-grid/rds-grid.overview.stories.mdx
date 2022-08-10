@@ -1,0 +1,42 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import { BADGE } from '@geometricpanda/storybook-addon-badges';
+
+<Meta title="Components/Grid/Overview" parameters={{ badges: [BADGE.DEPRECATED] }} />
+
+# Grid: Overview
+
+**Please see the [`Flex` component](?path=/story/components-flex-overview--page) to create layouts within RDS.**
+
+## Grid
+
+`Grid` is a basic component that can be set to _flex_ or default to _grid_.
+
+In order to create a flex grid, simply update the type prop as follows: `type='flex'`.
+
+<Canvas withSource="auto">
+  <Story id="components-grid-stories--default-story"></Story>
+</Canvas>
+
+## Attribute Options
+
+The grid has pre-built attributes that you can use to tailor the look of the grid. You can combine these attributes or use them on their own. The names of these attributes correspond to the CSS flex / grid classes.
+
+Options include:
+
+```
+<RdsGrid itemsbase />
+<RdsGrid justifybetween />
+<RdsGrid justifyaround />
+<RdsGrid justifyend />
+<RdsGrid itemscenter />
+<RdsGrid itemscenter />
+<RdsGrid collapseGaps='true' />
+<RdsGrid collapseMargins='true' />
+```
+
+## Usage Guidelines
+
+_Coming soon_
+
+<Description>{Readme}</Description>

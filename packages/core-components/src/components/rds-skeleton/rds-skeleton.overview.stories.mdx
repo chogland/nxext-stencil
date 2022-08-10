@@ -1,0 +1,69 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+
+<Meta title="Components/Skeleton/Overview" />
+
+# Skeleton: Overview
+
+`Skeleton` provides a visual representation of content loading before the content actually loads. Show this component before the data loads. Once the data loads, replace or remove the skeleton from the dom.
+
+## Variations
+
+### Default
+
+By default the `RdsSkeleton` pulses. It will take up a 20px tall and spans full width of its parent element.
+
+<Canvas withSource="auto">
+  <Story id="components-skeleton-stories--default-story"></Story>
+</Canvas>
+
+### Circle
+
+Circle is best to show the loading of an image or other visual element before it loads.
+
+<Canvas withSource="auto">
+  <Story id="components-skeleton-stories--circle"></Story>
+  <Story id="components-skeleton-stories--circle-large"></Story>
+</Canvas>
+
+### Lines
+
+To show groups of skeletons to represent lines of text or lists you can use the [prop](#properties) _count_ to set the number of lines you want displayed.
+
+<Canvas withSource="auto">
+  <Story id="components-skeleton-stories--count"></Story>
+</Canvas>
+
+### Rectangle
+
+This can be used to represent a larger region in an loading state. The height can be set with a [prop](#properties).
+
+<Canvas withSource="auto">
+  <Story id="components-skeleton-stories--rect"></Story>
+</Canvas>
+
+## Usage Guidelines
+
+> **When to use a skeleton**
+
+<ul>
+  <li>
+    Use when you are loading dynamic content. Static content does not need a skeleton. A content area can include both dynamic and static content; i.e. Headlines (static) and body
+    content (dynamic). If this is the case you can use skeletons and static content together.
+  </li>
+</ul>
+
+> **Implementation**
+
+<ul>
+  <li>Use multiple skeletons to give indication of what content will load where.</li>
+  <li>Always match the expected size of the dynamic content block.</li>
+</ul>
+
+> **Load in real time**
+
+<ul>
+  <li>Replace the skeleton with content as soon as it has loaded. Do not wait for all content available to replace all skeletons.</li>
+</ul>
+
+<Description>{Readme}</Description>

@@ -1,0 +1,84 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsSnackbar from '../../../dist/collection/components/rds-snackbar/rds-snackbar';
+
+<Meta
+  title="Components/Snackbar/Stories"
+  component={RdsSnackbar}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=48%3A90802',
+    },
+    docs: {
+      inlineStories: false,
+      source: {
+        excludeDecorators: true,
+      },
+    },
+  }}
+  argTypes={{
+    appearance: {
+      control: { type: 'select', options: ['info', 'success', 'error'] },
+      description: 'the severity shows the type of snackbar that needs to be displayed',
+    },
+  }}
+/>
+
+export const Default = args => <rds-snackbar {...args}>For your information.</rds-snackbar>;
+
+export const Error = args => <rds-snackbar {...args}>Error uploading!</rds-snackbar>;
+
+export const Success = args => <rds-snackbar {...args}>Successfully uploaded!</rds-snackbar>;
+
+# Snackbar
+
+### Default
+
+<Canvas>
+  <Story
+    height="200px"
+    name="Default"
+    args={{
+      'appearance': 'info',
+      'auto-hide': false,
+      'visible': true,
+    }}
+  >
+    {Default.bind({})}
+  </Story>
+</Canvas>
+
+### Success
+
+<Canvas>
+  <Story
+    height="200px"
+    name="Success"
+    args={{
+      'appearance': 'success',
+      'auto-hide': false,
+      'visible': true,
+    }}
+  >
+    {Success.bind({})}
+  </Story>
+</Canvas>
+
+### Error
+
+<Canvas>
+  <Story
+    height="200px"
+    name="Error"
+    args={{
+      'appearance': 'error',
+      'auto-hide': false,
+      'visible': true,
+    }}
+  >
+    {Error.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

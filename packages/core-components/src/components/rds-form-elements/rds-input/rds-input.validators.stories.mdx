@@ -1,0 +1,269 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsInput from '../../../../dist/collection/components/rds-form-elements/rds-input/rds-input';
+
+<Meta
+  title="Components/Form Elements/Validators/Stories/Constraint Validators/Input"
+  component={RdsInput}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/uYf4DWKd7OtQSx7BRfchZv/RDS-Components-for-Storybook?node-id=1207%3A43033',
+    },
+  }}
+  argTypes={{
+    label: {
+      control: { type: 'text' },
+      description: 'Text displayed as the label for the input.',
+    },
+    placeholder: {
+      control: { type: 'text' },
+      description: 'Text displayed as the placeholder for the input.',
+    },
+    type: {
+      control: { type: 'select', options: ['email', 'file', 'number', 'password', 'tel', 'url', 'text'] },
+      description: 'Type of the input to be entered.',
+    },
+    name: {
+      control: { type: 'text' },
+      description: 'Name assigned to the input element.',
+    },
+    value: {
+      control: { type: 'text', options: ['number', 'text'] },
+      description: 'Default value is provided for the input element if needed.',
+    },
+    required: {
+      control: { type: 'boolean' },
+      description: 'Removes the optional indicator from the input and makes it required for form submission.',
+    },
+    readonly: {
+      description: 'Shows the input as normal but the value cannot be changed.',
+      control: { type: 'boolean' },
+    },
+    disabled: {
+      control: { type: 'boolean' },
+    },
+    validate: {
+      control: { type: 'boolean' },
+    },
+    pattern: {
+      control: { type: 'text' },
+    },
+  }}
+/>
+
+export const Template = args => (
+  <rds-input {...args}>
+    <span slot="error-text">This field is required.</span>
+  </rds-input>
+);
+
+export const EmailTemplate = args => (
+  <rds-input {...args}>
+    <span slot="error-text">Please enter a correct email.</span>
+  </rds-input>
+);
+
+export const URLTemplate = args => (
+  <rds-input {...args}>
+    <span slot="error-text">Please enter a correct URL.</span>
+  </rds-input>
+);
+
+export const MinlengthTemplate = args => (
+  <rds-input {...args}>
+    <span slot="error-text">Enter a password over 8 characters long.</span>
+    <span slot="help-text">Enter a password over 8 characters long.</span>
+  </rds-input>
+);
+
+export const MaxlengthTemplate = args => (
+  <rds-input {...args}>
+    <span slot="error-text">Enter a number less than 3 characters.</span>
+    <span slot="error-text">Enter a number less than 3 characters.</span>
+  </rds-input>
+);
+
+export const MinTemplate = args => (
+  <rds-input {...args}>
+    <span slot="error-text">Enter a valid age greater than 18.</span>
+    <span slot="help-text">Enter a valid age greater than 18.</span>
+  </rds-input>
+);
+
+export const MaxTemplate = args => (
+  <rds-input {...args}>
+    <span slot="error-text">Enter a valid age less than 100.</span>
+    <span slot="help-text">Enter a valid age less than 100.</span>
+  </rds-input>
+);
+
+export const MinAndMaxTemplate = args => (
+  <rds-input {...args}>
+    <span slot="error-text">Enter a valid age between 18-99.</span>
+    <span slot="help-text">Enter a valid age between 18-99.</span>
+  </rds-input>
+);
+
+export const PatternTemplate = args => (
+  <rds-input {...args}>
+    <span slot="error-text">Enter a username with letters and numbers only (no punctuation).</span>
+    <span slot="help-text">Enter a username with letters and numbers only (no punctuation).</span>
+  </rds-input>
+);
+
+# Input
+
+### Required
+
+<Canvas>
+  <Story
+    name="Required"
+    args={{
+      name: 'required',
+      label: 'Name',
+      type: 'text',
+      required: true,
+      validate: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Email
+
+<Canvas>
+  <Story
+    name="Email"
+    args={{
+      name: 'email',
+      label: 'Email',
+      type: 'email',
+      validate: true,
+    }}
+  >
+    {EmailTemplate.bind({})}
+  </Story>
+</Canvas>
+
+### URL
+
+<Canvas>
+  <Story
+    name="URL"
+    args={{
+      name: 'url',
+      label: 'URL',
+      type: 'url',
+      validate: true,
+    }}
+  >
+    {URLTemplate.bind({})}
+  </Story>
+</Canvas>
+
+### Minlength
+
+<Canvas>
+  <Story
+    name="Minlength"
+    args={{
+      name: 'minlength',
+      label: 'Password',
+      type: 'password',
+      minlength: 8,
+      validate: true,
+    }}
+  >
+    {MinlengthTemplate.bind({})}
+  </Story>
+</Canvas>
+
+### Maxlength
+
+<Canvas>
+  <Story
+    name="Maxlength"
+    args={{
+      name: 'maxlength',
+      label: 'Age',
+      type: 'text',
+      maxlength: 3,
+      validate: true,
+    }}
+  >
+    {MaxlengthTemplate.bind({})}
+  </Story>
+</Canvas>
+
+### Min
+
+<Canvas>
+  <Story
+    name="Min"
+    args={{
+      name: 'min',
+      label: 'Age',
+      type: 'number',
+      min: 18,
+      validate: true,
+    }}
+  >
+    {MinTemplate.bind({})}
+  </Story>
+</Canvas>
+
+### Max
+
+<Canvas>
+  <Story
+    name="Max"
+    args={{
+      name: 'max',
+      label: 'Age',
+      type: 'number',
+      max: 99,
+      validate: true,
+    }}
+  >
+    {MaxTemplate.bind({})}
+  </Story>
+</Canvas>
+
+### Min and Max
+
+<Canvas>
+  <Story
+    name="Min and Max"
+    args={{
+      name: 'min-and-max',
+      type: 'number',
+      label: 'Age',
+      min: 18,
+      max: 99,
+      validate: true,
+    }}
+  >
+    {MinAndMaxTemplate.bind({})}
+  </Story>
+</Canvas>
+
+### Pattern
+
+<Canvas>
+  <Story
+    name="Pattern"
+    args={{
+      name: 'pattern',
+      type: 'text',
+      label: 'Username',
+      pattern: '[A-Za-z0-9]+',
+      validate: true,
+    }}
+  >
+    {PatternTemplate.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

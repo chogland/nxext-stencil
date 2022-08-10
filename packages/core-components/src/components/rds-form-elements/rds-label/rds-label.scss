@@ -1,0 +1,10 @@
+:host {
+  label {
+    @apply block text-sm font-medium text-gray-700 font-inter;
+  }
+}
+
+:host([disabled]),
+:host([readonly]) {
+  @apply pointer-events-none;
+}

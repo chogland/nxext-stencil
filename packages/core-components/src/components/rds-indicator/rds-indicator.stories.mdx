@@ -1,0 +1,131 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsIndicator from '../../../dist/collection/components/rds-indicator/rds-indicator';
+
+<Meta
+  title="Components/Indicator/Stories"
+  component={RdsIndicator}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=48%3A22038',
+    },
+  }}
+  argTypes={{
+    appearance: {
+      control: { type: 'select' },
+      options: ['success', 'warning', 'alert', 'primary', 'secondary', 'tertiary'],
+      description: 'Controls the appearance of the indicator',
+    },
+  }}
+/>
+
+export const Template = args => <rds-indicator {...args}></rds-indicator>;
+
+# Indicator
+
+### Success
+
+<Canvas>
+  <Story
+    name="Success"
+    args={{
+      appearance: 'success',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Warning
+
+<Canvas>
+  <Story
+    name="Warning"
+    args={{
+      appearance: 'warning',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Alert
+
+<Canvas>
+  <Story
+    name="Alert"
+    args={{
+      appearance: 'alert',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Primary
+
+<Canvas>
+  <Story
+    name="Primary"
+    args={{
+      appearance: 'primary',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Secondary
+
+<Canvas>
+  <Story
+    name="Secondary"
+    args={{
+      appearance: 'secondary',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Tertiary
+
+<Canvas>
+  <Story
+    name="Tertiary"
+    args={{
+      appearance: 'tertiary',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Primary-alt
+
+<Canvas>
+  <Story
+    name="Primary-alt"
+    args={{
+      appearance: 'primary-alt',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Tertiary-alt
+
+<Canvas>
+  <Story
+    name="Tertiary-alt"
+    args={{
+      appearance: 'tertiary-alt',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

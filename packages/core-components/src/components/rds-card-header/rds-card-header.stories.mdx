@@ -1,0 +1,177 @@
+import { Meta, Story, Canvas, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsCardHeader from '../../../dist/collection/components/rds-card-header/rds-card-header';
+
+<Meta
+  title="Collections/Card/Stories/Card Header"
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=48%3A17219',
+    },
+    layout: 'padded',
+  }}
+  argTypes={{}}
+/>
+
+export const Default = args => (
+  <rds-card-container {...args}>
+    <rds-card-header padded rule>
+      <rds-card-title slot="title">Card Title</rds-card-title>
+    </rds-card-header>
+  </rds-card-container>
+);
+
+export const WithIcon = args => (
+  <rds-card-container {...args}>
+    <rds-card-header padded rule>
+      <rds-hero-icon slot="icon" size="lg" name="users" type="outline" />
+      <rds-card-title slot="title">Card Title</rds-card-title>
+      <rds-link slot="actions" appearance="secondary" link-text="Text link">
+        <rds-hero-icon name="share" size="md" />
+      </rds-link>
+      <rds-link slot="actions" appearance="secondary" link-text="Text link">
+        <rds-hero-icon name="download" size="md" />
+      </rds-link>
+      <rds-link slot="actions" appearance="secondary" link-text="Text link">
+        <rds-hero-icon name="dots-vertical" size="md" />
+      </rds-link>
+    </rds-card-header>
+  </rds-card-container>
+);
+
+export const WithActions = args => (
+  <rds-card-container {...args}>
+    <rds-card-header padded rule>
+      <rds-card-title slot="title">Card Title</rds-card-title>
+      <rds-text slot="description" type="inline">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit quam corrupti consectetur.
+      </rds-text>
+      <rds-button slot="actions">Card Action</rds-button>
+      <rds-button slot="actions" appearance="tertiary">
+        Edit
+      </rds-button>
+    </rds-card-header>
+  </rds-card-container>
+);
+
+export const WithDecription = args => (
+  <rds-card-container {...args}>
+    <rds-card-header padded rule>
+      <rds-card-title slot="title">Card Title</rds-card-title>
+      <rds-text slot="description" type="inline">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit quam corrupti consectetur.
+      </rds-text>
+    </rds-card-header>
+  </rds-card-container>
+);
+
+export const WithMeta = args => (
+  <rds-card-container {...args}>
+    <rds-card-header padded rule>
+      <rds-card-title slot="title">Card Title</rds-card-title>
+      <rds-button slot="actions">Card Action</rds-button>
+      <rds-button slot="actions" appearance="tertiary">
+        Edit
+      </rds-button>
+      <rds-meta slot="content" icon="briefcase">
+        Full-time
+      </rds-meta>
+      <rds-meta slot="content" icon="location-marker">
+        Remote
+      </rds-meta>
+      <rds-meta slot="content" icon="currency-dollar">
+        $120k - $140k
+      </rds-meta>
+    </rds-card-header>
+  </rds-card-container>
+);
+
+export const WithTabs = args => (
+  <rds-card-container {...args}>
+    <rds-card-header padded rule>
+      <rds-card-title slot="title">Card Title</rds-card-title>
+      <rds-button slot="actions">Card Action</rds-button>
+      <rds-button slot="actions" appearance="tertiary">
+        Edit
+      </rds-button>
+      <rds-tabs slot="content" appearance="secondary">
+        <rds-tab active>My Account</rds-tab>
+        <rds-tab>Team Members</rds-tab>
+      </rds-tabs>
+    </rds-card-header>
+  </rds-card-container>
+);
+
+export const WithAuxiliary = args => (
+  <rds-card-container {...args}>
+    <rds-card-header>
+      <rds-card-title slot="title">Card Title</rds-card-title>
+      <rds-text slot="auxiliary-text">1d ago</rds-text>
+      <rds-tabs slot="content" appearance="secondary">
+        <rds-tab active>My Account</rds-tab>
+        <rds-tab>Team Members</rds-tab>
+      </rds-tabs>
+    </rds-card-header>
+  </rds-card-container>
+);
+
+# Card Header
+
+### Default
+
+<Canvas>
+  <Story name="Default" args={{}}>
+    {Default.bind({})}
+  </Story>
+</Canvas>
+
+### With Description
+
+<Canvas>
+  <Story name="With Description" args={{}}>
+    {WithDecription.bind({})}
+  </Story>
+</Canvas>
+
+### With Icon
+
+<Canvas>
+  <Story name="With Icon" args={{}}>
+    {WithIcon.bind({})}
+  </Story>
+</Canvas>
+
+### With Actions
+
+<Canvas>
+  <Story name="With Actions" args={{}}>
+    {WithActions.bind({})}
+  </Story>
+</Canvas>
+
+### With Meta
+
+<Canvas>
+  <Story name="With Meta" args={{}}>
+    {WithMeta.bind({})}
+  </Story>
+</Canvas>
+
+### With Tabs
+
+<Canvas>
+  <Story name="With Tabs" args={{}}>
+    {WithTabs.bind({})}
+  </Story>
+</Canvas>
+
+### With Auxiliary Text
+
+<Canvas>
+  <Story name="With Aux Text" args={{}}>
+    {WithAuxiliary.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

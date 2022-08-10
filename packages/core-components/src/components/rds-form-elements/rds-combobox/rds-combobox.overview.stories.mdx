@@ -1,0 +1,212 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import ItemReadme from '../rds-combobox-item/readme.md';
+import RdsCombobox from '../../../../dist/collection/components/rds-form-elements/rds-combobox/rds-combobox';
+
+<Meta title="Components/Form Elements/Combobox/Overview" />
+
+# Combobox: Overview
+
+`RdsCombobox` is a component that includes an `RdsInput` and slotted `RdsComboboxItem`s, that dynamically pop up to help a user set the value of the input.
+
+## Variations
+
+### Default
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-combobox-stories--default-story" height="300px"></Story>
+</Canvas>
+
+### Required
+
+When the `required` prop is set to true, the optional indicator will disappear and the user will need to complete the combobox requirements in order to submit the form it is a part of.
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-combobox-stories--required" height="300px"></Story>
+</Canvas>
+
+### With Data from API Source
+
+See the below example and code snippet for information on displaying data in the combobox from an API source. Note the different
+props to set to true/false on load and error, `loading`, and `error`, specifically. This will make sure the rds-spinner is displayed
+when the data is loading, and that error text is provided if an error occurs.
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-combobox-stories--with-data-from-api-source" height="300px"></Story>
+</Canvas>
+
+```jsx
+App.jsx;
+
+import { RdsCombobox, RdsComboboxItem } from 'rds-components-react';
+import react, { useState } from 'react';
+const App = () => {
+  const [data, setdata] = useState([]); // used to store the data from source
+  const [loading, setloading] = useState(false); // used to set the loading prop in component
+  const [error, seterror] = useState(false); //used to set the state when error from source
+  const [noresult, setnoresult] = useState(false); // used to set the noResult prop in the component
+  const handleapi = e => {
+    setloading(true);
+    seterror(false);
+    setnoresult(false);
+    //sets the number of characters needed to be in combobox input to call API
+    if (e.detail.length >= 4) {
+      fetch('http://universities.hipolabs.com/search?country=United+States')
+        .then(response => response.json())
+        .then(
+          data => {
+            if (data.length === 0) {
+              setnoresult(true);
+              setloading(false);
+            } else {
+              setloading(false);
+              setdata(data); //source data loaded
+            }
+          },
+          err => {
+            setloading(false);
+            seterror(true);
+          },
+        );
+    }
+  };
+
+  return (
+    <div>
+      <RdsCombobox noResult={noresult} loading={loading} error={error} onRdsOnInput={e => handleapi(e)}>
+        {data?.map(university => (
+          <RdsComboboxItem value={university.name} textLabel={university.name}></RdsComboboxItem>
+        ))}
+      </RdsCombobox>
+    </div>
+  );
+};
+export default App;
+```
+
+### Error from API Source
+
+When an error occurs during API fetch process, the user needs to set the `error` prop to display an error message inside the combobox dialog.
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-combobox-stories--error-from-api-source" height="300px"></Story>
+</Canvas>
+
+```jsx
+App.jsx;
+
+import { RdsCombobox, RdsComboboxItem } from 'rds-components-react';
+import react, { useState } from 'react';
+const App = () => {
+  const [data, setdata] = useState([]); // used to store the data from source
+  const [loading, setloading] = useState(false); // used to set the loading prop in component
+  const [error, seterror] = useState(false); //used to set the state when error from source
+  const [noresult, setnoresult] = useState(false); // used to set the noResult prop in the component
+  const handleapi = e => {
+    setloading(true);
+    seterror(false);
+    setnoresult(false);
+    //sets the number of characters needed to be in combobox input to call API
+    if (e.detail.length >= 4) {
+      fetch('http://universities.hipolabs.com/search?country=United+States')
+        .then(response => response.json())
+        .then(
+          data => {
+            if (data.length === 0) {
+              setnoresult(true);
+              setloading(false);
+            } else {
+              setloading(false);
+              setdata(data);
+            }
+          },
+          err => {
+            setloading(false);
+            seterror(true); //set the error prop in component when source is errored.
+          },
+        );
+    }
+  };
+
+  return (
+    <div>
+      <RdsCombobox noResult={noresult} loading={loading} error={error} onRdsOnInput={e => handleapi(e)}>
+        {data?.map(university => (
+          <RdsComboboxItem value={university.name} textLabel={university.name}></RdsComboboxItem>
+        ))}
+      </RdsCombobox>
+    </div>
+  );
+};
+export default App;
+```
+
+### No Data from API Source
+
+When there is no data returned from API fetch, the user needs to set the `noResult` prop to display the required message under the combobox.
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-combobox-stories--no-data-from-api-source" height="300px"></Story>
+</Canvas>
+
+```jsx
+App.jsx;
+
+import { RdsCombobox, RdsComboboxItem } from 'rds-components-react';
+import react, { useState } from 'react';
+const App = () => {
+  const [data, setdata] = useState([]); // used to store the data from source
+  const [loading, setloading] = useState(false); // used to set the loading prop in component
+  const [error, seterror] = useState(false); //used to set the state when error from source
+  const [noresult, setnoresult] = useState(false); // used to set the noResult prop in the component
+  const handleapi = e => {
+    setloading(true);
+    seterror(false);
+    setnoresult(false);
+    //sets the number of characters needed to be in combobox input to call API
+    if (e.detail.length >= 4) {
+      fetch('http://universities.hipolabs.com/search?country=United+States')
+        .then(response => response.json())
+        .then(
+          data => {
+            if (data.length === 0) {
+              setnoresult(true); // sets the noResult prop in component when source does not return any data.
+              setloading(false);
+            } else {
+              setloading(false);
+              setdata(data);
+            }
+          },
+          err => {
+            setloading(false);
+            seterror(true);
+          },
+        );
+    }
+  };
+
+  return (
+    <div>
+      <RdsCombobox noResult={noresult} loading={loading} error={error} onRdsOnInput={e => handleapi(e)}>
+        {data?.map(university => (
+          <RdsComboboxItem value={university.name} textLabel={university.name}></RdsComboboxItem>
+        ))}
+      </RdsCombobox>
+    </div>
+  );
+};
+export default App;
+```
+
+## Validations
+
+Visit the [validations overview page](?path=/story/components-form-elements-validators-overview--page) for information on validating input components.
+
+## Usage Guidelines
+
+> **Wait to validate**
+
+Only show error validation messages or stylings after a user has interacted with the input.
+
+<Description>{Readme}</Description>
+<Description>{ItemReadme}</Description>

@@ -1,0 +1,35 @@
+:host([type='grid']) {
+  @apply grid m-2 md:m-4 lg:m-8 gap-4 grid-cols-12 font-inter max-w-full;
+}
+
+:host([type='flex']) {
+  @apply flex w-full;
+}
+
+:host([itemsbase]) {
+  @apply items-baseline;
+}
+
+:host([justifybetween]) {
+  @apply justify-between;
+}
+
+:host([justifyaround]) {
+  @apply justify-around;
+}
+
+:host([justifyend]) {
+  @apply justify-end;
+}
+
+:host([itemscenter]) {
+  @apply items-center;
+}
+
+:host([collapseGaps='true']) {
+  @apply gap-0;
+}
+
+:host([collapseMargins='true']) {
+  @apply m-0;
+}

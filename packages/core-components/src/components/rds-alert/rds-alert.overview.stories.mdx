@@ -1,0 +1,83 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+
+<Meta title="Components/Alert/Overview" />
+
+# Alert: Overview
+
+`Alert` is designed for medium priority messages for the user.
+
+An alert displays an important, succinct message, and provides actions for users to address. It requires a user action to be dismissed. Although persistent, alerts can either be interacted with or ignored.
+
+Slots are used for the text in the Alert. The best element for alert slots is 'span'. To avoid any base styling, please do not use `RdsText` or `RdsHeadline`.
+
+To see the slot names and descriptions, view [slots](#slots) below.
+
+```
+<span slot="title">Alert title</span>
+```
+
+## Variations
+
+### Default
+
+<Canvas withSource="auto">
+  <Story id="components-alert-stories--default-story"></Story>
+</Canvas>
+
+### Success
+
+<Canvas withSource="auto">
+  <Story id="components-alert-stories--success"></Story>
+</Canvas>
+
+### Warning
+
+<Canvas withSource="auto">
+  <Story id="components-alert-stories--warning"></Story>
+</Canvas>
+
+### Error
+
+<Canvas withSource="auto">
+  <Story id="components-alert-stories--error"></Story>
+</Canvas>
+
+### With Actions
+
+The primary action text is provided via a slot named "action-text". When a user selects this action, an event called "rdsActionClick" is emitted. You can listen for this event in order to
+take action when a user selects the primary action.
+
+The 'dismiss' action also is provided text via a slot named "dismiss-text". When a user selects this, the alert is dismissed and an event called "rdsAlertDismiss" is emitted.
+
+<Canvas withSource="auto">
+  <Story id="components-alert-stories--with-actions"></Story>
+</Canvas>
+
+### Without Dismiss Button
+
+By default, the alert has a `dismissible` prop that is set to true, that displays a "Dismiss" button for the user to engage with. You can remove this button to have a persistent alert by setting `dismissible` to false. See the example below.
+
+<Canvas withSource="auto">
+  <Story id="components-alert-stories--without-dismiss-button"></Story>
+</Canvas>
+
+## Usage Guidelines
+
+> **Usage**
+
+Alerts are for use in the context of an application either in the content area itself or within components. They require a user action to be dismissed.
+
+> **Frequency**
+
+Only one alert may be displayed at a time.
+
+> **Priority**
+
+Alerts should be for medium priority information. While the alert can be ignored; user interaction is required to dismiss the alert
+
+> **Don't override color**
+
+Do not use custom colors for snackbar. The colors of the snackbar variations has been designed to be consistent and accessible.
+
+<Description>{Readme}</Description>

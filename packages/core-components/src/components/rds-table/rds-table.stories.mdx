@@ -1,0 +1,541 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsTable from '../../../dist/collection/components/rds-table/rds-table';
+
+<Meta
+  title="Components/Table/Stories"
+  component={RdsTable}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=48%3A92064',
+    },
+  }}
+/>
+
+export const Template = args => (
+  <rds-table {...args}>
+    <rds-table-row slot="head">
+      <rds-table-cell type="head">Name</rds-table-cell>
+      <rds-table-cell type="head">Title</rds-table-cell>
+      <rds-table-cell type="head">Email</rds-table-cell>
+      <rds-table-cell type="head">Role</rds-table-cell>
+      <rds-table-cell type="head">
+        <span className="sr-only">Edit</span>
+      </rds-table-cell>
+    </rds-table-row>
+    <rds-table-row slot="body" {...args}>
+      <rds-table-cell>First Last</rds-table-cell>
+      <rds-table-cell>Senior Principal Experience Design Developer</rds-table-cell>
+      <rds-table-cell>first.last@example.com</rds-table-cell>
+      <rds-table-cell>Lead</rds-table-cell>
+      <rds-table-cell>Edit</rds-table-cell>
+    </rds-table-row>
+    <rds-table-row slot="body" {...args}>
+      <rds-table-cell>First Last</rds-table-cell>
+      <rds-table-cell>Senior Experience Design Developer</rds-table-cell>
+      <rds-table-cell>first.last@example.com</rds-table-cell>
+      <rds-table-cell>Assistant</rds-table-cell>
+      <rds-table-cell>Edit</rds-table-cell>
+    </rds-table-row>
+    <rds-table-row slot="body" {...args}>
+      <rds-table-cell>First Last</rds-table-cell>
+      <rds-table-cell>Experience Design Developer</rds-table-cell>
+      <rds-table-cell>first.last@example.com</rds-table-cell>
+      <rds-table-cell>Mid-Level</rds-table-cell>
+      <rds-table-cell>Edit</rds-table-cell>
+    </rds-table-row>
+    <rds-table-row slot="body" {...args}>
+      <rds-table-cell>First Last</rds-table-cell>
+      <rds-table-cell>Experience Design Developer</rds-table-cell>
+      <rds-table-cell>first.last@example.com</rds-table-cell>
+      <rds-table-cell>Mid-Level</rds-table-cell>
+      <rds-table-cell>Edit</rds-table-cell>
+    </rds-table-row>
+    <rds-table-row slot="body" {...args}>
+      <rds-table-cell>First Last</rds-table-cell>
+      <rds-table-cell>Experience Design Developer</rds-table-cell>
+      <rds-table-cell>first.last@example.com</rds-table-cell>
+      <rds-table-cell>Mid-Level</rds-table-cell>
+      <rds-table-cell>Edit</rds-table-cell>
+    </rds-table-row>
+    <rds-table-row slot="body" {...args}>
+      <rds-table-cell>First Last</rds-table-cell>
+      <rds-table-cell>Experience Design Developer</rds-table-cell>
+      <rds-table-cell>first.last@example.com</rds-table-cell>
+      <rds-table-cell>Mid-Level</rds-table-cell>
+      <rds-table-cell>Edit</rds-table-cell>
+    </rds-table-row>
+    <rds-table-row slot="body" {...args}>
+      <rds-table-cell>First Last</rds-table-cell>
+      <rds-table-cell>Experience Design Developer</rds-table-cell>
+      <rds-table-cell>first.last@example.com</rds-table-cell>
+      <rds-table-cell>Mid-Level</rds-table-cell>
+      <rds-table-cell>Edit</rds-table-cell>
+    </rds-table-row>
+  </rds-table>
+);
+
+export const MultiLineTemplate = args => (
+  <rds-table {...args}>
+    <rds-table-row slot="head">
+      <rds-table-cell type="head">Name</rds-table-cell>
+      <rds-table-cell type="head">Title</rds-table-cell>
+      <rds-table-cell type="head">Email</rds-table-cell>
+      <rds-table-cell type="head" align="right">
+        Last Login
+      </rds-table-cell>
+      <rds-table-cell type="head">
+        <span className="sr-only">Edit</span>
+      </rds-table-cell>
+    </rds-table-row>
+    <rds-table-row slot="body" {...args}>
+      <rds-table-cell>
+        <rds-contact avatar-text="FL" name="First Last" role="first.last@example.com"></rds-contact>
+      </rds-table-cell>
+      <rds-table-cell>
+        <rds-text spacing="none" size="sm">
+          Senior Experience Design Developer
+        </rds-text>
+        <rds-text spacing="none" size="sm">
+          Digital Client Experience
+        </rds-text>
+      </rds-table-cell>
+      <rds-table-cell>
+        <rds-chip text="Active" />
+      </rds-table-cell>
+      <rds-table-cell align="right">1:05pm</rds-table-cell>
+      <rds-table-cell>Edit</rds-table-cell>
+    </rds-table-row>
+    <rds-table-row slot="body" {...args}>
+      <rds-table-cell>
+        <rds-contact avatar-text="FL" name="First Last" role="first.last@example.com"></rds-contact>
+      </rds-table-cell>
+      <rds-table-cell>
+        <rds-text spacing="none" size="sm">
+          Senior Principal Experience Design Developer
+        </rds-text>
+        <rds-text spacing="none" size="sm">
+          Digital Client Experience
+        </rds-text>
+      </rds-table-cell>
+      <rds-table-cell>
+        <rds-chip text="Active" />
+      </rds-table-cell>
+      <rds-table-cell align="right">1:05pm</rds-table-cell>
+      <rds-table-cell>Edit</rds-table-cell>
+    </rds-table-row>
+    <rds-table-row slot="body" {...args}>
+      <rds-table-cell>
+        <rds-contact avatar-text="FL" name="First Last" role="first.last@example.com"></rds-contact>
+      </rds-table-cell>
+      <rds-table-cell>
+        <rds-text spacing="none" size="sm">
+          Experience Design Developer
+        </rds-text>
+        <rds-text spacing="none" size="sm">
+          Digital Client Experience
+        </rds-text>
+      </rds-table-cell>
+      <rds-table-cell>
+        <rds-chip text="Active" />
+      </rds-table-cell>
+      <rds-table-cell align="right">1:05pm</rds-table-cell>
+      <rds-table-cell>Edit</rds-table-cell>
+    </rds-table-row>
+  </rds-table>
+);
+
+export const HideColumnsTemplate = args => (
+  <rds-table {...args}>
+    <rds-table-row slot="head">
+      <rds-table-cell type="head" mobile-hide="true">
+        Name
+      </rds-table-cell>
+      <rds-table-cell type="head">Title</rds-table-cell>
+      <rds-table-cell type="head">Email</rds-table-cell>
+      <rds-table-cell type="head" mobile-hide="true">
+        Role
+      </rds-table-cell>
+      <rds-table-cell type="head">
+        <span className="sr-only">Edit</span>
+      </rds-table-cell>
+    </rds-table-row>
+    <rds-table-row slot="body" {...args}>
+      <rds-table-cell>First Last</rds-table-cell>
+      <rds-table-cell>Senior Principal Experience Design Developer</rds-table-cell>
+      <rds-table-cell>first.last@example.com</rds-table-cell>
+      <rds-table-cell>Lead</rds-table-cell>
+      <rds-table-cell>Edit</rds-table-cell>
+    </rds-table-row>
+    <rds-table-row slot="body" {...args}>
+      <rds-table-cell>First Last</rds-table-cell>
+      <rds-table-cell>Senior Experience Design Developer</rds-table-cell>
+      <rds-table-cell>first.last@example.com</rds-table-cell>
+      <rds-table-cell>Assistant</rds-table-cell>
+      <rds-table-cell>Edit</rds-table-cell>
+    </rds-table-row>
+    <rds-table-row slot="body" {...args}>
+      <rds-table-cell>First Last</rds-table-cell>
+      <rds-table-cell>Experience Design Developer</rds-table-cell>
+      <rds-table-cell>first.last@example.com</rds-table-cell>
+      <rds-table-cell>Mid-Level</rds-table-cell>
+      <rds-table-cell>Edit</rds-table-cell>
+    </rds-table-row>
+    <rds-table-row slot="body" {...args}>
+      <rds-table-cell>First Last</rds-table-cell>
+      <rds-table-cell>Experience Design Developer</rds-table-cell>
+      <rds-table-cell>first.last@example.com</rds-table-cell>
+      <rds-table-cell>Mid-Level</rds-table-cell>
+      <rds-table-cell>Edit</rds-table-cell>
+    </rds-table-row>
+    <rds-table-row slot="body" {...args}>
+      <rds-table-cell>First Last</rds-table-cell>
+      <rds-table-cell>Experience Design Developer</rds-table-cell>
+      <rds-table-cell>first.last@example.com</rds-table-cell>
+      <rds-table-cell>Mid-Level</rds-table-cell>
+      <rds-table-cell>Edit</rds-table-cell>
+    </rds-table-row>
+    <rds-table-row slot="body" {...args}>
+      <rds-table-cell>First Last</rds-table-cell>
+      <rds-table-cell>Experience Design Developer</rds-table-cell>
+      <rds-table-cell>first.last@example.com</rds-table-cell>
+      <rds-table-cell>Mid-Level</rds-table-cell>
+      <rds-table-cell>Edit</rds-table-cell>
+    </rds-table-row>
+    <rds-table-row slot="body" {...args}>
+      <rds-table-cell>First Last</rds-table-cell>
+      <rds-table-cell>Experience Design Developer</rds-table-cell>
+      <rds-table-cell>first.last@example.com</rds-table-cell>
+      <rds-table-cell>Mid-Level</rds-table-cell>
+      <rds-table-cell>Edit</rds-table-cell>
+    </rds-table-row>
+  </rds-table>
+);
+
+export const StackedColumnTemplate = args => (
+  <rds-table>
+    <rds-table-row slot="head">
+      <rds-table-cell type="head">Name</rds-table-cell>
+      <rds-table-cell type="head" {...args}>
+        Title
+      </rds-table-cell>
+      <rds-table-cell type="head" {...args}>
+        Email
+      </rds-table-cell>
+      <rds-table-cell type="head" {...args}>
+        Role
+      </rds-table-cell>
+      <rds-table-cell type="head">
+        <span className="sr-only">Edit</span>
+      </rds-table-cell>
+    </rds-table-row>
+    <rds-table-row slot="body">
+      <rds-table-cell {...args}>First Last</rds-table-cell>
+      <rds-table-cell {...args} visible={true}>
+        <rds-text size="sm" spacing="none">
+          First Last
+        </rds-text>
+        <rds-text size="sm" spacing="none">
+          Senior Principal Experience Design Developer
+        </rds-text>
+        <rds-text size="sm" spacing="none">
+          first.last@example.com
+        </rds-text>
+        <rds-text size="sm" spacing="none">
+          Lead
+        </rds-text>
+      </rds-table-cell>
+      <rds-table-cell {...args}>Senior Principal Experience Design Developer</rds-table-cell>
+      <rds-table-cell {...args}>first.last@example.com</rds-table-cell>
+      <rds-table-cell {...args}>Lead</rds-table-cell>
+      <rds-table-cell>Edit</rds-table-cell>
+    </rds-table-row>
+    <rds-table-row slot="body">
+      <rds-table-cell {...args}>First Last</rds-table-cell>
+      <rds-table-cell {...args} visible={true}>
+        <rds-text size="sm" spacing="none">
+          First Last
+        </rds-text>
+        <rds-text size="sm" spacing="none">
+          Senior Principal Experience Design Developer
+        </rds-text>
+        <rds-text size="sm" spacing="none">
+          first.last@example.com
+        </rds-text>
+        <rds-text size="sm" spacing="none">
+          Lead
+        </rds-text>
+      </rds-table-cell>
+      <rds-table-cell {...args}>Senior Experience Design Developer</rds-table-cell>
+      <rds-table-cell {...args}>first.last@example.com</rds-table-cell>
+      <rds-table-cell {...args}>Assistant</rds-table-cell>
+      <rds-table-cell>Edit</rds-table-cell>
+    </rds-table-row>
+    <rds-table-row slot="body">
+      <rds-table-cell {...args}>First Last</rds-table-cell>
+      <rds-table-cell {...args} visible={true}>
+        <rds-text size="sm" spacing="none">
+          First Last
+        </rds-text>
+        <rds-text size="sm" spacing="none">
+          Senior Principal Experience Design Developer
+        </rds-text>
+        <rds-text size="sm" spacing="none">
+          first.last@example.com
+        </rds-text>
+        <rds-text size="sm" spacing="none">
+          Lead
+        </rds-text>
+      </rds-table-cell>
+      <rds-table-cell {...args}>Experience Design Developer</rds-table-cell>
+      <rds-table-cell {...args}>first.last@example.com</rds-table-cell>
+      <rds-table-cell {...args}>Mid-Level</rds-table-cell>
+      <rds-table-cell>Edit</rds-table-cell>
+    </rds-table-row>
+    <rds-table-row slot="body">
+      <rds-table-cell {...args}>First Last</rds-table-cell>
+      <rds-table-cell {...args} visible={true}>
+        <rds-text size="sm" spacing="none">
+          First Last
+        </rds-text>
+        <rds-text size="sm" spacing="none">
+          Senior Principal Experience Design Developer
+        </rds-text>
+        <rds-text size="sm" spacing="none">
+          first.last@example.com
+        </rds-text>
+        <rds-text size="sm" spacing="none">
+          Lead
+        </rds-text>
+      </rds-table-cell>
+      <rds-table-cell {...args}>Experience Design Developer</rds-table-cell>
+      <rds-table-cell {...args}>first.last@example.com</rds-table-cell>
+      <rds-table-cell {...args}>Mid-Level</rds-table-cell>
+      <rds-table-cell>Edit</rds-table-cell>
+    </rds-table-row>
+    <rds-table-row slot="body">
+      <rds-table-cell {...args}>First Last</rds-table-cell>
+      <rds-table-cell {...args} visible={true}>
+        <rds-text size="sm" spacing="none">
+          First Last
+        </rds-text>
+        <rds-text size="sm" spacing="none">
+          Senior Principal Experience Design Developer
+        </rds-text>
+        <rds-text size="sm" spacing="none">
+          first.last@example.com
+        </rds-text>
+        <rds-text size="sm" spacing="none">
+          Lead
+        </rds-text>
+      </rds-table-cell>
+      <rds-table-cell {...args}>Experience Design Developer</rds-table-cell>
+      <rds-table-cell {...args}>first.last@example.com</rds-table-cell>
+      <rds-table-cell {...args}>Mid-Level</rds-table-cell>
+      <rds-table-cell>Edit</rds-table-cell>
+    </rds-table-row>
+    <rds-table-row slot="body">
+      <rds-table-cell {...args}>First Last</rds-table-cell>
+      <rds-table-cell {...args} visible={true}>
+        <rds-text size="sm" spacing="none">
+          First Last
+        </rds-text>
+        <rds-text size="sm" spacing="none">
+          Senior Principal Experience Design Developer
+        </rds-text>
+        <rds-text size="sm" spacing="none">
+          first.last@example.com
+        </rds-text>
+        <rds-text size="sm" spacing="none">
+          Lead
+        </rds-text>
+      </rds-table-cell>
+      <rds-table-cell {...args}>Experience Design Developer</rds-table-cell>
+      <rds-table-cell {...args}>first.last@example.com</rds-table-cell>
+      <rds-table-cell {...args}>Mid-Level</rds-table-cell>
+      <rds-table-cell>Edit</rds-table-cell>
+    </rds-table-row>
+    <rds-table-row slot="body">
+      <rds-table-cell {...args}>First Last</rds-table-cell>
+      <rds-table-cell {...args} visible={true}>
+        <rds-text size="sm" spacing="none">
+          First Last
+        </rds-text>
+        <rds-text size="sm" spacing="none">
+          Senior Principal Experience Design Developer
+        </rds-text>
+        <rds-text size="sm" spacing="none">
+          first.last@example.com
+        </rds-text>
+        <rds-text size="sm" spacing="none">
+          Lead
+        </rds-text>
+      </rds-table-cell>
+      <rds-table-cell {...args}>Experience Design Developer</rds-table-cell>
+      <rds-table-cell {...args}>first.last@example.com</rds-table-cell>
+      <rds-table-cell {...args}>Mid-Level</rds-table-cell>
+      <rds-table-cell>Edit</rds-table-cell>
+    </rds-table-row>
+  </rds-table>
+);
+
+export const GroupedRowsTemplate = args => (
+  <rds-table {...args}>
+    <rds-table-row slot="head">
+      <rds-table-cell type="head">Name</rds-table-cell>
+      <rds-table-cell type="head">Title</rds-table-cell>
+      <rds-table-cell type="head">Email</rds-table-cell>
+      <rds-table-cell type="head">Role</rds-table-cell>
+      <rds-table-cell type="head">
+        <span className="sr-only">Edit</span>
+      </rds-table-cell>
+    </rds-table-row>
+    <rds-table-row slot="body" group={true}>
+      <rds-table-cell type="head">Texas</rds-table-cell>
+    </rds-table-row>
+    <rds-table-row slot="body">
+      <rds-table-cell>First Last</rds-table-cell>
+      <rds-table-cell>Senior Principal Experience Design Developer</rds-table-cell>
+      <rds-table-cell>first.last@example.com</rds-table-cell>
+      <rds-table-cell>Lead</rds-table-cell>
+      <rds-table-cell>Edit</rds-table-cell>
+    </rds-table-row>
+    <rds-table-row slot="body">
+      <rds-table-cell>First Last</rds-table-cell>
+      <rds-table-cell>Senior Experience Design Developer</rds-table-cell>
+      <rds-table-cell>first.last@example.com</rds-table-cell>
+      <rds-table-cell>Assistant</rds-table-cell>
+      <rds-table-cell>Edit</rds-table-cell>
+    </rds-table-row>
+    <rds-table-row slot="body">
+      <rds-table-cell>First Last</rds-table-cell>
+      <rds-table-cell>Experience Design Developer</rds-table-cell>
+      <rds-table-cell>first.last@example.com</rds-table-cell>
+      <rds-table-cell>Mid-Level</rds-table-cell>
+      <rds-table-cell>Edit</rds-table-cell>
+    </rds-table-row>
+    <rds-table-row slot="body" group={true}>
+      <rds-table-cell type="head">California</rds-table-cell>
+    </rds-table-row>
+    <rds-table-row slot="body">
+      <rds-table-cell>First Last</rds-table-cell>
+      <rds-table-cell>Experience Design Developer</rds-table-cell>
+      <rds-table-cell>first.last@example.com</rds-table-cell>
+      <rds-table-cell>Mid-Level</rds-table-cell>
+      <rds-table-cell>Edit</rds-table-cell>
+    </rds-table-row>
+    <rds-table-row slot="body">
+      <rds-table-cell>First Last</rds-table-cell>
+      <rds-table-cell>Experience Design Developer</rds-table-cell>
+      <rds-table-cell>first.last@example.com</rds-table-cell>
+      <rds-table-cell>Mid-Level</rds-table-cell>
+      <rds-table-cell>Edit</rds-table-cell>
+    </rds-table-row>
+    <rds-table-row slot="body">
+      <rds-table-cell>First Last</rds-table-cell>
+      <rds-table-cell>Experience Design Developer</rds-table-cell>
+      <rds-table-cell>first.last@example.com</rds-table-cell>
+      <rds-table-cell>Mid-Level</rds-table-cell>
+      <rds-table-cell>Edit</rds-table-cell>
+    </rds-table-row>
+    <rds-table-row slot="body" group={true}>
+      <rds-table-cell type="head">New York</rds-table-cell>
+    </rds-table-row>
+    <rds-table-row slot="body">
+      <rds-table-cell>First Last</rds-table-cell>
+      <rds-table-cell>Experience Design Developer</rds-table-cell>
+      <rds-table-cell>first.last@example.com</rds-table-cell>
+      <rds-table-cell>Mid-Level</rds-table-cell>
+      <rds-table-cell>Edit</rds-table-cell>
+    </rds-table-row>
+  </rds-table>
+);
+
+# Table (RDS Component)
+
+### Default
+
+<Canvas>
+  <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
+
+### Striped
+
+<Canvas>
+  <Story
+    name="Striped"
+    args={{
+      striped: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Compact
+
+<Canvas>
+  <Story
+    name="Compact"
+    args={{
+      compact: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Multi-line Content
+
+<Canvas>
+  <Story name="Multi-line Content">{MultiLineTemplate.bind({})}</Story>
+</Canvas>
+
+### Vertical Lines
+
+<Canvas>
+  <Story
+    name="Vertical Lines"
+    args={{
+      'vertical-lines': true,
+      'striped': true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Hiding Columns on Mobile
+
+<Canvas>
+  <Story name="Hiding Columns on Mobile">{HideColumnsTemplate.bind({})}</Story>
+</Canvas>
+
+### Stacking Columns On Mobile
+
+<Canvas>
+  <Story
+    name="Stacked Columns on Mobile"
+    args={{
+      'mobile-stacked': true,
+    }}
+  >
+    {StackedColumnTemplate.bind({})}
+  </Story>
+</Canvas>
+
+### Table with Grouped Rows
+
+<Canvas>
+  <Story
+    name="Grouped Rows"
+    args={{
+      'grouped-rows': true,
+    }}
+  >
+    {GroupedRowsTemplate.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

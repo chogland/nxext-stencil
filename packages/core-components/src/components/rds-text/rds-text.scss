@@ -1,0 +1,185 @@
+:host {
+  @apply block;
+  @include truncate-inherit;
+
+  p,
+  span {
+    @apply font-inter text-base text-gray-900 text-current font-normal leading-5 my-6;
+    @include truncate-inherit;
+  }
+}
+
+:host([weight='normal']) {
+  p,
+  span {
+    @apply font-normal;
+  }
+}
+
+:host([weight='medium']) {
+  p,
+  span {
+    @apply font-medium;
+  }
+}
+
+:host([weight='semibold']) {
+  p,
+  span {
+    @apply font-semibold;
+  }
+}
+
+:host([weight='bold']) {
+  p,
+  span {
+    @apply font-bold;
+  }
+}
+
+:host([weight='extrabold']) {
+  p,
+  span {
+    @apply font-extrabold;
+  }
+}
+
+:host([spacing='none']) {
+  p,
+  span {
+    @apply m-0;
+  }
+}
+
+:host([spacing='sm']) {
+  p,
+  span {
+    @apply my-2;
+  }
+}
+
+:host([spacing='md']) {
+  p,
+  span {
+    @apply my-4;
+  }
+}
+
+:host([spacing='lg']) {
+  p,
+  span {
+    @apply my-6;
+  }
+}
+
+:host([size='xxs']) {
+  p,
+  span {
+    @apply text-xxs;
+  }
+}
+
+:host([size='xs']) {
+  p,
+  span {
+    @apply text-xs;
+  }
+}
+
+:host([size='sm']) {
+  p,
+  span {
+    @apply text-sm;
+  }
+}
+
+:host([size='lg']) {
+  p,
+  span {
+    @apply text-xl;
+  }
+}
+
+:host([size='xl']) {
+  p,
+  span {
+    @apply text-2xl;
+  }
+}
+
+:host([size='2xl']) {
+  p,
+  span {
+    @apply text-3xl;
+  }
+}
+
+:host([size='3xl']) {
+  p,
+  span {
+    @apply text-4xl;
+  }
+}
+
+:host([size='4xl']) {
+  p,
+  span {
+    @apply text-5xl;
+  }
+}
+
+:host([size='5xl']) {
+  p,
+  span {
+    @apply text-6xl;
+  }
+}
+
+:host([size='6xl']) {
+  p,
+  span {
+    @apply text-7xl;
+  }
+}
+
+:host([size='7xl']) {
+  p,
+  span {
+    @apply text-8xl;
+  }
+}
+
+:host([align='center']) {
+  p,
+  span {
+    @apply text-center;
+  }
+}
+
+:host([align='inherit']) {
+  p,
+  span {
+    @apply text-inherit;
+  }
+}
+
+:host([align='left']) {
+  p,
+  span {
+    @apply text-left;
+  }
+}
+
+:host([align='right']) {
+  p,
+  span {
+    @apply text-right;
+  }
+}
+
+:host([align='justify']) {
+  p,
+  span {
+    @apply text-justify;
+  }
+}

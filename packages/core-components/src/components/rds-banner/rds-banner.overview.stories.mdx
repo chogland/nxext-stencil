@@ -1,0 +1,32 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+
+<Meta title="Components/Banner/Overview" />
+
+# Banner: Overview
+
+A `Banner` displays a prominent message at the top of the content area it relates to.
+
+## Variations
+
+### Non Rounded
+
+<Canvas withSource="auto">
+  <Story id="components-banner-stories--non-rounded"></Story>
+</Canvas>
+
+### Rounded
+
+<Canvas withSource="auto">
+  <Story id="components-banner-stories--rounded"></Story>
+</Canvas>
+
+### Optional: Not Dismissible
+
+Setting the _dismissible_ property to false allows you to have a `Banner` that the user cannot close.
+
+<Canvas withSource="auto">
+  <Story id="components-banner-stories--not-dismissible"></Story>
+</Canvas>
+
+<Description>{Readme}</Description>

@@ -1,0 +1,181 @@
+import { Meta, Story, Canvas, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsCardBody from '../../../dist/collection/components/rds-card-body/rds-card-body';
+
+<Meta
+  title="Collections/Card/Stories/Card Body"
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=48%3A17219',
+    },
+    layout: 'padded',
+  }}
+  argTypes={{}}
+/>
+
+export const Default = args => (
+  <rds-card-container {...args}>
+    <rds-card-body padded>
+      <rds-text size="sm" spacing="none">
+        Leverage agile frameworks to provide a robust synopsis for high level overviews.{' '}
+      </rds-text>
+    </rds-card-body>
+  </rds-card-container>
+);
+
+export const TextIcon = args => (
+  <rds-card-container {...args}>
+    <rds-card-body padded>
+      <rds-grid type="flex">
+        <rds-grid-col>
+          <rds-hero-icon class="pr-4 text-grey-900" type="outline" name="users" size="xl"></rds-hero-icon>
+        </rds-grid-col>
+        <rds-grid-col>
+          <rds-text spacing="none">Title</rds-text>
+          <rds-text type="inline">A card can stand alone, without relying on surrounding elements for context.</rds-text>
+        </rds-grid-col>
+      </rds-grid>
+    </rds-card-body>
+  </rds-card-container>
+);
+
+export const MultiCol = args => (
+  <rds-card-container {...args}>
+    <rds-card-body padded>
+      <rds-grid type="flex" justifybetween>
+        <rds-grid-col>
+          <rds-text type="inline">A card can stand alone, without relying on surrounding elements for context.</rds-text>
+        </rds-grid-col>
+        <rds-grid-col>
+          <rds-text type="inline">A card can stand alone, without relying on surrounding elements for context.</rds-text>
+        </rds-grid-col>
+      </rds-grid>
+    </rds-card-body>
+  </rds-card-container>
+);
+
+export const FileList = args => (
+  <rds-card-container {...args}>
+    <rds-card-body>
+      <rds-file-list>
+        <rds-hero-icon name="paper-clip" size="xl" slot="icon"></rds-hero-icon>
+        <rds-text type="inline" weight="bold" slot="name">
+          File Name
+        </rds-text>
+        <rds-text type="inline" slot="subtitle">
+          Subtitle
+        </rds-text>
+        <rds-link slot="detail">Text Link</rds-link>
+      </rds-file-list>
+      <rds-file-list>
+        <rds-hero-icon name="paper-clip" size="xl" slot="icon"></rds-hero-icon>
+        <rds-text type="inline" weight="bold" slot="name">
+          File Name
+        </rds-text>
+        <rds-text type="inline" slot="subtitle">
+          Subtitle
+        </rds-text>
+        <rds-link slot="detail">Text Link</rds-link>
+      </rds-file-list>
+      <rds-file-list>
+        <rds-hero-icon name="paper-clip" size="xl" slot="icon"></rds-hero-icon>
+        <rds-text type="inline" weight="bold" slot="name">
+          File Name
+        </rds-text>
+        <rds-text type="inline" slot="subtitle">
+          Subtitle
+        </rds-text>
+        <rds-link slot="detail">Text Link</rds-link>
+      </rds-file-list>
+      <rds-file-list>
+        <rds-hero-icon name="paper-clip" size="xl" slot="icon"></rds-hero-icon>
+        <rds-text type="inline" weight="bold" slot="name">
+          File Name
+        </rds-text>
+        <rds-text type="inline" slot="subtitle">
+          Subtitle
+        </rds-text>
+        <rds-link slot="detail">Text Link</rds-link>
+      </rds-file-list>
+      <rds-file-list>
+        <rds-hero-icon name="paper-clip" size="xl" slot="icon"></rds-hero-icon>
+        <rds-text type="inline" weight="bold" slot="name">
+          File Name
+        </rds-text>
+        <rds-text type="inline" slot="subtitle">
+          Subtitle
+        </rds-text>
+        <rds-link slot="detail">Text Link</rds-link>
+      </rds-file-list>
+    </rds-card-body>
+  </rds-card-container>
+);
+
+<!--
+export const Simple = args => (
+  <rds-card-container {...args}>
+    <rds-card-body padded>
+      <rds-grid type="flex">
+        <rds-grid-col>
+          <rds-hero-icon type="outline" name="users" size="lg" />
+        </rds-grid-col>
+        <rds-grid-col>
+          <rds-text spacing="none">
+            Total Subscribers <rds-hero-icon size="xs" name="question-mark-circle" />
+          </rds-text>
+          <rds-text size="xl" weight="bold" type="inline">
+            71,897
+          </rds-text>
+          <rds-text size="xs" type="inline">
+            from 70,946
+          </rds-text>
+        </rds-grid-col>
+      </rds-grid>
+    </rds-card-body>
+  </rds-card-container>
+); -->
+
+# Card Body
+
+### Default
+
+<Canvas>
+  <Story name="Default" args={{}}>
+    {Default.bind({})}
+  </Story>
+</Canvas>
+
+<!-- ### Simple Card
+
+<Canvas>
+  <Story name="Simple" args={{}}>
+    {Simple.bind({})}
+  </Story>
+</Canvas> -->
+
+### Text Content w/ Icon
+
+<Canvas>
+  <Story name="Text Content" args={{}}>
+    {TextIcon.bind({})}
+  </Story>
+</Canvas>
+
+### 2 Column Text Content
+
+<Canvas>
+  <Story name="2 Column Text Content" args={{}}>
+    {MultiCol.bind({})}
+  </Story>
+</Canvas>
+
+### File List
+
+<Canvas>
+  <Story name="File List" args={{}}>
+    {FileList.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

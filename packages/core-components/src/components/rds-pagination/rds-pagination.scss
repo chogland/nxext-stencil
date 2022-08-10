@@ -1,0 +1,21 @@
+:host {
+  @apply font-inter text-base inline-flex text-gray-900 w-full px-4 py-3 box-border items-center;
+
+  .page-count {
+    @apply flex-grow text-center md:text-left md:pl-2 order-2 md:order-1;
+  }
+
+  rds-button {
+    &.previous {
+      @apply order-1 md:order-2;
+    }
+
+    &.next {
+      @apply md:ml-4 order-3 md:order-3;
+    }
+  }
+
+  .page {
+    @apply inline-flex;
+  }
+}

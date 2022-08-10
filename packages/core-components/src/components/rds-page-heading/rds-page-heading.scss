@@ -1,0 +1,33 @@
+:host {
+  @apply max-w-7xl mx-auto my-8 block;
+
+  .page-heading-outer {
+    @apply md:flex md:items-center md:justify-between font-inter;
+  }
+
+  .page-heading-text-outer {
+    @apply flex-1 min-w-0;
+
+    h2 {
+      @apply text-2xl font-bold leading-7 text-gray-900 sm:text-3xl;
+
+      word-break: break-word;
+    }
+  }
+
+  ::slotted([slot='action-secondary']) {
+    @apply mr-3;
+  }
+
+  .page-heading-actions {
+    @apply mt-4 flex md:mt-0 md:ml-4;
+  }
+
+  .page-heading-breadcrumbs {
+    @apply flex mb-2;
+  }
+
+  .page-heading-meta {
+    @apply mt-1 flex flex-col md:flex-row md:flex-wrap md:mt-0 md:space-x-6;
+  }
+}

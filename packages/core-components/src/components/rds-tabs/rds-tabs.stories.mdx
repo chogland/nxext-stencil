@@ -1,0 +1,217 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsTabs from '../../../dist/collection/components/rds-tabs/rds-tabs';
+
+<Meta
+  title="Collections/Tabs/Stories"
+  component={RdsTabs}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=48%3A97278',
+    },
+    layout: 'fullscreen',
+    backgrounds: {
+      default: 'White',
+    },
+  }}
+  argTypes={{
+    href: {
+      control: { type: 'text' },
+      description: 'Hyperlink URL.',
+    },
+    target: {
+      control: { type: 'select', options: ['_blank', '_self', '_parent', '_top'] },
+      description: 'Target window for link.',
+    },
+    active: {
+      control: { type: 'boolean' },
+      defaultValue: false,
+      description: 'Sets the tab in its active state.',
+    },
+  }}
+/>
+
+export const Template = args => (
+  <rds-tabs>
+    <rds-tab tab="tab1" {...args}>
+      My account
+    </rds-tab>
+    <rds-tab tab="tab2" active>
+      Company
+    </rds-tab>
+    <rds-tab tab="tab3">Team members</rds-tab>
+    <rds-tab tab="tab4">Billing</rds-tab>
+  </rds-tabs>
+);
+
+export const SecondaryTemplate = args => (
+  <rds-tabs appearance="secondary">
+    <rds-tab tab="tab1" {...args}>
+      My account
+    </rds-tab>
+    <rds-tab tab="tab2" active>
+      Company
+    </rds-tab>
+    <rds-tab tab="tab3">Team members</rds-tab>
+    <rds-tab tab="tab4">Billing</rds-tab>
+  </rds-tabs>
+);
+
+export const TertiaryTemplate = args => (
+  <rds-tabs appearance="tertiary">
+    <rds-tab tab="tab1" {...args}>
+      My account
+    </rds-tab>
+    <rds-tab tab="tab2" active>
+      Company
+    </rds-tab>
+    <rds-tab tab="tab3">Team members</rds-tab>
+    <rds-tab tab="tab4">Billing</rds-tab>
+  </rds-tabs>
+);
+
+export const TemplateWithIcons = args => (
+  <rds-tabs>
+    <rds-tab tab="tab1" {...args}>
+      <rds-hero-icon name="user" slot="start" />
+      My account
+    </rds-tab>
+    <rds-tab tab="tab2" active>
+      <rds-hero-icon name="office-building" slot="start" />
+      Company
+    </rds-tab>
+    <rds-tab tab="tab3">
+      <rds-hero-icon name="users" slot="start" />
+      Team members
+    </rds-tab>
+    <rds-tab tab="tab4">
+      <rds-hero-icon name="credit-card" slot="start" />
+      Billing
+    </rds-tab>
+  </rds-tabs>
+);
+
+export const SecondaryTemplateWithIcons = args => (
+  <rds-tabs appearance="secondary">
+    <rds-tab tab="tab1" {...args}>
+      <rds-hero-icon name="user" slot="start" />
+      My account
+    </rds-tab>
+    <rds-tab tab="tab2" active>
+      <rds-hero-icon name="office-building" slot="start" />
+      Company
+    </rds-tab>
+    <rds-tab tab="tab3">
+      <rds-hero-icon name="users" slot="start" />
+      Team members
+    </rds-tab>
+    <rds-tab tab="tab4">
+      <rds-hero-icon name="credit-card" slot="start" />
+      Billing
+    </rds-tab>
+  </rds-tabs>
+);
+
+export const TertiaryTemplateWithIcons = args => (
+  <rds-tabs appearance="tertiary">
+    <rds-tab tab="tab1" {...args}>
+      <rds-hero-icon name="user" slot="start" />
+      My account
+    </rds-tab>
+    <rds-tab tab="tab2" active>
+      <rds-hero-icon name="office-building" slot="start" />
+      Company
+    </rds-tab>
+    <rds-tab tab="tab3">
+      <rds-hero-icon name="users" slot="start" />
+      Team members
+    </rds-tab>
+    <rds-tab tab="tab4">
+      <rds-hero-icon name="credit-card" slot="start" />
+      Billing
+    </rds-tab>
+  </rds-tabs>
+);
+
+export const PrimaryOverflowTemplate = args => (
+  <div className="show-overflow">
+    <rds-tabs>
+      <rds-tab tab="tab1" {...args} active>
+        My account
+      </rds-tab>
+      <rds-tab tab="tab2">Company</rds-tab>
+      <rds-tab tab="tab3">Team members</rds-tab>
+      <rds-tab tab="tab4">Billing</rds-tab>
+    </rds-tabs>
+  </div>
+);
+
+export const TwoTabsTemplate = args => (
+  <rds-tabs>
+    <rds-tab tab="tab1" {...args}>
+      My account
+    </rds-tab>
+    <rds-tab tab="tab2" active>
+      Company
+    </rds-tab>
+  </rds-tabs>
+);
+
+# Tabs
+
+### Primary
+
+<Canvas>
+  <Story name="Primary">{Template.bind({})}</Story>
+</Canvas>
+
+### Primary With Icons
+
+<Canvas>
+  <Story name="Primary With Icons">{TemplateWithIcons.bind({})}</Story>
+</Canvas>
+
+### Secondary
+
+<Canvas>
+  <Story name="Secondary">{SecondaryTemplate.bind({})}</Story>
+</Canvas>
+
+### Secondary With Icons
+
+<Canvas>
+  <Story name="Secondary With Icons">{SecondaryTemplateWithIcons.bind({})}</Story>
+</Canvas>
+
+### Tertiary
+
+<Canvas>
+  <Story name="Tertiary">{TertiaryTemplate.bind({})}</Story>
+</Canvas>
+
+### Tertiary With Icons
+
+<Canvas>
+  <Story name="Tertiary With Icons">{TertiaryTemplateWithIcons.bind({})}</Story>
+</Canvas>
+
+### Active
+
+<Canvas>
+  <Story name="Active Tab">{Template.bind({})}</Story>
+</Canvas>
+
+### Overflow
+
+<Canvas>
+  <Story name="Overflow">{PrimaryOverflowTemplate.bind({})}</Story>
+</Canvas>
+
+### Two Tab Items
+
+<Canvas>
+  <Story name="Two Tab Items">{TwoTabsTemplate.bind({})}</Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

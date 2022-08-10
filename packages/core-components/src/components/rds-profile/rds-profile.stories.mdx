@@ -1,0 +1,61 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsProfile from '../../../dist/collection/components/rds-profile/rds-profile';
+
+<Meta
+  title="Collections/Profile/Stories"
+  component={RdsProfile}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=48%3A89797',
+    },
+  }}
+  argTypes={{
+    name: {
+      control: { type: 'text' },
+      description: 'Name Displayed',
+    },
+    src: {
+      control: { type: 'text' },
+      description: 'This is the source for the image if available',
+    },
+  }}
+/>
+
+export const Template = args => (
+  <rds-menu width="auto" position="bottom" shadow="true" slot="profile">
+    <rds-profile slot="menu-trigger">
+      <rds-avatar size="lg" slot="avatar" {...args} text={args.text}>
+        <rds-indicator appearance="success" slot="indicator"></rds-indicator>
+      </rds-avatar>
+      <rds-text slot="name">{args.name}</rds-text>
+      <rds-icon icon="rds-chevron-down" slot="icon"></rds-icon>
+    </rds-profile>
+    <rds-menu-item slot="menu-content">Account & Profile</rds-menu-item>
+    <rds-menu-item slot="menu-content">Help & Support</rds-menu-item>
+    <rds-menu-item slot="menu-content">
+      <rds-text spacing="none" size="sm" weight="bold">
+        Sign Out
+      </rds-text>
+    </rds-menu-item>
+  </rds-menu>
+);
+
+# Profile
+
+### Default
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      name: 'First Last',
+      text: 'SM',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

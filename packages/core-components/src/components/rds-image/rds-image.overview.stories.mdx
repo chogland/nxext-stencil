@@ -1,0 +1,57 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+
+<Meta title="Components/Image/Overview" />
+
+# Image: Overview
+
+### Image
+
+`Image` is a basic component designed to place an image on a page. It accepts a few props that are used for `Lightbox` situations. You can also use `RdsImage` for thumbnails with or without Headlines displayed. See some examples below.
+
+<Canvas withSource="auto">
+  <Story id="components-image-stories--default-story"></Story>
+</Canvas>
+
+## Thumbnails: Small, Medium, Large and full
+
+`RdsImage` accepts thumbnail as an attribute in order to render a thumbnail of the image provided instead. You can also set the size by providing a "size=[size]" to the `RdsImage`.
+
+<Canvas withSource="auto">
+  <Story id="components-image-stories--thumbnail-small"></Story>
+  <Story id="components-image-stories--thumbnail-medium"></Story>
+  <Story id="components-image-stories--thumbnail-large"></Story>
+</Canvas>
+
+```
+size="full"
+```
+
+When the size is set to 'full', the width of the thumbnail will be set to 100%. The height will remain the same as the large, at 208px.
+
+<Canvas withSource="auto">
+  <Story id="components-image-stories--thumbnail-full"></Story>
+</Canvas>
+
+## Headline with Thumbnail
+
+To show a headline next to a thumbnail, simply set the 'show-headline' attribute and provide a 'headline' to the `RdsImage`.
+
+<Canvas withSource="auto">
+  <Story id="components-image-stories--thumbnail-with-caption-small"></Story>
+  <Story id="components-image-stories--thumbnail-with-caption-medium"></Story>
+  <Story id="components-image-stories--thumbnail-with-caption-large"></Story>
+</Canvas>
+
+## Usage Guidelines
+
+> **Layout Instability**
+
+Images served without their size specified can cause layout instability and contribute to a high Cumulative Layout Shift.
+
+> **Download Time**
+
+The larger the file size of an image, the longer it will take to download.
+Developers can reduce image sizes through better compression and the use of responsive images.
+
+<Description>{Readme}</Description>

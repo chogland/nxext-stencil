@@ -1,0 +1,48 @@
+import { Meta, Story, Canvas, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsCardMedia from '../../../dist/collection/components/rds-card-media/rds-card-media';
+
+<Meta
+  title="Collections/Card/Stories/Card Media"
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=48%3A17219',
+    },
+    layout: 'padded',
+  }}
+  argTypes={{}}
+/>
+
+export const Default = args => (
+  <rds-card-container>
+    <rds-card-body padded={false}>
+      <rds-card-media {...args} size="lg" src="https://via.placeholder.com/800/6046B9/FFFFFF?text=RDS+for+placeholder+only"></rds-card-media>
+    </rds-card-body>
+  </rds-card-container>
+);
+
+# Card Media
+
+### Default
+
+<Canvas>
+  <Story name="Default" args={{}}>
+    {Default.bind({})}
+  </Story>
+</Canvas>
+
+### With Media Tag
+
+<Canvas>
+  <Story
+    name="With Media Tag"
+    args={{
+      tag: 'Storage',
+    }}
+  >
+    {Default.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

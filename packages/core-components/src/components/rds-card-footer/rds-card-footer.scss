@@ -1,0 +1,17 @@
+:host {
+  @apply flex rounded-b-lg font-inter justify-between items-center;
+}
+
+:host([padded]) {
+  @apply py-4 px-6;
+}
+
+:host([padded='false']) {
+  @apply p-0;
+}
+
+:host([rule]) {
+  @apply border-t border-gray-200;
+
+  border-top-style: solid;
+}

@@ -1,0 +1,56 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import RdsButton from '../../../dist/collection/components/rds-button/rds-button';
+
+<Meta title="Components/Button Group/Overview" />
+
+# Button Group: Overview
+
+`Button Group` is used to organize a set of buttons together. This presentational component simply sets some styles differently for the `RdsButton(s)` placed inside it.
+
+## Variations
+
+_Use Tertiary Only_ for button groups. Other appearance styles are not currently supported.
+
+<Canvas withSource="auto">
+  <Story id="components-button-group-stories--primary"></Story>
+</Canvas>
+
+### With Icon
+
+Using `RdsButton` with icon works well to add additional context to the action.
+
+<Canvas withSource="auto">
+  <Story id="components-button-group-stories--with-icon"></Story>
+</Canvas>
+
+### Icon only
+
+You can also use icon only buttons for less prominent action set.
+
+<Canvas withSource="auto">
+  <Story id="components-button-group-stories--icon-only"></Story>
+</Canvas>
+
+## Active state
+
+When clicking on a `RdsButton` within a group, you can use the "active" prop.
+When a user clicks on a button, set "active" on the target button and remove it from others.
+
+<Canvas withSource="auto">
+  <Story id="components-button-group-stories--active"></Story>
+</Canvas>
+
+## With Full-Width Buttons on Mobile
+
+Setting `mobileFullWidth` to 'true' sets the grouped buttons to span the full-width of the mobile screen with uniform space on each side.
+
+<Canvas withSource="auto">
+  <Story id="components-button-group-stories--with-full-width-buttons-on-mobile"></Story>
+</Canvas>
+
+## Usage Guidelines
+
+See [RdsButton](?path=/story/components-buttons-overview--page) for appropriate usage of buttons.
+
+<Description>{Readme}</Description>

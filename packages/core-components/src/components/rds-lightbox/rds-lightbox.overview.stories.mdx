@@ -1,0 +1,33 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import ImageReadme from './../rds-image/readme.md';
+
+<Meta title="Patterns/Lightbox/Overview" />
+
+# Lightbox: Overview
+
+`Lightbox` is a visual enhancement tool used with `RdsImage` to click and focus on an image in a full screen takeover.
+
+The `RdsImage` accepts a _headline_, _detail_ and _caption_ [prop](#rds-image) that will be displayed within the `RdsLightbox` when activated.
+
+## Using `RdsImage` within the Lightbox
+
+<Canvas withSource="auto">
+  <Story id="patterns-lightbox-stories--default-story"></Story>
+</Canvas>
+
+## Usage Guidelines
+
+> **Use a Lightbox when...**
+
+- The thumbnail view of an image is not detailed enough, or when there isn't room to list all image details.
+- The original size of the image is bigger than the thumbnail.
+
+> **Do not use a Lightbox when...**
+
+- The image you are using is smaller than or as big as the thumbnail.
+- There is another click event attached to the image control.
+
+<Description>{Readme}</Description>
+
+<Description>{ImageReadme}</Description>

@@ -1,0 +1,72 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+
+<Meta title="Components/Form Elements/Checkbox/Overview" />
+
+# Checkbox: Overview
+
+`Checkboxes` are used for multiple choices, not for mutually exclusive choices. Each checkbox works independently from other checkboxes in the list, therefore checking an additional box does not affect any other selections.
+
+## Variations
+
+### Default
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-checkbox-stories--default-story"></Story>
+  <Story id="components-form-elements-checkbox-stories--checked"></Story>
+  <Story id="components-form-elements-checkbox-stories--disabled"></Story>
+</Canvas>
+
+### Small Card
+
+The small card variation can be applied by applying the `type='small-card'` prop to your checkbox. Below you can see the unchecked, checked, and disabled variations.
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-checkbox-stories--small-card"></Story>
+  <Story id="components-form-elements-checkbox-stories--small-card-checked"></Story>
+  <Story id="components-form-elements-checkbox-stories--small-card-disabled"></Story>
+</Canvas>
+
+### Card
+
+The card variation can be applied by applying the `type='card'` prop to your checkbox. Below you can see the unchecked, checked, and disabled variations.
+
+The card variation can accept slotted content below the label by utilizing the `card-content` slot.
+
+<Canvas withSource="auto" isColumn="true">
+  <Story id="components-form-elements-checkbox-stories--card"></Story>
+  <Story id="components-form-elements-checkbox-stories--card-checked"></Story>
+  <Story id="components-form-elements-checkbox-stories--card-disabled"></Story>
+</Canvas>
+
+### With Sub-Label
+
+For the sub-label to appear within the checkbox component, you must insert a `RdsSubLabel` component within the slot named `sub-label`.
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-checkbox-stories--with-sub-label"></Story>
+</Canvas>
+
+## Validations
+
+Visit the [validations overview page](?path=/story/components-form-elements-validators-overview--page) for information on validating checkbox and checkbox group components.
+
+## Usage Guidelines
+
+> **Multiple Selections**
+
+Use a checkbox when a user can choose more than one option in a form.
+
+> **Be Concise**
+
+The form element labels should be kept to a single line of text.
+
+> **Use sentence case**
+
+Labels should always be in sentence case. Capitalization should never be used to give more prominence to a specific element.
+
+> **Don't override color**
+
+Do not use custom colors for checkboxes. The colors have been designed to be consistent and accessible.
+
+<Description>{Readme}</Description>

@@ -1,0 +1,58 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import RdsChip from '../../../dist/collection/components/rds-chip/rds-chip';
+
+<Meta title="Components/Chip/Overview" />
+
+# Chip: Overview
+
+## Variations
+
+### Default
+
+`Chip` by default is gray and can display as one or many to show selections or filters. By default, Chip doesn't have hover or focus states until it can be clicked or dismissed.
+
+<Canvas style={{ backgroundColor: 'white' }}>
+  <Story id="components-chip-stories--default-story"></Story>
+</Canvas>
+
+### Dismissible
+
+The `rdsChipDismiss` event can be used when the prop `dismissible` is applied. Clicking on the Chip with `dismissible` applied will emit `rdsChipDismiss`.
+
+When Chip is dismissed, you should update what Chips should display.
+
+<Canvas style={{ backgroundColor: 'white' }}>
+  <Story id="components-chip-stories--dismissible"></Story>
+  <Story id="components-chip-stories--dismissible-disabled"></Story>
+</Canvas>
+
+### Active (Clickable)
+
+'Active' is best used with a set of Chips to distinguish certain Chips from others. The 'active' state can be used with and without 'clickable' to add interaction..
+
+<Canvas style={{ backgroundColor: 'white' }}>
+  <Story id="components-chip-stories--active"></Story>
+  <Story id="components-chip-stories--active-not-clickable"></Story>
+  <Story id="components-chip-stories--active-disabled"></Story>
+</Canvas>
+
+## Usage Guidelines
+
+> **Keep text brief**
+
+- One to three words is ideal for a chip to keep the component compact.
+
+> **Do not use punctuation**
+
+- When writing a sentence fragment, do not include any punctuation at the end of the chip.
+
+> **When using for selection**
+
+- Display chips sequentially, i.e. 01, 02, 03 instead of 02, 01, 03
+
+> **When displayed in a group**
+
+- Keep the default width of the chip. Do not adjust width or padding to achieve equal width.
+
+<Description>{Readme}</Description>

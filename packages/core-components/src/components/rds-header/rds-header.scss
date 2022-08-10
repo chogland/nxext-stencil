@@ -1,0 +1,103 @@
+:host {
+  @apply border-b border-gray-200 flex items-center p-3 md:px-6 md:py-4 bg-gray-50 flex-wrap;
+
+  border-bottom-style: solid;
+
+  .logo-wrapper {
+    @apply flex flex-grow md:flex-grow-0 order-1;
+
+    ::slotted([slot='logo']) {
+      @apply w-16 md:w-20 mr-5;
+    }
+  }
+
+  .account-selector {
+    @apply flex-auto md:mr-5 mt-2 order-last md:order-2 max-w-full;
+  }
+
+  .profile {
+    @apply order-2 md:order-last;
+  }
+
+  .menu-activate {
+    @apply block md:hidden relative w-8 h-8 cursor-pointer order-first flex-none rotate-0;
+
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+
+    span {
+      @apply block absolute h-1 w-full bg-purple-700 opacity-100 left-0 rounded-lg rotate-0;
+
+      -webkit-transition: 0.25s ease-in-out;
+      -moz-transition: 0.25s ease-in-out;
+      -o-transition: 0.25s ease-in-out;
+      transition: 0.25s ease-in-out;
+    }
+
+    span:nth-child(1) {
+      top: 0;
+    }
+
+    span:nth-child(2),
+    span:nth-child(3) {
+      top: 8px;
+    }
+
+    span:nth-child(4) {
+      top: 16px;
+    }
+
+    &.open span:nth-child(1) {
+      top: 18px;
+      width: 0%;
+      left: 50%;
+    }
+
+    &.open span:nth-child(2) {
+      @apply rotate-45;
+    }
+
+    &.open span:nth-child(3) {
+      @apply -rotate-45;
+    }
+
+    &.open span:nth-child(4) {
+      top: 18px;
+      width: 0%;
+      left: 50%;
+    }
+  }
+}
+
+:host([type='base']) {
+  @apply sticky top-0 z-order2 flex-shrink-0 flex h-16 bg-white shadow box-border p-0;
+
+  .open-sidebar {
+    @apply border-r border-gray-200 text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 lg:hidden -mt-0.5 h-full w-10 bg-white inline-flex items-center justify-center px-6 p-2 hover:text-gray-500 focus:ring-offset-2;
+  }
+
+  .header-inner {
+    @apply flex-1 px-4 flex justify-between;
+  }
+
+  .header-search {
+    @apply flex-1 flex;
+  }
+
+  .header-profile-outer {
+    @apply ml-4 lg:flex items-center lg:ml-6 hidden;
+
+    .header-profile-inner {
+      @apply ml-3 relative;
+    }
+  }
+}
+
+// Without sidebar
+:host([type='base'][sidebar='none']) {
+  .open-sidebar {
+    @apply hidden;
+  }
+}

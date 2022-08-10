@@ -1,0 +1,155 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsAvatar from '../../../dist/collection/components/rds-avatar/rds-avatar';
+
+<Meta
+  title="Components/Avatar/Stories"
+  component={RdsAvatar}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=39%3A707',
+    },
+  }}
+  argTypes={{
+    text: {
+      control: { type: 'text' },
+      description: "The initials for when an avatar image isn't present.",
+    },
+    src: {
+      control: { type: 'text' },
+      description: 'This is the source for the image if available.',
+    },
+    size: {
+      options: ['sm', 'md', 'lg', 'xl'],
+      control: { type: 'select' },
+      description: 'Determines the size of the avatar wrapper.',
+      defaultValue: 'lg',
+    },
+  }}
+/>
+
+export const Template = args => <rds-avatar {...args}></rds-avatar>;
+export const TemplateWithIndicator = args => (
+  <rds-avatar {...args}>
+    <rds-indicator appearance="success" slot="indicator"></rds-indicator>
+  </rds-avatar>
+);
+
+# Avatar
+
+### Default
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      text: 'TW',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### With Indicator
+
+<Canvas>
+  <Story
+    name="With Indicator"
+    args={{
+      text: 'TW',
+    }}
+  >
+    {TemplateWithIndicator.bind({})}
+  </Story>
+</Canvas>
+
+### With Image
+
+<Canvas>
+  <Story
+    name="With Image"
+    args={{
+      text: 'TW',
+      src: '/avatar/avatar-image.PNG',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### With Image and Indicator
+
+<Canvas>
+  <Story
+    name="With Image and Indicator"
+    args={{
+      text: 'TW',
+      src: '/avatar/avatar-image.PNG',
+    }}
+  >
+    {TemplateWithIndicator.bind({})}
+  </Story>
+</Canvas>
+
+### Size Small
+
+<Canvas>
+  <Story
+    name="Size Small"
+    args={{
+      text: 'TW',
+      size: 'sm',
+      src: '/avatar/avatar-image.PNG',
+    }}
+  >
+    {TemplateWithIndicator.bind({})}
+  </Story>
+</Canvas>
+
+### Size Medium
+
+<Canvas>
+  <Story
+    name="Size Medium"
+    args={{
+      text: 'TW',
+      size: 'md',
+      src: '/avatar/avatar-image.PNG',
+    }}
+  >
+    {TemplateWithIndicator.bind({})}
+  </Story>
+</Canvas>
+
+### Size Large
+
+<Canvas>
+  <Story
+    name="Size Large"
+    args={{
+      text: 'TW',
+      size: 'lg',
+      src: '/avatar/avatar-image.PNG',
+    }}
+  >
+    {TemplateWithIndicator.bind({})}
+  </Story>
+</Canvas>
+
+### Size Extra Large
+
+<Canvas>
+  <Story
+    name="Size Extra Large"
+    args={{
+      text: 'TW',
+      size: 'xl',
+      src: '/avatar/avatar-image.PNG',
+    }}
+  >
+    {TemplateWithIndicator.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

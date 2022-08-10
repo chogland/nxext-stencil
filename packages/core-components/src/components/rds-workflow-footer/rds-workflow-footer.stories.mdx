@@ -1,0 +1,78 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsWorkflowFooter from '../../../dist/collection/components/rds-workflow-footer/rds-workflow-footer';
+
+<Meta
+  title="Patterns/Workflow Footer/Stories"
+  component={RdsWorkflowFooter}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=136%3A16693',
+    },
+    docs: {
+      inlineStories: false,
+    },
+    layout: 'fullscreen',
+  }}
+  argTypes={{
+    sticky: {
+      control: { type: 'boolean' },
+      description: "If `true`, workflow footer will be fixed to the bottom of the user's screen.",
+    },
+  }}
+/>
+
+export const Template = args => (
+  <rds-workflow-footer {...args}>
+    <rds-button appearance="secondary" size="sm" slot="action-start">
+      Back
+    </rds-button>
+    <rds-text spacing="sm" slot="narration">
+      Narration Note goes here.
+    </rds-text>
+    <rds-button slot="action-end" size="sm">
+      Button
+    </rds-button>
+  </rds-workflow-footer>
+);
+
+export const NoNarrationNote = args => (
+  <rds-workflow-footer {...args}>
+    <rds-button appearance="secondary" size="sm" slot="action-start">
+      Back
+    </rds-button>
+    <rds-button slot="action-end" size="sm">
+      Button
+    </rds-button>
+  </rds-workflow-footer>
+);
+
+# Workflow Footer
+
+### Default
+
+<Canvas>
+  <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
+
+### Without Narration
+
+<Canvas>
+  <Story name="Without Narration">{NoNarrationNote.bind({})}</Story>
+</Canvas>
+
+### Sticky
+
+<Canvas>
+  <Story
+    name="Sticky"
+    args={{
+      sticky: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

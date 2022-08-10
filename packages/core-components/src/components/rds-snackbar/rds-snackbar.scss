@@ -1,0 +1,96 @@
+:host {
+  @apply items-center hidden font-inter rounded-lg shadow-md px-4 py-4 fixed left-4 md:left-10 bottom-10 z-order2 w-full md:w-auto max-w-screen-sm animate-in-up opacity-0 transition-all;
+
+  @media (max-width: 640px) {
+    width: calc(100% - 4rem);
+  }
+
+  .action {
+    @apply p-1.5 rounded-md outline-none;
+  }
+
+  .message {
+    @apply font-semibold px-3 flex-grow;
+  }
+
+  rds-hero-icon {
+    @apply flex;
+  }
+}
+
+:host([visible]) {
+  @apply flex items-center opacity-100;
+}
+
+:host([visible='false']) {
+  @apply hidden;
+}
+
+:host([severity='error']),
+:host([appearance='error']) {
+  @apply bg-red-100 text-red-800;
+
+  .icon {
+    @apply text-red-600;
+  }
+
+  .action {
+    @apply hover:bg-red-200 hover:text-red-800;
+
+    &:hover {
+      .icon {
+        @apply text-red-800;
+      }
+    }
+
+    &:focus {
+      @apply ring-2 ring-red-600;
+    }
+  }
+}
+
+:host([severity='success']),
+:host([appearance='success']) {
+  @apply bg-green-100 text-green-800;
+
+  .icon {
+    @apply text-green-600;
+  }
+
+  .action {
+    @apply hover:bg-green-200 hover:text-green-800;
+
+    &:hover {
+      .icon {
+        @apply text-green-800;
+      }
+    }
+
+    &:focus {
+      @apply ring-2 ring-green-600;
+    }
+  }
+}
+
+:host([severity='info']),
+:host([appearance='info']) {
+  @apply bg-blue-100 text-blue-800;
+
+  .icon {
+    @apply text-blue-600;
+  }
+
+  .action {
+    @apply hover:bg-blue-200 hover:text-blue-800;
+
+    &:hover {
+      .icon {
+        @apply text-blue-800;
+      }
+    }
+
+    &:focus {
+      @apply ring-2 ring-blue-600;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+:host {
+  @apply mt-2 flex items-center text-sm text-gray-500 font-inter;
+
+  rds-hero-icon {
+    @apply mr-1.5 text-gray-400;
+  }
+}
+
+:host(:not(:first-of-type)) {
+  @apply md:ml-6;
+}

@@ -1,0 +1,71 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsFab from '../../../dist/collection/components/rds-fab/rds-fab';
+
+<Meta
+  title="Components/FAB (Floating Action Button)/Stories"
+  component={RdsFab}
+  parameters={{
+    docs: {
+      inlineStories: false,
+    },
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=48%3A17523',
+    },
+  }}
+  argTypes={{
+    text: 'Testing Title',
+    size: {
+      control: { type: 'select', options: ['sm', 'md', 'lg'] },
+      description: 'The button size.',
+    },
+  }}
+/>
+
+export const Template = args => <rds-fab {...args}></rds-fab>;
+
+# FAB
+
+### Default
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      text: 'Testing Title',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Size Small
+
+<Canvas>
+  <Story
+    name="Size Small"
+    args={{
+      size: 'sm',
+      text: 'Testing Title',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Size Large
+
+<Canvas>
+  <Story
+    name="Size Large"
+    args={{
+      size: 'lg',
+      text: 'Testing Title',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

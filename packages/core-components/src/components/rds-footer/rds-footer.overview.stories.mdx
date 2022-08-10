@@ -1,0 +1,65 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+
+<Meta title="Patterns/Global Footer/Overview" />
+
+# Global Footer: Overview
+
+## Global Footer
+
+`Global Footer` has a few interchangable links to include/exclude Disclaimer, Confidentiality Notice, Survey/Feedback link, or change where "Help" links to.
+
+`Global Footer` has had its styles updated recently as part of the Phase 2 experience. The terms link now opens as a modal within the footer instead of redirecting to FMGlobal.com. All other functionality remains the same.
+
+You can see this in action in the _base_ [App Layout](?path=/story/patterns-app-layout-stories--base) story.
+
+## Usage Guidelines
+
+<div class="flex mt-8">
+  <div class="pr-10">
+    <img class="thumbnail" src="/app-layout/footer.jpg" alt="Footer Thumbnail" />
+  </div>
+
+  <div class="flex-grow">
+    <h3>Footer</h3>
+    The footer is for secondary elements such as disclaimers, terms, agreements and copyright. This would appear in our EXTERNAL facing experiences only.
+  </div>
+</div>
+
+```
+<RdsFooter slot="app-footer" />
+```
+
+## Default Footer
+
+The default footer comes has the following links visible. The `Terms` link will open a modal that displays the Terms and End-User License Agreement text. The terms modal code is now part of the `RdsFooter` as part of our Phase 2 experience, so you do not need to copy any modal code for this terms modal.
+
+<Canvas withSource="auto">
+  <Story id="patterns-global-footer-stories--default-story"></Story>
+</Canvas>
+
+## With Confidentiality Notice
+
+This footer comes with two modals, one for `Terms` which is built-in, and another for `Confidentiality Notice` which needs to be added if you are using it. Please copy all the code below to get the code for footer and both modals.
+
+<Canvas withSource="auto">
+  <Story id="patterns-global-footer-stories--with-confidentiality-notice"></Story>
+</Canvas>
+
+## With Feedback
+
+When the `survey` prop is set to `true`, the Feedback link will appear. You can change the default value of `surveyUrl` to make this link go to any of your choosing.
+
+<Canvas withSource="auto">
+  <Story id="patterns-global-footer-stories--with-feedback"></Story>
+</Canvas>
+
+## With All
+
+The below footer is the output when all conditional props are set to true.
+
+<Canvas withSource="auto">
+  <Story id="patterns-global-footer-stories--with-all"></Story>
+</Canvas>
+
+<Description>{Readme}</Description>

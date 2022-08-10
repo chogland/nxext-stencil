@@ -1,0 +1,32 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+
+<Meta title="Components/Indicator/Overview" />
+
+# Indicator: Overview
+
+# Indicator
+
+`Indicator` is used to draw the user's attention to important information.
+
+Indicator has only one property currently and that is `appearance`. This property is set to success, warning, alert, primary,
+secondary, tertiary, primary-alt or tertiary-alt.
+
+<Canvas withSource="auto">
+  <Story id="components-indicator-stories--success"></Story>
+  <Story id="components-indicator-stories--warning"></Story>
+  <Story id="components-indicator-stories--alert"></Story>
+  <Story id="components-indicator-stories--primary"></Story>
+  <Story id="components-indicator-stories--secondary"></Story>
+  <Story id="components-indicator-stories--tertiary"></Story>
+  <Story id="components-indicator-stories--primary-alt"></Story>
+  <Story id="components-indicator-stories--tertiary-alt"></Story>
+</Canvas>
+
+## Usage Guidelines
+
+> Don't override color
+
+Do not use custom colors for indicators. The colors have been designed to be consistent and accessible.
+
+<Description>{Readme}</Description>

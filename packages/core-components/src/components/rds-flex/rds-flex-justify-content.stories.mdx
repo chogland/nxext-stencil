@@ -1,0 +1,157 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsFlex from '../../../dist/collection/components/rds-flex/rds-flex';
+
+<Meta
+  title="Components/Flex/Stories/Justify Content"
+  component={RdsFlex}
+  parameters={{
+    layout: 'fullscreen',
+  }}
+  argTypes={{
+    'align-items': {
+      control: { type: 'select', options: ['center', 'flex-start', 'flex-end', 'stretch', 'baseline'] },
+      description: 'Space between and around flex items along the cross-axis of the container.',
+    },
+    'align-content': {
+      control: { type: 'select', options: ['center', 'flex-start', 'flex-end', 'space-around', 'space-between', 'space-evenly'] },
+      description:
+        'Space between and around flex items along the main-axis of the container, when the flex items span multiple lines. This only takes effect when `wrap` is set to true.',
+    },
+    'justify-items': {
+      control: { type: 'select', options: ['center', 'flex-start', 'flex-end', 'stretch'] },
+      description: 'Space between and around flex items along the cross-axis of the container.',
+    },
+    'justify-content': {
+      control: { type: 'select', options: ['center', 'flex-start', 'flex-end', 'space-around', 'space-between', 'space-evenly', 'stretch'] },
+      description: 'Space between and around flex items along the main axis of the container.',
+    },
+    'direction': {
+      control: { type: 'select', options: ['row', 'row-reverse', 'column', 'column-reverse'] },
+      description: 'The direction of the main axis.',
+    },
+    'wrap': {
+      control: { type: 'boolean' },
+      description: 'Whether or not the flex items should wrap to a new line when necessary.',
+    },
+    'inline': {
+      control: { type: 'boolean' },
+      description: 'If true, the flex container is displayed at inline level rather than block level.',
+    },
+    'gap': {
+      control: { type: 'text' },
+      description: 'Explicitly controls the space between flex items. It applies that spacing only between items not on the outer edges.',
+    },
+  }}
+/>
+
+export const Template = args => (
+  <rds-flex {...args}>
+    <rds-box bg="purple-100" padding="4xl">
+      <rds-headline level={1}>1</rds-headline>
+    </rds-box>
+    <rds-box bg="purple-200" padding="4xl">
+      <rds-headline level={1}>2</rds-headline>
+    </rds-box>
+    <rds-box bg="purple-300" padding="4xl">
+      <rds-headline level={1}>3</rds-headline>
+    </rds-box>
+  </rds-flex>
+);
+
+# Flex
+
+### Justify Content
+
+#### Flex Start
+
+<Canvas>
+  <Story
+    name="Flex Start (Default)"
+    args={{
+      'justify-content': 'flex-start',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+#### Flex End
+
+<Canvas>
+  <Story
+    name="Flex End"
+    args={{
+      'justify-content': 'flex-end',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+#### Center
+
+<Canvas>
+  <Story
+    name="Center"
+    args={{
+      'justify-content': 'center',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+#### Space Between
+
+<Canvas>
+  <Story
+    name="Space Between"
+    args={{
+      'justify-content': 'space-between',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+#### Space Around
+
+<Canvas>
+  <Story
+    name="Space Around"
+    args={{
+      'justify-content': 'space-around',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+#### Space Evenly
+
+<Canvas>
+  <Story
+    name="Space Evenly"
+    args={{
+      'justify-content': 'space-evenly',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+#### Stretch
+
+<Canvas>
+  <Story
+    name="Stretch"
+    args={{
+      'justify-content': 'stretch',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

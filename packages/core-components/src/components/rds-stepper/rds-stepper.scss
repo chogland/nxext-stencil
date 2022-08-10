@@ -1,0 +1,108 @@
+// Simple Stepper
+
+:host([type='simple']) #stepper-container {
+  @apply flex flex-row flex-wrap relative items-stretch mx-2 my-5 md:justify-center max-w-full m-auto;
+
+  flex: 1 1 auto;
+}
+
+// Complex Stepper
+
+:host([type='complex']) {
+  ::slotted(*) {
+    @apply border-solid border-0 border-b-2 border-b-gray-300 lg:border-b-0;
+  }
+
+  ::slotted(*:first-of-type) {
+    @apply lg:rounded-tl-md lg:rounded-bl-md;
+  }
+
+  ::slotted(*:last-of-type) {
+    @apply lg:rounded-tr-md lg:rounded-br-md;
+  }
+
+  ::slotted(*:last-of-type[active]) {
+    &::after {
+      @media (min-width: 1024px) {
+        @apply w-full;
+      }
+    }
+  }
+
+  ::slotted(*:not(:last-of-type)) {
+    @apply border-r-gray-300 lg:border-r-2;
+  }
+
+  #stepper-container {
+    @apply flex flex-wrap flex-col lg:flex-row flex-1 max-w-full m-auto relative items-stretch lg:justify-center lg:shadow-sm;
+
+    &.vertical {
+      @apply flex-col;
+
+      ::slotted(*:not(:last-of-type)) {
+        @apply border-b-gray-300 border-r-0 lg:border-b-2;
+      }
+
+      ::slotted(*:first-of-type) {
+        @apply lg:rounded-tl-none lg:rounded-bl-none;
+      }
+
+      ::slotted(*:last-of-type) {
+        @apply lg:rounded-tr-none lg:rounded-br-none;
+      }
+
+      ::slotted(*[active]) {
+        &::after {
+          @media (min-width: 1024px) {
+            @apply w-2 h-full;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Bullet stepper
+
+:host([type='bullet']) {
+  #stepper-container {
+    @apply flex gap-5;
+
+    &.vertical {
+      @apply flex-col gap-6;
+    }
+  }
+
+  .stepper-progress {
+    @apply mr-8;
+  }
+}
+
+// Circle stepper
+
+:host([type='circle']) {
+  @apply overflow-hidden;
+
+  #stepper-container {
+    @apply flex gap-8 md:gap-20;
+
+    &.vertical {
+      @apply flex-col gap-0;
+    }
+  }
+}
+
+// Stepper Content
+
+:host {
+  .rds-stepper-content {
+    @apply flex flex-col flex-wrap font-inter md:max-w-full my-6;
+    flex-basis: 100%;
+  }
+}
+
+// Padded
+
+:host([padded]:not([padded='false'])) {
+  @apply px-4;
+}

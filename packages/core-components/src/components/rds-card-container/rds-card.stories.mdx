@@ -1,0 +1,280 @@
+import { Meta, Story, Canvas, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsCardContainer from '../../../dist/collection/components/rds-card-container/rds-card-container';
+
+<Meta
+  title="Collections/Card/Stories"
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/uYf4DWKd7OtQSx7BRfchZv/Storybook-Integration?node-id=6%3A2509',
+    },
+  }}
+  argTypes={{
+    shadow: {
+      description: 'If true, the card will have a shadow.',
+      defaultValue: 'true',
+    },
+  }}
+/>
+
+export const Template = args => (
+  <rds-card-container {...args}>
+    <rds-card-header padded rule>
+      <rds-card-title slot="title">Card Title</rds-card-title>
+      <rds-button slot="actions">Card Action</rds-button>
+      <rds-button slot="actions" appearance="tertiary">
+        Card Action
+      </rds-button>
+      <rds-meta slot="content" icon="briefcase">
+        Full-time
+      </rds-meta>
+      <rds-meta slot="content" icon="location-marker">
+        Remote
+      </rds-meta>
+      <rds-meta slot="content" icon="currency-dollar">
+        $120k - $140k
+      </rds-meta>
+    </rds-card-header>
+    <rds-card-body padded>
+      <rds-grid type="flex" itemscenter>
+        <rds-grid-col>
+          <rds-box padding="0 xl 0 0" color="grey-900">
+            <rds-hero-icon name="question-mark-circle" size="xl" />
+          </rds-box>
+        </rds-grid-col>
+        <rds-grid-col>
+          <rds-text type="inline">A card can stand alone, without relying on surrounding elements for context.</rds-text>
+        </rds-grid-col>
+      </rds-grid>
+    </rds-card-body>
+    <rds-card-footer padded rule>
+      <rds-link slot="start">Text Link</rds-link>
+      <rds-button appearance="tertiary" slot="end">
+        Card Footer Action
+      </rds-button>
+    </rds-card-footer>
+  </rds-card-container>
+);
+
+export const Media = args => (
+  <rds-card-container {...args}>
+    <rds-card-header padded rule>
+      <rds-hero-icon slot="icon" size="lg" name="users" type="outline" />
+      <rds-card-title slot="title">Card Title</rds-card-title>
+      <rds-link slot="actions" appearance="secondary" link-text="Text link">
+        <rds-hero-icon name="share" size="md" />
+      </rds-link>
+      <rds-link slot="actions" appearance="secondary" link-text="Text link">
+        <rds-hero-icon name="download" size="md" />
+      </rds-link>
+      <rds-link slot="actions" appearance="secondary" link-text="Text link">
+        <rds-hero-icon name="dots-vertical" size="md" />
+      </rds-link>
+    </rds-card-header>
+    <rds-card-media size="lg" src="https://via.placeholder.com/800/6046B9/FFFFFF?text=RDS+for+placeholder+only"></rds-card-media>
+    <rds-card-body padded>
+      <rds-text type="inline">A card can stand alone, without relying on surrounding elements for context.</rds-text>
+    </rds-card-body>
+    <rds-card-footer padded>
+      <rds-grid justifybetween type="flex">
+        <rds-grid-col>
+          <rds-text type="inline">MM-DD-YYYY</rds-text>
+        </rds-grid-col>
+        <rds-grid-col>
+          <rds-button appearance="link">Link</rds-button>
+        </rds-grid-col>
+      </rds-grid>
+    </rds-card-footer>
+  </rds-card-container>
+);
+
+export const MediaWithTag = args => (
+  <rds-card-container rounded {...args}>
+    <rds-card-media size="sm" tag="Storage" src="https://via.placeholder.com/800/6046B9/FFFFFF?text=RDS+for+placeholder+only"></rds-card-media>
+    <rds-card-body padded>
+      <rds-text spacing="none" weight="bold" size="lg">
+        Sprinklers
+      </rds-text>
+      <rds-text>Covered equipment and shielded areas commonly occur in manufacturing facilities.</rds-text>
+      <rds-link>Explore</rds-link>
+    </rds-card-body>
+  </rds-card-container>
+);
+
+export const Watchlist = args => (
+  <rds-card-container {...args} type="watchlist">
+    <rds-card-body>
+      <rds-list>
+        <rds-list-item spacingX="md">
+          <rds-headline level={5} type="inline">
+            Mill City Steel Warehouse Facility{' '}
+          </rds-headline>
+          <rds-grid justifybetween type="flex">
+            <rds-grid-col>
+              <rds-text type="inline">
+                <b>68</b> Risk<i>Mark</i>
+              </rds-text>
+            </rds-grid-col>
+            <rds-grid-col>
+              <rds-text type="inline">
+                <b>78</b> % of Potential
+              </rds-text>
+            </rds-grid-col>
+          </rds-grid>
+        </rds-list-item>
+        <rds-divider spacing="sm" />
+        <rds-list-item spacingX="md">
+          <rds-headline level={5} type="inline">
+            Mill City Steel Warehouse Facility{' '}
+          </rds-headline>
+          <rds-grid justifybetween type="flex">
+            <rds-grid-col>
+              <rds-text type="inline">
+                <b>68</b> Risk<i>Mark</i>
+              </rds-text>
+            </rds-grid-col>
+            <rds-grid-col>
+              <rds-text type="inline">
+                <b>78</b> % of Potential
+              </rds-text>
+            </rds-grid-col>
+          </rds-grid>
+        </rds-list-item>
+        <rds-divider spacing="sm" />
+        <rds-list-item spacingX="md">
+          <rds-headline level={5} type="inline">
+            Mill City Steel Warehouse Facility
+          </rds-headline>
+          <rds-grid justifybetween type="flex">
+            <rds-grid-col>
+              <rds-text type="inline">
+                <b>68</b> Risk<i>Mark</i>
+              </rds-text>
+            </rds-grid-col>
+            <rds-grid-col>
+              <rds-text type="inline">
+                <b>78</b> % of Potential
+              </rds-text>
+            </rds-grid-col>
+          </rds-grid>
+        </rds-list-item>
+        <rds-divider spacing="sm" />
+        <rds-list-item spacingX="md">
+          <rds-headline level={5} type="inline">
+            Mill City Steel Warehouse Facility
+          </rds-headline>
+          <rds-grid justifybetween type="flex">
+            <rds-grid-col>
+              <rds-text type="inline">
+                <b>68</b> Risk<i>Mark</i>
+              </rds-text>
+            </rds-grid-col>
+            <rds-grid-col>
+              <rds-text type="inline">
+                <b>78</b> % of Potential
+              </rds-text>
+            </rds-grid-col>
+          </rds-grid>
+        </rds-list-item>
+      </rds-list>
+    </rds-card-body>
+  </rds-card-container>
+);
+
+export const Action = args => (
+  <rds-card-container {...args}>
+    <rds-card-header padded>
+      <rds-card-title>H4 Headline</rds-card-title>
+      <rds-button appearance="link">Link</rds-button>
+    </rds-card-header>
+    <rds-card-body padded>
+      <rds-text type="inline">A card can stand alone, without relying on surrounding elements for context.</rds-text>
+    </rds-card-body>
+    <rds-card-footer padded rule>
+      <rds-link size="lg">Text Link</rds-link>
+    </rds-card-footer>
+  </rds-card-container>
+);
+
+export const Form = args => (
+  <rds-card-container {...args}>
+    <rds-card-header padded rule>
+      <rds-card-title slot="title">Card Title</rds-card-title>
+    </rds-card-header>
+    <rds-card-body padded>
+      <rds-flex direction="column" gap="md">
+        <rds-select label="Reserve Reason" required>
+          <option value="option 1">Option 1</option>
+          <option value="option 2">Option 2</option>
+          <option value="option 3">Option 3</option>
+          <option value="option 4">Option 4</option>
+        </rds-select>
+        <rds-select label="Currency" required>
+          <option value="usd">USD (Policy)</option>
+          <option value="euro">EUR</option>
+          <option value="yen">JPY</option>
+          <option value="pounds">GBP</option>
+        </rds-select>
+        <rds-input label="Participation %" required placeholder="00"></rds-input>
+      </rds-flex>
+    </rds-card-body>
+    <rds-divider spacing="none" />
+    <rds-card-body>
+      <rds-flex direction="column" gap="md">
+        <rds-input label="PD Estimate" required placeholder="00"></rds-input>
+        <rds-input label="TE Estimate" required placeholder="00"></rds-input>
+      </rds-flex>
+    </rds-card-body>
+  </rds-card-container>
+);
+
+# Card
+
+### Default
+
+<Canvas>
+  <Story name="Default" args={{}}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### With Media
+
+<Canvas>
+  <Story name="With Media" args={{}}>
+    {Media.bind({})}
+  </Story>
+</Canvas>
+
+### With Media and Tag
+
+<Canvas>
+  <Story name="With Media and Tag">{MediaWithTag.bind({})}</Story>
+</Canvas>
+
+### Watchlist
+
+<Canvas>
+  <Story name="Watchlist" args={{}}>
+    {Watchlist.bind({})}
+  </Story>
+</Canvas>
+
+### Action
+
+<Canvas>
+  <Story name="Action" args={{}}>
+    {Action.bind({})}
+  </Story>
+</Canvas>
+
+### Form
+
+<Canvas>
+  <Story name="With Form" args={{}}>
+    {Form.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

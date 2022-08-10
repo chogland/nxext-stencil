@@ -1,0 +1,146 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsChip from '../../../dist/collection/components/rds-chip/rds-chip';
+
+<Meta
+  title="Components/Chip/Stories"
+  component={RdsChip}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=48%3A17244',
+    },
+    backgrounds: {
+      default: 'White',
+    },
+  }}
+  argTypes={{
+    clickable: {
+      control: {
+        type: 'boolean',
+      },
+    },
+    dismissible: {
+      control: {
+        type: 'boolean',
+      },
+    },
+    active: {
+      control: {
+        type: 'boolean',
+      },
+    },
+    disabled: {
+      control: {
+        type: 'boolean',
+      },
+    },
+  }}
+/>
+
+export const Template = args => <rds-chip {...args}></rds-chip>;
+
+# Chip
+
+### Default
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      text: 'Default',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Disabled
+
+<Canvas>
+  <Story
+    name="Disabled"
+    args={{
+      text: 'Disabled',
+      disabled: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Active
+
+<Canvas>
+  <Story
+    name="Active"
+    args={{
+      text: 'Active',
+      clickable: true,
+      active: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Active: Not Clickable
+
+<Canvas>
+  <Story
+    name="Active: Not Clickable"
+    args={{
+      text: 'Not Clickable',
+      active: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Active: Disabled
+
+<Canvas>
+  <Story
+    name="Active: Disabled"
+    args={{
+      text: 'Disabled',
+      clickable: true,
+      active: true,
+      disabled: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Dismissible
+
+<Canvas>
+  <Story
+    name="Dismissible"
+    args={{
+      text: 'Dismissible',
+      dismissible: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Dismissible: Disabled
+
+<Canvas>
+  <Story
+    name="Dismissible: Disabled"
+    args={{
+      text: 'Disabled',
+      dismissible: true,
+      disabled: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

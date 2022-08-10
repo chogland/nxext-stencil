@@ -1,0 +1,7 @@
+:host {
+  @apply flex items-center;
+}
+
+:host(.panel-toggle-hidden) {
+  @apply hidden;
+}

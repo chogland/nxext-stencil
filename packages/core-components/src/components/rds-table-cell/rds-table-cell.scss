@@ -1,0 +1,58 @@
+:host {
+  @apply table-cell text-gray-500 font-inter align-middle;
+
+  ::slotted(*) {
+    @apply py-0;
+  }
+}
+
+:host([type='head']) {
+  @apply px-6 py-3 text-left text-xs font-medium uppercase tracking-wider;
+}
+
+:host([type='data']) {
+  @apply px-6 py-4 whitespace-nowrap text-sm;
+}
+
+:host([type='data'].compact) {
+  @apply py-2;
+}
+
+:host(.verticalLines) {
+  @apply border-solid border-t-0 border-l-0 border-b-0 border-r-gray-300;
+  border-right-width: 0.5px;
+}
+
+:host([align='left']) {
+  @apply text-left;
+}
+
+:host([align='center']) {
+  @apply text-center;
+}
+
+:host([align='right']) {
+  @apply text-right;
+}
+
+:host(.mobile-hide) {
+  @media (max-width: 640px) {
+    @apply hidden;
+  }
+}
+
+:host(.hideRow) {
+  @apply hidden;
+}
+
+:host(.columnStack) {
+  @apply hidden sm:table-cell whitespace-normal;
+}
+
+:host(.visible) {
+  @apply px-5 py-3 table-cell whitespace-normal md:hidden;
+}
+
+:host(.emptyRow) {
+  @apply absolute flex items-center w-full h-4 tracking-wide border-l-0 border-r-0 border-b border-t border-solid border-gray-200 bg-gray-50 px-4 py-2 text-left sm:px-6;
+}

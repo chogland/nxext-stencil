@@ -1,0 +1,102 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+
+<Meta title="Components/Form Elements/Radio Button Group/Overview" />
+
+# Radio Button Group: Overview
+
+`RadioButtonGroup` is a wrapper component that is used for grouping radio button components. It provides a group label and a slot for adding as many radio buttons as needed. The radio buttons receive additional styling when they are part of the radio button group component. The component allows you to easily pass the same `name` and `type` properties to all slotted radios as well.
+
+## Variations
+
+### Type: Description List
+
+Below is an example of a radio group component set as the default type 'description-list' with sub-labels below each radio.
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-radio-button-group-stories--type-description-list-default"></Story>
+</Canvas>
+
+### Type: Default
+
+Set the `type` property to 'default' to achieve the radio group seen below.
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-radio-button-group-stories--type-default-vertical"></Story>
+</Canvas>
+
+### Direction: Horizontal
+
+Radio Button Groups will render vertically by default. If you would like to change that default behavior and render horizontal radios, change the `direction` property to 'horizontal'. All types besides 'description-list' can be rendered both vertically and horizontally.
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-radio-button-group-stories--type-default-horizontal"></Story>
+</Canvas>
+
+### Type: Small Card
+
+Set the `type` property to 'small-card' to achieve the radio group seen below.
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-radio-button-group-stories--type-small-card-vertical"></Story>
+</Canvas>
+
+### Type: Card
+
+Set the `type` property to 'card' to achieve the radio group seen below.
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-radio-button-group-stories--type-card-vertical"></Story>
+</Canvas>
+
+### With Group Label
+
+You can pass a _label_ to the radio button group component to add a label above the group.
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-radio-button-group-stories--with-group-label"></Story>
+</Canvas>
+
+### With Group Sub-Label
+
+For the sub-label to appear within the radio button group component, you must insert a `RdsSubLabel` component within the slot named `sub-label`.
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-radio-button-group-stories--with-group-sub-label"></Story>
+</Canvas>
+
+### Without Sub-Labels
+
+Below is an example of a radio button group without the sub-label slots fulfilled.
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-radio-button-group-stories--without-sub-labels"></Story>
+</Canvas>
+
+### Disabled
+
+You may disable any or all of the radio buttons in a group by passing the _disabled_ prop to the radio button component.
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-radio-button-group-stories--disabled"></Story>
+</Canvas>
+
+## Validations
+
+Visit the [validations overview page](?path=/story/components-form-elements-validators-overview--page) for information on validating radio button and radio button group components.
+
+## Usage Guidelines
+
+> **Be Concise**
+
+The grouping component labels should be kept to a single line of text.
+
+> **Use sentence case**
+
+Labels should always be in sentence case. Capitalization should never be used to give more prominence to a specific element.
+
+> **Don't override color**
+
+Do not use custom colors for the grouping label or any sub-elements of radio button group. The colors have been designed to be consistent and accessible.
+
+<Description>{Readme}</Description>

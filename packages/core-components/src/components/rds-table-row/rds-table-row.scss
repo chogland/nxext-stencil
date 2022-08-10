@@ -1,0 +1,19 @@
+:host {
+  @apply table-row font-inter;
+}
+
+:host(.striped:nth-child(even)) {
+  @apply bg-white;
+}
+
+:host(.striped:nth-child(odd)) {
+  @apply bg-gray-50;
+}
+
+:host(.show) {
+  @apply relative;
+}
+
+:host(.hide) {
+  @apply hidden relative;
+}

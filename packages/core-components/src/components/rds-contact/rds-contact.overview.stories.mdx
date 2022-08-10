@@ -1,0 +1,37 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import RdsContact from '../../../dist/collection/components/rds-contact/rds-contact';
+
+<Meta title="Patterns/Contact/Overview" />
+
+# Contact: Overview
+
+`Contact` is a simple pattern that includes avatar and text components to offer up a contact component that accepts Name, Role and another line of details.
+
+## Variations
+
+### Default
+
+<Canvas withSource="auto">
+  <Story id="patterns-contact-stories--default-story"></Story>
+</Canvas>
+
+### With Actions
+
+`Contact` now includes slot for adding action components like `RdsButton`.
+
+<Canvas withSource="auto">
+  <Story id="patterns-contact-stories--actions"></Story>
+</Canvas>
+
+## Usage Guidelines
+
+> Informational
+
+Use `Contact` to display one or more persons details like name and position.
+
+> Interactive
+
+Optionally add buttons to interact with `Contact` to assist a user in e-mailing, phoning or other contact methods.
+
+<Description>{Readme}</Description>

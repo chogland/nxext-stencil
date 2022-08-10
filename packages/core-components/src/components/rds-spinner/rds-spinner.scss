@@ -1,0 +1,31 @@
+:host {
+  svg {
+    @apply animate-spin h-8 w-8 text-purple-600;
+
+    circle {
+      @apply text-gray-200;
+    }
+
+    path {
+      @apply opacity-75;
+    }
+  }
+}
+
+:host([size='md']) {
+  svg {
+    @apply h-12 w-12;
+  }
+}
+
+:host([size='lg']) {
+  svg {
+    @apply h-16 w-16;
+  }
+}
+
+:host([size='xl']) {
+  svg {
+    @apply h-20 w-20;
+  }
+}

@@ -1,0 +1,102 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+
+<Meta title="Components/Form Elements/Checkbox Group/Overview" />
+
+# Checkbox Group: Overview
+
+`CheckboxGroup` is a wrapper component that is used for grouping checkbox components. It provides a group label and a slot for adding as many checkboxes as needed. The checkboxes receive additional styling when they are part of the checkbox group component. The component allows you to easily pass the same `name` and `type` properties to all slotted checkboxes as well.
+
+## Variations
+
+### Type: Description List
+
+Below is an example of a checkbox group component set as the default type 'description-list' with sub-labels below each checkbox.
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-checkbox-group-stories--type-description-list-default"></Story>
+</Canvas>
+
+### Type: Default
+
+Set the `type` property to 'default' to achieve the checkbox group seen below.
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-checkbox-group-stories--type-default-vertical"></Story>
+</Canvas>
+
+### Direction: Horizontal
+
+Radio Button Groups will render vertically by default. If you would like to change that default behavior and render horizontal checkboxes, change the `direction` property to 'horizontal'. All types besides 'description-list' can be rendered both vertically and horizontally.
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-checkbox-group-stories--type-default-horizontal"></Story>
+</Canvas>
+
+### Type: Small Card
+
+Set the `type` property to 'small-card' to achieve the checkbox group seen below.
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-checkbox-group-stories--type-small-card-vertical"></Story>
+</Canvas>
+
+### Type: Card
+
+Set the `type` property to 'card' to achieve the checkbox group seen below.
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-checkbox-group-stories--type-card-vertical"></Story>
+</Canvas>
+
+### With Group Label
+
+You can pass a _label_ to the checkbox group component to add a label above the group.
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-checkbox-group-stories--with-group-label"></Story>
+</Canvas>
+
+### With Group Sub-Label
+
+For the sub-label to appear within the checkbox component, you must insert a `RdsSubLabel` component within the slot named `sub-label`.
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-checkbox-group-stories--with-group-sub-label"></Story>
+</Canvas>
+
+### Without Sub-Labels
+
+Below is an example of a checkbox group without the sub-label slots fulfilled.
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-checkbox-group-stories--without-sub-labels"></Story>
+</Canvas>
+
+### Disabled
+
+You may disable any or all of the checkboxes in a group by passing the _disabled_ prop to the checkbox component.
+
+<Canvas withSource="auto">
+  <Story id="components-form-elements-radio-button-group-stories--disabled"></Story>
+</Canvas>
+
+## Validations
+
+Visit the [validations overview page](?path=/story/components-form-elements-validators-overview--page) for information on validating checkbox and checkbox group components.
+
+## Usage Guidelines
+
+> **Be Concise**
+
+The grouping component labels should be kept to a single line of text.
+
+> **Use sentence case**
+
+Labels should always be in sentence case. Capitalization should never be used to give more prominence to a specific element.
+
+> **Don't override color**
+
+Do not use custom colors for the grouping label or any sub-elements of checkbox group. The colors have been designed to be consistent and accessible.
+
+<Description>{Readme}</Description>

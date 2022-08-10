@@ -1,0 +1,247 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsHeroIcon from '../../../dist/collection/components/rds-hero-icon/rds-hero-icon';
+import iconNames from './icons';
+
+<Meta
+  title="Components/Hero Icon/Stories"
+  component={RdsHeroIcon}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=48%3A19824',
+    },
+  }}
+  args={{
+    type: {
+      control: { type: 'select', options: ['solid', 'outline'] },
+      description: 'Set the type of the icon.',
+    },
+    size: {
+      control: { type: 'select', options: ['md', 'lg', 'xl'] },
+      description: 'Set the size of the icon.',
+    },
+    bg: {
+      control: { type: 'select', options: ['gray', 'purple', 'blue', 'green', 'yellow', 'red'] },
+      description: 'Set the background color of the icon.',
+    },
+    color: {
+      control: {
+        type: 'select',
+        options: [
+          undefined,
+          'black',
+          'white',
+          'gray-900',
+          'gray-800',
+          'gray-700',
+          'gray-600',
+          'gray-500',
+          'gray-400',
+          'gray-300',
+          'gray-200',
+          'gray-100',
+          'gray-50',
+          'purple-900',
+          'purple-800',
+          'purple-700',
+          'purple-600',
+          'purple-500',
+          'purple-400',
+          'purple-300',
+          'purple-200',
+          'purple-100',
+          'purple-50',
+          'blue-900',
+          'blue-800',
+          'blue-700',
+          'blue-600',
+          'blue-500',
+          'blue-400',
+          'blue-300',
+          'blue-200',
+          'blue-100',
+          'blue-50',
+          'green-900',
+          'green-800',
+          'green-700',
+          'green-600',
+          'green-500',
+          'green-400',
+          'green-300',
+          'green-200',
+          'green-100',
+          'green-50',
+          'yellow-900',
+          'yellow-800',
+          'yellow-700',
+          'yellow-600',
+          'yellow-500',
+          'yellow-400',
+          'yellow-300',
+          'yellow-200',
+          'yellow-100',
+          'yellow-50',
+          'red-900',
+          'red-800',
+          'red-700',
+          'red-600',
+          'red-500',
+          'red-400',
+          'red-300',
+          'red-200',
+          'red-100',
+          'red-50',
+        ],
+      },
+      description: 'Controls the icon color.',
+    },
+  }}
+/>
+
+export const Template = args => <rds-hero-icon size="xl" {...args}></rds-hero-icon>;
+
+# Icons
+
+### Solid
+
+<Canvas withSource="none">
+  <Story name="Solid">
+    {iconNames.map((icon, index) => (
+      <rds-flex
+        key={index}
+        inline
+        direction="column"
+        justify-content="center"
+        align-items="center"
+        style={{ boxSizing: 'content-box', width: '48px', height: '48px', textAlign: 'center', padding: '1rem' }}
+      >
+        <rds-hero-icon name={icon.name}></rds-hero-icon>
+        <rds-text size="sm">{icon.name}</rds-text>
+      </rds-flex>
+    ))}
+  </Story>
+</Canvas>
+
+### Outline
+
+<Canvas withSource="none">
+  <Story name="Outline">
+    {iconNames.map((icon, index) => (
+      <rds-flex
+        key={index}
+        inline
+        direction="column"
+        justify-content="center"
+        align-items="center"
+        style={{ boxSizing: 'content-box', width: '48px', height: '48px', textAlign: 'center', padding: '1rem' }}
+      >
+        <rds-hero-icon name={icon.name} type="outline"></rds-hero-icon>
+        <rds-text size="sm">{icon.name}</rds-text>
+      </rds-flex>
+    ))}
+  </Story>
+</Canvas>
+
+### Size Medium
+
+<Canvas>
+  <Story name="Size Medium">
+    <rds-hero-icon name="user" size="md"></rds-hero-icon>
+    <rds-hero-icon name="user" size="md" type="outline"></rds-hero-icon>
+  </Story>
+</Canvas>
+
+### Size Large
+
+<Canvas>
+  <Story name="Size Large">
+    <rds-hero-icon name="user" size="lg"></rds-hero-icon>
+    <rds-hero-icon name="user" size="lg" type="outline"></rds-hero-icon>
+  </Story>
+</Canvas>
+
+### Size Extra Large
+
+<Canvas>
+  <Story name="Size Extra Large">
+    <rds-hero-icon name="user" size="xl"></rds-hero-icon>
+    <rds-hero-icon name="user" size="xl" type="outline"></rds-hero-icon>
+  </Story>
+</Canvas>
+
+### Background Gray
+
+<Canvas>
+  <Story name="Background Gray">
+    <rds-hero-icon name="user" bg="gray"></rds-hero-icon>
+    <rds-hero-icon name="user" bg="gray" shape="circle"></rds-hero-icon>
+    <rds-hero-icon name="user" bg="gray" type="outline"></rds-hero-icon>
+    <rds-hero-icon name="user" bg="gray" shape="circle" type="outline"></rds-hero-icon>
+  </Story>
+</Canvas>
+
+### Background Purple
+
+<Canvas>
+  <Story name="Background Purple">
+    <rds-hero-icon name="user" bg="purple" />
+    <rds-hero-icon name="user" bg="purple" shape="circle" />
+    <rds-hero-icon name="user" bg="purple" type="outline" />
+    <rds-hero-icon name="user" bg="purple" shape="circle" type="outline" />
+  </Story>
+</Canvas>
+
+### Background Purple
+
+<Canvas>
+  <Story name="Background Blue">
+    <rds-hero-icon name="user" bg="blue" />
+    <rds-hero-icon name="user" bg="blue" shape="circle" />
+    <rds-hero-icon name="user" bg="blue" type="outline" />
+    <rds-hero-icon name="user" bg="blue" shape="circle" type="outline" />
+  </Story>
+</Canvas>
+
+### Background Green
+
+<Canvas>
+  <Story name="Background Green">
+    <rds-hero-icon name="user" bg="green" />
+    <rds-hero-icon name="user" bg="green" shape="circle" />
+    <rds-hero-icon name="user" bg="green" type="outline" />
+    <rds-hero-icon name="user" bg="green" shape="circle" type="outline" />
+  </Story>
+</Canvas>
+
+### Background Yellow
+
+<Canvas>
+  <Story name="Background Yellow">
+    <rds-hero-icon name="user" bg="yellow" />
+    <rds-hero-icon name="user" bg="yellow" shape="circle" />
+    <rds-hero-icon name="user" bg="yellow" type="outline" />
+    <rds-hero-icon name="user" bg="yellow" shape="circle" type="outline" />
+  </Story>
+</Canvas>
+
+### Background Red
+
+<Canvas>
+  <Story name="Background Red">
+    <rds-hero-icon name="user" bg="red" />
+    <rds-hero-icon name="user" bg="red" shape="circle" />
+    <rds-hero-icon name="user" bg="red" type="outline" />
+    <rds-hero-icon name="user" bg="red" shape="circle" type="outline" />
+  </Story>
+</Canvas>
+
+### Icon Color
+
+<Canvas>
+  <Story name="Color">
+    <rds-hero-icon name="user" size="xl" color="purple-600" />
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

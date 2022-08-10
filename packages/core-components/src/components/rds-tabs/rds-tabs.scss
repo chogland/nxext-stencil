@@ -1,0 +1,126 @@
+// Shared appearance styles
+:host {
+  @apply font-inter;
+
+  .container {
+    // Overflow styles
+    @apply md:overflow-x-auto md:overflow-y-hidden w-full cursor-auto;
+
+    // Hide default scrollbar styles, but keep functionality
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+
+    &::-webkit-scrollbar {
+      @apply hidden md:block cursor-pointer h-2;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      @apply bg-gray-50;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      @apply bg-gray-200;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      @apply bg-gray-500;
+    }
+
+    nav {
+      @apply flex;
+    }
+  }
+}
+
+// Desktop / mobile styles
+:host {
+  .mobile {
+    .select {
+      @apply relative;
+    }
+
+    select {
+      @apply shadow-sm text-gray-600 focus:outline-none focus:ring-1 border focus:ring-purple-600 focus:border-purple-600 block w-full sm:text-sm border-gray-300 rounded-md py-2 pl-3 pr-9;
+
+      // Hide native select arrow
+      -webkit-appearance: none;
+      appearance: none;
+
+      &::-ms-expand {
+        @apply hidden;
+      }
+
+      &[disabled] {
+        @apply bg-gray-100 text-gray-400 pointer-events-none;
+      }
+
+      &:active {
+        @apply border-purple-600 ring-purple-600;
+      }
+    }
+
+    .icon-container {
+      @apply absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none text-gray-500;
+    }
+  }
+}
+
+// Primary only styles
+:host(.primary) {
+  .container {
+    @apply border-gray-200 md:border-b;
+  }
+
+  ::slotted(*) {
+    @apply mx-4;
+  }
+
+  ::slotted(:first-child) {
+    @apply ml-0;
+  }
+
+  ::slotted(:last-child) {
+    @apply mr-0;
+  }
+}
+
+// Secondary only styles
+:host(.secondary) {
+  ::slotted(*) {
+    @apply mx-3;
+  }
+
+  ::slotted(:first-child) {
+    @apply ml-0;
+  }
+
+  ::slotted(:last-child) {
+    @apply mr-0;
+  }
+}
+
+// Tertiary only styles
+:host(.tertiary) {
+  .container {
+    @apply bg-white relative z-0 rounded-lg shadow w-full;
+  }
+
+  ::slotted(*) {
+    @apply flex-1;
+  }
+
+  ::slotted(:not(:last-child)) {
+    @apply border border-solid border-l-0 border-t-0 border-b-0 border-r-gray-200;
+  }
+
+  ::slotted(:first-child) {
+    @apply rounded-l-lg;
+  }
+
+  ::slotted(:last-child) {
+    @apply rounded-r-lg;
+  }
+}

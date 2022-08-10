@@ -1,0 +1,86 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import { useState } from 'react';
+import Readme from './readme.md';
+import * as RdsSelect from '../../../../dist/collection/components/rds-form-elements/rds-select/rds-select';
+
+<Meta
+  title="Components/Form Elements/Validators/Stories/Constraint Validators/Select"
+  component={RdsSelect}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/uYf4DWKd7OtQSx7BRfchZv/RDS-Components-for-Storybook?node-id=1328%3A44646',
+    },
+  }}
+  argTypes={{
+    onFocus: { action: 'onRdsOnFocus', table: { disable: true } },
+    onBlur: { action: 'onRdsOnBlur', table: { disable: true } },
+    onChange: { action: 'onRdsOnChange', table: { disable: true } },
+    label: {
+      control: { type: 'text' },
+      description: 'Text displayed as the label for the select.',
+      defaultValue: 'Assigned to',
+    },
+    required: {
+      control: { type: 'boolean' },
+      description: 'Sets the select as required.',
+    },
+    helptext: {
+      control: { type: 'boolean' },
+      description: 'Displays the help text when true and a help-text slot is present.',
+    },
+    disabled: {
+      control: { type: 'boolean' },
+      description: 'If true, the select is displayed as disabled.',
+    },
+    multiple: {
+      control: { type: 'boolean' },
+      description: 'If true, multiple item can be selected.',
+    },
+    validate: {
+      control: { type: 'boolean' },
+    },
+  }}
+/>
+
+# Select
+
+export const Template = args => (
+  <rds-select {...args}>
+    <option value="">Select an option</option>
+    <option value="ca">Canada</option>
+    <option value="nyc">New York</option>
+    <option value="sfo">SFO</option>
+    <option value="verylongname">Verylongname goes here</option>
+    <span slot="error-text">This field is required.</span>
+  </rds-select>
+);
+
+### Native Required
+
+<Canvas>
+  <Story
+    name="Native Required"
+    args={{
+      validate: true,
+      required: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Custom Required
+
+<Canvas>
+  <Story
+    name="Custom Required"
+    args={{
+      native: false,
+      validate: true,
+      required: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>

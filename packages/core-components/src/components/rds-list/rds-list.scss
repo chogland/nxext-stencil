@@ -1,0 +1,64 @@
+:host {
+  @apply block font-inter w-full;
+
+  // Sub navigation list
+  ul.sub {
+    @apply max-h-0 delay-200 m-0 p-0 overflow-hidden font-inter text-xl font-normal ease-in-out duration-500 bg-gray-50 cursor-pointer;
+
+    transition: max-height;
+
+    a {
+      @apply no-underline text-gray-600 hover:text-gray-700 hover:font-bold font-inter text-xl;
+    }
+  }
+}
+
+// `Active` list
+:host(.active) {
+  ul.sub {
+    @apply block h-auto text-purple-600 clear-both w-full max-h-screen border-b border-gray-200;
+
+    border-bottom-style: solid;
+  }
+}
+
+// Navigation
+:host([type='navigation']) {
+  @apply m-0 p-0 list-none w-56 clear-both table bg-gray-100 text-gray-500;
+
+  ul {
+    @apply p-0 m-0;
+  }
+}
+
+// Unordered list
+:host([type='unordered']) {
+  ul {
+    @apply list-disc ml-8;
+  }
+}
+
+// Ordered list
+:host([type='ordered']) {
+  ol {
+    @apply list-decimal ml-8;
+  }
+}
+
+// List type of 'none' - for removing bullets/numbers
+:host([type='none']) {
+  ol,
+  ul {
+    @apply list-none ml-8;
+  }
+}
+
+// Stacked list
+:host([type='stacked']:not([narrow])) {
+  @apply bg-white shadow sm:rounded-md;
+}
+
+// Narrow list
+:host([narrow]:not([narrow='false'])) {
+  @apply max-w-md;
+}

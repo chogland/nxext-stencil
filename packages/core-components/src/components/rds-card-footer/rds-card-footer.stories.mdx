@@ -1,0 +1,38 @@
+import { Meta, Story, Canvas, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsCardFooter from '../../../dist/collection/components/rds-card-footer/rds-card-footer';
+
+<Meta
+  title="Collections/Card/Stories/Card Footer"
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=48%3A17219',
+    },
+    layout: 'padded',
+  }}
+  argTypes={{}}
+/>
+
+export const Default = args => (
+  <rds-card-container {...args}>
+    <rds-card-footer padded>
+      <rds-link slot="start">Text Link</rds-link>
+      <rds-button appearance="tertiary" slot="end">
+        Card Footer Action
+      </rds-button>
+    </rds-card-footer>
+  </rds-card-container>
+);
+
+# Card Footer
+
+### Default
+
+<Canvas>
+  <Story name="Default" args={{}}>
+    {Default.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

@@ -1,0 +1,48 @@
+:host(:focus) {
+  @apply shadow-none;
+}
+
+:host,
+ul {
+  @apply m-0 flex flex-col outline-none relative select-none py-2 px-3 text-gray-900 font-inter cursor-pointer;
+}
+
+:host(:active),
+:host(:hover),
+:host(:focus-within),
+:host(:focus),
+:host(.active),
+ul:active,
+ul:hover {
+  @apply bg-purple-600 text-white;
+
+  rds-hero-icon {
+    @apply text-white;
+  }
+}
+
+:host(.selected) {
+  span {
+    @apply font-medium;
+  }
+}
+
+li {
+  @apply relative box-border flex w-full min-w-full items-center justify-between no-underline ease-in-out;
+
+  span {
+    @apply block truncate;
+  }
+
+  rds-hero-icon {
+    @apply pl-3 text-purple-600;
+  }
+}
+
+:host([disabled]) {
+  @apply cursor-default;
+}
+
+:host([hidden]) {
+  @apply hidden;
+}

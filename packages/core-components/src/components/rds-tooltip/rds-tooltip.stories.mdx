@@ -1,0 +1,133 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsTooltip from '../../../dist/collection/components/rds-tooltip/rds-tooltip';
+
+<Meta
+  title="Components/Tooltip/Stories"
+  component={RdsTooltip}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=44%3A85578',
+    },
+    layout: 'centered',
+    docs: {
+      inlineStories: true,
+    },
+  }}
+  argTypes={{
+    position: {
+      control: { type: 'select', options: ['auto', 'top', 'bottom', 'right', 'left'] },
+      description: 'Tooltip position',
+    },
+    referenceElement: {
+      control: { type: 'text' },
+    },
+    overlayPositioning: {
+      control: { type: 'text' },
+    },
+    tooltipText: {
+      control: { type: 'text' },
+    },
+  }}
+/>
+
+export const Template = args => (
+  <span>
+    <rds-tooltip reference-element={args.referenceElement} position={args.position} overlay-positioning={args.overlayPositioning}>
+      {args.tooltipText}
+    </rds-tooltip>
+    <rds-tooltip-manager>
+      <rds-hero-icon name="information-circle" type="outline" size="lg" id={args.id}></rds-hero-icon>
+    </rds-tooltip-manager>
+  </span>
+);
+
+# Tooltip
+
+### NEW: Auto Position (Default)
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      position: 'auto',
+      referenceElement: 'tooltip-auto',
+      id: 'tooltip-auto',
+      tooltipText: 'Sample tooltip text',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Tooltip on Top
+
+<Canvas>
+  <Story
+    name="Top"
+    args={{
+      position: 'top',
+      referenceElement: 'tooltip-top',
+      id: 'tooltip-top',
+      overlayPositioning: 'fixed',
+      tooltipText: 'Tooltip on Top',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Tooltip on Right
+
+<Canvas>
+  <Story
+    name="Right"
+    args={{
+      referenceElement: 'tooltip-icon-right',
+      position: 'right',
+      id: 'tooltip-icon-right',
+      overlayPositioning: 'fixed',
+      tooltipText: 'Tooltip on Right',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Tooltip on Left
+
+<Canvas>
+  <Story
+    name="Left"
+    args={{
+      referenceElement: 'tooltip-icon-left',
+      position: 'left',
+      id: 'tooltip-icon-left',
+      overlayPositioning: 'fixed',
+      tooltipText: 'Tooltip on Left',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Tooltip on Bottom
+
+<Canvas>
+  <Story
+    name="Bottom"
+    args={{
+      referenceElement: 'tooltip-icon-bottom',
+      text: 'testing deprecated prop',
+      position: 'bottom',
+      id: 'tooltip-icon-bottom',
+      overlayPositioning: 'fixed',
+      tooltipText: 'Tooltip on Bottom',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

@@ -1,0 +1,25 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsErrorPage from '../../../dist/collection/components/rds-error-page/rds-error-page';
+
+<Meta title="Components/Error Page/Stories" component={RdsErrorPage} parameters={{ layout: 'fullscreen' }} />
+
+export const Template = args => {
+  return (
+    <rds-error-page id="ErrorPage" {...args}>
+      {' '}
+      <button slot="primary">Go back home </button>
+      <button slot="secondary">Contact support</button>
+    </rds-error-page>
+  );
+};
+
+# Error Page
+
+### 404 page
+
+<Canvas>
+  <Story name="404 page">{Template.bind({})}</Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

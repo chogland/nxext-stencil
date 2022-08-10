@@ -1,0 +1,140 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsImage from '../../../dist/collection/components/rds-image/rds-image';
+
+<Meta
+  title="Components/Image/Stories"
+  component={RdsImage}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=48%3A21959',
+    },
+  }}
+  argTypes={{
+    caption: {
+      control: { type: 'text' },
+    },
+    alt: {
+      control: { type: 'text' },
+    },
+    src: {
+      control: { type: 'text' },
+    },
+  }}
+/>
+
+export const Template = args => <rds-image {...args}></rds-image>;
+
+# Image
+
+### Default
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      alt: 'Test Alt',
+      src: 'https://via.placeholder.com/400/6046B9/FFFFFF?text=RDS+for+placeholder+only',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Thumbnails
+
+<Canvas isColumn>
+  <Story
+    name="Thumbnail: Large"
+    args={{
+      caption: 'test caption',
+      alt: 'Test Alt',
+      src: 'https://via.placeholder.com/2000/6046B9/FFFFFF?text=RDS+for+placeholder+only',
+      thumbnail: true,
+      size: 'lg',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Thumbnail: Medium"
+    args={{
+      caption: 'test caption',
+      alt: 'Test Alt',
+      src: 'https://via.placeholder.com/2000/6046B9/FFFFFF?text=RDS+for+placeholder+only',
+      thumbnail: true,
+      size: 'md',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Thumbnail: Small"
+    args={{
+      caption: 'test caption',
+      alt: 'Test Alt',
+      src: 'https://via.placeholder.com/2000/6046B9/FFFFFF?text=RDS+for+placeholder+only',
+      thumbnail: true,
+      size: 'sm',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Thumbnail: Full"
+    args={{
+      caption: 'test caption',
+      alt: 'Test Alt',
+      src: 'https://via.placeholder.com/2000/6046B9/FFFFFF?text=RDS+for+placeholder+only',
+      thumbnail: true,
+      size: 'full',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Thumbnail: With Caption Small"
+    args={{
+      'caption': 'test caption',
+      'alt': 'Test Alt',
+      'src': 'https://via.placeholder.com/2000/6046B9/FFFFFF?text=RDS+for+placeholder+only',
+      'thumbnail': true,
+      'size': 'sm',
+      'headline': 'Sample Headline',
+      'show-headline': true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Thumbnail: With Caption Medium"
+    args={{
+      'caption': 'test caption',
+      'alt': 'Test Alt',
+      'src': 'https://via.placeholder.com/2000/6046B9/FFFFFF?text=RDS+for+placeholder+only',
+      'thumbnail': true,
+      'size': 'md',
+      'headline': 'Sample Headline',
+      'show-headline': true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Thumbnail: With Caption Large"
+    args={{
+      'caption': 'test caption',
+      'alt': 'Test Alt',
+      'src': 'https://via.placeholder.com/2000/6046B9/FFFFFF?text=RDS+for+placeholder+only',
+      'thumbnail': true,
+      'size': 'lg',
+      'headline': 'Sample Headline',
+      'show-headline': true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

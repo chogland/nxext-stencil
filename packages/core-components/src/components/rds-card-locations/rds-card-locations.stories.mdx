@@ -1,0 +1,108 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import { BADGE } from '@geometricpanda/storybook-addon-badges';
+import * as RdsCardLocations from '../../../dist/collection/components/rds-card-locations/rds-card-locations';
+
+<Meta
+  title="Patterns/Cards"
+  component={RdsCardLocations}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/uYf4DWKd7OtQSx7BRfchZv/RDS-Components-for-Storybook?node-id=893%3A39311',
+    },
+    layout: 'padded',
+    badges: [BADGE.DEPRECATED],
+  }}
+  argTypes={{
+    showLocations: {
+      control: false,
+    },
+  }}
+/>
+
+export const Template = args => (
+  <rds-card-locations show-locations {...args}>
+    <rds-headline level={3} slot="title" spacing="none">
+      Engineered Locations
+    </rds-headline>
+    <rds-text size="sm" slot="description" spacing="none">
+      <i>
+        Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the
+        overall value proposition
+      </i>
+    </rds-text>
+    <div slot="locations">129</div>
+    <rds-icon icon="rds-question-circle" slot="location-info"></rds-icon>
+    <div slot="recommendations">256</div>
+    <rds-icon icon="rds-question-circle" slot="recommendations-info"></rds-icon>
+    <rds-text slot="recommendations-label" weight="semibold" type="inline">
+      Active Recommendations
+    </rds-text>
+    <rds-text slot="locations-label" weight="semibold" type="inline">
+      Engineered Locations
+    </rds-text>
+    <rds-button size="sm" slot="error-action">
+      <rds-icon slot="start" icon="rds-undo" />
+      Reload
+    </rds-button>
+  </rds-card-locations>
+);
+
+export const RecCard = args => (
+  <rds-card-locations {...args}>
+    <rds-headline level={3} slot="title">
+      Total Recommendations
+    </rds-headline>
+    <rds-text size="sm" slot="description">
+      Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the
+      overall value proposition
+    </rds-text>
+    <div slot="recommendations">156</div>
+    <rds-text slot="recommendations-label" weight="semibold">
+      Total Recommendations
+    </rds-text>
+  </rds-card-locations>
+);
+
+# Card Locations
+
+### Engineered Locations Card
+
+<Canvas>
+  <Story name="Engineered Locations Card">{Template.bind({})}</Story>
+</Canvas>
+
+### Recommendation Card
+
+<Canvas>
+  <Story name="Recommendation Card">{RecCard.bind({})}</Story>
+</Canvas>
+
+### Card in Error State
+
+<Canvas>
+  <Story
+    name="Card in Error State"
+    args={{
+      error: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Card in Loading State
+
+<Canvas>
+  <Story
+    name="Card in Loading State"
+    args={{
+      loading: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

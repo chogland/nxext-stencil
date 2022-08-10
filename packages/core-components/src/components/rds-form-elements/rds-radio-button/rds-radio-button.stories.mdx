@@ -1,0 +1,173 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsRadioButton from '../../../../dist/collection/components/rds-form-elements/rds-radio-button/rds-radio-button';
+
+<Meta
+  title="Components/Form Elements/Radio Button/Stories"
+  component={RdsRadioButton}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=48%3A18670',
+    },
+  }}
+  argTypes={{
+    label: {
+      control: { type: 'text' },
+      description: 'The text which is shown',
+    },
+    checked: {
+      control: { type: 'boolean' },
+      description: 'If true, the radio button is selected',
+    },
+    disabled: {
+      control: { type: 'boolean' },
+      description: 'If true, the radio button is displayed as disabled',
+    },
+  }}
+/>
+
+export const Template = args => <rds-radio-button {...args}></rds-radio-button>;
+
+export const CardTemplate = args => (
+  <rds-radio-button {...args}>
+    <rds-flex slot="card-content" direction="column" gap="xl">
+      <rds-text spacing="none" size="sm" color="gray-500">
+        Last message sent 2 weeks ago
+      </rds-text>
+      <rds-text spacing="none" size="sm" color="gray-900">
+        1200 users
+      </rds-text>
+    </rds-flex>
+  </rds-radio-button>
+);
+
+export const WithSubLabel = args => (
+  <rds-radio-button {...args}>
+    <rds-sub-label slot="sub-label">I am a sub-label component</rds-sub-label>
+  </rds-radio-button>
+);
+
+# Radio Button
+
+### Default
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      label: 'Default',
+      checked: false,
+      name: 'default-radiobutton',
+      value: 'Test',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Disabled
+
+<Canvas>
+  <Story
+    name="Disabled"
+    args={{
+      label: 'Disabled',
+      disabled: true,
+      value: 'Disabled',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### With Sub-Label
+
+<Canvas>
+  <Story
+    name="With Sub-Label"
+    args={{
+      label: 'With Sub-Label',
+    }}
+  >
+    {WithSubLabel.bind({})}
+  </Story>
+</Canvas>
+
+### Small Card
+
+<Canvas>
+  <Story
+    name="Small Card"
+    args={{
+      label: 'Radio Button',
+      type: 'small-card',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Small Card: Disabled
+
+<Canvas>
+  <Story
+    name="Small Card: Disabled"
+    args={{
+      label: 'Radio Button',
+      type: 'small-card',
+      disabled: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Card
+
+<Canvas>
+  <Story
+    name="Card"
+    args={{
+      label: 'Existing Customers',
+      type: 'card',
+      name: 'card-radio',
+    }}
+  >
+    {CardTemplate.bind({})}
+  </Story>
+</Canvas>
+
+### Card: Checked
+
+<Canvas>
+  <Story
+    name="Card: Checked"
+    args={{
+      label: 'Existing Customers',
+      type: 'card',
+      name: 'card-radio',
+      checked: true,
+    }}
+  >
+    {CardTemplate.bind({})}
+  </Story>
+</Canvas>
+
+### Card: Disabled
+
+<Canvas>
+  <Story
+    name="Card: Disabled"
+    args={{
+      label: 'Existing Customers',
+      type: 'card',
+      name: 'card-radio',
+      disabled: true,
+    }}
+  >
+    {CardTemplate.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

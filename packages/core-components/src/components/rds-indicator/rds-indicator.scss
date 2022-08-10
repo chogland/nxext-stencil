@@ -1,0 +1,35 @@
+:host {
+  @apply inline-block rounded-full h-2.5 w-2.5 ring-2 ring-white bg-green-500;
+}
+
+:host([appearance='success']) {
+  @apply bg-green-500;
+}
+
+:host([appearance='warning']) {
+  @apply bg-yellow-400;
+}
+
+:host([appearance='alert']) {
+  @apply bg-red-500;
+}
+
+:host([appearance='primary']) {
+  @apply bg-purple-500;
+}
+
+:host([appearance='secondary']) {
+  @apply bg-blue-500;
+}
+
+:host([appearance='tertiary']) {
+  @apply bg-gray-400;
+}
+
+:host([appearance='primary-alt']) {
+  @apply ring-purple-500 bg-white;
+}
+
+:host([appearance='tertiary-alt']) {
+  @apply bg-white;
+}

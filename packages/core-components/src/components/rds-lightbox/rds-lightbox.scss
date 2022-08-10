@@ -1,0 +1,74 @@
+:host {
+  @apply flex;
+
+  .lightbox-images-wrapper {
+    @apply w-full;
+  }
+
+  #images {
+    @apply cursor-pointer;
+
+    rds-image,
+    .rds-image {
+      @apply p-1;
+    }
+  }
+
+  #lightbox-container {
+    @apply transition-all duration-200 fixed z-order3 top-0 right-0 w-screen h-screen bg-black md:bg-opacity-80 text-white flex justify-evenly items-center flex-col flex-nowrap;
+
+    .next,
+    .previous {
+      @apply bg-gray-700 absolute p-2 top-1/2 -mt-8 rounded-full cursor-pointer pb-1 hover:bg-gray-600 border-0 text-white;
+    }
+
+    .next {
+      @apply right-6;
+    }
+
+    .previous {
+      @apply left-6;
+    }
+
+    .caption {
+      @apply text-white block pt-4;
+    }
+
+    .close {
+      @apply cursor-pointer p-6 self-center bg-transparent text-white border-0;
+    }
+
+    .title {
+      @apply py-4 pr-8 truncate font-semibold md:w-full md:text-center text-base md:text-2xl;
+    }
+
+    .subtitle {
+      @apply text-xs md:text-sm text-center font-normal pt-1 md:pt-2;
+    }
+
+    .lightbox-header {
+      @apply absolute top-0 left-0 flex bg-black bg-opacity-60 md:bg-transparent w-full box-border self-start font-inter bg-gradient-to-b from-black to-transparent;
+    }
+
+    .lightbox-body {
+      @apply w-full text-center font-inter text-sm font-semibold flex flex-wrap flex-col items-center;
+
+      .rds-image,
+      rds-image {
+        @apply block;
+
+        img {
+          @media (max-width: 640px) {
+            max-height: 80vh;
+          }
+        }
+      }
+
+      .rds-image::part(image) {
+        @apply w-auto;
+
+        max-height: 80vh;
+      }
+    }
+  }
+}

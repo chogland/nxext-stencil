@@ -1,0 +1,46 @@
+:host {
+  @apply font-inter;
+
+  .error-page {
+    @apply bg-white min-h-screen px-3 sm:px-6 sm:py-24 justify-center items-center lg:px-8 max-w-full mx-auto flex;
+  }
+
+  .error-code {
+    @apply text-4xl font-extrabold text-purple-600 sm:text-5xl;
+  }
+
+  .error-view {
+    @apply max-w-max mx-auto;
+  }
+
+  .error-main {
+    @apply flex flex-col sm:flex-row;
+  }
+
+  .error-content {
+    @apply sm:ml-6;
+  }
+
+  .error-text {
+    @apply sm:border-l sm:border-gray-200 sm:pl-6;
+  }
+
+  .error-text-primary {
+    @apply text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl;
+  }
+
+  .error-text-secondary {
+    @apply mt-1 text-base text-gray-500;
+  }
+
+  .error-nav {
+    @apply mt-10 flex space-x-3 sm:border-l sm:border-transparent sm:pl-6 gap-x-3;
+  }
+
+  ::slotted([slot='primary']) {
+    @apply inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500;
+  }
+}
+::slotted([slot='secondary']) {
+  @apply inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-purple-700 bg-purple-100 hover:bg-purple-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500;
+}

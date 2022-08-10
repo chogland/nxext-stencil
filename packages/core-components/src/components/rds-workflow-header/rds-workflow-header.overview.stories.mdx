@@ -1,0 +1,36 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+
+<Meta title="Patterns/Workflow Header/Overview" />
+
+# Workflow Header: Overview
+
+Workflow header comes with three slots: title, description and action. The action slot can include more than one component if you utilize the `Grid` component as seen in the example below. The title slot, in this case, shows a `Headline`. The description slot is meant to show any additional text or components needed to complete your workflow header.
+
+Note: The workflow header is _only_ intended for use in full page takeovers.
+
+## Variations
+
+### With Title and Single Action
+
+<Canvas withSource="auto">
+  <Story id="patterns-workflow-header-stories--default-story"></Story>
+</Canvas>
+
+### With Title, Description, and Multiple Actions
+
+<Canvas withSource="auto">
+  <Story id="patterns-workflow-header-stories--with-description"></Story>
+</Canvas>
+
+## Usage Guidelines
+
+> **Usage**
+
+Workflow Headers should be used as part of a full page takeover.
+
+> **Placement**
+
+Workflow Headers appear at the top of the screen.
+
+<Description>{Readme}</Description>

@@ -1,0 +1,213 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsModal from '../../../dist/collection/components/rds-modal/rds-modal';
+
+<Meta
+  title="Components/Modal/Stories"
+  component={RdsModal}
+  parameters={{
+    docs: {
+      inlineStories: false,
+    },
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=48%3A24358',
+    },
+    layout: 'fullscreen',
+  }}
+  argTypes={{
+    visible: {
+      control: {
+        type: 'boolean',
+      },
+      defaultValue: true,
+    },
+    disableOverlayClose: {
+      control: {
+        type: 'boolean',
+      },
+    },
+    closeButton: {
+      control: {
+        type: 'boolean',
+      },
+    },
+    disableEscape: {
+      control: {
+        type: 'boolean',
+      },
+    },
+  }}
+/>
+
+export const Template = args => (
+  <rds-modal {...args} id="actionModal">
+    I am a sample Modal with footer that includes action buttons.
+    <rds-button slot="secondary" size="xl" appearance="tertiary" onClick={() => document.getElementById('actionModal').closeModal()}>
+      Cancel
+    </rds-button>
+    <rds-button slot="primary" size="xl">
+      Continue
+    </rds-button>
+  </rds-modal>
+);
+
+export const FullscreenTemplate = args => (
+  <rds-modal {...args} id="fullscreenModal">
+    <rds-box padding="xl">
+      <rds-flex align-items="center" justify-content="space-between">
+        <rds-text color="gray-900" spacing="none" weight="semibold" size="lg">
+          Modal Title
+        </rds-text>
+        <rds-flex gap="sm">
+          <rds-button appearance="tertiary" onClick={() => document.getElementById('fullscreenModal').closeModal()}>
+            Close
+          </rds-button>
+          <rds-button>Submit</rds-button>
+        </rds-flex>
+      </rds-flex>
+    </rds-box>
+    <rds-divider spacing="none" />
+  </rds-modal>
+);
+
+export const AlertModal = args => (
+  <rds-modal {...args} id="alertModal">
+    <rds-hero-icon name="exclamation" slot="icon" type="outline"></rds-hero-icon>I am a sample Modal with footer that include action buttons.
+    <rds-button slot="primary" size="xl" appearance="danger">
+      Deactivate
+    </rds-button>
+    <rds-button slot="secondary" size="xl" appearance="tertiary" onClick={() => document.getElementById('actionModal').closeModal()}>
+      Cancel
+    </rds-button>
+  </rds-modal>
+);
+
+export const SlotModalHeadline = args => (
+  <rds-modal {...args}>
+    <span slot="headline">
+      Risk<i>Mark</i> Score
+    </span>
+    I am a sample Modal to show how to include HTML in a Modal Headline. Enjoy.
+  </rds-modal>
+);
+
+export const TemplateWithTrigger = args => (
+  <rds-flex justify-content="center" align-items="center">
+    <rds-box padding="3xl">
+      <rds-button
+        onClick={() => {
+          document.getElementById('triggerModal').openModal();
+        }}
+      >
+        Open Modal
+      </rds-button>
+      <rds-modal {...args} id="triggerModal">
+        I am a sample Modal with footer that includes action buttons.
+        <rds-button slot="secondary" size="xl" appearance="tertiary" onClick={() => document.getElementById('triggerModal').closeModal()}>
+          Cancel
+        </rds-button>
+        <rds-button slot="primary" size="xl">
+          Continue
+        </rds-button>
+      </rds-modal>
+    </rds-box>
+  </rds-flex>
+);
+
+# Modal
+
+### Default
+
+<Canvas>
+  <Story
+    height="300px"
+    name="Default"
+    args={{
+      visible: true,
+      headline: 'Sample Modal',
+      label: 'Sample Modal',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Fullscreen
+
+<Canvas>
+  <Story
+    height="300px"
+    name="Fullscreen"
+    args={{
+      'visible': true,
+      'closeButton': false,
+      'full-screen': true,
+    }}
+  >
+    {FullscreenTemplate.bind({})}
+  </Story>
+</Canvas>
+
+### Alert With Icon
+
+<Canvas>
+  <Story
+    height="300px"
+    name="With Icon"
+    args={{
+      visible: true,
+      headline: 'Sample Modal',
+      label: 'Sample Modal',
+    }}
+  >
+    {AlertModal.bind({})}
+  </Story>
+</Canvas>
+
+### Custom HTML Headline
+
+<Canvas>
+  <Story
+    height="400px"
+    name="Custom HTML Headline"
+    args={{
+      visible: true,
+    }}
+  >
+    {SlotModalHeadline.bind({})}
+  </Story>
+</Canvas>
+
+### No Overlay Close
+
+<Canvas>
+  <Story
+    height="300px"
+    name="No Overlay Close"
+    args={{
+      visible: true,
+      headline: 'Sample Modal',
+      disableOverlayClose: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### With Modal Trigger
+
+<Canvas>
+  <Story
+    height="300px"
+    name="With Modal Trigger"
+    args={{
+      visible: false,
+      headline: 'Sample Modal',
+    }}
+  >
+    {TemplateWithTrigger.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

@@ -1,0 +1,159 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsLink from '../../../dist/collection/components/rds-link/rds-link';
+
+<Meta
+  title="Components/Link/Stories"
+  component={RdsLink}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=48%3A23659',
+    },
+    layout: 'padded',
+  }}
+  argTypes={{
+    linkText: {
+      control: { type: 'text' },
+      description: 'The link text.',
+      defaultValue: 'Text link',
+    },
+    appearance: {
+      control: { type: 'select', options: ['primary', 'secondary'] },
+      description: 'The appearance / style of the link.',
+    },
+    disabled: {
+      control: { type: 'boolean' },
+      description: 'If true, the link is displayed as disabled.',
+    },
+    size: {
+      control: { type: 'select', options: ['sm', 'base'] },
+      description: 'The link size.',
+    },
+    href: {
+      control: { type: 'text' },
+      description: 'Contains a URL or a URL fragment that the hyperlink points to. If this property is set, an anchor tag will be rendered.',
+    },
+    target: {
+      control: { type: 'select', options: ['_blank', '_self', '_parent', '_top'] },
+      description: 'Specifies where to display the linked URL. Only applies when an `href` is provided. Special keywords: `_blank`  `_self`  `_parent`  `_top`.',
+    },
+  }}
+/>
+
+export const Template = args => <rds-link {...args}>{args.linkText}</rds-link>;
+export const TemplateWithIconLeading = args => (
+  <rds-link {...args}>
+    <rds-hero-icon slot="start" size="lg" name="question-mark-circle"></rds-hero-icon>
+    {args.linkText}
+  </rds-link>
+);
+export const TemplateWithIconTrailing = args => (
+  <rds-link {...args}>
+    <rds-hero-icon slot="end" size="lg" name="question-mark-circle"></rds-hero-icon>
+    {args.linkText}
+  </rds-link>
+);
+export const TemplateWithIcon = args => (
+  <rds-link {...args}>
+    <rds-hero-icon name="home"></rds-hero-icon>
+  </rds-link>
+);
+export const TemplateWithLargeIcon = args => (
+  <rds-link {...args}>
+    <rds-hero-icon name="home" size="lg"></rds-hero-icon>
+  </rds-link>
+);
+
+# Link
+
+### Primary Links
+
+<Canvas>
+  <Story name="Primary">{Template.bind({})}</Story>
+  <Story
+    name="Primary: Small"
+    args={{
+      size: 'sm',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Primary: Disabled"
+    args={{
+      disabled: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story name="Primary: Icon Leading">{TemplateWithIconLeading.bind({})}</Story>
+  <Story name="Primary: Icon Trailing">{TemplateWithIconTrailing.bind({})}</Story>
+  <Story name="Primary: Icon Only">{TemplateWithIcon.bind({})}</Story>
+  <Story name="Primary: Large Icon Only">{TemplateWithLargeIcon.bind({})}</Story>
+</Canvas>
+
+### Secondary Links
+
+<Canvas>
+  <Story
+    name="Secondary"
+    args={{
+      appearance: 'secondary',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Secondary: Small"
+    args={{
+      appearance: 'secondary',
+      size: 'sm',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Secondary: Disabled"
+    args={{
+      appearance: 'secondary',
+      disabled: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Secondary: Icon Leading"
+    args={{
+      appearance: 'secondary',
+    }}
+  >
+    {TemplateWithIconLeading.bind({})}
+  </Story>
+  <Story
+    name="Secondary: Icon Trailing"
+    args={{
+      appearance: 'secondary',
+    }}
+  >
+    {TemplateWithIconTrailing.bind({})}
+  </Story>
+  <Story
+    name="Secondary: Icon Only"
+    args={{
+      appearance: 'secondary',
+    }}
+  >
+    {TemplateWithIcon.bind({})}
+  </Story>
+  <Story
+    name="Secondary: Large Icon Only"
+    args={{
+      appearance: 'secondary',
+    }}
+  >
+    {TemplateWithLargeIcon.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

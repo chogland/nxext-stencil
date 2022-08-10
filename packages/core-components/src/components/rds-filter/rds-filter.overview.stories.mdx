@@ -1,0 +1,23 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import { BADGE } from '@geometricpanda/storybook-addon-badges';
+
+<Meta title="Components/Filter/Overview" parameters={{ badges: [BADGE.DEPRECATED] }} />
+
+# Filter: Overview
+
+## Filter
+
+`Filter` is a container component that provides wrapper support for grouped form elements i.e. radio and checkbox input components needed for filtering page content.
+
+<Canvas withSource="auto">
+  <Story id="components-filter-stories--default-story"></Story>
+</Canvas>
+
+## Usage Guidelines
+
+The `Filter` component is to be used with `RdsButton` and can be applied by adding the `isFilter` attribute. By adding the `isFilter` attribute to the `RdsButton` it enables a toggle to communicate with the `Filter` component.
+
+A pattern illustrating further usage will be Coming Soon.
+
+<Description>{Readme}</Description>

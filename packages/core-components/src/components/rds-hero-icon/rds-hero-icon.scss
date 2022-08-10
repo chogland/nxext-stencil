@@ -1,0 +1,186 @@
+:host {
+  @apply inline-flex items-center justify-center;
+}
+
+.icon {
+  @apply inline-flex items-center justify-center w-4 h-4;
+
+  &[bg] {
+    // Add padding for background
+    @apply p-3 box-content;
+  }
+
+  &[shape='rounded'] {
+    @apply rounded-md;
+  }
+
+  &[shape='circle'] {
+    @apply rounded-full;
+  }
+
+  // Icon sizes
+  &[size='lg'] {
+    @apply w-6 h-6;
+  }
+
+  &[size='xl'] {
+    @apply w-8 h-8;
+  }
+
+  // Solid icon styles
+  &:not(.outline) {
+    svg,
+    path {
+      @apply fill-current;
+    }
+
+    &[bg] {
+      svg,
+      path {
+        @apply fill-white;
+      }
+    }
+
+    &[bg='gray'] {
+      @apply bg-gray-400;
+    }
+
+    &[bg='purple'] {
+      @apply bg-purple-500;
+    }
+
+    &[bg='blue'] {
+      @apply bg-blue-500;
+    }
+
+    &[bg='green'] {
+      @apply bg-green-500;
+    }
+
+    &[bg='yellow'] {
+      @apply bg-yellow-500;
+    }
+
+    &[bg='red'] {
+      @apply bg-red-500;
+    }
+  }
+
+  // Outline icon styles
+  &.outline {
+    svg {
+      @apply stroke-current;
+
+      fill: transparent;
+
+      path {
+        @apply stroke-current;
+      }
+    }
+
+    &[bg='gray'] {
+      @apply bg-gray-50 stroke-gray-700;
+
+      path {
+        @apply stroke-gray-700;
+      }
+    }
+
+    &[bg='purple'] {
+      @apply bg-purple-50 stroke-purple-700;
+
+      path {
+        @apply stroke-purple-700;
+      }
+    }
+
+    &[bg='blue'] {
+      @apply bg-blue-50 stroke-blue-700;
+
+      path {
+        @apply stroke-blue-700;
+      }
+    }
+
+    &[bg='green'] {
+      @apply bg-green-50 stroke-green-700;
+
+      path {
+        @apply stroke-green-700;
+      }
+    }
+
+    &[bg='yellow'] {
+      @apply bg-yellow-50 stroke-yellow-700;
+
+      path {
+        @apply stroke-yellow-700;
+      }
+    }
+
+    &[bg='red'] {
+      @apply bg-red-50 stroke-red-700;
+
+      path {
+        @apply stroke-red-700;
+      }
+    }
+  }
+}
+
+// Target Icon Outline Fix
+:host([name='target'][type='outline']) {
+  svg,
+  svg path {
+    @apply fill-current;
+    stroke: transparent;
+  }
+
+  [bg='gray'] {
+    svg,
+    svg path {
+      @apply fill-gray-700;
+    }
+  }
+
+  [bg='purple'] {
+    svg,
+    svg path {
+      @apply fill-purple-700;
+    }
+  }
+
+  [bg='blue'] {
+    svg,
+    svg path {
+      @apply fill-blue-700;
+    }
+  }
+
+  [bg='green'] {
+    svg,
+    svg path {
+      @apply fill-green-700;
+    }
+  }
+
+  [bg='yellow'] {
+    svg,
+    svg path {
+      @apply fill-yellow-700;
+    }
+  }
+
+  [bg='red'] {
+    svg,
+    svg path {
+      @apply fill-red-700;
+    }
+  }
+}
+
+:host {
+  svg {
+    @apply h-full;
+  }
+}

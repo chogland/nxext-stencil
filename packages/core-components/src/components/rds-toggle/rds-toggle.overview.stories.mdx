@@ -1,0 +1,47 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+
+<Meta title="Components/Toggle/Overview" />
+
+# Toggle: Overview
+
+## Variations
+
+`Toggle` helps users update preferences, settings, and other types of information. Keep in mind that toggle switches should only be used when the user needs to decide between two opposing states.
+
+<Canvas withSource="auto">
+  <Story id="components-toggle-stories--default-story"></Story>
+  <Story id="components-toggle-stories--switched"></Story>
+</Canvas>
+
+### Disabled
+
+Pass the `disabled` prop to disable the user from engaging with the toggle.
+
+<Canvas withSource="auto">
+  <Story id="components-toggle-stories--disabled"></Story>
+</Canvas>
+
+### With Label
+
+Using the 'Label' property allows you to add a text label that automatically references the toggle.
+
+<Canvas withSource="auto">
+  <Story id="components-toggle-stories--with-label"></Story>
+</Canvas>
+
+## Usage Guidelines
+
+> **Keep labels for toggle switches short and direct**
+
+> **Use when:**
+
+- Applying a system state, not a contextual one
+- Presenting binary options, not opposing ones
+- Activating a state, not performing an action
+
+> **Don't stack many toggles**
+
+- It is best to reconsider using toggles if you find stacking them or having more than a couple in a page setting.
+
+<Description>{Readme}</Description>

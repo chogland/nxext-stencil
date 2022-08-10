@@ -1,0 +1,47 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import RdsFileList from '../../../dist/collection/components/rds-file-list/rds-file-list';
+
+<Meta title="Patterns/File List/Overview" />
+
+# File List: Overview
+
+`FileList` is a simple pattern that includes icon and text components to offer up a file list component that uses slots to apply the details.
+
+## Variations
+
+### Default
+
+<Canvas withSource="auto">
+  <Story id="patterns-file-list-stories--default-story"></Story>
+</Canvas>
+
+### Clickable
+
+If your file list item has an action to take, you can use the hover-action slot which will be displayed when the file list is hovered.
+
+**This requires the prop 'clickable' to show hover state**
+
+<Canvas withSource="auto">
+  <Story id="patterns-file-list-stories--clickable"></Story>
+</Canvas>
+
+### Always Show Action
+
+You can provide a component in the 'detail' slot to always show the interaction for the file.
+
+<Canvas withSource="auto">
+  <Story id="patterns-file-list-stories--action"></Story>
+</Canvas>
+
+## Usage Guidelines
+
+> Showing List of Files
+
+Use File List to show a list of files with optional details for time uploaded or which user has interacted with a file.
+
+> File Actions
+
+When a file requires interaction like downloading or sharing.
+
+<Description>{Readme}</Description>

@@ -1,0 +1,34 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsSubLabel from '../../../../dist/collection/components/rds-form-elements/rds-sub-label/rds-sub-label';
+import * as RdsLabel from '../../../../dist/collection/components/rds-form-elements/rds-label/rds-label';
+
+<Meta
+  title="Components/Form Elements/Sub-Label/Stories"
+  component={RdsSubLabel}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=48%3A19522',
+    },
+  }}
+  argTypes={{
+    text: {
+      control: { type: 'text' },
+      description: 'Adds text within the `RdsSubLabel` tags.',
+      defaultValue: 'I am a sub-label component',
+    },
+  }}
+/>
+
+export const Template = args => <rds-sub-label>{args.text}</rds-sub-label>;
+
+# Sub Label
+
+### Default
+
+<Canvas>
+  <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

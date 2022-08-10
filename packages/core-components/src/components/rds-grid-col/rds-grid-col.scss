@@ -1,0 +1,211 @@
+// Small breakpoint and Above
+:host([colspan='auto']) {
+  @apply col-auto;
+}
+
+:host([colspan='1']) {
+  @apply col-span-1;
+}
+
+:host([colspan='2']) {
+  @apply col-span-2;
+}
+
+:host([colspan='3']) {
+  @apply col-span-3;
+}
+
+:host([colspan='4']) {
+  @apply col-span-4;
+}
+
+:host([colspan='5']) {
+  @apply col-span-5;
+}
+
+:host([colspan='6']) {
+  @apply col-span-6;
+}
+
+:host([colspan='7']) {
+  @apply col-span-7;
+}
+
+:host([colspan='8']) {
+  @apply col-span-8;
+}
+
+:host([colspan='9']) {
+  @apply col-span-9;
+}
+
+:host([colspan='10']) {
+  @apply col-span-10;
+}
+
+:host([colspan='11']) {
+  @apply col-span-11;
+}
+
+:host([colspan='12']) {
+  @apply col-span-12;
+}
+
+// Medium breakpoint and Above
+:host([colspanMd='auto']) {
+  @apply md:col-auto;
+}
+
+:host([colspanMd='1']) {
+  @apply md:col-span-1;
+}
+
+:host([colspanMd='2']) {
+  @apply md:col-span-2;
+}
+
+:host([colspanMd='3']) {
+  @apply md:col-span-3;
+}
+
+:host([colspanMd='4']) {
+  @apply md:col-span-4;
+}
+
+:host([colspanMd='5']) {
+  @apply md:col-span-5;
+}
+
+:host([colspanMd='6']) {
+  @apply md:col-span-6;
+}
+
+:host([colspanMd='7']) {
+  @apply md:col-span-7;
+}
+
+:host([colspanMd='8']) {
+  @apply md:col-span-8;
+}
+
+:host([colspanMd='9']) {
+  @apply md:col-span-9;
+}
+
+:host([colspanMd='10']) {
+  @apply md:col-span-10;
+}
+
+:host([colspanMd='11']) {
+  @apply md:col-span-11;
+}
+
+:host([colspanMd='12']) {
+  @apply md:col-span-12;
+}
+
+// Large breakpoint and Above
+:host([colspanLg='auto']) {
+  @apply lg:col-auto;
+}
+
+:host([colspanLg='1']) {
+  @apply lg:col-span-1;
+}
+
+:host([colspanLg='2']) {
+  @apply lg:col-span-2;
+}
+
+:host([colspanLg='3']) {
+  @apply lg:col-span-3;
+}
+
+:host([colspanLg='4']) {
+  @apply lg:col-span-4;
+}
+
+:host([colspanLg='5']) {
+  @apply lg:col-span-5;
+}
+
+:host([colspanLg='6']) {
+  @apply lg:col-span-6;
+}
+
+:host([colspanLg='7']) {
+  @apply lg:col-span-7;
+}
+
+:host([colspanLg='8']) {
+  @apply lg:col-span-8;
+}
+
+:host([colspanLg='9']) {
+  @apply lg:col-span-9;
+}
+
+:host([colspanLg='10']) {
+  @apply lg:col-span-10;
+}
+
+:host([colspanLg='11']) {
+  @apply lg:col-span-11;
+}
+
+:host([colspanLg='12']) {
+  @apply lg:col-span-12;
+}
+
+// Large breakpoint and Above
+:host([colspanXl='auto']) {
+  @apply xl:col-auto;
+}
+
+:host([colspanXl='1']) {
+  @apply xl:col-span-1;
+}
+
+:host([colspanXl='2']) {
+  @apply xl:col-span-2;
+}
+
+:host([colspanXl='3']) {
+  @apply xl:col-span-3;
+}
+
+:host([colspanXl='4']) {
+  @apply xl:col-span-4;
+}
+
+:host([colspanXl='5']) {
+  @apply xl:col-span-5;
+}
+
+:host([colspanXl='6']) {
+  @apply xl:col-span-6;
+}
+
+:host([colspanXl='7']) {
+  @apply xl:col-span-7;
+}
+
+:host([colspanXl='8']) {
+  @apply xl:col-span-8;
+}
+
+:host([colspanXl='9']) {
+  @apply xl:col-span-9;
+}
+
+:host([colspanXl='10']) {
+  @apply xl:col-span-10;
+}
+
+:host([colspanXl='11']) {
+  @apply xl:col-span-11;
+}
+
+:host([colspanXl='12']) {
+  @apply xl:col-span-12;
+}

@@ -1,0 +1,349 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsButton from '../../../dist/collection/components/rds-button/rds-button';
+
+<Meta
+  title="Components/Button/Stories"
+  component={RdsButton}
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=48%3A17120',
+    },
+    layout: 'padded',
+  }}
+  argTypes={{
+    buttonText: {
+      control: { type: 'text' },
+      description: 'The button text.',
+    },
+    appearance: {
+      control: { type: 'select', options: ['primary', 'secondary', 'outline', 'tertiary', 'link'] },
+      description: 'The appearance of the button.',
+    },
+    disabled: {
+      control: { type: 'boolean' },
+      description: 'If true, the button is displayed as disabled.',
+    },
+    active: {
+      control: { type: 'boolean' },
+      description: 'If true, the button is displayed in its active state.',
+    },
+    size: {
+      control: { type: 'select', options: ['sm', 'md', 'lg', 'xl'] },
+      description: 'The button size.',
+    },
+    href: {
+      control: { type: 'text' },
+      description: 'Contains a URL or a URL fragment that the hyperlink points to. If this property is set, an anchor tag will be rendered.',
+    },
+    target: {
+      control: { type: 'select', options: ['_blank', '_self'] },
+      description: 'Specifies where to display the linked URL. Only applies when an `href` is provided. Special keywords: `_blank`  `_self`  `_parent`  `_top`.',
+    },
+  }}
+/>
+
+export const Template = args => <rds-button {...args}>{args.buttonText}</rds-button>;
+export const TemplateWithIconBefore = args => (
+  <rds-button {...args}>
+    <rds-hero-icon slot="start" name="mail"></rds-hero-icon>
+    {args.buttonText}
+  </rds-button>
+);
+export const TemplateWithIconAfter = args => (
+  <rds-button {...args}>
+    {args.buttonText}
+    <rds-hero-icon slot="end" name="mail"></rds-hero-icon>
+  </rds-button>
+);
+export const TemplateWithIconOnly = args => (
+  <rds-button {...args}>
+    <rds-hero-icon name="x"></rds-hero-icon>
+  </rds-button>
+);
+
+# Buttons
+
+### Primary
+
+<Canvas>
+  <Story
+    name="Primary"
+    args={{
+      appearance: 'primary',
+      buttonText: 'Primary Button',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Primary with Leading Icon"
+    args={{
+      appearance: 'primary',
+      buttonText: 'Leading Icon',
+    }}
+  >
+    {TemplateWithIconBefore.bind({})}
+  </Story>
+  <Story
+    name="Primary with Trailing Icon"
+    args={{
+      appearance: 'primary',
+      buttonText: 'Trailing Icon',
+    }}
+  >
+    {TemplateWithIconAfter.bind({})}
+  </Story>
+  <Story
+    name="Primary Disabled"
+    args={{
+      appearance: 'primary',
+      buttonText: 'Primary Button',
+      disabled: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Secondary
+
+<Canvas>
+  <Story
+    name="Secondary"
+    args={{
+      appearance: 'secondary',
+      buttonText: 'Secondary Button',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Secondary with Leading Icon"
+    args={{
+      appearance: 'secondary',
+      buttonText: 'Leading Icon',
+    }}
+  >
+    {TemplateWithIconBefore.bind({})}
+  </Story>
+  <Story
+    name="Secondary with Trailing Icon"
+    args={{
+      appearance: 'secondary',
+      buttonText: 'Trailing Icon',
+    }}
+  >
+    {TemplateWithIconAfter.bind({})}
+  </Story>
+  <Story
+    name="Secondary Active"
+    args={{
+      appearance: 'secondary',
+      buttonText: 'Secondary Button',
+      active: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Secondary Disabled"
+    args={{
+      appearance: 'secondary',
+      buttonText: 'Secondary Button',
+      disabled: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Tertiary
+
+<Canvas>
+  <Story
+    name="Tertiary"
+    args={{
+      appearance: 'tertiary',
+      buttonText: 'Tertiary Button',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Tertiary with Leading Icon"
+    args={{
+      appearance: 'tertiary',
+      buttonText: 'Leading Icon',
+    }}
+  >
+    {TemplateWithIconBefore.bind({})}
+  </Story>
+  <Story
+    name="Tertiary with Trailing Icon"
+    args={{
+      appearance: 'tertiary',
+      buttonText: 'Trailing Icon',
+    }}
+  >
+    {TemplateWithIconAfter.bind({})}
+  </Story>
+  <Story
+    name="Tertiary Active"
+    args={{
+      appearance: 'tertiary',
+      buttonText: 'Tertiary Button',
+      active: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Tertiary Disabled"
+    args={{
+      appearance: 'tertiary',
+      buttonText: 'Tertiary Button',
+      disabled: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Danger/Danger Lite
+
+<Canvas>
+  <Story
+    name="Danger"
+    args={{
+      appearance: 'danger',
+      buttonText: 'Danger Button',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Danger Lite"
+    args={{
+      appearance: 'danger-lite',
+      buttonText: 'Danger Lite Button',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Sizes
+
+<Canvas>
+  <Story
+    name="Size Small"
+    args={{
+      appearance: 'primary',
+      size: 'sm',
+      buttonText: 'Small Button',
+    }}
+  >
+    {TemplateWithIconAfter.bind({})}
+  </Story>
+  <Story
+    name="Size Medium"
+    args={{
+      appearance: 'primary',
+      buttonText: 'Default Button',
+    }}
+  >
+    {TemplateWithIconAfter.bind({})}
+  </Story>
+  <Story
+    name="Size Large"
+    args={{
+      appearance: 'primary',
+      buttonText: 'Large Button',
+      size: 'lg',
+    }}
+  >
+    {TemplateWithIconAfter.bind({})}
+  </Story>
+  <Story
+    name="Size Extra Large"
+    args={{
+      appearance: 'primary',
+      buttonText: 'Extra Large / Full Width Button',
+      size: 'xl',
+    }}
+  >
+    {TemplateWithIconAfter.bind({})}
+  </Story>
+</Canvas>
+
+### Icon Only
+
+<Canvas>
+  <Story
+    name="Primary Small Icon Only"
+    args={{
+      appearance: 'primary',
+      iconOnly: true,
+      label: 'Icon Only Label',
+      size: 'sm',
+    }}
+  >
+    {TemplateWithIconOnly.bind({})}
+  </Story>
+  <Story
+    name="Primary Icon Only"
+    args={{
+      appearance: 'primary',
+      iconOnly: true,
+      label: 'Icon Only Label',
+    }}
+  >
+    {TemplateWithIconOnly.bind({})}
+  </Story>
+  <Story
+    name="Secondary Small Icon Only"
+    args={{
+      appearance: 'secondary',
+      iconOnly: true,
+      label: 'Icon Only Label',
+      size: 'sm',
+    }}
+  >
+    {TemplateWithIconOnly.bind({})}
+  </Story>
+  <Story
+    name="Secondary Icon Only"
+    args={{
+      appearance: 'secondary',
+      iconOnly: true,
+      label: 'Icon Only Label',
+    }}
+  >
+    {TemplateWithIconOnly.bind({})}
+  </Story>
+  <Story
+    name="Tertiary Small Icon Only"
+    args={{
+      appearance: 'tertiary',
+      iconOnly: true,
+      label: 'Icon Only Label',
+      size: 'sm',
+    }}
+  >
+    {TemplateWithIconOnly.bind({})}
+  </Story>
+  <Story
+    name="Tertiary Icon Only"
+    args={{
+      appearance: 'tertiary',
+      iconOnly: true,
+      label: 'Icon Only Label',
+    }}
+  >
+    {TemplateWithIconOnly.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

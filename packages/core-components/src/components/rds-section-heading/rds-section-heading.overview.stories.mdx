@@ -1,0 +1,92 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+
+<Meta title="Patterns/Section Heading/Overview" />
+
+# Section Heading: Overview
+
+<div class="flex mt-8">
+  <div class="pr-10"><img class="thumbnail" src="/section-heading/section-heading.jpg" alt="" /></div>
+  <div class="flex-grow"><h3>Section Headings</h3>
+
+To separate certain types of content, section headings or dividers are used.
+
+Section heading is a pattern comprised of a default `Headline` set by the `text` property, as well as other slots to create your unique pattern.
+
+Below are some examples of components and slots to apply to them.
+
+```
+<RdsText slot="content" />
+<RdsButton slot="action-primary" />
+<RdsButton slot="action-secondary" />
+```
+
+```
+<RdsTabs slot="content">
+    <RdsTab tab="tab1">My account</RdsTab>
+    <RdsTab tab="tab2">Company</RdsTab>
+    <RdsTab tab="tab3">Team members</RdsTab>
+    <RdsTab tab="tab4">Billing</RdsTab>
+</RdsTabs>
+<RdsButton slot="action-primary" />
+<RdsButton slot="action-secondary" />
+```
+
+  </div>
+</div>
+
+## Variations
+
+### Default: Headline Only
+
+<Canvas withSource="auto">
+  <Story id="patterns-section-heading-stories--default-story"></Story>
+</Canvas>
+
+### With Text
+
+<Canvas withSource="auto">
+  <Story id="patterns-section-heading-stories--with-text"></Story>
+</Canvas>
+
+### With Actions
+
+<Canvas withSource="auto">
+  <Story id="patterns-section-heading-stories--with-actions"></Story>
+</Canvas>
+
+### With Text and Actions
+
+<Canvas withSource="auto">
+  <Story id="patterns-section-heading-stories--with-text-and-actions"></Story>
+</Canvas>
+
+### With Tabs
+
+<Canvas withSource="auto">
+  <Story id="patterns-section-heading-stories--with-tabs"></Story>
+</Canvas>
+
+### With Tabs and Actions
+
+<Canvas withSource="auto">
+  <Story id="patterns-section-heading-stories--with-tabs-and-actions"></Story>
+</Canvas>
+
+## Usage Guidelines
+
+> **Headings and subheadings should always be nested one level down from each other.**
+
+<ul>
+  <li>Level 1 is the highest or main level of heading.</li>
+  <li>Level 2 is a subheading of Level 1.</li>
+  <li>Level 3 is a subheading of Level 2, and so on through Levels 4 and 5.</li>
+</ul>
+
+> **Section heading**
+
+<ul>
+  <li>We need to change the headline level depending on where the section heading exists on the page which creates a logical structure.</li>
+</ul>
+
+<Description>{Readme}</Description>

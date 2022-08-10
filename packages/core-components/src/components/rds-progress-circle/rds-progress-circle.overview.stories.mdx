@@ -1,0 +1,34 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+
+<Meta title="Components/Progress Circle/Overview" />
+
+# Progress Circle: Overview
+
+## Progress Circle
+
+A `Progress Circle` includes a circular track that fills to show the progression of a task with a known duration. Progress circles are not interactive. The value is reflected as a label in the middle of the component.
+
+<Canvas withSource="auto" style={{ backgroundColor: 'white' }}>
+  <Story id="components-progress-circle-stories--no-value"></Story>
+  <Story id="components-progress-circle-stories--partial"></Story>
+  <Story id="components-progress-circle-stories--full"></Story>
+</Canvas>
+
+## Sizes
+
+<Canvas withSource="auto" style={{ backgroundColor: 'white' }}>
+  <Story id="components-progress-circle-stories--small"></Story>
+  <Story id="components-progress-circle-stories--medium"></Story>
+  <Story id="components-progress-circle-stories--large"></Story>
+</Canvas>
+
+## Usage Guidelines
+
+> Always report progress accurately.
+
+> Only use progress bars for tasks that are quantifiable.
+
+> Use progress bars for tasks with a well-defined duration.
+
+<Description>{Readme}</Description>

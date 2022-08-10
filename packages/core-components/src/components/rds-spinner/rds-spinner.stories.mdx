@@ -1,0 +1,57 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import * as Readme from './readme.md';
+import * as RdsSpinner from '../../../dist/collection/components/rds-spinner/rds-spinner';
+
+<Meta
+  title="Components/Spinner/Stories"
+  component={RdsSpinner}
+  parameters={{
+    layout: 'centered',
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/fws0J5pWjrviPYy0MLdEa3/RDS-Sticker-Sheet?node-id=48%3A90953',
+    },
+  }}
+  argTypes={{}}
+/>
+
+export const Template = args => <rds-spinner {...args}></rds-spinner>;
+
+# Spinner
+
+<Canvas>
+  <Story
+    name="Small"
+    args={{
+      size: 'sm',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Default"
+    args={{
+      size: 'md',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Large"
+    args={{
+      size: 'lg',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Extra Large"
+    args={{
+      size: 'xl',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

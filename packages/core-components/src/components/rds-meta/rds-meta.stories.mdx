@@ -1,0 +1,51 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import * as RdsMeta from '../../../dist/collection/components/rds-meta/rds-meta';
+
+<Meta title="Components/Meta/Stories" component={RdsMeta} />
+
+export const BriefCase = args => <rds-meta {...args}>Full-time</rds-meta>;
+export const LocationMarker = args => <rds-meta {...args}>Remote</rds-meta>;
+
+export const CurrencyDollar = args => <rds-meta {...args}>$120k - $140k</rds-meta>;
+
+### Brief Case
+
+<Canvas>
+  <Story
+    name="Brief Case"
+    args={{
+      icon: 'briefcase',
+    }}
+  >
+    {BriefCase.bind({})}
+  </Story>
+</Canvas>
+
+### Location Marker
+
+<Canvas>
+  <Story
+    name="Location Marker"
+    args={{
+      icon: 'location-marker',
+    }}
+  >
+    {LocationMarker.bind({})}
+  </Story>
+</Canvas>
+
+### Currency Dollar
+
+<Canvas>
+  <Story
+    name="Currency Dollar"
+    args={{
+      icon: 'currency-dollar',
+    }}
+  >
+    {CurrencyDollar.bind({})}
+  </Story>
+</Canvas>
+
+_Built for Resilience Design System @ FM Global_

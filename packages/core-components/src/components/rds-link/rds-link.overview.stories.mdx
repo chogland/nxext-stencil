@@ -1,0 +1,66 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import Readme from './readme.md';
+import RdsLink from '../../../dist/collection/components/rds-link/rds-link';
+
+<Meta title="Components/Link/Overview" />
+
+# Link: Overview
+
+`Link` is a traditional `<a>` tag, or a `<button>`, which points a user to another location. `RdsLink` is a component that utilizes both types of hyperlinks and is bootstrapped with a simple text-based style.
+
+### Primary Links
+
+<Canvas withSource="auto">
+  <Story id="components-link-stories--primary"></Story>
+  <Story id="components-link-stories--primary-icon-leading"></Story>
+  <Story id="components-link-stories--primary-icon-trailing"></Story>
+</Canvas>
+
+### Secondary Links
+
+<Canvas withSource="auto">
+  <Story id="components-link-stories--secondary"></Story>
+  <Story id="components-link-stories--secondary-icon-leading"></Story>
+  <Story id="components-link-stories--secondary-icon-trailing"></Story>
+</Canvas>
+
+### Disabled Links
+
+<Canvas withSource="auto">
+  <Story id="components-link-stories--primary-disabled"></Story>
+  <Story id="components-link-stories--secondary-disabled"></Story>
+</Canvas>
+
+### Link Sizes
+
+<Canvas withSource="auto">
+  <Story id="components-link-stories--primary-small"></Story>
+  <Story id="components-link-stories--primary"></Story>
+  <Story id="components-link-stories--secondary-small"></Story>
+  <Story id="components-link-stories--secondary"></Story>
+</Canvas>
+
+### Icon Only Links
+
+<Canvas withSource="auto">
+  <Story id="components-link-stories--primary-icon-only"></Story>
+  <Story id="components-link-stories--primary-large-icon-only"></Story>
+  <Story id="components-link-stories--secondary-icon-only"></Story>
+  <Story id="components-link-stories--secondary-large-icon-only"></Story>
+</Canvas>
+
+## Usage Guidelines
+
+> **Be Concise**
+
+Link text should be concise: 1 or 2 words, no longer than 4 words, with fewer than 20 characters including spaces. Don't use punctuation marks such as periods or exclamation points within the link.
+
+> **Use sentence case**
+
+Link text should always be in sentence case. Capitalization should never be used to give more prominence to a specific link.
+
+> **Use icons for clarity**
+
+Icons can be used in links when additional clarity is required and the icon is highly relevant to the action. Icons should not be used for decoration.
+
+<Description>{Readme}</Description>

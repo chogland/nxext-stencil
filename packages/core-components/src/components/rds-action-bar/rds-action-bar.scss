@@ -1,0 +1,14 @@
+:host {
+  @apply inline-flex flex-col self-stretch bg-white shadow h-full p-2;
+
+  .top-group {
+    @apply grow;
+  }
+
+  rds-divider,
+  ::slotted(rds-divider) {
+    @apply -mx-2 my-3;
+
+    width: calc(100% + 1rem);
+  }
+}

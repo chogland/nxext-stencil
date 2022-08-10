@@ -1,0 +1,68 @@
+:host {
+  @apply cursor-pointer flex;
+
+  ::slotted([slot='start']) {
+    @apply flex mr-2;
+  }
+}
+
+:host(:focus) {
+  @apply outline-none;
+}
+
+:host(.primary:focus) {
+  a {
+    @apply border-purple-500;
+  }
+}
+
+:host(.primary) {
+  a {
+    @apply transition-colors border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap px-1 py-4 border-b-2 font-medium text-sm flex items-center w-max;
+  }
+}
+
+:host(.primary.tab-active) {
+  a {
+    @apply border-purple-500 text-purple-600;
+  }
+}
+
+:host(.secondary:focus) {
+  a {
+    @apply ring-2 ring-purple-600 ring-offset-2;
+  }
+}
+
+:host(.secondary) {
+  a {
+    @apply text-purple-600 hover:text-purple-900 px-3 py-2 my-2 font-medium text-sm rounded-md flex items-center w-max;
+  }
+}
+
+:host(.secondary.tab-active) {
+  a {
+    @apply bg-purple-100 text-purple-900;
+  }
+}
+
+:host(.tertiary) {
+  a {
+    @apply text-gray-500 flex justify-center hover:text-gray-700 w-full relative min-w-0 overflow-hidden bg-white py-4 px-4 text-sm font-medium text-center hover:bg-gray-50 focus:z-order0;
+  }
+}
+
+:host(.tertiary.tab-active) {
+  a {
+    @apply text-gray-900;
+  }
+
+  a::after {
+    @apply bg-purple-500 absolute inset-x-0 bottom-0 h-0.5;
+    content: '';
+  }
+}
+
+:host(.tab-hidden) {
+  @apply hidden;
+}

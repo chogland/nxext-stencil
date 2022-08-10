@@ -1,0 +1,37 @@
+:host {
+  @apply flex flex-col text-gray-700 font-inter bg-white border-0 border-b border-gray-50 border-solid;
+
+  .padded {
+    @apply px-6;
+  }
+}
+
+:host(:focus-visible) {
+  @apply ring-inset ring-purple-600 ring-2 outline-none;
+}
+
+:host([active]) {
+  & .accordion-item-content {
+    @apply block pb-4;
+  }
+}
+
+:host .accordion-item-header * {
+  @apply inline-flex items-center;
+}
+
+:host .accordion-item-header {
+  @apply flex items-center cursor-pointer text-base font-semibold px-6 py-4;
+
+  .accordion-item-header-text {
+    @apply grow pr-4;
+  }
+}
+
+:host .accordion-item-content {
+  @apply hidden pt-0;
+}
+
+:host([active]) .accordion-item-expand-icon {
+  @apply rotate-180;
+}

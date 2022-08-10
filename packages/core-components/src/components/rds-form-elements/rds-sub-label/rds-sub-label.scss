@@ -1,0 +1,17 @@
+:host {
+  label {
+    @apply font-inter text-gray-600 text-sm block font-normal;
+  }
+}
+
+:host([type='headline']) {
+  label {
+    @apply text-gray-500;
+  }
+}
+
+:host([group-checked]) {
+  label {
+    @apply text-gray-900;
+  }
+}

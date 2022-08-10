@@ -1,0 +1,47 @@
+:host {
+  @apply flex flex-col font-inter;
+
+  .table-wrapper {
+    @apply -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8;
+
+    &::-webkit-scrollbar {
+      @apply h-2;
+    }
+
+    &::-webkit-scrollbar-track {
+      @apply bg-transparent ml-1;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      @apply bg-gray-300 rounded-3xl ml-1;
+    }
+
+    .table-outer {
+      @apply py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8;
+
+      .table-inner {
+        @apply shadow overflow-hidden border-b border-gray-200 sm:rounded-lg;
+
+        table {
+          @apply min-w-full divide-y divide-gray-200;
+
+          thead {
+            @apply bg-gray-50;
+          }
+
+          tbody {
+            @apply bg-white divide-y divide-gray-200;
+          }
+        }
+      }
+    }
+  }
+
+  // Sets border on un-striped table rows
+  .striped {
+    ::slotted([slot='body']:not(:last-of-type)) {
+      @apply border-solid border-t-0 border-l-0 border-r-0 border-b-gray-300;
+      border-bottom-width: 0.5px;
+    }
+  }
+}

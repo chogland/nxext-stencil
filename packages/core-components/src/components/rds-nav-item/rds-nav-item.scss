@@ -1,0 +1,101 @@
+:host {
+  @apply relative list-none;
+
+  a {
+    @apply text-gray-600 hover:bg-gray-100 hover:text-gray-900 flex items-center px-4 py-2 text-base font-medium rounded-md font-inter cursor-pointer outline-none my-1 relative;
+
+    &:focus {
+      @apply ring-2 ring-inset ring-purple-600;
+    }
+  }
+
+  // Icon within nav item
+  ::slotted([slot='icon']) {
+    @apply text-gray-400 pointer-events-none;
+  }
+
+  .nav-item-text {
+    @apply ml-3;
+  }
+}
+
+:host {
+  // Collapsed nav item styles
+  .collapsed {
+    ::slotted([slot='icon']) {
+      @apply mr-0;
+    }
+
+    .nav-item-text {
+      @apply lg:sr-only;
+    }
+
+    .chevron {
+      @apply hidden;
+    }
+  }
+
+  // Collapsed nav item styles on hover
+  .collapsed:hover {
+    .children {
+      @apply fixed left-16 top-auto bg-white rounded-md shadow-md p-2 w-max max-w-xs;
+
+      margin-top: -3.75rem;
+    }
+
+    ::slotted([slot='child']) {
+      @apply block;
+    }
+  }
+}
+
+// Collapsed nav item styles on hover if its a sub nav item
+:host([slot='child']) {
+  .collapsed {
+    a {
+      @apply pl-4;
+    }
+  }
+}
+
+// Active nav item styles
+:host([active]) {
+  a {
+    @apply bg-gray-100 text-gray-900 font-semibold;
+  }
+  ::slotted([slot='icon']) {
+    @apply text-gray-600;
+  }
+}
+
+// Hides the sub nav by default and styles chevron
+:host {
+  .parent {
+    ::slotted([slot='child']) {
+      @apply hidden;
+    }
+
+    .chevron {
+      @apply absolute right-4 top-1/2 -translate-y-1/2 flex;
+    }
+  }
+}
+
+// Shows the sub nav when open is true
+:host([open]) {
+  .parent {
+    ::slotted([slot='child']) {
+      @apply block;
+    }
+
+    .chevron {
+      @apply rotate-90;
+    }
+  }
+}
+
+:host([slot='child']) {
+  a {
+    padding-left: 3.25rem;
+  }
+}

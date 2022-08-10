@@ -1,0 +1,11 @@
+:host {
+  @apply font-inter;
+}
+
+:host([padded]) {
+  @apply p-6;
+}
+
+:host([padded='false']) {
+  @apply p-0;
+}

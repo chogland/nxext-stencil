@@ -1,0 +1,19 @@
+:host {
+  @apply text-center font-inter flex items-center justify-center text-4xl bg-gray-50 rounded-full;
+
+  .progress-circle {
+    @apply flex items-center justify-center bg-gray-50 h-5/6 w-5/6 rounded-full;
+  }
+}
+
+:host([size='sm']) {
+  @apply w-16 h-16 text-xl;
+}
+
+:host([size='md']) {
+  @apply w-32 h-32 text-4xl;
+}
+
+:host([size='lg']) {
+  @apply w-48 h-48 text-6xl;
+}

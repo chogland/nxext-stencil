@@ -3,6 +3,7 @@
   "version": 2,
   "projects": {
     "core-components": "packages/core-components",
+    "core-components-angular": "packages/core-components-angular",
     "core-components-react": "packages/core-components-react"
   }
 }

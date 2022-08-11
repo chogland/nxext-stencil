@@ -13,9 +13,13 @@
     "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
+    "strictNullChecks": true,
     "baseUrl": ".",
     "paths": {
       "@rds-core/core-components": ["dist/libs/core-components"],
+      "@rds-core/core-components-angular": [
+        "packages/core-components-angular/src/index.ts"
+      ],
       "@rds-core/core-components-react": [
         "packages/core-components-react/src/index.ts"
       ],
